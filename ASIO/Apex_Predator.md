@@ -4,6 +4,8 @@ title: Apex Predator
 description: "Claim: We are in the final stages of a planet-wide transition from one apex predator to another."
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 
 
 **Thesis**:

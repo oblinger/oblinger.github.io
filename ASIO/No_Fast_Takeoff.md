@@ -4,6 +4,8 @@ title: No Fast Takeoff
 description: "Claim: A unilateral fast take-off scenario might be less likely while risks from a slow takeoff might be greater than often considered."
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 
 Here, we argue why a unilateral fast take-off scenario might be less likely while risks from a slow takeoff might be greater than often considered.
 

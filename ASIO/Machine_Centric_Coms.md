@@ -4,6 +4,8 @@ title: Machine_Centric_Coms
 description: "Claim: The fraction of machine-interpretable information will grow to eclipse human-interpretable communications.  This will be true both in terms of the importance of the communication and as a percentage of total volume.  It will also hold between and within intelligent agents."
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 
 
 This shift will occur across four areas:

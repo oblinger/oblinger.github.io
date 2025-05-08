@@ -4,6 +4,8 @@ title: Our Best Hope
 description: "Claim: Our best hope is to shape our progressive loss of control in ways least likely to result in catastrophic harm."
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 **Thesis**:
 - Humanity's predicament is far more dire than most imagine. 
 - In these [[EOCK Last stages AGI development]] there is a remote possibility that we can [[EOCK Shut it all down]].

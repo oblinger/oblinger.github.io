@@ -5,6 +5,8 @@ description: A framework for reasoning about and mitigating risks associated wit
 permalink: /ASIO/ASI_Outcomes/
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 *This is a work in progress.  I plan to flesh out additional structure before sharing it more widely.*
 
 <br>
