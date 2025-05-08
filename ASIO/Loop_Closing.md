@@ -4,6 +4,8 @@ title: Loop Closing
 description: 'Claim: Both scale and cost will jump discontinuously each time AI "closes loop" over all aspects of an end-to-end business function.'
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 **Definition**:
 We define ***loop closing*** as the automation of an end-to-end business activity so that humans are no longer used in any aspect of the process. Instead, it is fully automated via an AI-based solution.
 

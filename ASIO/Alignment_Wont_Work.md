@@ -4,6 +4,8 @@ title: Alignment Wont Work
 description: "Claim: Because of a layered combination of reasons, humanity will fail to align the AIs we build."
 ---
 
+<img src="../assets/images/WorkInProgress.png" height="150px;" />
+
 
 
 NOTE: The reasoning on this point is messy implying a greater possibility of being incorrect.  Still humanity will have to clear several 'impossible seeming' hurdles sequentially in order for this to work---it seems unlikely we will succeed in this.
