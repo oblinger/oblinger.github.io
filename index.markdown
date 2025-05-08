@@ -32,7 +32,7 @@ title: Dan Oblinger
 
  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; height: 100vh; width: 500px;">   <!-- justify-content: center;-->
 
-   <div style="height: 110px;"></div>
+   <div style="height: 113px;"></div>
 
    <img src="/assets/images/dan_headshot.png" height=370 alt="DanO Headshot">  
 
