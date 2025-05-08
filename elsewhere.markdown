@@ -4,6 +4,7 @@
 
 layout: blank
 title: Dan Oblinger
+permalink: /elsewhere/
 ---
 
 

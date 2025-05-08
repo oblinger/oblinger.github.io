@@ -38,7 +38,7 @@ title: Dan Oblinger
 
    <div style="display: flex; justify-content: center; gap: 20px;">
     <a href="/projects/"><b>Projects</b></a>
-  	<b><a href="/elsewhere">Elsewhere</a></b>
+  	<b><a href="/elsewhere/">Elsewhere</a></b>
    </div>
 
    <div style="height: 1vh;"></div>
