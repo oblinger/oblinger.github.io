@@ -5,9 +5,9 @@ description: A framework for reasoning about and mitigating risks associated wit
 permalink: /ASIO/ASI_Outcomes/
 ---
 
-<img src="../assets/images/WorkInProgress.png" height="150px;" />
+<img src="../../assets/images/WorkInProgress.png" height="150px;" />
 
-*This is a work in progress.  I plan to flesh out additional structure before sharing it more widely.*
+*I plan on refining/adding content before sharing it more widely.*
 
 <br>
 
@@ -20,7 +20,7 @@ There are too many unknowns to reason our way to a consensus conclusion; still, 
 
 This suggests we identify and isolate areas of relative consensus, then combine subsets of these to envision a couple of plausible futures. This approach allows us to agree on a collection of plausible futures and highlight the specific sub-claims that separate the divergent thinking on this pressing existential question.
 
-Below is a starter hierarchy of about a dozen plausible claims. The aim is to frame as many "Obvious" claims as possible to serve as the building blocks for more contentious conclusions. Ultimately, I would like to have an open wiki-style framework where researchers might post other claims and some mechanism to record consensus and dissent for each of the posited claims. For now, the focus is simply on capturing a handful of claims that tie together to form interesting conclusions. Feedback is most welcome at <a href="mailto:public@oblinger.us">public@oblinger.us</a>.
+Below is a starter hierarchy of about a dozen plausible claims. The aim is to frame as many "Obvious" claims as possible to serve as the building blocks for more contentious conclusions. Ultimately, I would like an open wiki-style framework where researchers might post other claims and some mechanism to record consensus and dissent for each posited claim. For now, the focus is simply on capturing a handful of claims that tie together to form interesting conclusions. Feedback is most welcome at <a href="mailto:public@oblinger.us">public@oblinger.us</a>.
 
 <br>
 
