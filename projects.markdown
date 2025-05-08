@@ -45,7 +45,7 @@ permalink: /projects/
   	<b><a href="/elsewhere/">Elsewhere</a></b>
    </div>
 
-   <div style="height: 1vh;"></div><br>
+   <div style="height: 1vh;"></div>
 
    <div><a href="https://github.com/oblinger/DVC-DAT">DVC Dat</a> - A framework for persistent, self-describing, Python-accessible data and code that is designed to operate seemlessly with DVC and ML-FLOW (we use a fork of this at SportsVisio).</div>
 
