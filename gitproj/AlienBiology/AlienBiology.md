@@ -15,8 +15,9 @@ Many existing large language model tests are suseptible to training set taint an
 
  <br> 
 
-[Alien Biology Whitepaper](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
-
+<div style="font-size: 18px;">
+   [Alien Biology Whitepaper](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
+</div>
 <br>
 
 ## Artifacts relevant for Alien Biology construction
