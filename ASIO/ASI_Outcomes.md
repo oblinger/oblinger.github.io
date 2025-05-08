@@ -2,6 +2,7 @@
 layout: cayman
 title: ASI Outcomes
 description: A framework for reasoning about and mitigating risks associated with ASI
+permalink: /ASIO/ASI_Outcomes/
 ---
 
 *This is a work in progress.  I plan to flesh out additional structure before sharing it more widely.*
