@@ -1,4 +1,4 @@
-.[[ASIO]].   [[EOCI]] 
+.[[ASIO]].   [[EOCI]]    [ASIO](https://oblinger.github.io/ASIO/ASI_Outcomes/)  
   [[ASI_Outcomes]] 
   [[Cant_Control]],
   [[Cant_Stop]],
