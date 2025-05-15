@@ -7,23 +7,24 @@ description: "Claim: Humanity cannot maintain indefinite control over the ASI sy
 
 **TL;DR.**  Even if we succeed in the challenging objective of building ASI systems that are aligned with the purposes we intend, we will still ultimately be at the mercy of these ASI systems once they are created, as well as at the mercy of other unaligned ASI systems that will also likely exist.  And since "shit happens" no matter how carefully humanity strives to set the initial conditions of this ecosystem, a due to variety of pressures will evolve it significantly beyond that point in unforseeable ways.  Whatever happens, humanity will not be in control of this evolution. Instead, a collection of one or more ASIs will be.
 
-**Caveats**—It is helpful to frame this sobering claim first in terms of what is NOT being claimed, both to minimize the non-trivial alarm it might cause and to increase the believability of the argument itself by carefully avoiding unintended overreach.
-- ALIGNMENT MAY BE POSSIBLE — We are not arguing that it is impossible to construct an ASI that is aligned to a purpose intended by its creators.  We are skeptical, but it is still conceivable that an ASI could be built that guarantees it remains aligned even as it evolves itself indefinitely into the future.  Our argument here is to notice several intrinsic properties of the system as a whole will conspire to break any such alignment guarantees in the long run.
+**Caveats**—It is helpful to frame this sobering claim first in terms of what is NOT being claimed, both to minimize the non-trivial alarm it might cause and to increase the believability of the argument by carefully avoiding unintended overreach.
+- ALIGNMENT MAY BE POSSIBLE — We are not arguing that it is impossible to construct an ASI that is aligned to a purpose intended by its creators.  We are skeptical, but it is still conceivable that an ASI could be built that guarantees it remains aligned even as it evolves itself indefinitely into the future.  Our argument here is to notice that several intrinsic properties of the system as a whole will conspire to break any such alignment guarantees in the long run.
 - HUMANITY IS NOT NECESSARILY DOOMED — We argue humanity will not remain in control, and any tight alignment guarantees attempts to install into the systems that will be in control will tend to unravel over time. Still, we are in control today, so it is conceivable that we can shape the trajectory this society of ASIs will embark upon in a way that has lasting consequences beneficial for humanity.
 
 **Assumptions, Dependencies, and Conclusions**:
 - AGI is possible, and we are on track to achieve it (see [[AGI_Will_Come]]).
 - Further, ASI will soon follow (see [[AGI_implies_ASI]]).
-- The world (people, corporations, and nations) operates within competitive ecosystems they cannot escape (see [[Corp_AI]]).
+- The world (people, corporations, and nations) operates within competitive ecosystems that they cannot escape (see [[Corp_AI]]).
 - Consequently, we cannot stop the construction of ASI systems (see [[Cant_Stop]]).
-- The best we can do is shape their starting point to best support humanity's long-term interests (see [[EOCK Shaping The Future]]).
+-  [Not If But When](/ASIO/Not_If_But_When).
+- The best we can do is shape their starting point towards humanity's long-term interests (see [[EOCK Shaping The Future]]).
 
 
 
 
 ## The Argument
 
-This is an argument about tendencies inherent in the world and consequences that, over time, invariable follow from these tendencies.  In its barest form, we argue that:
+This is an argument about tendencies inherent in the world and consequences that, over time, invariably follow from these tendencies.  In its barest form, we argue that:
 1. Life is a competition where the strongest tend to win, and 
 2. Where chaos occasionally intervenes in ways that will destroy mechanisms designed to thwart #1.
 

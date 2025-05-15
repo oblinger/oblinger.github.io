@@ -11,7 +11,7 @@ permalink: /ASIO/ASI_Outcomes/
 
 <br>
 
-**TL; DR.**  *Splitting arguments about plausible outcomes for ASI into isolated claims allows us to identify sub-areas having broad consensus and provide Lego-like blocks one can use to construct the range of most plausible outcomes.*
+**TL; DR.**  *Segmenting arguments about  ASI outcomes into isolated claims allows us to identify sub-areas with broad consensus and provide Lego-like building blocks one can use to construct the range of most plausible outcomes.*
 
 <br>
 
@@ -37,6 +37,7 @@ Below is a starter hierarchy of about a dozen plausible claims. The aim is to fr
 | **[AGI Implies ASI](/ASIO/AGI_implies_ASI)**                       | Claim: Achieving AGI will likely afford us a specific kind of ASI at nearly the same time.                                                                                                           |
 | **[Corp AI](/ASIO/Corp_AI)**                                       | Claim: Nations, Corporations, and Individuals are, to a first order of approximation, profit/power maximization mechanisms.                                                                          |
 | **[Loop Closing](/ASIO/Loop_Closing)**                             | Claim: Once loop is closed over an entire job function, performance on that job function will jump discontinuously in cost and productivity.                                                         |
+| **[Not If But When](/ASIO/Not_If_But_When)**                       | Claim: Execution lapses *will* eventually occur. Thus, safety guarantees are only meaningful if robust to those expected lapses.                                                                     |
 | **[Agentic Decompositionality](/ASIO/Agentic_Decompositionality)** | Claim: While not required of all AGI systems, knowledge, ability, and agency can be encoded as separable concerns.                                                                                   |
 | **[Alignment Won't Work](/ASIO/Alignment_Wont_Work)**              | Claim: Because of a layered combination of reasons, humanity will fail to align the AIs we build.                                                                                                    |
 | **[Natural Selection](/ASIO/Natural_Selection)**                   | Claim: People, organizations, or AI-Agents embedded within a process of natural selection cannot escape or halt that process of natural selection.                                                   |
