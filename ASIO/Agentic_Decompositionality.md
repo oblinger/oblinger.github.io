@@ -5,7 +5,7 @@ description: "Claim: While not required of all AGI systems, it appears knowledge
 ---
 
 
-Within AI systems, we can already see that it is possible to construct systems with different combinations of knowledge, ability, and drive. If this remains true of future ASI systems (as we expect it will), it will have significant implications for their controllability. Specifically, it implies that alignment can always be broken, though not necessarily by actions intentionally taken by those systems (this result is used in [[Cant_Control]]).
+Within AI systems, we can already see that it is possible to construct systems with different combinations of knowledge, ability, and drive. If this remains true of future ASI systems (as we expect it will), it will have significant implications for their controllability. Specifically, it implies that alignment can always be broken, though not necessarily by actions intentionally taken by those systems (this result is used in [[Loose_Control]]).
 
 For purposes of this discussion, we define the following terms:
 An ***agent*** is an embodied, configured computational system that can perceive and act within the world in which it operates.
@@ -21,7 +21,7 @@ Finally, distillation is the well-understood process of using the performance of
 
 Finally, let us turn to agency interoperability.  Yann LeCun famously argues [REF] that we need not worry that our AI systems will acquire motivating drives that biological entities have since, unlike their biological counterparts, they are not evolved but are instead programmed with the agency we biological creatures intend when we create them.  Yann observes that present AI systems are absent any animating drive beyond that which we explicitly encode in their top-level "agency" control loop we provide and in examples used to train its abilities.  He uses this observation to argue that we will be in control of the agency of these ASI systems since we will be the ones putting it there.  Regardless of whether he is correct that one can 'freeze' the state of an ASI's agency indefinitely as one desires, it seems he is correct that one can set such agency initially as one wishes, regardless of the rest of the agentic system.  But this also implies the claim made at the top of this section.  Namely, given access to an ASI system with an agency aligned in some particular way, one could construct a second agent with a different set of agentic drives.
 
-In the [[Cant_Control]] section, this is one component of the argument that humanity will lose control and eventually be dominated by ASI systems.
+In the [[Loose_Control]] section, this is one component of the argument that humanity will lose control and eventually be dominated by ASI systems.
 
 
 
