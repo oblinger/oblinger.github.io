@@ -1,9 +1,11 @@
 .[[ASIO]].   [[EOCI]]    [ASIO](https://oblinger.github.io/ASIO/ASI_Outcomes/)  
+   -
   [[ASI_Outcomes]] 
-  [[Cant_Control]],
+  [[Loose_Control]],
   [[Cant_Stop]],
   [[Our_Best_Hope]],
   [[Protective_Policies]],
+  
   -
   [[Corp_AI]] -
   [[AGI_implies_ASI]],
@@ -19,6 +21,8 @@
   [[Civilizing_Tendency]],
   [[No_Fast_Takeoff]],
 
+- [[Not_If_But_When]] 
+- [[EOCP Median Path]] 
 
 ---
 layout: cayman

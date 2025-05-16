@@ -7,7 +7,7 @@ description: "Claim: Achieving AGI will likely afford us a specific kind of ASI 
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
 
 
-In making this claim we are speaking about a particular limited kind of ASI, but one that likely affords decisive advantage in the societally most important competitive activities.  Specifically it will be enough to enable loss of control (see [Cant Control](/ASIO/Cant_Control)).
+In making this claim we are speaking about a particular limited kind of ASI, but one that likely affords decisive advantage in the societally most important competitive activities.  Specifically it will be enough to enable loss of control (see [Cant Control](Loose_Control.md)).
 
 There are several ways in which intelligence in digital form affords intrinsic advantage over biological intelligence, likely leading to a form of ASI:
 - Replication based learning

@@ -19,3 +19,5 @@ So, we have established that it will be difficult for humanity to stop the devel
 
 
 
+- WHY
+	- The gap to AGI likely does not involve easily monitored or controlled technologies like large training runs, GPU farms or such.
