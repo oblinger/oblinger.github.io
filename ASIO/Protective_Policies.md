@@ -13,3 +13,8 @@ description: "Claim: We can predict policies that are likely societally protecti
 - national parity
 - win-win networks
 - something to loose
+
+
+
+## References
+- [The Crucible](https://forum.effectivealtruism.org/posts/hJfXMffMaT57odFDv/the-crucible-how-i-think-about-the-situation-with-ai?utm_source=EA+Forum+Digest&utm_campaign=7100e1bbd8-EMAIL_CAMPAIGN_2025_05_07_08_33&utm_medium=email&utm_term=0_-7100e1bbd8-319275481) 
