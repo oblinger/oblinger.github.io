@@ -5,14 +5,15 @@
   [[Cant_Stop]],
   [[Our_Best_Hope]],
   [[Protective_Policies]],
-  
   -
+  [[Competition_Implies]] 
+  [[Natural_Selection]] 
   [[Corp_AI]] -
+  -
   [[AGI_implies_ASI]],
   [[Loop_Closing]] -
   [[Agentic_Decompositionality]],
   [[Alignment_Wont_Work]]
-  [[Natural_Selection]]
   [[Machine_Centric_Coms]],
   -
   [[Apex_Predator]],
@@ -20,11 +21,17 @@
   [[Nature_of_AI_Progress]],
   [[Civilizing_Tendency]],
   [[No_Fast_Takeoff]],
+  -
+[[Hiding_Beats_Finding]] 
+-
+
 
 - [[Not_If_But_When]] 
 - [[EOCP Median Path]] 
 - [[Performant_Or_Predictable]] 
+  -
 - [[Needle_Hiding]] 
+
 
 
 
