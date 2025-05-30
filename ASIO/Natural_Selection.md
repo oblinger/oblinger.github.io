@@ -1,7 +1,7 @@
 ---
 layout: cayman
 title: Natural Selection
-description: Claim People, organizations, or AI-Agents embedded within a process of natural selection cannot escape or halt that process of natural selection.
+description: "Claim: People, organizations, or AI-agents embedded within a process of natural selection cannot individually halt or escape this process of natural selection."
 ---
 RENAME: No Escape
 

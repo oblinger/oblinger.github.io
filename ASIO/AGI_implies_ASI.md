@@ -1,7 +1,7 @@
 ---
 layout: cayman
 title: AGI Implies ASI
-description: "Claim: Achieving AGI will likely afford us a specific kind of ASI at nearly the same time."
+description: "Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time."
 ---
 
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
