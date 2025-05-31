@@ -4,7 +4,7 @@ title: Alien Biology
 description: A next-generation agentic AI testing framework
 permalink: /projects/AlienBiology/
 ---
-Many existing large language model tests are suseptible to training set taint and are not designed to test the very long interaction chains expected with Agentic AI.  Alien Biology aim to address these concerns:
+Many existing large language model tests are susceptible to training set taint and are not designed to test the very long interaction chains expected with Agentic AI.  Alien Biology aims to address these concerns:
 
 
 **Alien Biology**:
@@ -15,9 +15,8 @@ Many existing large language model tests are suseptible to training set taint an
 
  <br> 
 
-<div style="font-size: 18px;">
-   [Alien Biology Whitepaper](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
-</div>
+[Alien Biology Whitepaper](/projects/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
+
 <br>
 
 ## Artifacts relevant for Alien Biology construction
@@ -29,6 +28,9 @@ Below are some samples from the data artifacts being used as the statistical bas
 **Biological Processes**.  Executable examples of terrestrial behavior processes.  Examples of energy transport processes, anabolic and catabolic behavioral systems, used as a statistical basis for corresponding alien processes:
 - [Photosynthesis](/gitproj/AlienBiology/Photosynthesis.pdf) 
 - [5 Interrelated Cell Respiration Processes](/gitproj/AlienBiology/CellMetabolism5.pdf)
+
+
+Dan Oblinger (c) 2025
 
 <!--
 
