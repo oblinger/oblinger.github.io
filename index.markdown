@@ -37,7 +37,7 @@ title: Dan Oblinger
    <img src="/assets/images/dan_headshot.png" height=370 alt="DanO Headshot">  
 
    <div style="display: flex; justify-content: center; gap: 20px;">
-    <a href="/projects/"><b>Projects</b></a>
+    <a href="/gitproj/"><b>Projects</b></a>
   	<b><a href="/elsewhere/">Elsewhere</a></b>
    </div>
 

@@ -4,7 +4,7 @@
 
 layout: blank
 title: Projects
-permalink: /projects/
+permalink: /gitproj/
 ---
 
 
