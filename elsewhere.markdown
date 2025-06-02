@@ -40,7 +40,7 @@ permalink: /elsewhere/
    <div><img src="../assets/images/dan_headshot.png" height=170 alt="DanO Headshot"></div>
 
    <div style="display: flex; justify-content: center; gap: 20px;">
-    <a href="/projects/"><b>Projects</b></a>
+    <a href="/gitproj/"><b>Projects</b></a>
   	<b>Elsewhere</b>
    </div>
 
