@@ -1,6 +1,7 @@
 .[[ASIO]].   [[EOCI]]    [ASIO](https://oblinger.github.io/ASIO/ASI_Outcomes/)  
-   -
   [[ASI_Outcomes]] 
+  [[ASIO Log]] 
+   -
   [[Loose_Control]],
   [[Cant_Stop]],
   [[Our_Best_Hope]],
