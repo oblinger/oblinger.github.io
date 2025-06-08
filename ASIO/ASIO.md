@@ -12,6 +12,8 @@
   [[Corp_AI]] -
   [[Civilizing_Tendency]],
   [[Profit_Power_Control]] 
+  [[Capital_Over_Labor]] ...
+  
   -
   [[AGI_implies_ASI]],
   [[Loop_Closing]] -
