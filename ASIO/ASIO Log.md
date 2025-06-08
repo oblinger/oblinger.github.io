@@ -1,5 +1,25 @@
 
 
+### 2025-06-06  Power centers remain, but become dominated by AI
+
+Corps
+Trade Groups
+Standard Bodies
+Governing bodies
+Governments -- maybe not this one
+
+- Power centers remain, but become dominated by AI.
+- Forces acting upon these centers remain similar. Thus, the motivation of these entities remains, but is run by AI.
+
+- Behavior of all centers remain aligned with current agenda but becomes inscrutable as AI's complexity increases.
+- Democratic governments are special because the power of the competing politicians comes from their ability to get votes. 
+	- this center does not get more inscrutible as it continues to follow the populace.
+	- still to a large degree these governments are competing against other govs, and thus cede power to centers that bring relative power to their regioned areas
+
+
+
+
+
 ### 2025-06-04  Police Bots
 
 - there will be police bots
