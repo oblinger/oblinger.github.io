@@ -1,4 +1,0 @@
-
-- [[Trackers]]
-- [[Hough Transform]] 
-

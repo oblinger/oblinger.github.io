@@ -1,3 +1,0 @@
-.[[DL Activation]].
-  , [[ReLU]], 
-
