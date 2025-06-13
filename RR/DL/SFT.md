@@ -1,7 +1,0 @@
-
-
-SFT
--?-
-Supervised Fine-tuning
-
-
