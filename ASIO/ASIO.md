@@ -1,4 +1,4 @@
-.[[ASIO]].   [[EOCI]]    [ASIO](https://oblinger.github.io/ASIO/ASI_Outcomes/)  
+.[[ASIO]].   [[EOC]]   [[EOCI]]    [ASIO](https://oblinger.github.io/ASIO/ASI_Outcomes/)  
   [[ASI_Outcomes]] 
   [[ASIO Log]] 
    -
@@ -31,12 +31,13 @@
   [[No_Fast_Takeoff]],
   -
 
-
-- [[EOCP Median Path]] 
-- [[Performant_Or_Predictable]] 
   -
-- [[Needle_Hiding]] 
-
+  [[EOCP Median Path]] 
+  [[Performant_Or_Predictable]] 
+  -
+  [[Needle_Hiding]] 
+  -
+  [[]]
 
 
 
@@ -348,3 +349,174 @@ description: .
 
 
 
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.

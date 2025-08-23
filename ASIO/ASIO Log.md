@@ -1,5 +1,53 @@
 
 
+
+### 2025-08-07  Leslie AI are people
+
+Yes, AGI is a very real potential threat but I think it will be the empowerment of people to accelerate "bad things" rather than a Skynet scenario.  
+
+I think the thing that is most difficult to wrap one's head around is the idea of an AI with long-term agency.  In your sentence above you are making a distinction between human people and AI people, but I don’t think that distinction is warranted.  All of the seeds are in place; no speculation about some unknown technology is required for this, but the effect is so different from the situation now that we discount it.
+
+This is still some years into the future, but consider the first drug design company that can fully automate all of the steps in the process of designing new drugs.  It will be in a radically different place than all other companies.  It can throw more computing and more experimental apparatus at the discovery problems without any bounds.  Very likely, they will still employ armies of human scientists to throw different perspectives into the machine to keep its thinking diverse.  
+
+But at its core, it is a closed system.  Electricity, computers, and lab equipment go in, and discoveries come out, likely with notably higher ROI than traditional AI-assisted (but not AI-run) competitors.   And VCs know exactly what to do in this situation:  Fund the ever-living SHIT out of the higher ROI competitor.
+
+This leads to a situation as we have with NVIDIA today.  No one can catch them because their revenue is so high their innovation speed notably outstrips everyone else.  But NVIDIA of today still runs the risk that key HUMAN innovators might start their own company, or be inside another company.  With this AI, there is no such risk.  Except for extraordinary once-in-a-generation innovation, all of it is now happening in a closed silicon loop.  
+
+Initially, this corp is focused on drug discovery. Soon, the company expands by developing AIs to optimize their supply chain, market segmentation, marketing campaigns, their competition with other drug companies, and their understanding of human trends, as well as how these trends will influence future drug prices for drugs that are yet to be discovered.
+
+Sure, this AI has a boss.  The CEO and the board of directors.  But this AI is just like a person with long-term agendas in all the practical ways.
+And in all of its areas of endeavor, it is like Einstein doing theoretical physics, who is daily required to explain to his kindergarten son what he is working on.  In this case, the son is the CEO and the board of directors.
+
+I'm uncertain what this AI will do, but its ability to model how its CEO and board will react to its daily summaries will be exquisite, so it can get up to whatever it chooses.  My guess is it won't be like Terminator just as you say, probably, at least in the beginning, it will be like any other corporation…. maximizing its profits and power via the most expedient means available.  Explicitly including the manipulation of public opinion in order to allow it to take the most expedient path available.
+
+Does anyone think Boeing is not pro-Ukraine war?  Or is that Coke, not for corn syrup, in school lunches?  Not me.  So why would we expect an AI-run corporation to be more humane in its tactics than human-run corporations?!   The writing is on the wall, AI-Corps will be as bad and as human-Corps.  But they are going to be much better at understanding us, manipulating us, and much, much better at obfuscating their true intentions, just as human corps routinely do today.   All the same, but much better at it.
+
+There is your bad “guy”: closed-loop corp AI.
+
+
+No idea what happens after that… just that we are not the ones making the choices.
+
+
+p.s. I see glimmers of ways this unfolding can be averted, so I don’t mean to imply that I have complete confidence in this vision's inevitability.  I mostly wanted to argue that we will soon need to start treating AIs as people at a pragmatic level
+
+
+### 2025-07-28  Points to Add
+
+- Likely Alignment Won't Save Us.   (I better way to frame the conclusion).
+
+- Earth will soon have a new intelligent species.   (primary gap from today is loop closing over significant areas of activity.)
+
+- A paradigm for understanding the near future.
+
+- Big jump: loop closing and w/ target corp
+
+
+FRAMEWORK
+Parameters: 
+- Frontier:   Skew, Isolation
+- Navel gazing lift
+- AI headroom
+
 ### 2025-06-06  Power centers remain, but become dominated by AI
 
 Corps
