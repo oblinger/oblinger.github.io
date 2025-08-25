@@ -1,6 +1,38 @@
 
 
 
+### 2025-08-24  Corp AI Capacities
+
+CorpAI will be driven to achieve several key capacities:
+
+UNDERSTANDING AND MANIPULATING OTHERS - Claim: CorpAI will centrally require ability to understand and manipulate other AIs, other people, and society at large.
+
+MANY MASTERS - Claim:  Just as a corp employee has only one boss, yet many masters they must respect so it will be with AI.
+
+
+MANY MASTERS
+Just as an employee must consider and respect the perspective and objectives of key leader, key clients
+### 2025-08-24  Dan's Worry
+
+- [[Corp_AI]] and National_AI will drive adoption even in face of notable risks.
+- AI_Dependence develops as deeply as electricity more than the internet.
+
+
+
+Claim: AIs will carry out world shaping decision making in closed multi-party AI-driving communications and decision-making:
+
+Consider Competition Among Compute Providers
+
+- Margins are based on costs of tech, power, realestate, etc. verses location, thruput, privacy, connectiivity, velocity, memory-capacity
+- Huge Cap-Ex expenses balanced against future projections on many complex dimensions.
+- Answers to each of these dimensions are best understood by relevant-AIs in privledged positions in other areas.
+- Example Info Sharing:
+	- National AI understands its strategic assessments and likely future actions based on its world assessment.  It desired to share relevant consequences of this future projection with nationally-aligned industries, but in ways that are strongly resistant to adversary inference or spying by national counter parties.
+	  ==> aim to inform corporate strategy but in ways that are opaque to adversary spying or inference.
+	  ==> how do to this.   Allow the corp AI to reason w/o National knowledge and national-AI looks for harsh damage from possible national actions, then devises recommendations to the corp-AI which maximally obfuscate the future policy action being protected against.  Ideally done w/o the corp-AI even really understanding ultimate reason (since it could inadvertently leak the knowlege by its behavior)
+	- Compute client would like to inform compute vendor of its future needs to ensure they are met at a minimum of cost w/o providing requirements data that could drive price, or provide competitive knowledge that could 
+
+
 ### 2025-08-07  Leslie AI are people
 
 Yes, AGI is a very real potential threat but I think it will be the empowerment of people to accelerate "bad things" rather than a Skynet scenario.  
