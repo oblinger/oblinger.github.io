@@ -15,4 +15,7 @@ The AI has a representation of itself, its corp, and relevant goals held by itse
 
 At least initially both the human and machine parts of the the AI-corp are self correcting so that the org tends towards a cohesive strategy and plan.  The AI is manipulated, manipulates itself, and convinces others, in a multi-prong strategy to improve and maintain a cohesive corporate strategy.
 
-This initial phase can only continue as long as the human CEO as at least a rudimentary ability to understand and manipulate their AI 
+This initial phase can only continue as long as the human CEO as at least a rudimentary ability to understand and manipulate their AI.
+
+
+
