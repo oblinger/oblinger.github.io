@@ -15,7 +15,10 @@ I have also built a Mac app (now in private beta) that facilitates use of these 
 
 <br>
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/VYdF44f6mmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="https://youtu.be/VYdF44f6mmM" target="_blank">
+  <img src="/gitproj/HookAnchor/thumbnail.jpg" alt="Hook Anchor Demo Video" width="640" style="cursor: pointer; border: 2px solid #157878;">
+</a>
+<p style="text-align: center; margin-top: 10px;"><em>Click to watch the demo video</em></p>
 
 <br>
 
