@@ -1,7 +1,7 @@
 ---
 layout: cayman
 title: Hook Anchor
-description: An Approach for Knowledge Management<br>(the associated Mac app is in private beta)
+description: An Approach for Knowledge Management<br>(the associated Mac app is in alpha test)
 permalink: /gitproj/HookAnchor/
 ---
 
@@ -10,7 +10,7 @@ Context: I have written, used, and suffered with at least five personal knowledg
 </em>
 
 <em>
-I have also built a Mac app (now in private beta) that facilitates use of these principles as well.
+I have also built a Mac app (now in alpha test) that facilitates use of these principles as well.
 </em>
 
 <br>
