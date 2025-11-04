@@ -1,7 +1,7 @@
 ---
 layout: cayman
 title: Hook Anchor
-description: An Approach for Knowledge Management (associated tool is in private beta)
+description: An Approach for Knowledge Management<br>(the associated Mac app is in private beta)
 permalink: /gitproj/HookAnchor/
 ---
 
