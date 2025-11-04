@@ -1,15 +1,27 @@
 ---
 layout: cayman
 title: Hook Anchor
-description: Knowledge management tool (in private beta)
+description: An Approach for Knowledge Management (associated tool is in private beta)
 permalink: /gitproj/HookAnchor/
 ---
 
-## Context
+<em>
+Context: I have written, used, and suffered with at least five personal knowledge systems over the years. In the last 5 years, I have landed on three principles that I think are essential for best-in-class knowledge management. The principles can be used with many knowlege management tools so I describe them in general form here.
+</em>
 
-I have written, used, and suffered with at least five personal knowledge systems over the decades. In the last 5 years, I have landed on three principles that I think are essential for best-in-class knowledge management. I describe them here, and they are the center of a Mac App I have written that helps implement these principles. Still, the principles are more general, as I had been following them for years w/o the aid of this app.
+<em>
+I have also built a Mac app (now in private beta) that facilitates use of these principles as well.
+</em>
 
-Hook Anchor Stream is an approach for knowledge management that works with your existing tools, adding a layer that radically improves three perennial issues plaguing them: how to ***find*** your stuff, how to ***place*** new stuff, and how to keep everything ***up to date***. Here are the key ideas:
+<br>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/VYdF44f6mmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+
+# Hook Anchor
+
+Hook Anchor Stream is a knowledge management approach that works with your existing tools, adding a layer that radically improves three perennial issues plaguing these systems: how to ***find*** your stuff, how to ***place*** new stuff, and how to keep everything ***up to date***. Here are the key ideas:
 
 <br>
 
@@ -41,9 +53,9 @@ Personal knowledge is too fluid for any fixed structure to stand the test of tim
 
 The solution is to avoid playing the game entirely: Instead, organize knowledge *locally* by anchor, then organize anchors according to three *universal dimensions*: Time, Place, and Type. Having search capability across these three axes provides enough structure to find past knowledge directly w/o backtracking.
 
-**TIME** is obvious; all personal knowledge is known and captured as a specific moment in time. Often, we will remember this time period even when we remember little else specific about the sought knowledge. Thus, organizing all information by time is critical.
+**TIME** is obvious; all personal knowledge is known and captured as a specific moment in time. Often, we will remember this time period even when we remember little else specific about the sought knowledge. Thus, organizing all information by time is critical.  (Tools like Evernote are built upon this principle as is the trusty old paper journal where new info always goes on the first empty page.)
 
-**PLACE** is trickier; with Hook Anchor we give up on the idea of globally consistent taxonomies or tags. Over time these will change, and we cannot go back and recategorize according to the evolving structures. Still, there is value in a taxonomy and using it to organize our Anchors, we just have to avoid using the finest details when searching over regions that have shifted during the time in question. For example, it is still valuable to separate work from personal, or AI-papers from Economics-papers, even if the detailed sub-categorization around these items has shifted. And building comprehensive taxonomies allows one to indicate many relational assertions by simply placing an anchor into a single place within that structure, so organizing by place can be instant and easy.
+**PLACE** is trickier; in Hook Anchor we give up on the idea of globally consistent taxonomies or tags. Over time these will change, and we cannot go back and recategorize past knowledge according to these evolving structures. Still, there is value in _having_ a taxonomy and using it to organize our Anchors. We just have to avoid using the finest details when searching over regions that have shifted during the time in question. For example, it is still valuable to separate work from personal, or AI-papers from Economics-papers, even if the detailed sub-categorization around these items has shifted the broad placements are still valuable. Further, when placing an item within a taxonomy one is indicating many relational assertions simply from that single placement.  As long as we can ensure correct placement is easy and instant, adding this structure is worth it.
 
 **TYPE** is trickiest of all; Some types, like Canva pages or Excel spreadsheets, are obviously different and distinct. While a markdown page about a person and a markdown page about a paper are also distinct, the space these logical types require a bit of thought. Still, this can pay big dividends if we are consistent in the way we treat all papers and all people, then we can access and organize along this dimension over extended periods of time without ever requiring refactoring.
 
