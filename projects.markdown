@@ -47,7 +47,7 @@ permalink: /gitproj/
 
    <div style="height: 1vh;"></div>
 
-   <div><a href="https://oblinger.github.io/HookAnchor/">HookAnchor</a> - Knowledge management that works with your existing tools (<a href="https://github.com/oblinger/HookAnchor">GitHub</a>)</div>
+   <div><a href="https://github.com/oblinger/HookAnchor">HookAnchor</a> - Knowledge management that works with your existing tools</div>
 
    <div><a href="https://github.com/oblinger/DVC-DAT">DVC Dat</a> - A framework for persistent, self-describing, Python-accessible data and code that is designed to operate seemlessly with DVC and ML-FLOW (we use a private fork of this at SportsVisio)</div>
 
