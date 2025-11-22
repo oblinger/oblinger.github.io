@@ -47,13 +47,13 @@ permalink: /gitproj/
 
    <div style="height: 1vh;"></div>
 
-   <div><a href="https://github.com/oblinger/DVC-DAT">DVC Dat</a> - A framework for persistent, self-describing, Python-accessible data and code that is designed to operate seemlessly with DVC and ML-FLOW (we use a fork of this at SportsVisio).</div>
+   <div><a href="https://oblinger.github.io/HookAnchor/">HookAnchor</a> - Knowledge management that works with your existing tools</div>
+
+   <div><a href="https://github.com/oblinger/DVC-DAT">DVC Dat</a> - A framework for persistent, self-describing, Python-accessible data and code that is designed to operate seemlessly with DVC and ML-FLOW (we use a private fork of this at SportsVisio)</div>
 
    <div><a href="/gitproj/AlienBiology">Alien Biology</a> - A framework for testing agentic AI which avoid the training set taint that occurs with most existing AI testing sets..</div>
 
    <div><a href="/ASIO/ASI_Outcomes/">ASI Outcomes</a> - A way of analyzing societal outcomes of Artificial Super Intelligence</div>
-
-   <div><a href="https://oblinger.github.io/HookAnchor/">HookAnchor</a> - Knowledge management that works with your existing tools (in private beta)</div>
 
   </div>
 
