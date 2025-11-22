@@ -53,7 +53,7 @@ permalink: /gitproj/
 
    <div><a href="/ASIO/ASI_Outcomes/">ASI Outcomes</a> - A way of analyzing societal outcomes of Artificial Super Intelligence</div>
 
-   <div><a href="/gitproj/HookAnchor">Hook Anchor</a> - Knowledge management tool (in alpha test)</div>
+   <div><a href="https://oblinger.github.io/HookAnchor/">HookAnchor</a> - Knowledge management that works with your existing tools (in private beta)</div>
 
   </div>
 
