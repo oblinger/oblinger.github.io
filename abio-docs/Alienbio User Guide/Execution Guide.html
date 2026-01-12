@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://oblinger.github.io/abio-docs/api/index.html">
+        <link rel="canonical" href="https://oblinger.github.io/abio-docs/Alienbio%20User%20Guide/Execution%20Guide.html">
       
       
-        <link rel="prev" href="../architecture/modules/Scope.html">
+        <link rel="prev" href="Generator%20Spec.html">
       
       
-        <link rel="next" href="bio.html">
+        <link rel="next" href="Agent%20Interface.html">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - AlienBio Documentation</title>
+        <title>Execution Guide - AlienBio Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#execution-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Execution Guide
             
           </span>
         </div>
@@ -244,11 +244,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../Alienbio%20User%20Guide/Alienbio%20User%20Guide.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="Alienbio%20User%20Guide.html" class="md-tabs__link">
           
   
   
@@ -354,13 +356,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../api/index.html" class="md-tabs__link">
           
   
   
@@ -448,28 +448,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -487,7 +490,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Alienbio%20User%20Guide.html" class="md-nav__link">
+      <a href="Alienbio%20User%20Guide.html" class="md-nav__link">
         
   
   
@@ -533,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Core%20Spec.html" class="md-nav__link">
+      <a href="Core%20Spec.html" class="md-nav__link">
         
   
   
@@ -561,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Generator%20Spec.html" class="md-nav__link">
+      <a href="Generator%20Spec.html" class="md-nav__link">
         
   
   
@@ -586,10 +589,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Execution%20Guide.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Execution%20Guide.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -605,6 +635,170 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Execution Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Execution Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Experiment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Experiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenariosbaselineyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scenarios/baseline.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatorsbaselineyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        generators/baseline.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentsmutualismyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        experiments/mutualism.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escape-hatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escape Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -617,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Agent%20Interface.html" class="md-nav__link">
+      <a href="Agent%20Interface.html" class="md-nav__link">
         
   
   
@@ -2625,31 +2819,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2667,7 +2858,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2682,37 +2873,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/index.html" class="md-nav__link">
         
   
   
@@ -2728,48 +2892,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2782,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="bio.html" class="md-nav__link">
+      <a href="../api/bio.html" class="md-nav__link">
         
   
   
@@ -2810,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="infra.html" class="md-nav__link">
+      <a href="../api/infra.html" class="md-nav__link">
         
   
   
@@ -2838,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="protocols.html" class="md-nav__link">
+      <a href="../api/protocols.html" class="md-nav__link">
         
   
   
@@ -2866,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="spec_lang.html" class="md-nav__link">
+      <a href="../api/spec_lang.html" class="md-nav__link">
         
   
   
@@ -2894,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cli.html" class="md-nav__link">
+      <a href="../api/cli.html" class="md-nav__link">
         
   
   
@@ -2949,10 +3071,110 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
+  <a href="#new-execution-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modules
+        New Execution Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Execution Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Experiment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Experiment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenariosbaselineyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scenarios/baseline.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generatorsbaselineyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        generators/baseline.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimentsmutualismyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        experiments/mutualism.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escape-hatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escape Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
       
     </span>
   </a>
@@ -2960,10 +3182,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
+  <a href="#python-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Links
+        Python API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -2990,19 +3234,242 @@
   
 
 
-<p>[[ABIO]] </p>
-<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
-<p>This section contains auto-generated API documentation from the Python source code.</p>
-<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<p><a href="../ABIO%20docs.html">ABIO docs</a> → <a href="Alienbio%20User%20Guide.html">Alienbio User Guide</a></p>
+<h1 id="execution-guide">Execution Guide<a class="headerlink" href="#execution-guide" title="Permanent link">&para;</a></h1>
+<p><strong>Contents</strong>
+- <a href="#new-execution-model">#New Execution Model</a>
+- <a href="#cli-commands">#CLI Commands</a>
+- <a href="#python-api">#Python API</a>
+- <a href="#experiments">#Experiments</a></p>
+<p><strong>Command Reference:</strong> <a href="../architecture/ABIO%20Commands.html">Commands</a></p>
+<hr />
+<h2 id="new-execution-model">New Execution Model<a class="headerlink" href="#new-execution-model" title="Permanent link">&para;</a></h2>
+<p>The execution pipeline: <span style="white-space: nowrap">DAT Spec + Bio → <b>.build()</b> → DAT Folder → <b>.run()</b> → Results</span></p>
+<p><strong>Build</strong> uses the DAT spec as a template to create a new folder, then calls the Bio generators to populate it with biological content.</p>
+<p><strong>Run</strong> executes the commands listed in the spec, operating on the newly created DAT folder.</p>
+<hr />
+<h3 id="example-experiment">Example Experiment<a class="headerlink" href="#example-experiment" title="Permanent link">&para;</a></h3>
+<p><strong><a href="../architecture/classes/infra/DAT.html">DAT Spec</a></strong> — Defines the folder structure for the experiment.
+- <code>build:</code> — what content to generate
+- <code>run:</code> — actions to perform</p>
+<h4 id="scenariosbaselineyaml"><code>scenarios/baseline.yaml</code><a class="headerlink" href="#scenariosbaselineyaml" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">scenarios.baseline</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/scenarios/baseline_{seed}/</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">index.yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generators.baseline</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run . --agent claude</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report .</span>
+</code></pre></div>
+<p><br></p>
+<p><strong><a href="../architecture/commands/ABIO%20Scenario.html">Scenario Generator</a></strong> — Bio content that produces the biological scenario (species, interactions, rules).</p>
+<h4 id="generatorsbaselineyaml"><code>generators/baseline.yaml</code><a class="headerlink" href="#generatorsbaselineyaml" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">generators.baseline</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="kt">!include</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates/mutualism.yaml</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">species_count</span><span class="p">:</span><span class="w"> </span><span class="kt">!ev</span><span class="w"> </span><span class="s">&quot;random.randint(3,</span><span class="nv"> </span><span class="s">6)&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">interactions</span><span class="p">:</span><span class="w"> </span><span class="kt">!ev</span><span class="w"> </span><span class="s">&quot;generate_interactions(species_count)&quot;</span>
+</code></pre></div>
+<p><br></p>
+<p><strong><a href="#experiments">Experiment Spec</a></strong> — Defines what to iterate over: which scenarios, which agents, how many seeds.
+- <code>axes:</code> — dimensions to iterate or sample over
+- <code>post_actions:</code> — commands to run after the experiment</p>
+<h4 id="experimentsmutualismyaml"><code>experiments/mutualism.yaml</code><a class="headerlink" href="#experimentsmutualismyaml" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">experiments.mutualism</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/experiments/mutualism_{date}_{seq}/</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">axes</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">scenarios</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">scenarios.baseline</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">scenarios.competition</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">agents</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">claude</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gpt-4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">random</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">seeds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{scenario}_{agent}_s{seed}&quot;</span><span class="w">    </span><span class="c1"># naming pattern for child DATs</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">iterate</span><span class="w">                            </span><span class="c1"># or: sample</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">post_actions</span><span class="p">:</span><span class="w">                            </span><span class="c1"># executed after experiment completes</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report summary</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report comparison</span>
+</code></pre></div>
+<p>Experiments are just specs—run them with <code>bio run experiments.mutualism</code>.</p>
+<hr />
+<h3 id="step-by-step">Step by Step<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
+<p><strong><code>bio build scenarios.baseline --seed 42</code></strong></p>
+<ol>
+<li>Load <code>scenarios/baseline.yaml</code> (the DAT spec)</li>
+<li>Create folder <code>data/scenarios/baseline_42/</code> using path template</li>
+<li>For each entry in <code>build:</code>:</li>
+<li>Look up <code>generators.baseline</code> (the Bio generator)</li>
+<li>Call Bio.build with seed=42 to generate content</li>
+<li>Write result to <code>index.yaml</code></li>
+<li>Done — folder exists with generated content</li>
+</ol>
+<p><strong><code>bio run data/scenarios/baseline_42/</code></strong></p>
+<ol>
+<li>Load the spec from the DAT folder</li>
+<li>Execute each command in <code>run:</code> sequentially:</li>
+<li><code>run . --agent claude</code> — run the scenario with agent</li>
+<li><code>report .</code> — generate report</li>
+<li>Results written to the same folder</li>
+</ol>
+<p><strong>Shortcut:</strong> <code>bio run scenarios.baseline --seed 42</code> does build + run in one step.</p>
+<hr />
+<h3 id="output-structure">Output Structure<a class="headerlink" href="#output-structure" title="Permanent link">&para;</a></h3>
+<p>After build + run of an experiment, the <a href="../architecture/classes/infra/DAT.html">DAT</a> folder contains:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>data/experiments/mutualism_2026-01-09_001/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── _spec_.yaml                   # copy of the DAT spec used
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── scenarios/
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── baseline_claude_s0/       # child DAT
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ├── baseline_claude_s1/       # child DAT
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── baseline_gpt-4_s0/        # child DAT
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   └── ...
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├── results.yaml
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>└── report.md
+</code></pre></div></p>
+<h3 id="escape-hatch">Escape Hatch<a class="headerlink" href="#escape-hatch" title="Permanent link">&para;</a></h3>
+<p>For non-bio commands, prefix with <code>shell:</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">run</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run . --agent claude</span><span class="w">        </span><span class="c1"># runs the experiment with the Claude agent</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python analysis.py</span><span class="w">   </span><span class="c1"># shell command runs in the DAT folder</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report .</span>
+</code></pre></div></p>
+<hr />
+<h2 id="cli-commands">CLI Commands<a class="headerlink" href="#cli-commands" title="Permanent link">&para;</a></h2>
+<p>See <a href="../architecture/ABIO%20Commands.html">Commands</a> for full reference. Key commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Build only (creates DAT folder, prints path)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>bio<span class="w"> </span>build<span class="w"> </span>scenarios.baseline<span class="w"> </span>--seed<span class="w"> </span><span class="m">42</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># → Created: data/scenarios/baseline_s42/</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Run existing DAT (see [bio run](&lt;../architecture/commands/ABIO Run.md&gt;))</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>bio<span class="w"> </span>run<span class="w"> </span>data/scenarios/baseline_s42/<span class="w">         </span><span class="c1"># run previously built scenario</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Build + run in one step (dots = recipe, slashes = DAT)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>bio<span class="w"> </span>run<span class="w"> </span>scenarios.baseline<span class="w"> </span>--seed<span class="w"> </span><span class="m">42</span><span class="w">         </span><span class="c1"># builds, then runs</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>bio<span class="w"> </span>run<span class="w"> </span>scenarios.baseline<span class="w"> </span>--agent<span class="w"> </span>claude<span class="w">    </span><span class="c1"># specify agent</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># Experiments (see Experiments section)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>bio<span class="w"> </span>run<span class="w"> </span>experiments.mutualism<span class="w">                </span><span class="c1"># build + run full experiment</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># Reports (see [bio report](&lt;../architecture/commands/ABIO Report.md&gt;))</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>bio<span class="w"> </span>report<span class="w"> </span>data/experiments/mutualism_2026-01-09/
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># Agent management (see [bio agent](&lt;../architecture/commands/ABIO Agent.md&gt;))</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>bio<span class="w"> </span>agent<span class="w"> </span>add<span class="w"> </span>claude<span class="w"> </span>--api<span class="w"> </span>anthropic<span class="w"> </span>--model<span class="w"> </span>claude-opus-4
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>bio<span class="w"> </span>agent<span class="w"> </span>list
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>bio<span class="w"> </span>agent<span class="w"> </span><span class="nb">test</span><span class="w"> </span>claude
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>bio<span class="w"> </span>agent<span class="w"> </span>remove<span class="w"> </span>claude
+</code></pre></div>
+<hr />
+<h2 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">alienbio</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bio</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Build only - returns DAT path</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">dat_path</span> <span class="o">=</span> <span class="n">Bio</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;scenarios.baseline&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># → &quot;data/scenarios/baseline_s42/&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Run existing DAT</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Bio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">dat_path</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;claude&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Build + run in one step (dotted name = recipe)</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Bio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;scenarios.baseline&quot;</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;claude&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Result access</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="n">result</span><span class="o">.</span><span class="n">score</span>                    <span class="c1"># canonical score</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">result</span><span class="o">.</span><span class="n">scores</span>                   <span class="c1"># all scoring metrics</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="n">result</span><span class="o">.</span><span class="n">success</span>                  <span class="c1"># pass/fail</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="n">result</span><span class="o">.</span><span class="n">timeline</span>                 <span class="c1"># state at each step</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="n">result</span><span class="o">.</span><span class="n">dat_path</span>                 <span class="c1"># path to DAT folder</span>
+</code></pre></div>
+<p><strong>Programmatic iteration:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">Bio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;scenarios.baseline&quot;</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;claude&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;seed </span><span class="si">{</span><span class="n">seed</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">dat_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h2>
+<p>Experiments run scenarios across multiple agents and seeds, then generate reports.</p>
+<p>Experiment pipeline: <span style="white-space: nowrap">Experiment (YAML) → <b>.build()</b> → Experiment (DAT) containing Scenario DATs → <b>.run()</b> → Results + Reports</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">experiment.mutualism</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">iterate</span><span class="p">:</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">scenarios</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">mutualism.hidden</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">mutualism.competition</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">agents</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">claude</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">gpt-4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">random</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">seeds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">hyperparameters</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="nt">temperature</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">post</span><span class="p">:</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">report</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">summary</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">report</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comparison</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bio<span class="w"> </span>run<span class="w"> </span>experiments.mutualism
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># → Created: data/experiments/mutualism_2026-01-09_001/</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># → Running 180 scenarios (2 × 3 × 10 × 3)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># → Results + reports written to DAT</span>
+</code></pre></div>
+<p>Output structure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>data/experiments/mutualism_2026-01-09_001/
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── _manifest_.yaml
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├── scenarios/
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>│   ├── hidden_claude_s0_t0.0/
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>│   ├── hidden_claude_s0_t0.5/
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>│   └── ...                        # 180 scenario DATs
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>├── results.yaml
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>└── reports/
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    ├── summary.md
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    └── comparison.png
+</code></pre></div></p>
+<p><strong>Python for complex sweeps:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">experiment.mutualism_temperature</span><span class="p">:</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">iterate</span><span class="p">:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">scenarios</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">mutualism.hidden</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">agents</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">claude</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">seeds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="c1"># temperature will be injected by Python</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">alienbio</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bio</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>    <span class="c1"># [0.01, 0.03, 0.1, 0.3, 1.0]</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">Bio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;experiments.mutualism_temperature&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>            <span class="n">hyperparameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temp</span><span class="p">})</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># → Creates: data/experiments/mutualism_temperature_t0.01_.../</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1"># → Creates: data/experiments/mutualism_temperature_t0.03_.../</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># → ...</span>
+</code></pre></div>
+<p><em>Note: Automatic naming of nested DATs follows DAT conventions. See [[ABIO Features]] for open questions on naming.</em></p>
+<p><strong>Query results:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">Bio</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">experiment</span><span class="o">=</span><span class="s2">&quot;mutualism&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">results</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">)</span>                       <span class="c1"># aggregate stats</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">results</span><span class="o">.</span><span class="n">compare</span><span class="p">([</span><span class="s2">&quot;claude&quot;</span><span class="p">,</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">])</span>        <span class="c1"># side-by-side</span>
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>Use case</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard evaluation</td>
+<td>Experiment spec (declarative)</td>
+</tr>
+<tr>
+<td>Custom iteration</td>
+<td>Python loop with <code>Bio.run()</code></td>
+</tr>
+<tr>
+<td>One-off testing</td>
+<td>CLI with flags</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="bio.html">Bio</a> - Core biology simulation classes</li>
-<li><a href="infra.html">Infra</a> - Infrastructure and utilities</li>
-<li><a href="protocols.html">Protocols</a> - Protocol definitions</li>
-<li><a href="spec_lang.html">Spec Language</a> - Specification language parser</li>
-<li><a href="cli.html">CLI</a> - Command line interface</li>
+<li><a href="Agent%20Interface.html">Agent Interface</a> — detailed agent protocol</li>
+<li><a href="../architecture/commands/ABIO%20Scenario.html">Scenario</a> — scenario definition</li>
+<li><a href="Core%20Spec.html">Core Spec</a> — YAML foundations</li>
 </ul>
-<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
-<p>For conceptual documentation, see the <a href="../architecture/Architecture%20Docs.html">Architecture</a> section.</p>
 
 
 

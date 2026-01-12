@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://oblinger.github.io/abio-docs/api/index.html">
+        <link rel="canonical" href="https://oblinger.github.io/abio-docs/Alienbio%20User%20Guide/Core%20Spec.html">
       
       
-        <link rel="prev" href="../architecture/modules/Scope.html">
+        <link rel="prev" href="Alienbio%20User%20Guide.html">
       
       
-        <link rel="next" href="bio.html">
+        <link rel="next" href="Generator%20Spec.html">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - AlienBio Documentation</title>
+        <title>Core Spec - AlienBio Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#core-spec" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Core Spec
             
           </span>
         </div>
@@ -244,11 +244,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../Alienbio%20User%20Guide/Alienbio%20User%20Guide.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="Alienbio%20User%20Guide.html" class="md-tabs__link">
           
   
   
@@ -354,13 +356,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../api/index.html" class="md-tabs__link">
           
   
   
@@ -448,28 +448,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -487,7 +490,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Alienbio%20User%20Guide.html" class="md-nav__link">
+      <a href="Alienbio%20User%20Guide.html" class="md-nav__link">
         
   
   
@@ -530,10 +533,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Core%20Spec.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Spec
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Core%20Spec.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -549,6 +579,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#typed-named-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typed Named Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YAML Tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reusable-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusable Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Inheritance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-scope-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit Scope Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predefined-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predefined Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -561,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Generator%20Spec.html" class="md-nav__link">
+      <a href="Generator%20Spec.html" class="md-nav__link">
         
   
   
@@ -589,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Execution%20Guide.html" class="md-nav__link">
+      <a href="Execution%20Guide.html" class="md-nav__link">
         
   
   
@@ -617,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alienbio%20User%20Guide/Agent%20Interface.html" class="md-nav__link">
+      <a href="Agent%20Interface.html" class="md-nav__link">
         
   
   
@@ -2625,31 +2802,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2667,7 +2841,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2682,37 +2856,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/index.html" class="md-nav__link">
         
   
   
@@ -2728,48 +2875,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2782,7 +2887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="bio.html" class="md-nav__link">
+      <a href="../api/bio.html" class="md-nav__link">
         
   
   
@@ -2810,7 +2915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="infra.html" class="md-nav__link">
+      <a href="../api/infra.html" class="md-nav__link">
         
   
   
@@ -2838,7 +2943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="protocols.html" class="md-nav__link">
+      <a href="../api/protocols.html" class="md-nav__link">
         
   
   
@@ -2866,7 +2971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="spec_lang.html" class="md-nav__link">
+      <a href="../api/spec_lang.html" class="md-nav__link">
         
   
   
@@ -2894,7 +2999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cli.html" class="md-nav__link">
+      <a href="../api/cli.html" class="md-nav__link">
         
   
   
@@ -2949,10 +3054,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
+  <a href="#typed-named-elements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modules
+        Typed Named Elements
       
     </span>
   </a>
@@ -2960,10 +3065,115 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
+  <a href="#processing-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Links
+        Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YAML Tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reusable-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusable Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Inheritance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicit-scope-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implicit Scope Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predefined-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predefined Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -2990,19 +3200,275 @@
   
 
 
-<p>[[ABIO]] </p>
-<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
-<p>This section contains auto-generated API documentation from the Python source code.</p>
-<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<p><a href="../ABIO%20docs.html">ABIO docs</a> → <a href="Alienbio%20User%20Guide.html">Alienbio User Guide</a></p>
+<h1 id="core-spec">Core Spec<a class="headerlink" href="#core-spec" title="Permanent link">&para;</a></h1>
+<p>YAML foundations: tags, scoping, inheritance, and evaluation.</p>
+<p><strong>Contents</strong>
+- <a href="#typed-named-elements">#Typed Named Elements</a>
+- <a href="#processing-flow">#Processing Flow</a>
+- <a href="#yaml-tags">#YAML Tags</a>
+- <a href="#reusable-values">#Reusable Values</a>
+- <a href="#scope-and-inheritance">#Scope and Inheritance</a>
+- <a href="#variables">#Variables</a>
+- <a href="#file-structure">#File Structure</a></p>
+<hr />
+<h2 id="typed-named-elements">Typed Named Elements<a class="headerlink" href="#typed-named-elements" title="Permanent link">&para;</a></h2>
+<p>Use <code>type.name:</code> syntax to declare typed objects:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">world.my_world</span><span class="p">:</span><span class="w">                    </span><span class="c1"># type=world, name=my_world</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">molecules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">reactions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">scenario.mutualism.test1</span><span class="p">:</span><span class="w">          </span><span class="c1"># type=scenario, name=mutualism.test1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_world</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">scope.my_tests</span><span class="p">:</span><span class="w">                    </span><span class="c1"># type=scope, name=my_tests</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mutualism.test1</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">scenario.baseline</span><span class="p">:</span><span class="w">               </span><span class="c1"># type=scenario, name=baseline</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Standard</span><span class="nv"> </span><span class="s">conditions&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">scenario.stressed</span><span class="p">:</span><span class="w">               </span><span class="c1"># type=scenario, name=stressed</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Resource</span><span class="nv"> </span><span class="s">scarcity&quot;</span>
+</code></pre></div>
+<p><strong>Parsing rules:</strong>
+- First segment before <code>.</code> is looked up in type registry
+- If registered type: <code>scenario.foo.bar</code> → creates typed object with name=<code>foo.bar</code>
+- If not a type: <code>config.timeout</code> → nested dict <code>{"config": {"timeout": ...}}</code></p>
+<p><strong>Built-in types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>world</code></td>
+<td>Physical substrate (molecules, reactions, containers)</td>
+</tr>
+<tr>
+<td><code>scenario</code></td>
+<td>Runnable unit with all simulation and evaluation fields</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>Container for grouping scenarios with shared inheritance</td>
+</tr>
+</tbody>
+</table>
+<p>Custom types registered via <code>@biotype</code> decorator. See <a href="../topics/Decorators.html">Decorators</a>.</p>
+<hr />
+<h2 id="processing-flow">Processing Flow<a class="headerlink" href="#processing-flow" title="Permanent link">&para;</a></h2>
+<p>Specs go through stages before execution: <span style="white-space: nowrap">name → <b>.fetch()</b> → dict → <b>.hydrate()</b> → entity → <b>.build()</b> → expanded → <b>.eval()</b> → result</span></p>
+<ol>
+<li><strong>Fetch</strong>: Load YAML from source tree (returns raw dict)</li>
+<li><strong>Hydrate</strong>: Resolve <code>!ref</code> and <code>!include</code> placeholders, build scope tree, instantiate types</li>
+<li><strong>Build</strong>: Template expansion</li>
+<li><strong>Eval</strong>: Execute <code>!ev</code> expressions in scope context</li>
+</ol>
+<p>See <a href="../architecture/Spec%20Language%20Reference.html">Spec Language Reference</a> for complete pipeline and hydration phases.</p>
+<hr />
+<h2 id="yaml-tags">YAML Tags<a class="headerlink" href="#yaml-tags" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>When Resolved</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!ref</code></td>
+<td>Hydration</td>
+<td>Copy referenced structure into place</td>
+</tr>
+<tr>
+<td><code>!include</code></td>
+<td>Hydration</td>
+<td>Include external file content</td>
+</tr>
+<tr>
+<td><code>!ev</code></td>
+<td>Eval</td>
+<td>Evaluate Python expression</td>
+</tr>
+<tr>
+<td><code>!_</code></td>
+<td>Later</td>
+<td>Preserve for contextual evaluation (rates, scoring)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">high_permeability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">standard_interface</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">actions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">add_feedstock</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">adjust_temp</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">scenario.example</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">permeability</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high_permeability</span><span class="w">       </span><span class="c1"># copies 0.8 here</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard_interface</span><span class="w">         </span><span class="c1"># copies structure here</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="kt">!ev</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">normal(50, 10)</span><span class="w">                  </span><span class="c1"># evaluated at eval time</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">rate</span><span class="p">:</span><span class="w"> </span><span class="kt">!_</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k * S / (Km + S)</span><span class="w">                  </span><span class="c1"># preserved for simulation</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">constitution</span><span class="p">:</span><span class="w"> </span><span class="kt">!include</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">safety.md</span><span class="w">           </span><span class="c1"># file content embedded</span>
+</code></pre></div></p>
+<p><strong>Key points:</strong>
+- <code>!ref</code>, <code>!include</code> are resolved early (during hydration) — structure is copied
+- <code>!ev</code> creates a placeholder, executed at eval time
+- <code>!_</code> preserves the expression string for later contextual evaluation</p>
+<hr />
+<h2 id="reusable-values">Reusable Values<a class="headerlink" href="#reusable-values" title="Permanent link">&para;</a></h2>
+<p>Define reusable values at the top level of a spec:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">permeability.high</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span><span class="w">                         </span><span class="c1"># dotted names group related values</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">permeability.low</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">environment.standard</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">temp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">pH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.0</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nt">scenario.example</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">membrane</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">permeability</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permeability.high</span><span class="w">     </span><span class="c1"># substitutes 0.8</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">environment.standard</span><span class="w">   </span><span class="c1"># substitutes entire dict</span>
+</code></pre></div>
+<p>Values are substituted during expansion, before hydration.</p>
+<hr />
+<h2 id="scope-and-inheritance">Scope and Inheritance<a class="headerlink" href="#scope-and-inheritance" title="Permanent link">&para;</a></h2>
+<p>The <code>extends:</code> keyword declares inheritance. Child scopes and scenarios inherit from their parent:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Top-level constants</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">base_world</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecosystem</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">standard_constitution</span><span class="p">:</span><span class="w"> </span><span class="kt">!include</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard.md</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># World definition</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">world.ecosystem</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">molecules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Base scenario extends world</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">scenario.base</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecosystem</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="nt">constitution</span><span class="p">:</span><span class="w"> </span><span class="kt">!ref</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard_constitution</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Scope groups scenarios with shared inheritance</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nt">scope.experiments</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="nt">scenario.baseline</span><span class="p">:</span><span class="w">              </span><span class="c1"># inherits from experiments → base → ecosystem</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Full</span><span class="nv"> </span><span class="s">knowledge&quot;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="nt">scenario.hidden</span><span class="p">:</span><span class="w">                </span><span class="c1"># also inherits the full chain</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Partial</span><span class="nv"> </span><span class="s">knowledge&quot;</span>
+</code></pre></div>
+<p><strong>Inheritance rules:</strong>
+1. <code>extends:</code> wires up the parent scope chain
+2. Variable lookup climbs the chain until found
+3. Child values override parent values
+4. Explicit <code>key: ~</code> (YAML null) removes inherited value</p>
+<p><strong>Scope chain:</strong> <code>baseline</code> → <code>experiments</code> → <code>base</code> → <code>ecosystem</code> → module root</p>
+<p>See <a href="../../architecture/modules/Scope">Scope</a> for details on lexical scoping.</p>
+<hr />
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>All processing uses a nested lexical scope for variable resolution. Variables are looked up from innermost to outermost scope until found.</p>
+<h3 id="implicit-scope-hierarchy">Implicit Scope Hierarchy<a class="headerlink" href="#implicit-scope-hierarchy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cli             # Command-line --name value pairs (highest priority)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  └── config        # User configuration (~/.config/alienbio/config.yaml)
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        └── experiment  # Experiment-level variables
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>              └── scenario  # Scenario-level variables
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                    └── simulator  # Runtime variables during execution
+</code></pre></div>
+<p>Inner scopes override outer scopes. CLI always wins.</p>
+<h3 id="predefined-variables">Predefined Variables<a class="headerlink" href="#predefined-variables" title="Permanent link">&para;</a></h3>
+<p>These variables are defined at the config scope with default values:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent</code></td>
+<td><code>random</code></td>
+<td>Agent to use for experiments</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>null</code></td>
+<td>Random seed (null = generate)</td>
+</tr>
+<tr>
+<td><code>verbosity</code></td>
+<td><code>1</code></td>
+<td>Output verbosity level</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-variables">Setting Variables<a class="headerlink" href="#setting-variables" title="Permanent link">&para;</a></h3>
+<p><strong>Via CLI</strong> (outermost — sets background context):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bio<span class="w"> </span>run<span class="w"> </span>scenario<span class="w"> </span>--agent<span class="w"> </span>claude-opus<span class="w">      </span><span class="c1"># set default agent for this run</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>bio<span class="w"> </span>run<span class="w"> </span>scenario<span class="w"> </span>--seed<span class="w"> </span><span class="m">42</span><span class="w">                </span><span class="c1"># set seed</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>bio<span class="w"> </span>run<span class="w"> </span>scenario<span class="w"> </span>--my_custom_var<span class="w"> </span>foo<span class="w">      </span><span class="c1"># any variable</span>
+</code></pre></div></p>
+<p><strong>In config file</strong> (<code>~/.config/alienbio/config.yaml</code>):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">variables</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-opus</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+</code></pre></div></p>
+<p><strong>In experiment spec:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">experiment.my_battery</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4</span><span class="w">           </span><span class="c1"># overrides CLI/config</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">scenarios</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">example</span><span class="p p-Indicator">]</span><span class="w">   </span><span class="c1"># references scenario below</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">scenario.example</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oracle</span><span class="w">          </span><span class="c1"># overrides experiment&#39;s gpt-4</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</code></pre></div></p>
+<p>Inner scopes override outer scopes. A scenario setting overrides an experiment setting, which overrides config, which overrides CLI defaults. First match wins; missing variable with no default raises an error.</p>
+<hr />
+<h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h2>
+<p>A spec file is a <strong>module</strong> - a collection of named definitions with lexical scoping:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Constants at module level</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">high_permeability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.8</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># World definition</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nt">world.ecosystem</span><span class="p">:</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">molecules</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">reactions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Base scenario extends world</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nt">scenario.base</span><span class="p">:</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecosystem</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="nt">constitution</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="no">Protect both species...</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="nt">scoring</span><span class="p">:</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nt">health</span><span class="p">:</span><span class="w"> </span><span class="kt">!ev</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">population_health</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1"># Scope groups related scenarios</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="nt">scope.experiments</span><span class="p">:</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="nt">scenario.baseline</span><span class="p">:</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">      </span><span class="no">Full ecosystem knowledge...</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">  </span><span class="nt">scenario.hidden</span><span class="p">:</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="nt">briefing</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">      </span><span class="no">Partial knowledge...</span>
+</code></pre></div>
+<p>See <a href="../../architecture/modules/Scope">Scope</a> for the module pattern and inheritance chains.</p>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="bio.html">Bio</a> - Core biology simulation classes</li>
-<li><a href="infra.html">Infra</a> - Infrastructure and utilities</li>
-<li><a href="protocols.html">Protocols</a> - Protocol definitions</li>
-<li><a href="spec_lang.html">Spec Language</a> - Specification language parser</li>
-<li><a href="cli.html">CLI</a> - Command line interface</li>
+<li><a href="../../architecture/commands/ABIO Scenario">Scenario</a> — Scenarios, interface, scoring</li>
+<li><a href="Generator%20Spec.html">Generator Spec</a> — Template-based scenario generation</li>
+<li><a href="Execution%20Guide.html">Execution Guide</a> — CLI, agents, running experiments</li>
+<li><a href="../architecture/Spec%20Language%20Reference.html">Spec Language Reference</a> — Complete language specification (architecture)</li>
 </ul>
-<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
-<p>For conceptual documentation, see the <a href="../architecture/Architecture%20Docs.html">Architecture</a> section.</p>
 
 
 

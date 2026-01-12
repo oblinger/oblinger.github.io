@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://oblinger.github.io/abio-docs/api/index.html">
+        <link rel="canonical" href="https://oblinger.github.io/abio-docs/topics/Decorators.html">
       
       
-        <link rel="prev" href="../architecture/modules/Scope.html">
-      
-      
-        <link rel="next" href="bio.html">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Overview - AlienBio Documentation</title>
+        <title>Decorators - AlienBio Documentation</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#decorators" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Decorators
             
           </span>
         </div>
@@ -354,13 +350,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../api/index.html" class="md-tabs__link">
           
   
   
@@ -2625,31 +2619,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2667,7 +2658,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2682,37 +2673,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/index.html" class="md-nav__link">
         
   
   
@@ -2728,48 +2692,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2782,7 +2704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="bio.html" class="md-nav__link">
+      <a href="../api/bio.html" class="md-nav__link">
         
   
   
@@ -2810,7 +2732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="infra.html" class="md-nav__link">
+      <a href="../api/infra.html" class="md-nav__link">
         
   
   
@@ -2838,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="protocols.html" class="md-nav__link">
+      <a href="../api/protocols.html" class="md-nav__link">
         
   
   
@@ -2866,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="spec_lang.html" class="md-nav__link">
+      <a href="../api/spec_lang.html" class="md-nav__link">
         
   
   
@@ -2894,7 +2816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cli.html" class="md-nav__link">
+      <a href="../api/cli.html" class="md-nav__link">
         
   
   
@@ -2949,10 +2871,110 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modules" class="md-nav__link">
+  <a href="#type-registration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modules
+        Type Registration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#biotype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @biotype
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Decorators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @fn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @action
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
       
     </span>
   </a>
@@ -2960,10 +2982,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
+  <a href="#implementation-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Links
+        Implementation Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
       
     </span>
   </a>
@@ -2990,19 +3023,230 @@
   
 
 
-<p>[[ABIO]] </p>
-<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
-<p>This section contains auto-generated API documentation from the Python source code.</p>
-<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<p><a href="../ABIO%20docs.html">ABIO docs</a> → <a href="ABIO%20topics.html">ABIO Topics</a></p>
+<h1 id="decorators">Decorators<a class="headerlink" href="#decorators" title="Permanent link">&para;</a></h1>
+<p><strong>Module</strong>: <code>alienbio.spec_lang</code></p>
+<p>Python decorators for registering functions and classes in the ABIO system. All decorators and YAML tag implementations live in the <code>spec_lang</code> module.</p>
+<hr />
+<h2 id="type-registration">Type Registration<a class="headerlink" href="#type-registration" title="Permanent link">&para;</a></h2>
+<h3 id="biotype"><code>@biotype</code><a class="headerlink" href="#biotype" title="Permanent link">&para;</a></h3>
+<p>Registers a class for hydration. When YAML with a matching <code>_type</code> field is loaded, it will be instantiated as this class.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@biotype</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Chemistry</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">molecules</span><span class="p">:</span> <span class="nb">dict</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">reactions</span><span class="p">:</span> <span class="nb">dict</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@biotype</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>                      <span class="c1"># explicit type name (default: class name lowercase)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">World</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">molecules</span><span class="p">:</span> <span class="nb">dict</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">reactions</span><span class="p">:</span> <span class="nb">dict</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">containers</span><span class="p">:</span> <span class="nb">dict</span>
+</code></pre></div>
+<p><strong>Behavior:</strong>
+- Adds class to global hydration registry
+- Type name defaults to lowercase class name
+- On load: <code>{"_type": "chemistry", ...}</code> → <code>Chemistry(...)</code>
+- On save: <code>Chemistry(...)</code> → <code>{"_type": "chemistry", ...}</code></p>
+<hr />
+<h2 id="function-decorators">Function Decorators<a class="headerlink" href="#function-decorators" title="Permanent link">&para;</a></h2>
+<p>All function decorators inherit from <code>@fn</code> and share common metadata.</p>
+<h3 id="fn"><code>@fn</code><a class="headerlink" href="#fn" title="Permanent link">&para;</a></h3>
+<p>Base decorator for all functions. Stores metadata for documentation, plots, and tooling.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@fn</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s2">&quot;One-liner for plots/tables&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">category</span><span class="o">=</span><span class="s2">&quot;scoring.process&quot;</span><span class="p">,</span>        <span class="c1"># arbitrary additional metadata</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">reference</span><span class="o">=</span><span class="s2">&quot;Author, Year&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Detailed docstring for documentation.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="o">...</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>summary</code></td>
+<td>Yes</td>
+<td>Short description for plots/tables</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td>Yes*</td>
+<td>Expected output range (*not required for actions)</td>
+</tr>
+<tr>
+<td>(other)</td>
+<td>No</td>
+<td>Arbitrary kwargs stored as <code>fn.meta[key]</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="scoring"><code>@scoring</code><a class="headerlink" href="#scoring" title="Permanent link">&para;</a></h3>
+<p>Evaluation metrics for scenarios. Used by <code>sim.results()</code> to compute final scores.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@scoring</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Population health of protected species&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>         <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>         <span class="n">higher_is_better</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">population_health</span><span class="p">(</span><span class="n">timeline</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Measures final population health.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="o">...</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>higher_is_better</code></td>
+<td>Direction of optimization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="action"><code>@action</code><a class="headerlink" href="#action" title="Permanent link">&para;</a></h3>
+<p>Agent actions that modify simulation state. Called via <code>sim.action(name, ...)</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@action</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Add feedstock molecules to a region&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        <span class="n">targets</span><span class="o">=</span><span class="s2">&quot;regions&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">reversible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">cost</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_feedstock</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">molecule</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Add molecules from feedstock to substrate.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="o">...</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targets</code></td>
+<td>What the action operates on (regions, organisms, etc.)</td>
+</tr>
+<tr>
+<td><code>reversible</code></td>
+<td>Whether effects can be undone</td>
+</tr>
+<tr>
+<td><code>cost</code></td>
+<td>Resource cost of taking this action</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="measurement"><code>@measurement</code><a class="headerlink" href="#measurement" title="Permanent link">&para;</a></h3>
+<p>Agent observations that read simulation state. Called via <code>sim.measure(name, ...)</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@measurement</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Sample substrate concentrations&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>             <span class="n">targets</span><span class="o">=</span><span class="s2">&quot;regions&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>             <span class="n">cost</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">sample_substrate</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get molecule concentrations in a region.&quot;&quot;&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">return</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_concentrations</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Metadata</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targets</code></td>
+<td>What can be observed (regions, organisms, etc.)</td>
+</tr>
+<tr>
+<td><code>returns</code></td>
+<td>Description of return value structure</td>
+</tr>
+<tr>
+<td><code>cost</code></td>
+<td>Resource cost of taking this measurement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rate"><code>@rate</code><a class="headerlink" href="#rate" title="Permanent link">&para;</a></h3>
+<p>Reaction rate laws for chemistry. Used in reaction definitions.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@rate</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="s2">&quot;Mass action rate law&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)))</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">mass_action</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Derives rate from equation using Law of Mass Action.&quot;&quot;&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="o">...</span>
+</code></pre></div>
+<p><strong>Future:</strong> Rate functions will be JIT-compiled via JAX for GPU acceleration.</p>
+<hr />
+<h2 id="summary-table">Summary Table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Decorator</th>
+<th>Purpose</th>
+<th>Registration</th>
+<th>Called via</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@biotype</code></td>
+<td>Class hydration</td>
+<td>type registry</td>
+<td><code>Bio.fetch()</code></td>
+</tr>
+<tr>
+<td><code>@fn</code></td>
+<td>Base function</td>
+<td>—</td>
+<td>direct call</td>
+</tr>
+<tr>
+<td><code>@scoring</code></td>
+<td>Evaluation metrics</td>
+<td>scoring registry</td>
+<td><code>sim.results()</code></td>
+</tr>
+<tr>
+<td><code>@action</code></td>
+<td>Agent actions</td>
+<td>action registry</td>
+<td><code>sim.action()</code></td>
+</tr>
+<tr>
+<td><code>@measurement</code></td>
+<td>Agent observations</td>
+<td>measurement registry</td>
+<td><code>sim.measure()</code></td>
+</tr>
+<tr>
+<td><code>@rate</code></td>
+<td>Reaction rates</td>
+<td>rate registry</td>
+<td>reaction evaluation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h2>
+<p>All decorators assume the decorated functions/classes are loaded into the environment before use. This happens via:
+- <code>spec.include("functions.py")</code> — loads Python file, decorators register automatically
+- Direct import in Python code</p>
+<p>The registries are global singletons. Registration happens at decoration time (module load), not at call time.</p>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="bio.html">Bio</a> - Core biology simulation classes</li>
-<li><a href="infra.html">Infra</a> - Infrastructure and utilities</li>
-<li><a href="protocols.html">Protocols</a> - Protocol definitions</li>
-<li><a href="spec_lang.html">Spec Language</a> - Specification language parser</li>
-<li><a href="cli.html">CLI</a> - Command line interface</li>
+<li>[[Spec Language]] — YAML syntax and tags (<code>!ev</code>, <code>!ref</code>, <code>!include</code>)</li>
+<li><a href="../api/bio.html">Bio</a> — Loading and hydration using <code>@biotype</code> registry</li>
 </ul>
-<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
-<p>For conceptual documentation, see the <a href="../architecture/Architecture%20Docs.html">Architecture</a> section.</p>
 
 
 
