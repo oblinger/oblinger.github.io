@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HookAnchor - TEMPLATE JS VARIABLES</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="docs-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HookAnchor - TEMPLATE JS VARIABLES</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#template-javascript-variables-reference"
+id="toc-template-javascript-variables-reference">Template JavaScript
+Variables Reference</a>
+<ul>
+<li><a href="#overview" id="toc-overview">Overview</a></li>
+<li><a href="#variable-syntax" id="toc-variable-syntax">Variable
+Syntax</a></li>
+<li><a href="#available-objects" id="toc-available-objects">Available
+Objects</a>
+<ul>
+<li><a href="#input-string" id="toc-input-string"><code>input</code>
+(String)</a></li>
+<li><a href="#last_executed-object"
+id="toc-last_executed-object"><code>last_executed</code>
+(Object)</a></li>
+<li><a href="#selected-object"
+id="toc-selected-object"><code>selected</code> (Object)</a></li>
+<li><a href="#date-object" id="toc-date-object"><code>date</code>
+(Object)</a></li>
+<li><a href="#grabbed-object"
+id="toc-grabbed-object"><code>grabbed</code> (Object)</a></li>
+<li><a href="#env-object" id="toc-env-object"><code>env</code>
+(Object)</a></li>
+</ul></li>
+<li><a href="#javascript-functions"
+id="toc-javascript-functions">JavaScript Functions</a>
+<ul>
+<li><a href="#string-methods" id="toc-string-methods">String
+Methods</a></li>
+<li><a href="#conditional-logic" id="toc-conditional-logic">Conditional
+Logic</a></li>
+<li><a href="#complex-expressions" id="toc-complex-expressions">Complex
+Expressions</a></li>
+</ul></li>
+<li><a href="#migration-from-old-variables"
+id="toc-migration-from-old-variables">Migration from Old
+Variables</a></li>
+<li><a href="#examples" id="toc-examples">Examples</a>
+<ul>
+<li><a href="#create-sub-anchor" id="toc-create-sub-anchor">Create
+Sub-Anchor</a></li>
+<li><a href="#daily-journal" id="toc-daily-journal">Daily
+Journal</a></li>
+<li><a href="#smart-note-creator" id="toc-smart-note-creator">Smart Note
+Creator</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="template-javascript-variables-reference">Template JavaScript
+Variables Reference</h1>
+<p><strong>Version 0.10.0</strong> - Variables now use object-based
+notation for better organization.</p>
+<h2 id="overview">Overview</h2>
+<p>Templates in HookAnchor use JavaScript evaluation for variable
+expansion within <code>{{...}}</code> expressions. This provides
+powerful scripting capabilities and access to contextual information
+through JavaScript objects.</p>
+<h2 id="variable-syntax">Variable Syntax</h2>
+<p>Variables are accessed within double curly braces using JavaScript
+dot notation: - <code>{{last_executed.name}}</code> - Access the name of
+the last executed command - <code>{{input.toUpperCase()}}</code> -
+Transform user input to uppercase - <code>{{date.year}}</code> - Access
+current year</p>
+<h2 id="available-objects">Available Objects</h2>
+<h3 id="input-string"><code>input</code> (String)</h3>
+<p>The user-provided text input when the template is triggered.</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span><span class="co">           # Direct use</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.trim()}}&quot;</span><span class="co">    # Remove whitespace</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.replace(&#39; &#39;, &#39;_&#39;)}}&quot;</span><span class="co">  # Replace spaces</span></span></code></pre></div>
+<h3 id="last_executed-object"><code>last_executed</code> (Object)</h3>
+<p>Information about the last command that was actually executed.</p>
+<p><strong>Properties:</strong> - <code>last_executed.name</code> -
+Command name - <code>last_executed.action</code> - Action type (app,
+url, cmd, etc.) - <code>last_executed.arg</code> - Command argument/path
+- <code>last_executed.patch</code> - Command group/patch -
+<code>last_executed.folder</code> - Extracted folder path (for
+file-based commands) - <code>last_executed.flags</code> - Command flags
+- <code>last_executed.flags</code> - Command flags</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.folder}}/{{input}}.md&quot;</span><span class="co">  # Create in same folder as last_executed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.patch}}&quot;</span><span class="co">              # Use same group as last_executed</span></span></code></pre></div>
+<h3 id="selected-object"><code>selected</code> (Object)</h3>
+<p>Information about the currently selected command in the popup.</p>
+<p><strong>Properties:</strong> - <code>selected.name</code> - Command
+name - <code>selected.action</code> - Action type -
+<code>selected.arg</code> - Command argument/path -
+<code>selected.patch</code> - Command group/patch -
+<code>selected.folder</code> - Extracted folder path -
+<code>selected.flags</code> - Command flags</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Sub: {{selected.name}}&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{selected.folder}}/subfolder&quot;</span></span></code></pre></div>
+<h3 id="date-object"><code>date</code> (Object)</h3>
+<p>Current date and time information.</p>
+<p><strong>Properties:</strong> - <code>date.year</code> - 4-digit year
+(e.g., “2024”) - <code>date.year2</code> - 2-digit year (e.g., “24”) -
+<code>date.month</code> - Month padded (e.g., “03”) -
+<code>date.month_short</code> - Month unpadded (e.g., “3”) -
+<code>date.month_name</code> - Month name (e.g., “March”) -
+<code>date.month_abbr</code> - Month abbreviation (e.g., “Mar”) -
+<code>date.day</code> - Day padded (e.g., “05”) -
+<code>date.day_short</code> - Day unpadded (e.g., “5”) -
+<code>date.weekday</code> - Day name (e.g., “Monday”) -
+<code>date.weekday_abbr</code> - Day abbreviation (e.g., “Mon”) -
+<code>date.hour</code> - Hour 24h padded (e.g., “14”) -
+<code>date.hour12</code> - Hour 12h (e.g., “2”) -
+<code>date.minute</code> - Minute padded (e.g., “30”) -
+<code>date.second</code> - Second padded (e.g., “45”) -
+<code>date.ampm</code> - AM/PM indicator - <code>date.timestamp</code> -
+Unix timestamp - <code>date.iso</code> - ISO 8601 format</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Note {{date.year}}-{{date.month}}-{{date.day}}&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/journal/{{date.year}}/{{date.month}}/{{input}}.md&quot;</span></span></code></pre></div>
+<h3 id="grabbed-object"><code>grabbed</code> (Object)</h3>
+<p>Information captured by the grabber (when using <code>grab</code>
+option).</p>
+<p><strong>Properties:</strong> - <code>grabbed.action</code> - Detected
+action type - <code>grabbed.arg</code> - Captured argument/path -
+<code>grabbed.app</code> - Application name - <code>grabbed.title</code>
+- Window title - <code>grabbed.text</code> - Selected text or
+content</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grab</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co">  # Wait 3 seconds then grab</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{grabbed.app}}: {{input}}&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{grabbed.action}}&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{grabbed.arg}}&quot;</span></span></code></pre></div>
+<h3 id="env-object"><code>env</code> (Object)</h3>
+<p>Environment variables and system information.</p>
+<p><strong>Properties:</strong> - <code>env.home</code> - User home
+directory - <code>env.user</code> - Current username -
+<code>env.hostname</code> - Machine hostname - <code>env.os</code> -
+Operating system - <code>env.config_dir</code> - HookAnchor config
+directory</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{env.home}}/Documents/{{input}}.txt&quot;</span></span></code></pre></div>
+<h2 id="javascript-functions">JavaScript Functions</h2>
+<p>Since templates use full JavaScript evaluation, you can use any
+JavaScript string methods and expressions:</p>
+<h3 id="string-methods">String Methods</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.toUpperCase()}}&quot;</span><span class="co">          # UPPERCASE</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.toLowerCase()}}&quot;</span><span class="co">          # lowercase</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.slice(0, 10)}}&quot;</span><span class="co">          # First 10 chars</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.replace(/ /g, &#39;_&#39;)}}&quot;</span><span class="co">    # Replace all spaces</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.trim()}}&quot;</span><span class="co">                # Remove whitespace</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.padStart(10, &#39;0&#39;)}}&quot;</span><span class="co">     # Pad with zeros</span></span></code></pre></div>
+<h3 id="conditional-logic">Conditional Logic</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input || &#39;Untitled&#39;}}&quot;</span><span class="co">         # Default value</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.length &gt; 20 ? input.slice(0,20) + &#39;...&#39; : input}}&quot;</span><span class="co">  # Truncate</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.patch || &#39;MISC&#39;}}&quot;</span><span class="co">   # Fallback to MISC</span></span></code></pre></div>
+<h3 id="complex-expressions">Complex Expressions</h3>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate slug from input</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input.toLowerCase().replace(/[^a-z0-9]+/g, &#39;-&#39;).replace(/^-|-$/g, &#39;&#39;)}}&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dated filename</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/notes/{{date.year}}/{{date.month}}/{{date.day}}-{{input.replace(/ /g, &#39;_&#39;)}}.md&quot;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Smart folder selection</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.folder || selected.folder || env.home + &#39;/Documents&#39;}}/{{input}}.md&quot;</span></span></code></pre></div>
+<h2 id="migration-from-old-variables">Migration from Old Variables</h2>
+<table>
+<thead>
+<tr>
+<th>Old Variable</th>
+<th>New JavaScript Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{input}}</code></td>
+<td><code>{{input}}</code></td>
+</tr>
+<tr>
+<td><code>{{last_executed_name}}</code></td>
+<td><code>{{last_executed.name}}</code></td>
+</tr>
+<tr>
+<td><code>{{last_executed_folder}}</code></td>
+<td><code>{{last_executed.folder}}</code></td>
+</tr>
+<tr>
+<td><code>{{last_executed_patch}}</code></td>
+<td><code>{{last_executed.patch}}</code></td>
+</tr>
+<tr>
+<td><code>{{selected_name}}</code></td>
+<td><code>{{selected.name}}</code></td>
+</tr>
+<tr>
+<td><code>{{selected_folder}}</code></td>
+<td><code>{{selected.folder}}</code></td>
+</tr>
+<tr>
+<td><code>{{YYYY}}</code></td>
+<td><code>{{date.year}}</code></td>
+</tr>
+<tr>
+<td><code>{{MM}}</code></td>
+<td><code>{{date.month}}</code></td>
+</tr>
+<tr>
+<td><code>{{DD}}</code></td>
+<td><code>{{date.day}}</code></td>
+</tr>
+<tr>
+<td><code>{{hh}}</code></td>
+<td><code>{{date.hour}}</code></td>
+</tr>
+<tr>
+<td><code>{{mm}}</code></td>
+<td><code>{{date.minute}}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<h3 id="create-sub-anchor">Create Sub-Anchor</h3>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sub_anchor</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;!&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;anchor&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.folder}}/{{input}}/{{input}}.md&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.patch}}&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">validate_last_executed_folder</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create sub-anchor under last_executed folder&quot;</span></span></code></pre></div>
+<h3 id="daily-journal">Daily Journal</h3>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">journal</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;J&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Journal {{date.year}}-{{date.month}}-{{date.day}}&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;markdown&quot;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{env.home}}/journal/{{date.year}}/{{date.month_name}}/{{date.day}}-{{date.weekday}}.md&quot;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">file</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{env.home}}/journal/{{date.year}}/{{date.month_name}}/{{date.day}}-{{date.weekday}}.md&quot;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;# {{date.weekday}}, {{date.month_name}} {{date.day}}, {{date.year}}</span><span class="sc">\n\n</span><span class="st">## {{input || &#39;Daily Notes&#39;}}</span><span class="sc">\n\n</span><span class="st">&quot;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create daily journal entry&quot;</span></span></code></pre></div>
+<h3 id="smart-note-creator">Smart Note Creator</h3>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">smart_note</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;N&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input || &#39;Quick Note&#39;}}&quot;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;markdown&quot;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{(last_executed.folder || selected.folder || env.home + &#39;/notes&#39;)}}/{{date.year}}-{{date.month}}-{{date.day}}_{{input.toLowerCase().replace(/</span><span class="sc">\\</span><span class="st">s+/g, &#39;_&#39;)}}.md&quot;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create note in context-aware location&quot;</span></span></code></pre></div>
+</body>
+</html>

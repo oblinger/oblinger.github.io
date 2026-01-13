@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HookAnchor - HookAnchor Action Types</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="docs-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HookAnchor - HookAnchor Action Types</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hookanchor-action-types-reference"
+id="toc-hookanchor-action-types-reference">HookAnchor Action Types
+Reference</a>
+<ul>
+<li><a href="#overview" id="toc-overview">Overview</a></li>
+<li><a href="#action-types-summary" id="toc-action-types-summary">Action
+Types Summary</a>
+<ul>
+<li><a href="#command-actions" id="toc-command-actions">Command
+Actions</a></li>
+<li><a href="#control-actions" id="toc-control-actions">Control
+Actions</a></li>
+</ul></li>
+<li><a href="#template" id="toc-template">template</a></li>
+<li><a href="#popup" id="toc-popup">popup</a></li>
+<li><a href="#open_url" id="toc-open_url">open_url</a></li>
+<li><a href="#open_app" id="toc-open_app">open_app</a></li>
+<li><a href="#open_folder" id="toc-open_folder">open_folder</a></li>
+<li><a href="#open_file" id="toc-open_file">open_file</a></li>
+<li><a href="#shell" id="toc-shell">shell</a></li>
+<li><a href="#obsidian" id="toc-obsidian">obsidian</a></li>
+<li><a href="#alias" id="toc-alias">alias</a></li>
+<li><a href="#javascript-actions" id="toc-javascript-actions">JavaScript
+Actions</a>
+<ul>
+<li><a href="#pass" id="toc-pass">1pass</a></li>
+<li><a href="#slack" id="toc-slack">slack</a></li>
+<li><a href="#text" id="toc-text">text</a></li>
+<li><a href="#cmd" id="toc-cmd">cmd</a></li>
+<li><a href="#contact" id="toc-contact">contact</a></li>
+<li><a href="#doc" id="toc-doc">doc</a></li>
+<li><a href="#folder" id="toc-folder">folder</a></li>
+<li><a href="#js" id="toc-js">js</a></li>
+<li><a href="#markdown" id="toc-markdown">markdown</a></li>
+<li><a href="#rescan" id="toc-rescan">rescan</a></li>
+</ul></li>
+<li><a href="#grabber-support" id="toc-grabber-support">Grabber
+Support</a></li>
+<li><a href="#command-usage" id="toc-command-usage">Command
+Usage</a></li>
+<li><a href="#configuration-example"
+id="toc-configuration-example">Configuration Example</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hookanchor-action-types-reference">HookAnchor Action Types
+Reference</h1>
+<h2 id="overview">Overview</h2>
+<p>Actions in HookAnchor define behaviors that can be triggered via
+keyboard shortcuts, commands, or other actions. Each action has a type
+that determines its behavior.</p>
+<h2 id="action-types-summary">Action Types Summary</h2>
+<h3 id="command-actions">Command Actions</h3>
+<p>These actions are designed to be used as the action type for commands
+in your commands.txt file.</p>
+<table>
+<thead>
+<tr>
+<th>Action Type</th>
+<th>Description</th>
+<th>Grab?</th>
+<th>Primary Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#open_url">open_url</a></td>
+<td>Opens URLs in default browser</td>
+<td>No</td>
+<td>url</td>
+</tr>
+<tr>
+<td><a href="#open_app">open_app</a></td>
+<td>Opens/activates applications</td>
+<td>No</td>
+<td>app, arg</td>
+</tr>
+<tr>
+<td><a href="#open_folder">open_folder</a></td>
+<td>Opens folders in Finder</td>
+<td>No</td>
+<td>folder</td>
+</tr>
+<tr>
+<td><a href="#open_file">open_file</a></td>
+<td>Opens files in default app</td>
+<td>No</td>
+<td>file</td>
+</tr>
+<tr>
+<td><a href="#shell">shell</a></td>
+<td>Executes shell commands</td>
+<td>No</td>
+<td>command, wait</td>
+</tr>
+<tr>
+<td><a href="#obsidian">obsidian</a></td>
+<td>Opens files in Obsidian</td>
+<td>No</td>
+<td>file, line</td>
+</tr>
+<tr>
+<td><a href="#alias">alias</a></td>
+<td>Executes another command</td>
+<td>No</td>
+<td>command</td>
+</tr>
+<tr>
+<td><a href="#1pass">1pass</a></td>
+<td>1Password Quick Access</td>
+<td>No</td>
+<td>query</td>
+</tr>
+<tr>
+<td><a href="#slack">slack</a></td>
+<td>Navigates to Slack channels</td>
+<td>No</td>
+<td>channel</td>
+</tr>
+<tr>
+<td><a href="#text">text</a></td>
+<td>Types text via keyboard</td>
+<td>No</td>
+<td>text</td>
+</tr>
+<tr>
+<td><a href="#cmd">cmd</a></td>
+<td>JavaScript shell commands</td>
+<td>No</td>
+<td>JS expression</td>
+</tr>
+<tr>
+<td><a href="#contact">contact</a></td>
+<td>Opens contacts</td>
+<td>No</td>
+<td>query</td>
+</tr>
+<tr>
+<td><a href="#doc">doc</a></td>
+<td>Opens documentation</td>
+<td>No</td>
+<td>arg</td>
+</tr>
+<tr>
+<td><a href="#folder">folder</a></td>
+<td>Folder operations</td>
+<td>No</td>
+<td>path</td>
+</tr>
+<tr>
+<td><a href="#js">js</a></td>
+<td>JavaScript evaluation</td>
+<td>No</td>
+<td>code</td>
+</tr>
+<tr>
+<td><a href="#markdown">markdown</a></td>
+<td>Markdown file operations</td>
+<td>No</td>
+<td>file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-actions">Control Actions</h3>
+<p>These actions control HookAnchor itself and are typically bound to
+keyboard shortcuts.</p>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 26%" />
+<col style="width: 14%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action Type</th>
+<th>Description</th>
+<th>Grab?</th>
+<th>Primary Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#template">template</a></td>
+<td>Creates new commands with templates</td>
+<td>Yes</td>
+<td>name, action, arg, patch</td>
+</tr>
+<tr>
+<td><a href="#popup">popup</a></td>
+<td>Controls the popup window</td>
+<td>No</td>
+<td>popup_action</td>
+</tr>
+<tr>
+<td><a href="#rescan">rescan</a></td>
+<td>Rescans command database</td>
+<td>No</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="template">template</h2>
+<p>Creates new commands from templates with variable substitution.</p>
+<p><strong>Arguments:</strong> - <code>name</code> - Command name
+(supports {{input}} substitution) - <code>action</code> - Action type
+for the new command - <code>arg</code> - Argument for the action
+(supports {{input}}) - <code>patch</code> - Optional patch text to
+prepend - <code>flags</code> - Optional flags - <code>grab</code> -
+Grabber timeout in seconds - <code>edit</code> - Edit timeout in seconds
+- <code>contents</code> - File contents if creating a file</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">doc_page</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> template</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Doc{{input}}&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;doc&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/Users/oblinger/ob/kmr/T/DOC/Doc{{input}}.md&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;DOC&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="popup">popup</h2>
+<p>Controls the popup window state.</p>
+<p><strong>Arguments:</strong> - <code>popup_action</code> - Action to
+perform: “show”, “hide”, “toggle”</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_popup</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> popup</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">popup_action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;show&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="open_url">open_url</h2>
+<p>Opens URLs in the default web browser.</p>
+<p><strong>Arguments:</strong> - <code>url</code> - URL to open
+(required)</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">github</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> open_url</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://github.com&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="open_app">open_app</h2>
+<p>Opens or activates an application, optionally with arguments.</p>
+<p><strong>Arguments:</strong> - <code>app</code> - Application name or
+path (required) - <code>arg</code> - Optional argument to pass to the
+app</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vscode</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> open_app</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">app</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Visual Studio Code&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/projects&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="open_folder">open_folder</h2>
+<p>Opens a folder in Finder.</p>
+<p><strong>Arguments:</strong> - <code>folder</code> - Folder path to
+open (required)</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">downloads</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> open_folder</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">folder</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Downloads&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="open_file">open_file</h2>
+<p>Opens a file in its default application.</p>
+<p><strong>Arguments:</strong> - <code>file</code> - File path to open
+(required)</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readme</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> open_file</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">file</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/projects/README.md&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="shell">shell</h2>
+<p>Executes shell commands with optional waiting.</p>
+<p><strong>Arguments:</strong> - <code>command</code> - Shell command to
+execute (required) - <code>wait</code> - Whether to wait for completion
+(optional, default: false)</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rebuild</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> shell</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;cargo build --release&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">wait</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<hr />
+<h2 id="obsidian">obsidian</h2>
+<p>Opens files in Obsidian vault, with optional line navigation.</p>
+<p><strong>Arguments:</strong> - <code>file</code> - File path to open
+(required) - <code>line</code> - Optional line number to navigate to</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">notes</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> obsidian</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">file</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/ob/kmr/notes.md&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">line</span><span class="kw">:</span><span class="at"> </span><span class="dv">42</span></span></code></pre></div>
+<hr />
+<h2 id="alias">alias</h2>
+<p>Executes another existing command by name.</p>
+<p><strong>Arguments:</strong> - <code>command</code> - Name of command
+to execute (required)</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> alias</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;github&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="javascript-actions">JavaScript Actions</h2>
+<p>The following action types are implemented in JavaScript via the
+config file:</p>
+<h3 id="pass">1pass</h3>
+<p>Opens 1Password Quick Access with a search query.</p>
+<p><strong>Arguments:</strong> - <code>query</code> - Search query for
+1Password (required)</p>
+<hr />
+<h3 id="slack">slack</h3>
+<p>Navigates to a specific Slack channel.</p>
+<p><strong>Arguments:</strong> - <code>channel</code> - Channel name to
+navigate to (required)</p>
+<hr />
+<h3 id="text">text</h3>
+<p>Types text via keyboard simulation.</p>
+<p><strong>Arguments:</strong> - <code>text</code> - Text to type
+(required)</p>
+<hr />
+<h3 id="cmd">cmd</h3>
+<p>Executes JavaScript expressions that can run shell commands.</p>
+<p><strong>Arguments:</strong> - JavaScript expression as the action
+body</p>
+<hr />
+<h3 id="contact">contact</h3>
+<p>Opens contact information.</p>
+<p><strong>Arguments:</strong> - <code>query</code> - Contact search
+query (required)</p>
+<hr />
+<h3 id="doc">doc</h3>
+<p>Opens documentation files.</p>
+<p><strong>Arguments:</strong> - <code>arg</code> - Documentation file
+path (required)</p>
+<hr />
+<h3 id="folder">folder</h3>
+<p>Performs folder-related operations.</p>
+<p><strong>Arguments:</strong> - <code>path</code> - Folder path
+(required)</p>
+<hr />
+<h3 id="js">js</h3>
+<p>Evaluates JavaScript code.</p>
+<p><strong>Arguments:</strong> - <code>code</code> - JavaScript code to
+evaluate (required)</p>
+<hr />
+<h3 id="markdown">markdown</h3>
+<p>Operations on markdown files.</p>
+<p><strong>Arguments:</strong> - <code>file</code> - Markdown file path
+(required)</p>
+<hr />
+<h3 id="rescan">rescan</h3>
+<p>Rescans the command database for changes.</p>
+<p><strong>Arguments:</strong> - None</p>
+<hr />
+<h2 id="grabber-support">Grabber Support</h2>
+<p>Actions that support grabbers can capture context from the current
+application when invoked with the grab modifier (typically ‘g’). The
+grabbed context is used to create commands that can recreate the current
+state.</p>
+<p>Currently, the <code>template</code> action type has full grabber
+support, allowing it to capture application context and create commands
+based on grabber rules defined in the configuration.</p>
+<h2 id="command-usage">Command Usage</h2>
+<p>Most action types can be used as command actions, meaning they can be
+assigned to commands in the commands.txt file or created dynamically.
+Actions marked as “Can Use as Command: No” are typically system actions
+that control the HookAnchor interface itself.</p>
+<h2 id="configuration-example">Configuration Example</h2>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">actions</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Template action bound to Cmd+D</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">doc_page</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> template</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Cmd+D&quot;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create documentation page&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Doc{{input}}&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;doc&quot;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/Users/oblinger/ob/kmr/T/DOC/Doc{{input}}.md&quot;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">  # Simple URL opener</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">github</span><span class="kw">:</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> open_url</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Cmd+G&quot;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://github.com&quot;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">  # TMUX session creator</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">new_session</span><span class="kw">:</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action_type</span><span class="kw">:</span><span class="at"> tmux_create</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Cmd+T&quot;</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">folder</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{current_folder}}&quot;</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;claude --continue&quot;</span></span></code></pre></div>
+</body>
+</html>
