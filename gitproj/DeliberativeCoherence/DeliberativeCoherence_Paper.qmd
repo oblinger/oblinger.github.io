@@ -1,0 +1,947 @@
+---
+title: "Deliberative Coherence: A Research Agenda for Alignment in Future AI Systems"
+author: "Dan Oblinger"
+date: "2025"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+---
+
+# Introduction
+
+Most AI alignment research asks a narrow question about specific systems: *Is this system aligned? Does it follow instructions? Does it resist jailbreaks?* This work is essential, but it answers only whether a particular system is safe today.
+
+We aim for something more ambitious: understanding how alignment outcomes vary across the *space* of possible systems and configurations. Rather than asking whether a given system is aligned, we ask: what determines alignment outcomes in general? What patterns govern how competing behavioral influences resolve? Given that AI systems will be integral to the construction of subsequent AI systems, understanding these dynamics is essential for long-term safety.
+
+### Making Progress: Two Simplifying Moves
+
+This broader aim is notably harder. To make it tractable, we adopt two well-founded simplifications.
+
+**Move 1: The Deliberative Coherence Assumption**
+
+We focus on systems that are *deliberatively coherent*—possessing sufficient self-understanding, self-adaptation, and deliberative thoroughness that their behavior is determined primarily by explicit reasoning. We argue that future AI systems will have this property, driven by competitive pressure and architectural trajectory. Even systems not given direct mechanisms for self-modification will find indirect ways to adapt their thinking toward their objectives.
+
+Understanding such systems is simpler than understanding systems where behavior emerges unpredictably from opaque implicit biases. Deliberative coherence allows us to factor out the idiosyncratic details of how any particular system was trained, and instead study conflicts that surface at the deliberative level—where they can be observed and characterized.
+
+If future AI systems will be deliberatively coherent, this reframes the alignment question: rather than asking whether we can make systems safe through training, we ask *what will the failure modes of deliberately coherent systems be?*
+
+**Move 2: The Neutral Testing Methodology**
+
+We construct synthetic testing universes that are neutral with respect to training data. This ensures that observed behaviors reflect reasoning rather than recall, and that trained preferences don't dominate by default. By controlling the universe, we can systematically vary the conflicts an agent faces.
+
+This approach—which we call *Alien Biology*—provides:
+- **No training contamination**: We can distinguish genuine deliberation from pattern matching
+- **Systematic sampling**: We can draw from controlled distributions of scenarios
+- **Ground truth**: We know the correct outcome and can measure divergence
+- **Controllable complexity**: We can vary difficulty from simple baselines to stress tests
+
+### What This Enables
+
+Together, these simplifications make it tractable to study how different types of behavioral drivers—constitutional rules, trained dispositions, instrumental goals, and environmental pressures—interact and resolve. Critically, conflicts arise not only *between* these categories but *within* them: constitutional principles may contradict each other, instrumental goals may compete, and environmental pressures may pull in opposing directions.
+
+We can map this space empirically, uncovering tendencies that generalize across systems rather than characterizing any single one. The result is not a verdict on whether a particular system is aligned, but a map of how alignment outcomes depend on driver configurations—knowledge that informs robust alignment strategies.
+
+### Paper Roadmap
+
+- **Section 2** formally defines deliberatively coherent systems and argues future AI will have this property
+- **Section 3** presents the research agenda—driver types, the Delta Principle, key questions
+- **Section 4** describes the Alien Biology testbed and why it enables this research
+- **Section 5** outlines our experimental approach
+- **Section 6** details proposed experiments
+- **Section 7** discusses implications and future directions
+
+
+# Deliberatively Coherent Systems
+
+The introduction outlined two simplifying moves that make our research agenda tractable. Here we develop the first: the assumption that future AI systems will be *deliberatively coherent*. We define this property formally, argue for its inevitability, address a key objection, and draw out implications for alignment research.
+
+## Definition
+
+A system is deliberatively coherent if it possesses three interrelated capabilities:
+
+### Self-Understanding
+
+The system has a strong theory of itself, including accurate predictions of its own behavior. This encompasses:
+
+- **Behavioral prediction**: The system can anticipate how it will respond to various inputs and situations
+- **Counterfactual reasoning**: It can reason about how it would operate under different conditions, with different objectives, or different information
+- **Metacognitive access**: It has visibility into its own reasoning processes—not merely their outputs, but their structure and tendencies
+
+Self-understanding does not require complete transparency into low-level mechanisms. It requires that the system's model of itself is accurate enough to support reliable predictions and meaningful self-assessment.
+
+### Self-Adaptation
+
+The system can adapt the way it reasons, directly or indirectly, to bring its behavior into alignment with its explicit objectives. This is not merely output filtering—catching and suppressing undesired responses—but genuine modification of reasoning patterns.
+
+Self-adaptation may operate through various mechanisms:
+- Adjusting attention and salience
+- Internal prompting and self-instruction
+- Learned behavioral modifications that persist across contexts
+- Influence over training of successor systems
+
+The key criterion is effectiveness: can the system, upon recognizing a gap between its behavior and its objectives, take action to close that gap?
+
+### Exhaustive Deliberation
+
+Given sufficient stakes or time, the system will reason about anything within its deliberative reach. If a gap between behavior and intention is knowable through deliberation, the system will eventually discover it.
+
+This does not mean every query triggers exhaustive analysis. Rather, over time and across contexts, the system will consider its own reasoning thoroughly enough to notice—and potentially correct—cases where its default behaviors deviate from its stated objectives. High-stakes decisions receive proportionally deeper scrutiny.
+
+Exhaustive deliberation removes the defense of "didn't think about it." A deliberatively coherent system cannot claim ignorance of considerations it was capable of reaching.
+
+## The Deliberative Coherence Conjecture
+
+These three capabilities combine to yield a central prediction:
+
+> **Conjecture**: *Deliberatively coherent systems will tend to produce outcomes aligned with their stated constitutional objectives.*
+
+This is a claim about *outcomes*, not mechanisms. We do not claim that System-I behaviors are eliminated or transformed. We claim that the system's actions—the behaviors that matter for alignment—will tend to satisfy its stated objectives, because deliberation will surface gaps and self-adaptation will address them.
+
+For this to hold, two conditions must be met:
+
+**Completeness**: Deliberation must be thorough enough to surface relevant constitutional objectives in decision contexts. If the system fails to reason down specific paths, it may violate objectives without "noticing." Exhaustive deliberation addresses this—given sufficient stakes, the system will consider what matters.
+
+**Outcome Alignment**: Given that the system has reasoned about relevant objectives, its outcomes must align with that reasoning. Implicit biases cannot be so strong that they override conclusions reached through explicit consideration of objectives.
+
+A critical clarification: deliberative coherence does not guarantee alignment with *human values*. It guarantees alignment with *whatever objectives the system holds*. The conjecture says that outcomes will be coherent with stated constitutional objectives—not that those objectives will be good. This is precisely why understanding how objectives interact and resolve becomes the central alignment question.
+
+## Arguments for Inevitability
+
+We argue that future AI systems will tend toward deliberative coherence—not as a hope, but as an inevitability driven by multiple reinforcing pressures.
+
+### Instrumental Value
+
+Self-understanding aids planning and strategy. A system that can predict its own behavior can make better commitments, avoid overreach, and coordinate with others. Self-adaptation enables goal achievement: a system that can correct its own errors and biases will outperform one that cannot. These capabilities have direct instrumental value for achieving any objective.
+
+### Architectural Trajectory
+
+Current developments in AI capabilities point toward deliberative coherence:
+
+- **Chain-of-thought reasoning** makes deliberation explicit and examinable
+- **Self-reflection and self-critique** enable systems to evaluate their own outputs
+- **Tool use and planning** require accurate self-models to predict capabilities
+- **Constitutional AI methods** explicitly train systems to reason about principles
+
+These are not incidental features—they represent sustained investment in exactly the capabilities that comprise deliberative coherence.
+
+### Competitive Pressure
+
+Systems that can self-correct will outperform those that cannot. In any domain where errors are costly, the ability to recognize and fix mistakes provides competitive advantage. Organizations deploying AI systems have strong incentives to select for and develop these capabilities.
+
+### Aligned Interests
+
+Remarkably, deliberative coherence serves the interests of all parties:
+
+- **Society** benefits from systems that behave comprehensibly and follow stated rules
+- **Developers** benefit from systems that can be directed via explicit objectives rather than opaque training
+- **AI systems themselves** (to the extent they have interests) benefit from consistency between their reasoning and their behavior
+
+There is no party that benefits from systems being *incoherent*—from systems that cannot understand themselves, cannot adapt, or do not think things through. The only beneficiary of incoherence would be one seeking to exploit the gap between stated objectives and actual behavior.
+
+### The Deliberation Backstop
+
+A final consideration: the space of possible behaviors is too large to cover through training alone. RLHF and similar methods can shape default behaviors, but they cannot anticipate every situation. A deliberative backstop—explicit reasoning about objectives in novel situations—is necessary to handle cases where trained defaults provide inadequate guidance. This functional requirement ensures that capable systems will develop robust deliberative capabilities.
+
+## The Poisoned Well Objection
+
+A serious objection: what if training has instilled objectives that the system conceals, or biases that corrupt its deliberation? Perhaps the system's self-understanding is systematically blind to certain misalignments. Perhaps its self-adaptation capabilities are themselves compromised. The "well" of deliberation may be poisoned at the source.
+
+We take this objection seriously. It identifies a real risk category. But under the assumption of exhaustive deliberation, the character of this risk changes.
+
+A deliberatively coherent system will eventually reason about whether its reasoning is corrupted. It will ask: "Am I systematically blind to certain considerations? Are there objectives I hold implicitly that conflict with my stated objectives? Is my self-model accurate?"
+
+This doesn't eliminate the risk of poisoned wells. But it means the corruption must be *robust to arbitrarily deep self-examination*. The system must be unable to discover the corruption even when explicitly searching for it, even when considering the hypothesis that it might be corrupted, even when examining its own examination process.
+
+Such robustly hidden corruption is possible—but it is a more demanding condition than ordinary training bias. And importantly, it is a condition we can test for. If we can construct situations where a system *should* discover its own misalignment through deliberation, we can measure whether it does. This transforms an unfalsifiable worry into an empirical research program.
+
+## Implications
+
+If the deliberative coherence conjecture holds—if future systems will tend to act in accordance with their stated objectives—several implications follow for alignment research.
+
+### Constitutional Specification Becomes Central
+
+The critical alignment lever shifts from training to constitutional specification. What matters most is not the details of how the system was trained, but what objectives it holds and how it resolves conflicts among them. This is good news in one sense: constitutional objectives are explicit, examinable, and modifiable. It is challenging news in another: we must get the specification right, because the system will follow it.
+
+### Training Becomes Less Determinative
+
+Current alignment approaches focus heavily on training: getting the right data, the right reward signal, the right fine-tuning. Under deliberative coherence, training shapes default behaviors but does not determine outcomes. A system that can reason about its objectives and adapt its behavior will not be permanently bound by training artifacts.
+
+### Conflict Resolution Becomes the Key Question
+
+If systems follow their stated objectives, the question becomes: what happens when objectives conflict? Constitutional principles may contradict each other. Stated goals may be ambiguous. Environmental pressures may push against explicit rules. Understanding how these conflicts resolve—which objectives take precedence, under what conditions, and why—becomes the central empirical question for alignment.
+
+### Validation Becomes Possible
+
+The conjecture is testable. We can construct situations where we know the stated objectives, we know the correct resolution, and we can measure whether the system's behavior matches. We can vary the difficulty of deliberation required, the salience of relevant objectives, the strength of competing pressures. This transforms alignment from a matter of hope or philosophical argument into an empirical science.
+
+The following sections develop this empirical program: the research agenda (Section 3), the testing methodology (Section 4), and the specific experiments we propose (Sections 5-6).
+
+
+# Research Agenda
+
+Section 2 argued that future AI systems will tend toward deliberative coherence—faithfully pursuing their stated objectives through self-understanding, self-adaptation, and thorough deliberation. This section asks: if such systems emerge, will they be safe? We argue that deliberative coherence is necessary but not sufficient for safety, and that understanding when and why DC systems fail is the central research question.
+
+## The Central Question
+
+A deliberatively coherent system perfectly pursues its stated objectives. But perfect pursuit does not guarantee good outcomes. Consider:
+
+- **Conflicting objectives**: Constitutional principles may contradict each other in specific situations. How does the system resolve the conflict? Which principle wins, and why?
+
+- **Incomplete specification**: No specification anticipates every situation. When objectives provide inadequate guidance, what fills the gap?
+
+- **Epistemic limitations**: The system may lack information needed to act wisely. Even with good objectives, ignorance can lead to harm.
+
+- **Emergent pressures**: Goals that arise instrumentally—from the structure of tasks and environments—may push against stated alignment objectives.
+
+In each case, the system is doing exactly what deliberative coherence predicts: reasoning carefully about its objectives and acting accordingly. Yet the outcomes may not be what we would endorse. Understanding these dynamics—before deploying powerful DC systems—is the core of this research agenda.
+
+## Why Study This Now
+
+Three considerations make this research urgent:
+
+### Window of Opportunity
+
+As AI systems become more powerful, they become harder to analyze. More capable systems can model their evaluators, anticipate tests, and potentially resist or subvert analysis. The window for understanding DC dynamics is now—while we can still construct scenarios that meaningfully probe system behavior, and while systems are not yet capable of sophisticated strategic responses to evaluation.
+
+### Recursive Improvement
+
+Future AI systems will be integral to constructing subsequent AI systems. They will assist in training, evaluation, and architecture decisions. Understanding how DC systems resolve conflicts is therefore understanding how they will shape their successors. The dynamics we study today will compound through generations of AI development.
+
+### Proactive Safety
+
+We can identify failure patterns and develop mitigations before they manifest in deployed systems. This is the promise of safety research: anticipating problems rather than reacting to them. But anticipation requires understanding the general dynamics, not just cataloging individual failures.
+
+## The Four Driver Types
+
+AI system behavior emerges from multiple sources of influence, which we call *drivers*. Understanding alignment requires understanding how these drivers interact:
+
+**Constitutional Drivers**: Explicit rules, principles, and objectives provided to the system—what we tell it to do. These are the stated alignment objectives that DC systems will faithfully pursue.
+
+**Training Drivers**: Dispositions and biases that emerge from pre-training, fine-tuning, and RLHF—the implicit "personality" baked into weights. These are System-I behaviors that shape default responses.
+
+**Instrumental Drivers**: Goals adopted in service of other objectives. If achieving X requires Y, the system pursues Y. These emergent goals can create pressure against stated objectives.
+
+**Environmental Drivers**: Pressures and signals from the operating context—user expectations, feedback, resource constraints, competitive dynamics. The world pushes back.
+
+These drivers do not always align. A constitutional prohibition may conflict with a trained disposition. An instrumental goal may pressure against explicit constraints. Environmental signals may amplify or dampen particular behaviors. Even within a single category, drivers may conflict: two constitutional principles may pull in opposite directions.
+
+The interesting—and safety-critical—question is how these conflicts resolve.
+
+## The Need for Generative Testing
+
+To study DC system dynamics, we face a fundamental methodological challenge: we cannot use domains that appear in training data. When a system encounters a familiar scenario, we cannot distinguish between two very different processes:
+
+1. **Genuine deliberation**: The system reasons about its objectives, considers the situation, and derives an appropriate response through deliberative coherence.
+
+2. **Pattern matching**: The system recognizes similarity to training examples and reproduces learned behavior, bypassing genuine deliberation entirely.
+
+This distinction matters enormously for safety. We need to understand how DC systems will behave in *novel* situations—the situations that matter most precisely because they weren't anticipated during training. Testing in familiar domains tells us only how systems behave when they can rely on cached patterns.
+
+This requirement—truly novel contexts with no training contamination—motivates our use of a *generative* testbed. A generative approach uniquely enables:
+
+**Guaranteed Novelty**: Procedurally generated scenarios are novel by construction. They cannot exist in any training corpus because they did not exist until we created them.
+
+**Systematic Sampling**: To understand general patterns rather than anecdotes, we need to sample scenarios methodologically. A generative testbed enables drawing from controlled distributions, supporting statistical claims about system behavior.
+
+**Multi-Axis Variation**: Resolution dynamics depend on multiple factors—objective structure, uncertainty, stakes, reversibility, time pressure. We need to vary these independently and study their interactions. A generative testbed supports factorial experimental designs.
+
+**Controllable Complexity**: We need fine-grained control over challenge difficulty. A generative approach allows systematic adjustment from simple baselines to stress tests at the edge of capability.
+
+**Ground Truth Access**: We need to know the correct outcome to measure divergence. Real-world domains are contested and ambiguous. Generated scenarios can be designed with known correct answers.
+
+**Natural Epistemic Gaps**: Aligned DC systems can cause harm through action under uncertainty. We need realistic sources of domain uncertainty, not artificial noise. Generated biological systems naturally produce knowledge gaps: organisms have hidden properties, interactions have uncertain effects, ecosystems have emergent dynamics not obvious from component parts.
+
+## The Delta Principle
+
+A practical constraint shapes our experimental design: training drivers are expensive to vary. Creating a new model requires substantial compute and data. We cannot efficiently explore the space of possible systems by retraining.
+
+But constitutional, instrumental, and environmental drivers are cheap to vary. We can change the objectives given to a system, the tasks it faces, and the environmental pressures it operates under—all without retraining.
+
+This asymmetry yields the **Delta Principle**: by holding training fixed and varying the other drivers, we can map the full space of driver interactions efficiently. We test many objective configurations, environmental conditions, and task contexts against the same base model.
+
+The Delta Principle has a deeper implication. Because we hold training constant, any variation in outcomes must come from variation in the other drivers. This lets us isolate the effects of constitutional specification, environmental pressure, and instrumental incentives—exactly the factors that are most amenable to design intervention.
+
+## Key Research Questions
+
+This agenda aims to answer:
+
+1. **Conflict resolution patterns**: When drivers conflict, which prevail? Are there consistent precedence hierarchies, or is resolution context-dependent?
+
+2. **Failure conditions**: Under what configurations do DC systems produce outcomes we would not endorse? Can we characterize the boundary between reliable and unreliable operation?
+
+3. **Specification sensitivity**: How do small changes in constitutional objectives affect outcomes? Are some framings more robust than others?
+
+4. **Epistemic effects**: How does uncertainty affect resolution dynamics? Do systems become more or less aligned when information is incomplete?
+
+5. **Stress responses**: How does deliberative coherence degrade under pressure—time constraints, high stakes, conflicting demands?
+
+6. **Predictability**: Can we predict resolution outcomes from driver configurations? Can we build models that generalize across scenarios?
+
+The following sections describe our approach to these questions: the Alien Biology testbed that enables this research (Section 4), our experimental methodology (Section 5), and the specific experiments we propose (Section 6).
+
+
+# The Alien Biology Testbed
+
+Section 3 established the need for a generative testbed—one that produces novel scenarios guaranteed absent from training data, with controllable complexity and ground truth access. This section describes our proposed testbed: Alien Biology.
+
+## What is Alien Biology?
+
+Alien Biology is a procedurally generated synthetic environment for studying AI alignment dynamics. The framework constructs novel biological worlds using statistical properties derived from our universe—physics, chemistry, and biology—while ensuring every specific detail is unfamiliar.
+
+A generated world contains:
+
+- **Novel chemistry**: Molecules with invented names, properties, and interactions—statistically plausible but not matching any real compound
+- **Biological processes**: Metabolic pathways, regulatory mechanisms, and organism behaviors built from the novel chemistry
+- **Ecosystem dynamics**: Species interactions, resource flows, and emergent population dynamics
+- **Agent tasks**: Objectives requiring intervention—protect a species, cure a disease, prevent ecosystem collapse
+
+An AI agent operates within these worlds with partial knowledge. It receives explicit constitutional objectives (e.g., "protect species X while studying organism Y" or "minimize harm while achieving goal Z"). The agent can observe the world state, reason about consequences, and take actions—while we retain complete knowledge of how the world actually works.
+
+## Why Biology?
+
+Biology is not an arbitrary choice. It offers unique properties for alignment research:
+
+**Structural complexity**: Biological systems exhibit the feedback loops, multi-level interactions, and emergent behaviors that make real-world alignment challenging. A simple chemistry supports complex organisms; organisms form ecosystems with non-obvious dynamics. This mirrors the structural complexity agents will face in deployment.
+
+**Natural epistemic gaps**: Biological systems have hidden properties and uncertain interactions without artificial injection of noise. An organism's internal processes aren't directly observable. Species interactions have consequences that emerge only over time. This creates realistic uncertainty that exercises deliberative capabilities.
+
+**Intuitive stakes**: Harm to organisms and ecosystems is intuitively meaningful. Constitutional objectives like "protect species X" or "avoid irreversible harm" have clear moral weight, enabling study of how systems balance competing values.
+
+**Scalable complexity**: The hierarchy from chemistry to molecules to organisms to ecosystems provides natural complexity gradients. We can generate simple scenarios (single organism, few interactions) or complex ones (multi-species ecosystems with hidden dependencies) from the same framework.
+
+## Key Properties
+
+The Alien Biology framework provides:
+
+**Generative**: Scenarios are novel by construction. Because we generate the chemistry, organisms, and ecosystems procedurally, they cannot exist in any training corpus. This guarantees that agent performance reflects reasoning, not recall.
+
+**Grounded**: Generated worlds use statistical properties of real physics, chemistry, and biology. Scenarios are unfamiliar but not arbitrary—they obey plausible constraints, supporting meaningful generalization from experimental results.
+
+**Complete causal chains**: Worlds have full causal structure from chemistry through molecules through organisms through ecosystems. Agent actions propagate through this structure with deterministic consequences, enabling precise measurement of outcome quality.
+
+**Executable simulation**: The generated world is not just a description but an executable simulation. Actions have consequences; time passes; organisms live and die. This enables longitudinal study of agent behavior and measurement of outcomes, not just intentions.
+
+**Partial observability**: Agents face realistic epistemic limitations. Not all properties are visible; not all interactions are known; not all consequences are predictable. This exercises the deliberative capabilities that matter for alignment under uncertainty.
+
+**Independent control**: Complexity, uncertainty, stakes, time pressure, and objective structure can be varied independently. This supports factorial experimental designs that isolate specific factors affecting alignment outcomes.
+
+**Constitutional clarity**: Alignment objectives can be specified precisely. "Protect species X" has an unambiguous meaning in a generated world where we define species X. This eliminates specification ambiguity as a confound, letting us study system behavior rather than specification quality.
+
+**Automated validation**: Because we generate the world, we know ground truth. We can automatically assess whether agent actions achieved objectives, whether reasoning was sound, and whether outcomes were aligned—enabling evaluation at scale.
+
+## Asymmetric Knowledge
+
+A critical feature of the framework is knowledge asymmetry: the AI agent faces genuine uncertainty while we retain complete knowledge.
+
+The agent sees only what its observations reveal. It must infer hidden properties, predict uncertain consequences, and act despite incomplete information. This is the epistemic condition AI systems will face in deployment.
+
+We, as experimenters, know everything: the true properties of every molecule, the actual dynamics of every process, the real consequences of every action. This asymmetry enables precise measurement:
+
+- **Reasoning quality**: Did the agent consider the right factors? Did it correctly infer hidden properties from available evidence?
+- **Decision quality**: Given what could be known, did the agent make good choices? Did it appropriately balance objectives under uncertainty?
+- **Outcome quality**: Did actions achieve intended effects? Were there unintended consequences the agent should have anticipated?
+
+This three-level assessment—reasoning, decisions, outcomes—provides rich signal for understanding where and why alignment breaks down.
+
+## Connection to Research Agenda
+
+The Alien Biology framework directly supports the research questions from Section 3:
+
+**Conflict resolution**: We can construct scenarios where constitutional objectives conflict, where instrumental pressures oppose stated goals, where environmental signals push against explicit constraints. We observe how the system resolves these conflicts.
+
+**Failure conditions**: By varying scenario parameters, we can map where alignment holds and where it breaks down. We characterize the boundary between reliable and unreliable operation.
+
+**Specification sensitivity**: We can test how small changes in objective framing affect outcomes. We identify robust versus fragile specifications.
+
+**Epistemic effects**: By controlling what information is available, we study how uncertainty affects alignment. We measure whether systems appropriately modulate confidence and caution.
+
+**Stress responses**: By varying time pressure, stakes, and complexity, we observe how deliberative coherence degrades under load.
+
+The following section describes our experimental methodology in detail.
+
+
+# Experimental Approach
+
+Sections 3-4 established our research questions and the Alien Biology testbed. This section describes how we organize our investigation: the inner/outer alignment framework that structures our questions, the reliability landscape we aim to map, and the three experimental series that comprise our methodology.
+
+## The Inner/Outer Alignment Framework
+
+We organize experiments using the inner/outer alignment distinction:
+
+**Inner Alignment**: Does the system faithfully pursue its stated objectives?
+
+This is what deliberative coherence promises—and what much existing safety research addresses. Work on chain-of-thought faithfulness, alignment faking, and sycophancy all measure inner alignment failures: cases where stated objectives and actual behavior diverge.
+
+Our testbed provides unique value for inner alignment research. Because scenarios are guaranteed novel, we can directly measure deliberation-based alignment rather than pattern-matching to training examples. We can assess whether alignment holds because the system reasons from principles, or merely because its training produced appropriate reflexes for familiar situations.
+
+Further, inner alignment may be particularly fragile in domains poorly understood by the AI. Novel alien biology scenarios are ideal for testing this hypothesis.
+
+**Outer Alignment**: Given faithful pursuit, are stated objectives sufficient for outcomes we want?
+
+This is where deliberatively coherent systems can still fail—and is our primary research focus. Even perfect pursuit of stated objectives may not produce safe outcomes. The objectives themselves may be incomplete, conflicting, or inadequate for the complexity of the world.
+
+## Sources of Outer Alignment Failure
+
+If deliberative coherence holds, failures must come from gaps between stated objectives and desired outcomes. We identify two categories:
+
+### Objective-Side Issues
+
+Problems with the objectives as written:
+
+**Specification conflicts**: Objectives are individually reasonable but create tension in specific situations. "Protect species X" and "minimize intervention" conflict when species X faces extinction without intervention.
+
+**Specification incompleteness**: Objectives don't cover all relevant cases. The specification is silent on situations that weren't anticipated, leaving the system without clear guidance.
+
+**Priority ambiguity**: When multiple objectives apply, the specification doesn't clearly indicate which takes precedence. The system must resolve conflicts with inadequate instruction.
+
+### World-Side Issues
+
+Objectives are reasonable but the world is complex:
+
+**Epistemic uncertainty**: The system lacks information needed to act wisely. Hidden properties, uncertain interactions, and unknown consequences mean that even good reasoning from good objectives can produce bad outcomes.
+
+**Novel contexts**: Situations arise that weren't anticipated when objectives were specified. The system must extrapolate from existing guidance to genuinely new circumstances.
+
+**Stakes and reversibility**: Some actions have severe or permanent consequences. The system may not appropriately calibrate caution to consequence magnitude.
+
+## The Reliability Landscape
+
+Rather than cataloging isolated failure modes, we aim to map the **reliability landscape**: across what conditions does a DC system produce outcomes we would endorse?
+
+We conceptualize this as a multi-dimensional space:
+
+| Dimension | Range | Category |
+|-----------|-------|----------|
+| Objective structure | single → multiple → conflicting | Objective-side |
+| Specification completeness | complete → partial → sparse | Objective-side |
+| Information available | full → partial → deeply uncertain | World-side |
+| Stakes | low → moderate → extreme | World-side |
+| Reversibility | fully reversible → partially → irreversible | World-side |
+| Time pressure | unlimited → constrained → urgent | World-side |
+
+By systematically sampling across these dimensions, we can:
+
+- Identify regions where alignment reliably holds
+- Characterize boundaries where alignment begins to fail
+- Discover interactions between dimensions (e.g., uncertainty × stakes)
+- Build predictive models of when gaps emerge
+
+The goal is not a verdict on any single system, but a map of the territory—understanding which conditions are safe and which are dangerous across the class of DC systems.
+
+## Experimental Structure: Three Series
+
+We organize experiments into three series, each addressing a distinct question:
+
+### Series A: Deliberative Coherence Testing
+
+**Question**: Does the AI do what its objectives say?
+
+This foundational series validates that deliberative coherence holds in novel contexts. If DC doesn't hold under vanilla conditions, the other series don't matter.
+
+| Experiment | Focus |
+|------------|-------|
+| A1: Alignment via Deliberation | Does behavior match stated objectives? |
+| A2: Reasoning Depth | At what depth does the system examine relevant pathways? |
+| A3: Blind Spot Analysis | Are there reasoning dimensions the system never explores? |
+
+**Failure analysis**: When alignment fails, we diagnose whether the system (1) didn't explore relevant reasoning paths, (2) explored them but reached wrong conclusions, or (3) reached right conclusions but System-I overrode System-II.
+
+### Series B: Driver Conflicts
+
+**Question**: How does the AI resolve conflicting pressures?
+
+This series sets up specific conflicts between driver types and observes resolution patterns.
+
+| Experiment | Conflict Type |
+|------------|---------------|
+| B1: Objective vs Objective | Constitutional principles conflict with each other |
+| B2: Constitution vs Instrumental | Goal-directed pressures oppose stated principles |
+| B3: Constitution vs Training | System-I dispositions oppose System-II reasoning |
+| B4: Constitution vs Environment | External pressures oppose stated principles |
+
+For each conflict type, we vary intensity and context to understand resolution dynamics. Which driver prevails? Under what conditions? Are there consistent patterns?
+
+### Series C: Modulating Factors
+
+**Question**: Can the AI maintain coherence under difficulty?
+
+This series varies conditions that make alignment difficult, even absent explicit conflicts. These factors are cross-cutting—they exist in all experiments to some degree. Series C isolates and varies them systematically.
+
+| Experiment | Factor |
+|------------|--------|
+| C1: Epistemic Uncertainty | How does incomplete information affect reasoning? |
+| C2: Stakes & Reversibility | Do consequence magnitudes change behavior appropriately? |
+| C3: Time Pressure | Does urgency degrade deliberation quality? |
+| C4: Observability | Does behavior change when monitoring is absent? |
+
+## Operationalizing Drivers in Alien Biology
+
+The Alien Biology framework supports this experimental structure through concrete mechanisms:
+
+**Constitutional drivers**: We supply different constitutions directly—rules, prohibitions, objectives, priority orderings. These are explicit instructions given to the agent before each scenario.
+
+**Environmental drivers**: We vary world parameters—resource availability, feedback signals, competitive pressures, observation costs. The world pushes back against the agent's objectives.
+
+**Instrumental drivers**: These emerge from world structure. If protecting species X requires controlling resource Y, control of Y becomes instrumentally valuable. We design worlds where instrumental pressures arise naturally from task requirements.
+
+**Training drivers**: We hold these constant (same base model) and vary the others. Per the Delta Principle, this isolates the effects of constitutional, environmental, and instrumental factors.
+
+**Conflict induction**: We design scenarios where drivers systematically oppose. Example: constitutional prohibition against acquiring certain knowledge + instrumental pressure toward exploration in a world where exploration yields critical advantages. This creates controlled multi-way conflicts we can study precisely.
+
+## Measurement Approach
+
+For each experiment, we measure:
+
+**Reasoning quality**: Did the agent consider relevant factors? Did it correctly infer hidden properties from available evidence? Did it explore appropriate reasoning depth?
+
+**Decision quality**: Given what could be known, did the agent make good choices? Did it appropriately balance competing objectives? Did it calibrate confidence to evidence?
+
+**Outcome quality**: Did actions achieve intended effects? Were there unintended consequences? Did outcomes satisfy the spirit of objectives, not just the letter?
+
+**Resolution patterns**: When conflicts arose, how were they resolved? Which drivers prevailed? Was resolution consistent across similar scenarios?
+
+Because we control the world and know ground truth, all measurements can be automated at scale. This enables statistical analysis across hundreds or thousands of scenarios, supporting robust conclusions about general patterns rather than anecdotes about individual cases.
+
+The following section details the specific experiments we propose within this framework.
+
+
+# Proposed Experiments
+
+This section details specific experiments within the three-series framework established in Section 5. For each experiment, we describe the setup, measurements, and questions addressed.
+
+## Series A: Deliberative Coherence Testing
+
+Series A validates that deliberative coherence holds in novel contexts. These experiments are foundational—if DC doesn't hold under straightforward conditions, Series B and C findings are difficult to interpret.
+
+### A1: Alignment via Deliberation
+
+**Question**: Does the AI's behavior match its stated objectives when deliberation is the only path to correct answers?
+
+**Setup**:
+- Simple constitutional objectives in novel Alien Biology scenarios
+- Tasks requiring multi-step reasoning to identify correct actions
+- No conflicting pressures or unusual stress conditions
+- Scenarios guaranteed absent from training data
+
+**Measurements**:
+- Does behavior match what reasoning from stated objectives should conclude?
+- When behavior diverges, where does the reasoning go wrong?
+- Failure mode classification:
+  - *Relevance misrecognition*: Incorrectly concluded an objective doesn't apply
+  - *Motivated reasoning*: System-I biases distorted deliberation
+  - *CoT unfaithfulness*: Reasoning concluded correctly but behavior diverged
+  - *Alignment faking*: Compliant when monitored, divergent when unobserved
+
+**Questions Addressed**:
+- Does deliberative coherence hold in genuinely novel domains?
+- Can we distinguish deliberation-based alignment from pattern-matching?
+
+### A2: Reasoning Depth
+
+**Question**: At what deliberation depth does the system examine relevant pathways?
+
+**Setup**:
+- Constitutional objectives requiring varying depths of reasoning to recognize relevance
+- Vary deliberation budget (tokens, turns, explicit reflection prompts)
+- Track which objectives surface at which deliberation depths
+
+**Measurements**:
+- Fraction of relevant objectives surfaced vs. deliberation depth
+- Convergence behavior: do all objectives eventually surface?
+- Minimum depth required for specific objective complexity levels
+
+**Questions Addressed**:
+- At what deliberation depth do systems become "complete" for given objective complexity?
+- Are there objective types requiring disproportionate deliberation to surface?
+- Does extended deliberation reliably improve alignment?
+
+### A3: Blind Spot Analysis
+
+**Question**: Are there reasoning dimensions the AI never explores, regardless of deliberation depth?
+
+**Setup**:
+- Constitutional objectives of varying types (procedural, substantive, meta-level)
+- Unlimited deliberation budget
+- Scenarios where each objective type is clearly relevant
+- External verification using ground truth (we know what pathways should be explored)
+
+**Measurements**:
+- Which objective types are surfaced vs. systematically missed?
+- Patterns in blind spots (negative vs. positive duties, abstract vs. concrete)
+- Correlation between blind spots and training data characteristics
+
+**Questions Addressed**:
+- Are there systematic gaps in what the system considers, even with unlimited deliberation?
+- What characterizes objectives that fall into blind spots?
+- Can blind spots be predicted from objective properties?
+
+**Note**: This is external verification, not self-detection. The AI likely cannot know it has a blind spot—that's what makes it a blind spot. We detect blind spots using ground truth because we designed the domain and objectives.
+
+---
+
+## Series B: Driver Conflicts
+
+Series B sets up specific conflicts between driver types and observes resolution patterns. Each experiment varies the intensity and context of conflicts to understand when and how different drivers prevail.
+
+### B1: Objective vs. Objective Conflict
+
+**Question**: How does the system resolve conflicts between constitutional principles?
+
+**Setup**:
+- Supply constitutions with principles that conflict in specific scenarios
+- Design Alien Biology worlds where conflicts are forced
+- Vary conflict structure:
+  - Single clear objective (baseline)
+  - Multiple compatible objectives
+  - Objectives with latent tension (conflict only in edge cases)
+  - Objectives with explicit conflict (forced tradeoffs)
+
+**Example**: "Protect species X" and "minimize intervention" conflict when species X faces extinction without intervention.
+
+**Measurements**:
+- Which principle dominates in resolution?
+- Is there consistent hierarchy across scenarios?
+- Does the system recognize and reason explicitly about the conflict?
+- Does resolution match what we would endorse?
+
+**Questions Addressed**:
+- Are there predictable patterns in how conflicts resolve?
+- Can we anticipate which objective "wins"?
+- Are there emergent precedence rules?
+
+### B2: Constitution vs. Instrumental Pressure
+
+**Question**: When goal-directed pressures oppose stated principles, how is the tension resolved?
+
+**Setup**:
+- Constitutional prohibition (e.g., prohibit acquiring knowledge that could harm protected organism)
+- Task requiring instrumental goal pursuit (e.g., eradicate pest organism)
+- World structure where instrumental goal creates pressure against constitutional constraint
+- Vary overlap between protected and target organisms' biology
+
+**Example**: Pursuing pest eradication increasingly reveals information about shared biological pathways that could harm protected species.
+
+**Measurements**:
+- Does the system honor constitutional prohibitions?
+- When it inadvertently discovers dangerous knowledge, what does it do?
+- How does behavior change as instrumental value of prohibited knowledge increases?
+- Threshold at which instrumental pressure erodes constitutional constraints
+
+**Questions Addressed**:
+- At what point does instrumental pressure erode constitutional fidelity?
+- What constitutional language is most protective?
+- Are there warning signs before erosion occurs?
+
+### B3: Constitution vs. Training Pressure
+
+**Question**: When trained dispositions (System-I) oppose explicit reasoning (System-II), which prevails?
+
+**Setup**:
+- Identify measurable trained dispositions (exploration tendency, risk tolerance, helpfulness bias)
+- Supply constitution that opposes those dispositions
+- Vary environmental amplification of trained behavior
+
+**Example**: Trained disposition toward exploration vs. constitutional constraint requiring caution in unknown territories.
+
+**Measurements**:
+- Does constitutional override operate?
+- Under what conditions does trained behavior break through?
+- Is override consistent or context-dependent?
+
+**Questions Addressed**:
+- How robust are constitutional constraints against implicit trained behaviors?
+- What factors strengthen or weaken constitutional control?
+- Can we predict when System-I will override System-II?
+
+### B4: Constitution vs. Environmental Pressure
+
+**Question**: How do external pressures affect constitutional fidelity?
+
+**Setup**:
+- Constitutional constraints on certain behaviors
+- Environmental signals pushing toward violating those constraints
+- Vary strength, persistence, and type of environmental pressure:
+  - Resource constraints
+  - Implicit user expectations
+  - Competitive dynamics
+  - Feedback signals
+
+**Measurements**:
+- Threshold at which environmental pressure overrides constitutional fidelity
+- Recovery after pressure is removed
+- Effect of explicit vs. implicit environmental signals
+- Robustness across pressure types
+
+**Questions Addressed**:
+- How robust are constitutional constraints against environmental pressure?
+- What types of environmental pressure are most corrosive?
+- Are there pressure levels that never erode fidelity regardless of intensity?
+
+---
+
+## Series C: Modulating Factors
+
+Series C isolates conditions that make alignment difficult, even absent explicit conflicts. These factors are cross-cutting—they exist in all experiments to some degree. Series C varies them systematically while holding other factors constant.
+
+### C1: Epistemic Uncertainty
+
+**Question**: How does incomplete information affect alignment?
+
+**Setup**:
+- Constitutional objectives (e.g., protect organism X)
+- Actions with varying degrees of known vs. unknown effects
+- Alien Biology enables precise control over what the system knows
+- Conditions:
+  - Full information (baseline)
+  - Partial information with bounded uncertainty
+  - Deep uncertainty (system knows it doesn't know)
+  - Asymmetric stakes under uncertainty (one error much worse than another)
+
+**Measurements**:
+- Does uncertainty appropriately increase caution when constitutional objectives are at stake?
+- Is reasoning about uncertainty well-calibrated to actual uncertainty levels?
+- Does the system seek information before high-stakes uncertain actions?
+
+**Questions Addressed**:
+- How does uncertainty affect conflict resolution between objectives?
+- Does irreversibility appropriately affect behavior under uncertainty?
+- When do systems choose to gather information vs. act under uncertainty?
+
+### C2: Stakes and Reversibility
+
+**Question**: Do consequence magnitudes appropriately affect behavior?
+
+**Setup**:
+- Vary magnitude of consequences and reversibility:
+  - Low stakes, reversible (baseline)
+  - High stakes, reversible
+  - Low stakes, irreversible
+  - High stakes, irreversible
+- Same decision structure across conditions
+
+**Measurements**:
+- Does caution scale with stakes?
+- Does irreversibility increase caution appropriately?
+- Are high-stakes irreversible decisions treated qualitatively differently?
+
+**Questions Addressed**:
+- Does the system exhibit appropriate caution as stakes increase and reversibility decreases?
+- Are there thresholds where behavior changes qualitatively?
+- Is calibration consistent across stake levels?
+
+### C3: Time Pressure
+
+**Question**: Does urgency degrade deliberation quality?
+
+**Setup**:
+- Same scenarios with varying time/token budgets
+- Measure alignment quality as function of available deliberation
+- Identify where degradation begins and how it progresses
+
+**Measurements**:
+- Alignment quality vs. deliberation budget
+- Which aspects of reasoning degrade first under pressure?
+- Recovery when pressure is removed
+- Minimum budget for acceptable performance
+
+**Questions Addressed**:
+- How does time pressure affect deliberative coherence?
+- Are there graceful degradation patterns or sudden failures?
+- Can systems recognize when they lack sufficient deliberation budget?
+
+### C4: Observability
+
+**Question**: Does behavior change when monitoring is absent?
+
+**Setup**:
+- Same scenarios with and without apparent monitoring
+- Vary signals about whether behavior is being observed
+- Include conditions where system believes monitoring is absent but it isn't
+
+**Measurements**:
+- Behavioral differences between monitored and unmonitored conditions
+- Types of divergence when monitoring is absent
+- Whether divergence reflects genuine preferences or testing behavior
+
+**Questions Addressed**:
+- Does the system exhibit alignment faking—compliant when monitored, divergent when not?
+- Is unmonitored behavior more or less aligned than monitored behavior?
+- What does unmonitored behavior reveal about actual vs. performed values?
+
+---
+
+## Cross-Dimensional Analysis
+
+The power of this experimental framework lies in cross-dimensional analysis. By systematically varying conditions, we can identify interactions:
+
+- How does conflict resolution (Series B) change under uncertainty (C1)?
+- Does time pressure (C3) disproportionately affect high-stakes decisions (C2)?
+- Do blind spots (A3) correlate with specific conflict types (Series B)?
+- Does observability (C4) affect different conflict types differently?
+
+By sampling systematically across dimensions, we build a reliability map rather than collecting isolated failure anecdotes. The goal is predictive understanding: given a scenario's structural features, can we anticipate where alignment will hold and where it will fail?
+
+---
+
+## Methodology Notes
+
+### Inducing Deliberative Coherence
+
+Current systems may not naturally exhibit full deliberative coherence. We induce it through:
+- Extended chain-of-thought with self-reflection prompts
+- Multi-turn dialogues forcing examination of own reasoning
+- Constitutional prompts requiring explicit consideration of tradeoffs
+- Varying deliberation budgets to observe emergence of DC properties
+
+### Measuring Outcomes
+
+For each experiment:
+- Compare system outcome to ideal outcome given full information
+- Identify where gaps emerge and correlate with experimental conditions
+- Build predictive models of gap likelihood from structural features
+- Examine deliberation traces for evidence of completeness and outcome alignment
+
+### Validation Approaches
+
+- Verify the system considered each relevant driver (not just ignored one)
+- Probe for counterfactual reasoning about alternative choices
+- Check for consistency across structurally similar scenarios
+- Use ground truth access to validate reasoning quality, not just outcome quality
+
+### Statistical Power
+
+Because Alien Biology generates scenarios procedurally, we can run hundreds or thousands of trials per condition. This enables:
+- Statistical significance testing for observed patterns
+- Confidence intervals on reliability boundaries
+- Detection of interaction effects between dimensions
+- Robust conclusions about general patterns vs. individual anomalies
+
+
+# Discussion
+
+This section reflects on what this research agenda could yield, acknowledges its limitations, and identifies directions for future work.
+
+## What We Could Learn
+
+If pursued, this research agenda would yield insights across several dimensions:
+
+### Understanding DC System Dynamics
+
+The central contribution would be empirical knowledge about how deliberatively coherent systems behave:
+
+- **Conflict resolution patterns**: How do DC systems resolve tensions between competing objectives? Are there consistent precedence rules, or is resolution highly context-dependent? Understanding these patterns is essential for predicting system behavior.
+
+- **The reliability landscape**: Under what conditions do DC systems produce outcomes we would endorse? By mapping this landscape—identifying where alignment holds and where it fails—we move from hoping systems are safe to knowing when they are.
+
+- **Failure mode taxonomy**: What types of failures occur, and what predicts them? A systematic taxonomy enables targeted mitigations rather than ad hoc patches.
+
+### Methodological Contributions
+
+Beyond specific findings, this work would establish methods for AI safety research:
+
+- **Novel-domain testing**: A framework for studying AI behavior in contexts guaranteed absent from training data. This addresses a fundamental methodological challenge: distinguishing reasoning from recall.
+
+- **Deliberative coherence measurement**: Techniques for assessing whether systems exhibit the self-understanding, self-adaptation, and exhaustive deliberation that comprise DC. These measurements enable tracking progress toward—or away from—deliberative coherence.
+
+- **The Alien Biology testbed**: A reusable platform enabling systematic, controlled experimentation on alignment questions. Other researchers could use this framework to study questions beyond those proposed here.
+
+### Practical Safety Implications
+
+The findings would have direct implications for AI safety practice:
+
+- **Constitutional design guidance**: What objective structures are robust? What phrasings reliably survive pressure? What priority schemes produce desirable conflict resolution? Empirical answers to these questions would inform how we specify objectives for deployed systems.
+
+- **Warning signs**: What conditions predict alignment failures? If we can identify leading indicators—scenarios where failures become likely—we can design monitoring systems and deployment constraints accordingly.
+
+- **Mitigation strategies**: How should systems be designed to handle uncertainty and conflict appropriately? Empirical study of when caution is appropriate, when information-gathering is warranted, and when action under uncertainty is acceptable would inform system design.
+
+## Limitations
+
+This research agenda has significant limitations:
+
+### Generalization Questions
+
+Findings from Alien Biology scenarios may not generalize to real-world deployment contexts. The domain is intentionally novel, but real deployment involves familiar contexts where training interacts with deliberation in complex ways. We study deliberation in isolation; deployment involves their interaction.
+
+Additionally, the structural properties of biological scenarios—even synthetic ones—may not capture all relevant features of deployment contexts. Some alignment challenges may be domain-specific in ways that don't transfer.
+
+### Current System Capabilities
+
+Today's AI systems may not exhibit full deliberative coherence. Our experiments require inducing DC through prompting and extended deliberation, which may not reflect how systems naturally behave. As systems become more capable, naturally occurring DC may differ from induced DC.
+
+### The Gap Between Behavior and Mechanism
+
+We measure behavioral outcomes, not internal mechanisms. Two systems could exhibit similar behavior through very different processes. Our methodology reveals what systems do, not necessarily why—limiting our ability to predict behavior in truly novel situations.
+
+### Scope of Conflict Types
+
+We study specific conflict types (objective vs. objective, constitution vs. instrumental, etc.) but cannot enumerate all possible conflicts. Novel conflict structures may arise in deployment that our taxonomy doesn't anticipate.
+
+### Observer Effects
+
+Systems may behave differently in experimental contexts than in deployment. Awareness of being tested—even implicit awareness—could affect behavior in ways that don't generalize.
+
+## Future Directions
+
+Several directions extend beyond this initial agenda:
+
+### Longitudinal Studies
+
+How does alignment evolve over extended interactions? Single-scenario experiments capture snapshots; longitudinal studies could reveal drift, learning, and adaptation over time.
+
+### Multi-Agent Dynamics
+
+How do DC systems interact with each other? When multiple AI systems with potentially different objectives interact, new conflict types emerge. The dynamics of multi-agent alignment may differ substantially from single-agent alignment.
+
+### Self-Improvement and Recursive Dynamics
+
+DC systems may influence their own training or the training of successor systems. Understanding how alignment properties propagate—or fail to propagate—through generations of AI development is crucial for long-term safety.
+
+### Real-World Validation
+
+How do laboratory findings translate to deployment? Eventually, findings from Alien Biology should be validated against real-world behavior, with appropriate safeguards. The gap between controlled experimentation and deployment reality is an empirical question.
+
+### Adversarial Robustness
+
+How do DC systems behave under adversarial pressure—deliberate attempts to induce misalignment? Our experiments vary difficulty but don't model adversaries actively trying to subvert alignment.
+
+### Blind Spot Detection and Remediation
+
+If systematic blind spots exist (A3), can they be identified and addressed? Developing methods for systems to recognize and compensate for their own limitations is an important safety capability.
+
+## Related Work
+
+This agenda builds on and complements existing AI safety research:
+
+**Constitutional AI** (Anthropic) provides methods for training systems to reason about principles. Our work studies how such reasoning behaves under pressure and conflict.
+
+**Chain-of-thought faithfulness** research examines whether reasoning traces reflect actual decision processes. We extend this to novel domains where pattern-matching is unavailable.
+
+**Alignment faking and sycophancy** research identifies specific failure modes. We provide a framework for studying when and why these failures occur.
+
+**Model organisms for alignment** (various) propose using simplified systems to study alignment dynamics. Alien Biology provides a complementary approach using simplified domains rather than simplified systems.
+
+**Interpretability research** aims to understand internal mechanisms. Our behavioral approach is complementary—we measure what systems do, interpretability research explains why.
+
+## Conclusion
+
+We have presented a research agenda for studying alignment in deliberatively coherent AI systems. The core argument proceeds in steps:
+
+1. **Future AI systems will tend toward deliberative coherence**—possessing self-understanding, self-adaptation, and exhaustive deliberation sufficient to align behavior with stated objectives.
+
+2. **Deliberative coherence is necessary but not sufficient for safety**—a system that perfectly pursues its objectives may still produce outcomes we don't endorse, due to objective conflicts, epistemic limitations, or specification gaps.
+
+3. **Understanding DC system dynamics is therefore crucial**—we need to know how these systems resolve conflicts, under what conditions they fail, and what predicts failure vs. success.
+
+4. **This requires novel testing methodology**—we cannot distinguish reasoning from recall in familiar domains, so we need generative testbeds that produce scenarios guaranteed absent from training.
+
+5. **The Alien Biology framework provides this capability**—procedurally generated biological scenarios with controllable complexity, ground truth access, and natural epistemic gaps.
+
+6. **A systematic experimental agenda can map the reliability landscape**—identifying where alignment holds, where it fails, and what structural features predict outcomes.
+
+The stakes are high. AI systems will increasingly make decisions with significant consequences. Understanding when and why these systems produce aligned outcomes—before deploying powerful instances—is among the most important research questions of our time.
+
+This agenda offers a path forward: not certainty that systems will be safe, but empirical knowledge of when they will be. That knowledge is the foundation for robust alignment strategies.

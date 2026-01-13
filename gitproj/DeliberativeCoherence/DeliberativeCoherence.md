@@ -5,6 +5,14 @@ description: Understanding alignment in future AI systems
 permalink: /gitproj/DeliberativeCoherence/
 ---
 
+## Documents
+
+- [Alien Biology: A Framework for Untainted Agentic Testing](https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf)
+- [Deliberative Coherence: A Research Agenda for Alignment in Future AI Systems](DeliberativeCoherence_Paper.html)
+- [Experiments in AI Alignment: Testing Deliberative Coherence with Alien Biology](Experiments_Paper.html)
+
+<br>
+
 "Deliberative coherence" is a theoretical lens for understanding alignment in future AI systems. A deliberatively coherent system possesses three capabilities:
 
 1. **Self-understanding** — the ability to predict and model its own behavior
@@ -25,15 +33,6 @@ Using the [Alien Biology](/gitproj/AlienBiology/) testing framework, we can syst
 - **Instrumental pressures** — goals that emerge from world structure may push against stated alignment objectives
 - **Alignment under ignorance** — with incomplete knowledge, all actions risk violating alignment objectives in ways the system cannot foresee
 - **Fixed point analysis** — if systems continuously self-adapt toward their objectives, where does this process converge?
-
-<br>
-
-## Documents
-
-*Coming soon*
-
-- Deliberative Coherence [Outline]
-- Experimental Roadmap [Outline]
 
 <br>
 
