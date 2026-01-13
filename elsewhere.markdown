@@ -51,6 +51,8 @@ permalink: /elsewhere/
 
    <div><b><a href="https://github.com/oblinger">Github</a></b></div>
 
+   <div><b><a href="https://scholar.google.com/citations?user=NyU2n1IAAAAJ">Google Scholar</a></b></div>
+
    <div>CTO at <b><a href="https://www.sportsvisio.com/">SportsVisio</a></b></div>
 
    <!--div>My <a href="/assets/pdfs/CV.pdf">CV</a></div-->
