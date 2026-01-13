@@ -51,7 +51,9 @@ permalink: /gitproj/
 
    <div><a href="https://github.com/oblinger/DVC-DAT">DVC Dat</a> - A framework for persistent, self-describing, Python-accessible data and code that is designed to operate seemlessly with DVC and ML-FLOW (we use a private fork of this at SportsVisio)</div>
 
-   <div><a href="/gitproj/AlienBiology">Alien Biology</a> - A framework for testing agentic AI which avoid the training set taint that occurs with most existing AI testing sets..</div>
+   <div><a href="/gitproj/AlienBiology">Alien Biology</a> - A framework for testing agentic AI which avoid the training set taint that occurs with most existing AI testing sets.</div>
+
+   <div><a href="/gitproj/DeliberativeCoherence">Deliberative Coherence</a> - A theoretical lens for understanding alignment in future AI systems</div>
 
    <div><a href="/ASIO/ASI_Outcomes/">ASI Outcomes</a> - A way of analyzing societal outcomes of Artificial Super Intelligence</div>
 
