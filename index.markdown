@@ -44,7 +44,7 @@ title: Dan Oblinger
    <div style="height: 1vh;"></div>
 
    <div>
-     Hi I'm <b>Dan Oblinger</b> a Machine Learning Manager and mult-exit CTO founder.
+     Hi I'm <b>Dan Oblinger</b> a Machine Learning engineer/manager and multi-exit CTO founder.
    </div>
 
    <div>I live in <a href="https://en.wikipedia.org/wiki/Golden_Gate_Bridge#/media/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg">San Francisco</a> 
