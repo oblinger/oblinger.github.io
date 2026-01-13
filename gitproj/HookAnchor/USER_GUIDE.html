@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HookAnchor - USER GUIDE</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="docs-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HookAnchor - USER GUIDE</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hookanchor-user-guide"
+id="toc-hookanchor-user-guide">HookAnchor User Guide</a>
+<ul>
+<li><a href="#table-of-contents" id="toc-table-of-contents">Table of
+Contents</a></li>
+<li><a href="#installation" id="toc-installation">Installation</a>
+<ul>
+<li><a href="#requirements" id="toc-requirements">Requirements</a></li>
+<li><a href="#installation-steps"
+id="toc-installation-steps">Installation Steps</a></li>
+</ul></li>
+<li><a href="#setting-up-keyboard-triggers"
+id="toc-setting-up-keyboard-triggers">Setting Up Keyboard Triggers</a>
+<ul>
+<li><a
+href="#option-1-built-in-global-hotkey-simplest---no-setup-required"
+id="toc-option-1-built-in-global-hotkey-simplest---no-setup-required">Option
+1: Built-in Global Hotkey (Simplest - No Setup Required!)</a></li>
+<li><a href="#option-2-keyboard-maestro-power-users"
+id="toc-option-2-keyboard-maestro-power-users">Option 2: Keyboard
+Maestro (Power Users)</a></li>
+<li><a href="#option-3-karabiner-elements-caps-lock"
+id="toc-option-3-karabiner-elements-caps-lock">Option 3:
+Karabiner-Elements (Caps Lock)</a></li>
+<li><a href="#option-4-other-automation-tools"
+id="toc-option-4-other-automation-tools">Option 4: Other Automation
+Tools</a></li>
+</ul></li>
+<li><a href="#getting-started" id="toc-getting-started">Getting
+Started</a>
+<ul>
+<li><a href="#triggering-hookanchor"
+id="toc-triggering-hookanchor">Triggering HookAnchor</a></li>
+<li><a href="#basic-navigation" id="toc-basic-navigation">Basic
+Navigation</a></li>
+</ul></li>
+<li><a href="#basic-usage" id="toc-basic-usage">Basic Usage</a>
+<ul>
+<li><a href="#searching-commands" id="toc-searching-commands">Searching
+Commands</a></li>
+<li><a href="#command-organization"
+id="toc-command-organization">Command Organization</a></li>
+<li><a href="#submenus" id="toc-submenus">Submenus</a></li>
+</ul></li>
+<li><a href="#key-features" id="toc-key-features">Key Features</a>
+<ul>
+<li><a href="#universal-command-launcher"
+id="toc-universal-command-launcher">1. Universal Command
+Launcher</a></li>
+<li><a href="#smart-search" id="toc-smart-search">2. Smart
+Search</a></li>
+<li><a href="#markdown-integration" id="toc-markdown-integration">3.
+Markdown Integration</a></li>
+<li><a href="#url-scheme-support" id="toc-url-scheme-support">4. URL
+Scheme Support</a></li>
+<li><a href="#context-grabber" id="toc-context-grabber">5. Context
+Grabber</a></li>
+</ul></li>
+<li><a href="#command-types" id="toc-command-types">Command
+Types</a></li>
+<li><a href="#keyboard-shortcuts" id="toc-keyboard-shortcuts">Keyboard
+Shortcuts</a></li>
+<li><a href="#creating-commands" id="toc-creating-commands">Creating
+Commands</a>
+<ul>
+<li><a href="#method-1-using-templates"
+id="toc-method-1-using-templates">Method 1: Using Templates</a></li>
+<li><a href="#method-2-using-the-grabber"
+id="toc-method-2-using-the-grabber">Method 2: Using the Grabber</a></li>
+<li><a href="#method-3-markdown-files"
+id="toc-method-3-markdown-files">Method 3: Markdown Files</a></li>
+<li><a href="#method-4-direct-configuration"
+id="toc-method-4-direct-configuration">Method 4: Direct
+Configuration</a></li>
+</ul></li>
+<li><a href="#tips-and-tricks" id="toc-tips-and-tricks">Tips and
+Tricks</a>
+<ul>
+<li><a href="#quick-access-patterns"
+id="toc-quick-access-patterns">Quick Access Patterns</a></li>
+<li><a href="#advanced-search" id="toc-advanced-search">Advanced
+Search</a></li>
+<li><a href="#workflow-integration"
+id="toc-workflow-integration">Workflow Integration</a></li>
+</ul></li>
+<li><a href="#troubleshooting"
+id="toc-troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#popup-doesnt-appear" id="toc-popup-doesnt-appear">Popup
+Doesn’t Appear</a></li>
+<li><a href="#commands-not-found" id="toc-commands-not-found">Commands
+Not Found</a></li>
+<li><a href="#url-handling-issues" id="toc-url-handling-issues">URL
+Handling Issues</a></li>
+<li><a href="#performance-issues"
+id="toc-performance-issues">Performance Issues</a></li>
+<li><a href="#reset-configuration" id="toc-reset-configuration">Reset
+Configuration</a></li>
+<li><a href="#restore-from-backup" id="toc-restore-from-backup">Restore
+from Backup</a></li>
+</ul></li>
+<li><a href="#getting-help" id="toc-getting-help">Getting Help</a></li>
+<li><a href="#action-reference" id="toc-action-reference">Action
+Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hookanchor-user-guide">HookAnchor User Guide</h1>
+<p>HookAnchor is a powerful command launcher for macOS that provides
+instant access to applications, files, URLs, and custom commands through
+a keyboard-driven popup interface.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#key-features">Key Features</a></li>
+<li><a href="#command-types">Command Types</a></li>
+<li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+<li><a href="#creating-commands">Creating Commands</a></li>
+<li><a href="#tips-and-tricks">Tips and Tricks</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+<h2 id="installation">Installation</h2>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>macOS 11.0 or later</li>
+<li>A keyboard trigger method (see Setup Keyboard Trigger below)</li>
+</ul>
+<h3 id="installation-steps">Installation Steps</h3>
+<ol type="1">
+<li><p><strong>Download HookAnchor</strong></p>
+<ul>
+<li>Download the latest <code>HookAnchor-{version}.dmg</code> from <a
+href="https://github.com/oblinger/hookanchor/releases">releases</a></li>
+</ul></li>
+<li><p><strong>Install the Application</strong></p>
+<ul>
+<li>Open the DMG file</li>
+<li>Drag HookAnchor.app to your Applications folder</li>
+</ul></li>
+<li><p><strong>First Launch - Bypass macOS Security</strong></p>
+<p>Because HookAnchor is not signed with an Apple Developer certificate,
+macOS will block it on first launch. Follow these steps:</p>
+<ol type="a">
+<li><strong>Try to open</strong> HookAnchor.app from Applications
+(double-click)
+<ul>
+<li>You’ll see: “HookAnchor cannot be opened” with “Move to Trash”
+option</li>
+<li>Click <strong>“Done”</strong> or <strong>“Cancel”</strong></li>
+</ul></li>
+<li><strong>Open System Settings</strong>:
+<ul>
+<li>Go to <strong>System Settings</strong> (or System Preferences)</li>
+<li>Select <strong>Privacy &amp; Security</strong></li>
+<li>Scroll down to the <strong>Security</strong> section</li>
+<li>You should see: <em>“HookAnchor.app was blocked from use because it
+is not from an identified developer”</em></li>
+</ul></li>
+<li><strong>Approve the app</strong>:
+<ul>
+<li>Click <strong>“Open Anyway”</strong></li>
+<li>Try opening HookAnchor.app again</li>
+<li>In the new dialog, click <strong>“Open”</strong></li>
+</ul></li>
+</ol>
+<p><strong>Important Notes:</strong></p>
+<ul>
+<li>The “Open Anyway” button only appears briefly after you try to open
+the app</li>
+<li>If you don’t see it, try opening HookAnchor.app again, then
+immediately check System Settings</li>
+<li>This security bypass is only needed <strong>once</strong> - after
+that, the app opens normally</li>
+</ul></li>
+<li><p><strong>Grant Permissions</strong>: Allow accessibility
+permissions when prompted</p></li>
+<li><p><strong>You’re Done!</strong>: Press
+<strong>Option+Space</strong> (⌥Space) from anywhere to open
+HookAnchor</p></li>
+<li><p><strong>Setup Keyboard Trigger</strong> (choose one method below
+- <strong>Option 1 is recommended</strong>)</p></li>
+</ol>
+<h2 id="setting-up-keyboard-triggers">Setting Up Keyboard Triggers</h2>
+<p>You can trigger HookAnchor using any of these methods:</p>
+<h3
+id="option-1-built-in-global-hotkey-simplest---no-setup-required">Option
+1: Built-in Global Hotkey (Simplest - No Setup Required!)</h3>
+<p><strong>HookAnchor includes a native global hotkey system that works
+out of the box!</strong></p>
+<p>By default, HookAnchor uses <strong>Option+Space</strong> (⌥Space) to
+show the popup from any application.</p>
+<p><strong>To change the hotkey:</strong></p>
+<ol type="1">
+<li><p>Open the configuration file:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> ~/.config/hookanchor/config.yaml</span></code></pre></div></li>
+<li><p>Find the <code>global_hotkey</code> line (around line 21):</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">global_hotkey</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Option+Space&quot;</span></span></code></pre></div></li>
+<li><p>Change it to your preferred key combination:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">global_hotkey</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Option+`&quot;</span><span class="co">          # Option+Backtick</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">global_hotkey</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Command+Shift+Space&quot;</span><span class="co">  # Cmd+Shift+Space</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">global_hotkey</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Control+Space&quot;</span><span class="co">     # Control+Space</span></span></code></pre></div></li>
+<li><p>Save the file and restart HookAnchor</p></li>
+</ol>
+<p><strong>Supported keys:</strong> - <strong>Modifiers</strong>:
+Option, Command, Control, Shift - <strong>Keys</strong>: Space, Return,
+Enter, <code>, Backtick - **Format**: Use</code>+` to combine (e.g.,
+“Option+Space”, “Command+Shift+Return”)</p>
+<p><strong>Advantages:</strong> - ✅ Works from <strong>any
+application</strong> system-wide - ✅ No third-party software needed -
+✅ No system settings to configure - ✅ Just works!</p>
+<h3 id="option-2-keyboard-maestro-power-users">Option 2: Keyboard
+Maestro (Power Users)</h3>
+<p>If you use Keyboard Maestro:</p>
+<ol type="1">
+<li>Create a new macro</li>
+<li>Set trigger to your desired key (e.g., Caps Lock, F13, or any
+combo)</li>
+<li>Add action: <strong>Open a File, Folder or Application</strong></li>
+<li>Select: <code>/Applications/HookAnchor.app</code></li>
+<li>Enable “Reopen” option for instant triggering</li>
+</ol>
+<h3 id="option-3-karabiner-elements-caps-lock">Option 3:
+Karabiner-Elements (Caps Lock)</h3>
+<p>For using Caps Lock as trigger:</p>
+<ol type="1">
+<li><p>Download <a
+href="https://karabiner-elements.pqrs.org/">Karabiner-Elements</a></p></li>
+<li><p>Install and grant permissions</p></li>
+<li><p>Add this rule to use Caps Lock:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Caps Lock opens HookAnchor&quot;</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;manipulators&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;basic&quot;</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;key_code&quot;</span><span class="fu">:</span> <span class="st">&quot;caps_lock&quot;</span> <span class="fu">},</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">&quot;shell_command&quot;</span><span class="fu">:</span> <span class="st">&quot;open /Applications/HookAnchor.app&quot;</span> <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div></li>
+</ol>
+<h3 id="option-4-other-automation-tools">Option 4: Other Automation
+Tools</h3>
+<p>HookAnchor works with any tool that can launch applications: -
+<strong>BetterTouchTool</strong>: Assign to gestures or keys -
+<strong>Alfred</strong>: Create a workflow to launch HookAnchor -
+<strong>Raycast</strong>: Add as a script command -
+<strong>Hammerspoon</strong>: Configure in Lua script</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="triggering-hookanchor">Triggering HookAnchor</h3>
+<p>Once you’ve set up your keyboard trigger, press your chosen key
+combination to open the HookAnchor popup. The popup displays a
+searchable list of all your commands.</p>
+<h3 id="basic-navigation">Basic Navigation</h3>
+<ul>
+<li><strong>Type to search</strong> - Start typing to filter
+commands</li>
+<li><strong>Arrow keys</strong> - Navigate through commands</li>
+<li><strong>Enter</strong> - Execute selected command</li>
+<li><strong>Escape</strong> - Close the popup</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="searching-commands">Searching Commands</h3>
+<ol type="1">
+<li>Press your configured trigger key to open HookAnchor</li>
+<li>Start typing part of a command name</li>
+<li>Matching commands appear instantly</li>
+<li>Use arrow keys to select</li>
+<li>Press Enter to execute</li>
+</ol>
+<h3 id="command-organization">Command Organization</h3>
+<p>Commands are organized into <strong>patches</strong> (groups). When
+you see a command like:</p>
+<pre><code>Work &gt; Project Setup</code></pre>
+<p>This means “Project Setup” is in the “Work” patch.</p>
+<h3 id="submenus">Submenus</h3>
+<p>Similar commands are automatically grouped into submenus. For
+example:</p>
+<pre><code>Git &gt;</code></pre>
+<p>Pressing Enter on this opens a submenu with all Git-related
+commands.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="universal-command-launcher">1. Universal Command Launcher</h3>
+<p>Launch anything from one place: - Applications - Websites - Folders -
+Shell commands - Custom scripts</p>
+<h3 id="smart-search">2. Smart Search</h3>
+<ul>
+<li><strong>Fuzzy matching</strong> - Type “prj” to find “Project”</li>
+<li><strong>Case insensitive</strong> - “TERMINAL” matches
+“Terminal”</li>
+<li><strong>Partial matching</strong> - “doc” matches “Documents”</li>
+</ul>
+<h3 id="markdown-integration">3. Markdown Integration</h3>
+<p>HookAnchor scans configured folders for markdown files and creates
+commands from: - Anchor files (markdown files matching folder names) -
+Code blocks in markdown - Links in markdown files</p>
+<h3 id="url-scheme-support">4. URL Scheme Support</h3>
+<p>Use <code>hook://</code> URLs from anywhere:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> <span class="st">&quot;hook://terminal&quot;</span>    <span class="co"># Opens Terminal</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> <span class="st">&quot;hook://slack&quot;</span>       <span class="co"># Opens Slack</span></span></code></pre></div>
+<h3 id="context-grabber">5. Context Grabber</h3>
+<p>Capture context from any application: 1. Press <code>+</code> in the
+popup 2. Enter a name for the command 3. Wait for countdown 4. Click on
+any window/application 5. HookAnchor creates a command for it</p>
+<h2 id="command-types">Command Types</h2>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 46%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>app</strong></td>
+<td>Launch macOS applications</td>
+<td><code>Terminal : app Terminal</code><br><code>Chrome : app Google Chrome</code></td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td>Open websites in default browser</td>
+<td><code>GitHub : url https://github.com</code><br><code>Google : url https://google.com</code></td>
+</tr>
+<tr>
+<td><strong>folder</strong></td>
+<td>Open folders in Finder</td>
+<td><code>Downloads : folder ~/Downloads</code><br><code>Projects : folder ~/Documents/Projects</code></td>
+</tr>
+<tr>
+<td><strong>cmd</strong></td>
+<td>Execute shell commands</td>
+<td><code>List Files : cmd ls -la</code><br><code>Server : cmd npm run dev</code></td>
+</tr>
+<tr>
+<td><strong>anchor</strong></td>
+<td>Navigate to project folders with markdown files</td>
+<td><code>My Project : anchor ~/Projects/MyProject/MyProject.md</code></td>
+</tr>
+<tr>
+<td><strong>alias</strong></td>
+<td>Reference other commands</td>
+<td><code>Term : alias Terminal</code><br><code>GH : alias GitHub</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Escape</strong></td>
+<td>Close popup</td>
+</tr>
+<tr>
+<td><strong>Enter</strong></td>
+<td>Execute command</td>
+</tr>
+<tr>
+<td><strong>Arrow Keys</strong></td>
+<td>Navigate commands</td>
+</tr>
+<tr>
+<td><strong>/</strong></td>
+<td>Launch first folder matching search</td>
+</tr>
+<tr>
+<td><strong>=</strong></td>
+<td>Template: Edit command from current input</td>
+</tr>
+<tr>
+<td><strong>;</strong></td>
+<td>Template: Edit currently selected command</td>
+</tr>
+<tr>
+<td><strong>+</strong></td>
+<td>Template (Grab): Capture window/app after countdown</td>
+</tr>
+<tr>
+<td><strong>&gt;</strong></td>
+<td>Template (Alias): Create alias to last executed command</td>
+</tr>
+<tr>
+<td><strong>!</strong></td>
+<td>Template (Sub Anchor): Create anchor as subfolder of last
+executed</td>
+</tr>
+<tr>
+<td><strong>&amp;</strong></td>
+<td>Template (Sub Markdown): Create markdown note in same folder as last
+executed</td>
+</tr>
+<tr>
+<td><strong>`</strong></td>
+<td>Show history viewer</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>Show keyboard shortcuts</td>
+</tr>
+<tr>
+<td><strong>Cmd+Shift+H</strong></td>
+<td>Open User Guide (HTML documentation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-commands">Creating Commands</h2>
+<h3 id="method-1-using-templates">Method 1: Using Templates</h3>
+<ol type="1">
+<li>Open HookAnchor (your configured trigger key)</li>
+<li>Press a template key (e.g., <code>%</code> for anchor)</li>
+<li>Enter the command name</li>
+<li>Edit details if needed</li>
+<li>Save the command</li>
+</ol>
+<h3 id="method-2-using-the-grabber">Method 2: Using the Grabber</h3>
+<ol type="1">
+<li>Open HookAnchor</li>
+<li>Press <code>+</code></li>
+<li>Enter a name</li>
+<li>Wait for countdown</li>
+<li>Click the target window</li>
+<li>Command is created automatically</li>
+</ol>
+<h3 id="method-3-markdown-files">Method 3: Markdown Files</h3>
+<p>Create commands in markdown files within your configured
+<code>markdown_roots</code>:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># My Commands</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Terminal : app Terminal</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Chrome : app Google Chrome</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>GitHub : url https://github.com</span></code></pre></div>
+<h3 id="method-4-direct-configuration">Method 4: Direct
+Configuration</h3>
+<p>Edit <code>~/.config/hookanchor/config.yaml</code> to add custom
+functions and templates.</p>
+<h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="quick-access-patterns">Quick Access Patterns</h3>
+<ol type="1">
+<li><strong>Two-letter shortcuts</strong>: Name frequently used commands
+with 2-3 letters
+<ul>
+<li><code>gh</code> → GitHub</li>
+<li><code>tm</code> → Terminal</li>
+<li><code>sl</code> → Slack</li>
+</ul></li>
+<li><strong>Patch prefixes</strong>: Use consistent prefixes for groups
+<ul>
+<li><code>dev-server</code> → Development server</li>
+<li><code>dev-build</code> → Development build</li>
+<li><code>dev-test</code> → Development tests</li>
+</ul></li>
+<li><strong>Smart naming</strong>: Use descriptive but searchable names
+<ul>
+<li>Instead of: “Open”</li>
+<li>Use: “Open Project Folder”</li>
+</ul></li>
+</ol>
+<h3 id="advanced-search">Advanced Search</h3>
+<ul>
+<li><strong>Patch search</strong>: Type patch name to see all commands
+in that group</li>
+<li><strong>Action filter</strong>: Type action name (app, url, cmd) to
+filter by type</li>
+<li><strong>Recent filter</strong>: Recently used commands appear
+first</li>
+</ul>
+<h3 id="workflow-integration">Workflow Integration</h3>
+<ol type="1">
+<li><strong>Project Anchors</strong>: Create anchor commands for each
+project
+<ul>
+<li>Automatically opens folder</li>
+<li>Can launch associated tools</li>
+<li>Integrates with tmux if configured</li>
+</ul></li>
+<li><strong>URL Shortcuts</strong>: Create shortcuts for frequently
+visited sites
+<ul>
+<li>Work sites with work browser</li>
+<li>Personal sites with personal browser</li>
+</ul></li>
+<li><strong>Script Launchers</strong>: Turn complex scripts into simple
+commands
+<ul>
+<li>Build processes</li>
+<li>Deployment scripts</li>
+<li>Testing suites</li>
+</ul></li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="popup-doesnt-appear">Popup Doesn’t Appear</h3>
+<ol type="1">
+<li><p>Verify your keyboard trigger is properly configured:</p>
+<ul>
+<li><strong>macOS Shortcuts</strong>: Check System Settings → Keyboard →
+Keyboard Shortcuts → App Shortcuts</li>
+<li><strong>Keyboard Maestro</strong>: Ensure macro is enabled and
+trigger is set</li>
+<li><strong>Karabiner</strong>: Check Karabiner-Elements is running and
+rule is active</li>
+</ul></li>
+<li><p>Test launching manually:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">open</span> /Applications/HookAnchor.app</span></code></pre></div></li>
+<li><p>Check HookAnchor process is running:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> aux <span class="kw">|</span> <span class="fu">grep</span> HookAnchor</span></code></pre></div></li>
+<li><p>Check logs for errors:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-f</span> ~/.config/hookanchor/anchor.log</span></code></pre></div></li>
+</ol>
+<h3 id="commands-not-found">Commands Not Found</h3>
+<ol type="1">
+<li><p>Check markdown_roots configuration</p></li>
+<li><p>Force rescan with <code>`</code> key</p></li>
+<li><p>Verify file permissions</p></li>
+<li><p>Check scanner is finding files:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ha</span> <span class="at">--rescan</span></span></code></pre></div></li>
+</ol>
+<h3 id="url-handling-issues">URL Handling Issues</h3>
+<ul>
+<li><p>HookAnchor uses a separate URLHandler app for stability</p></li>
+<li><p>Check URL handler registration:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister</span> <span class="at">-dump</span> <span class="kw">|</span> <span class="fu">grep</span> hook:</span></code></pre></div></li>
+<li><p>Should show <code>com.hookanchor.urlhandler</code></p></li>
+</ul>
+<h3 id="performance-issues">Performance Issues</h3>
+<ol type="1">
+<li>Reduce <code>max_rows</code> in configuration</li>
+<li>Disable <code>merge_similar</code> if not needed</li>
+<li>Increase <code>scan_interval_seconds</code></li>
+<li>Check log file size (auto-rotates at 10MB)</li>
+</ol>
+<h3 id="reset-configuration">Reset Configuration</h3>
+<p>To start fresh with default configuration:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Backup current config, then remove it to regenerate defaults</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/.config/hookanchor/config.yaml ~/.config/hookanchor/config.backup.yaml <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> ~/.config/hookanchor/config.yaml</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Restart HookAnchor to load defaults</span></span></code></pre></div>
+<h3 id="restore-from-backup">Restore from Backup</h3>
+<p>To restore commands from a previous backup:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy an earlier version of commands.txt from backups folder</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will load previous commands over the existing commands</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/.config/hookanchor/backups/commands_YYYYMMDD_HHMMSS.txt ~/.config/hookanchor/commands.txt</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Or restore the cache file to replace current commands with earlier version</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> ~/.config/hookanchor/backups/cache_YYYYMMDD_HHMMSS.json ~/.config/hookanchor/commands_cache.json</span></code></pre></div>
+<p>Both files in the backups folder use matching timestamps, so you can
+restore both from the same point in time.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>Use the CLI help system for detailed information:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ha</span> <span class="at">--help</span>              <span class="co"># General help and command overview</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ha</span> <span class="at">--help-config</span>       <span class="co"># Configuration reference</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">ha</span> <span class="at">--help-templates</span>    <span class="co"># Templates and scripting guide</span></span></code></pre></div>
+<p>Additional resources: - <strong>Logs</strong>: Check
+<code>~/.config/hookanchor/anchor.log</code> for debugging -
+<strong>Issues</strong>: Report bugs at
+https://github.com/oblinger/hookanchor/issues</p>
+<h2 id="action-reference">Action Reference</h2>
+<p>Action types specify what kind of command to execute. These are used
+in command definitions to tell HookAnchor how to handle the command.</p>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 37%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td>Launch macOS applications</td>
+<td><code>Terminal : app Terminal</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Open websites in default browser</td>
+<td><code>GitHub : url https://github.com</code></td>
+</tr>
+<tr>
+<td><code>folder</code></td>
+<td>Open folders in Finder</td>
+<td><code>Downloads : folder ~/Downloads</code></td>
+</tr>
+<tr>
+<td><code>cmd</code></td>
+<td>Execute shell commands</td>
+<td><code>List : cmd ls -la</code></td>
+</tr>
+<tr>
+<td><code>anchor</code></td>
+<td>Navigate to project folders with markdown files</td>
+<td><code>Project : anchor ~/Project/Project.md</code></td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>Reference other commands</td>
+<td><code>GH : alias GitHub</code></td>
+</tr>
+<tr>
+<td><code>markdown</code></td>
+<td>Open markdown files in Obsidian</td>
+<td><code>Notes : markdown ~/Documents/notes.md</code></td>
+</tr>
+<tr>
+<td><code>doc</code></td>
+<td>Open document files (Word, Excel, etc.)</td>
+<td><code>Report : doc ~/Documents/report.docx</code></td>
+</tr>
+<tr>
+<td><code>chrome</code></td>
+<td>Open URL in Chrome</td>
+<td><code>Gmail : chrome https://mail.google.com</code></td>
+</tr>
+<tr>
+<td><code>safari</code></td>
+<td>Open URL in Safari</td>
+<td><code>News : safari https://news.ycombinator.com</code></td>
+</tr>
+<tr>
+<td><code>brave</code></td>
+<td>Open URL in Brave browser</td>
+<td><code>Web3 : brave https://ethereum.org</code></td>
+</tr>
+<tr>
+<td><code>notion</code></td>
+<td>Open Notion pages</td>
+<td><code>Tasks : notion https://notion.so/tasks</code></td>
+</tr>
+<tr>
+<td><code>slack</code></td>
+<td>Open Slack channels</td>
+<td><code>Team : slack https://team.slack.com/archives/...</code></td>
+</tr>
+<tr>
+<td><code>contact</code></td>
+<td>Open contact cards</td>
+<td><code>John : contact john@example.com</code></td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>Open text files</td>
+<td><code>Todo : text ~/Documents/todo.txt</code></td>
+</tr>
+<tr>
+<td><code>console</code></td>
+<td>Open Google Cloud Console</td>
+<td><code>GCP : console https://console.cloud.google.com</code></td>
+</tr>
+<tr>
+<td><code>obs_url</code></td>
+<td>Open Obsidian URLs</td>
+<td><code>Daily : obs_url obsidian://open?vault=MyVault</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

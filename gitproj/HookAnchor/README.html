@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HookAnchor - README</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="docs-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HookAnchor - README</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hookanchor-user-documentation"
+id="toc-hookanchor-user-documentation">HookAnchor User Documentation</a>
+<ul>
+<li><a href="#documentation-files"
+id="toc-documentation-files">Documentation Files</a>
+<ul>
+<li><a href="#user_guide.md"
+id="toc-user_guide.md">USER_GUIDE.md</a></li>
+<li><a href="#config_reference.md"
+id="toc-config_reference.md">CONFIG_REFERENCE.md</a></li>
+<li><a href="#hookanchor_action_types.md"
+id="toc-hookanchor_action_types.md">HookAnchor_Action_Types.md</a></li>
+<li><a href="#templates_and_scripting.md"
+id="toc-templates_and_scripting.md">TEMPLATES_AND_SCRIPTING.md</a></li>
+<li><a href="#template_js_variables.md"
+id="toc-template_js_variables.md">TEMPLATE_JS_VARIABLES.md</a></li>
+</ul></li>
+<li><a href="#quick-reference" id="toc-quick-reference">Quick
+Reference</a>
+<ul>
+<li><a href="#key-concepts" id="toc-key-concepts">Key Concepts</a></li>
+<li><a href="#common-actions" id="toc-common-actions">Common
+Actions</a></li>
+<li><a href="#keyboard-shortcuts" id="toc-keyboard-shortcuts">Keyboard
+Shortcuts</a></li>
+<li><a href="#template-keys" id="toc-template-keys">Template
+Keys</a></li>
+</ul></li>
+<li><a href="#configuration-files"
+id="toc-configuration-files">Configuration Files</a></li>
+<li><a href="#version-history" id="toc-version-history">Version
+History</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hookanchor-user-documentation">HookAnchor User
+Documentation</h1>
+<p>Complete documentation for installing, configuring, and using
+HookAnchor.</p>
+<h2 id="documentation-files">Documentation Files</h2>
+<h3 id="user_guide.md"><a href="USER_GUIDE.html">USER_GUIDE.md</a></h3>
+<p><strong>Start here!</strong> Complete installation and usage guide: -
+Installation and setup - Keyboard triggers (Caps Lock, shortcuts) -
+Basic navigation and search - Command types and usage - Creating custom
+commands - Troubleshooting</p>
+<h3 id="config_reference.md"><a
+href="CONFIG_REFERENCE.html">CONFIG_REFERENCE.md</a></h3>
+<p><strong>Configuration reference</strong> for
+<code>~/.config/hookanchor/config.yaml</code>: - All settings explained
+- Actions and templates - Keyboard bindings - JavaScript functions -
+Complete examples</p>
+<h3 id="hookanchor_action_types.md"><a
+href="HookAnchor_Action_Types.html">HookAnchor_Action_Types.md</a></h3>
+<p><strong>Action types reference</strong> for all available action
+behaviors: - Complete list of action types - Arguments and parameters
+for each type - Grabber support information - Configuration examples</p>
+<h3 id="templates_and_scripting.md"><a
+href="TEMPLATES_AND_SCRIPTING.html">TEMPLATES_AND_SCRIPTING.md</a></h3>
+<p><strong>Advanced features</strong> for power users: - Template system
+with variables - JavaScript automation - Custom workflows - Integration
+examples</p>
+<h3 id="template_js_variables.md"><a
+href="TEMPLATE_JS_VARIABLES.html">TEMPLATE_JS_VARIABLES.md</a></h3>
+<p><strong>Variable reference</strong> for templates: - Object-based
+variables (v0.10.0+) - Context variables - Date/time formatting -
+Examples</p>
+<h2 id="quick-reference">Quick Reference</h2>
+<h3 id="key-concepts">Key Concepts</h3>
+<ul>
+<li><strong>Commands</strong>: Named actions (launch apps, open URLs,
+run scripts)</li>
+<li><strong>Patches</strong>: Groups of related commands</li>
+<li><strong>Templates</strong>: Dynamic command generators</li>
+<li><strong>Anchors</strong>: Project folder shortcuts with markdown
+integration</li>
+</ul>
+<h3 id="common-actions">Common Actions</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 43%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td>Launch application</td>
+<td><code>Terminal : app; Terminal</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Open website</td>
+<td><code>GitHub : url; https://github.com</code></td>
+</tr>
+<tr>
+<td><code>folder</code></td>
+<td>Open folder</td>
+<td><code>Downloads : folder; ~/Downloads</code></td>
+</tr>
+<tr>
+<td><code>cmd</code></td>
+<td>Run shell command</td>
+<td><code>Build : cmd; npm run build</code></td>
+</tr>
+<tr>
+<td><code>markdown</code></td>
+<td>Open markdown file</td>
+<td><code>Notes : markdown; ~/notes/daily.md</code></td>
+</tr>
+<tr>
+<td><code>anchor</code></td>
+<td>Project anchor</td>
+<td><code>Project : anchor; ~/projects/my-project/README.md</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enter</code></td>
+<td>Execute selected command</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Close popup</td>
+</tr>
+<tr>
+<td><code>↑↓←→</code></td>
+<td>Navigate commands</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>Edit selected command</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>Create/edit command from input</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Show command in Finder</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Show keyboard shortcuts</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Create sub-anchor</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Create alias</td>
+</tr>
+</tbody>
+</table>
+<h3 id="template-keys">Template Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!</code></td>
+<td>sub_anchor</td>
+<td>Create sub-anchor of last command</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>sub_markdown</td>
+<td>Create markdown in last folder</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>alias</td>
+<td>Alias to last executed command</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>grab</td>
+<td>Capture window/app info</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration-files">Configuration Files</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~/.config/hookanchor/config.yaml</code></td>
+<td>Main configuration</td>
+</tr>
+<tr>
+<td><code>~/.config/hookanchor/commands.txt</code></td>
+<td>Command definitions</td>
+</tr>
+<tr>
+<td><code>~/.config/hookanchor/state.json</code></td>
+<td>Runtime state</td>
+</tr>
+<tr>
+<td><code>~/.config/hookanchor/anchor.log</code></td>
+<td>Debug logs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-history">Version History</h2>
+<p>Current version: <strong>0.10.0</strong></p>
+<p>Major changes in v0.10.0: - Template variables now use object
+notation (<code>{{last_executed.name}}</code> instead of
+<code>{{previous_name}}</code>) - JavaScript-based actions are now
+first-class types - Improved template system with
+<code>use_existing</code> flag</p>
+<p>See <a href="../../CHANGELOG.html">CHANGELOG.md</a> for complete
+history.</p>
+</body>
+</html>

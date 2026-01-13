@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HookAnchor - CONFIG REFERENCE</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="docs-style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HookAnchor - CONFIG REFERENCE</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#hookanchor-configuration-reference"
+id="toc-hookanchor-configuration-reference">HookAnchor Configuration
+Reference</a>
+<ul>
+<li><a href="#table-of-contents" id="toc-table-of-contents">Table of
+Contents</a></li>
+<li><a href="#configuration-file-location"
+id="toc-configuration-file-location">Configuration File
+Location</a></li>
+<li><a href="#popup-settings" id="toc-popup-settings">Popup Settings</a>
+<ul>
+<li><a href="#field-details" id="toc-field-details">Field
+Details</a></li>
+</ul></li>
+<li><a href="#launcher-settings" id="toc-launcher-settings">Launcher
+Settings</a>
+<ul>
+<li><a href="#field-details-1" id="toc-field-details-1">Field
+Details</a></li>
+</ul></li>
+<li><a href="#scanner-settings" id="toc-scanner-settings">Scanner
+Settings</a>
+<ul>
+<li><a href="#field-details-2" id="toc-field-details-2">Field
+Details</a></li>
+</ul></li>
+<li><a href="#markdown-roots" id="toc-markdown-roots">Markdown
+Roots</a></li>
+<li><a href="#keyboard-bindings" id="toc-keyboard-bindings">Keyboard
+Bindings</a>
+<ul>
+<li><a href="#key-format" id="toc-key-format">Key Format</a></li>
+</ul></li>
+<li><a href="#templates" id="toc-templates">Templates</a>
+<ul>
+<li><a href="#template-fields" id="toc-template-fields">Template
+Fields</a></li>
+<li><a href="#template-variables-v0.10.0"
+id="toc-template-variables-v0.10.0">Template Variables
+(v0.10.0+)</a></li>
+</ul></li>
+<li><a href="#grabber-rules" id="toc-grabber-rules">Grabber Rules</a>
+<ul>
+<li><a href="#grabber-rule-fields" id="toc-grabber-rule-fields">Grabber
+Rule Fields</a></li>
+<li><a href="#available-context-in-matchers"
+id="toc-available-context-in-matchers">Available Context in
+Matchers</a></li>
+</ul></li>
+<li><a href="#functions" id="toc-functions">Functions</a>
+<ul>
+<li><a href="#javascript-functions"
+id="toc-javascript-functions">JavaScript Functions</a></li>
+</ul></li>
+<li><a href="#complete-example" id="toc-complete-example">Complete
+Example</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="hookanchor-configuration-reference">HookAnchor Configuration
+Reference</h1>
+<p>This document provides complete reference documentation for the
+HookAnchor configuration file
+(<code>~/.config/hookanchor/config.yaml</code>).</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#configuration-file-location">Configuration File
+Location</a></li>
+<li><a href="#popup-settings">Popup Settings</a></li>
+<li><a href="#launcher-settings">Launcher Settings</a></li>
+<li><a href="#scanner-settings">Scanner Settings</a></li>
+<li><a href="#markdown-roots">Markdown Roots</a></li>
+<li><a href="#keyboard-bindings">Keyboard Bindings</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#grabber-rules">Grabber Rules</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#complete-example">Complete Example</a></li>
+</ol>
+<h2 id="configuration-file-location">Configuration File Location</h2>
+<p>The main configuration file must be located at:</p>
+<pre><code>~/.config/hookanchor/config.yaml</code></pre>
+<p>If this file doesn’t exist, HookAnchor will create it with default
+settings on first run.</p>
+<h2 id="popup-settings">Popup Settings</h2>
+<p>Controls the appearance and behavior of the popup window.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">popup_settings</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Display Configuration</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_rows</span><span class="kw">:</span><span class="at"> </span><span class="dv">25</span><span class="co">                    # Maximum number of rows in command list (1-50)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span><span class="co">                  # Maximum columns for grid layout (1-10)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_window_size</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;1700x1100&quot;</span><span class="co">    # Maximum window size &quot;widthxheight&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">default_window_size</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;600x400&quot;</span><span class="co">  # Default popup size &quot;widthxheight&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">  # Behavior Settings</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">verbose_logging</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">           # Enable detailed debug logging</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">merge_similar</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">             # Merge similar commands into submenus</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_separators</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot; ._-&quot;</span><span class="co">         # Characters that separate words for merging</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">idle_timeout_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">60</span><span class="co">        # Auto-hide after N seconds of inactivity</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">countdown_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span><span class="co">            # Grabber countdown duration</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run_in_background</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">         # Keep process running for instant popup</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">  # System Settings</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">scan_interval_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">30</span><span class="co">       # Filesystem rescan interval</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_log_file_size</span><span class="kw">:</span><span class="at"> </span><span class="dv">10000000</span><span class="co">    # Max log size in bytes before rotation</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">  # Action Types</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">  listed_actions</span><span class="kw">: </span><span class="ch">&gt;</span><span class="co">               # Comma-separated list of valid action types</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    work,notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown</span></code></pre></div>
+<h3 id="field-details">Field Details</h3>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_rows</code></td>
+<td>integer</td>
+<td>25</td>
+<td>Maximum rows displayed in popup list</td>
+</tr>
+<tr>
+<td><code>max_columns</code></td>
+<td>integer</td>
+<td>4</td>
+<td>Columns in multi-column layout</td>
+</tr>
+<tr>
+<td><code>max_window_size</code></td>
+<td>string</td>
+<td>“1700x1100”</td>
+<td>Maximum window dimensions</td>
+</tr>
+<tr>
+<td><code>default_window_size</code></td>
+<td>string</td>
+<td>“600x400”</td>
+<td>Initial window size</td>
+</tr>
+<tr>
+<td><code>verbose_logging</code></td>
+<td>boolean</td>
+<td>true</td>
+<td>Enable debug output to log file</td>
+</tr>
+<tr>
+<td><code>merge_similar</code></td>
+<td>boolean</td>
+<td>true</td>
+<td>Group similar commands into submenus</td>
+</tr>
+<tr>
+<td><code>word_separators</code></td>
+<td>string</td>
+<td>” ._-”</td>
+<td>Characters that split words for grouping</td>
+</tr>
+<tr>
+<td><code>idle_timeout_seconds</code></td>
+<td>integer</td>
+<td>60</td>
+<td>Seconds before auto-hiding popup</td>
+</tr>
+<tr>
+<td><code>countdown_seconds</code></td>
+<td>integer</td>
+<td>5</td>
+<td>Grabber countdown before capture</td>
+</tr>
+<tr>
+<td><code>run_in_background</code></td>
+<td>boolean</td>
+<td>true</td>
+<td>Keep popup_server process running</td>
+</tr>
+<tr>
+<td><code>scan_interval_seconds</code></td>
+<td>integer</td>
+<td>3600</td>
+<td>Seconds between filesystem scans</td>
+</tr>
+<tr>
+<td><code>max_log_file_size</code></td>
+<td>integer</td>
+<td>10000000</td>
+<td>Log rotation threshold (bytes)</td>
+</tr>
+<tr>
+<td><code>listed_actions</code></td>
+<td>string</td>
+<td>(see above)</td>
+<td>Valid action types for commands</td>
+</tr>
+</tbody>
+</table>
+<h2 id="launcher-settings">Launcher Settings</h2>
+<p>Configuration for command execution and application integration.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">launcher_settings</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">js_timeout_ms</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span><span class="co">              # JavaScript execution timeout</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_app_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Obsidian&quot;</span><span class="co">    # Name of Obsidian app</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_vault_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;MyVault&quot;</span><span class="co">   # Your Obsidian vault name</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_vault_path</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Documents/Obsidian&quot;</span><span class="co"> # Path to vault</span></span></code></pre></div>
+<h3 id="field-details-1">Field Details</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 25%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>js_timeout_ms</code></td>
+<td>integer</td>
+<td>5000</td>
+<td>Maximum milliseconds for JavaScript execution</td>
+</tr>
+<tr>
+<td><code>obsidian_app_name</code></td>
+<td>string</td>
+<td>“Obsidian”</td>
+<td>Obsidian application name</td>
+</tr>
+<tr>
+<td><code>obsidian_vault_name</code></td>
+<td>string</td>
+<td>“MyVault”</td>
+<td>Name of your Obsidian vault</td>
+</tr>
+<tr>
+<td><code>obsidian_vault_path</code></td>
+<td>string</td>
+<td>“~/Documents”</td>
+<td>File path to Obsidian vault</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scanner-settings">Scanner Settings</h2>
+<p>Controls filesystem scanning for markdown files and commands.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scanner_settings</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">orphans_path</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Documents/Orphans&quot;</span><span class="co">  # Where to move orphaned files</span></span></code></pre></div>
+<h3 id="field-details-2">Field Details</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 25%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>orphans_path</code></td>
+<td>string</td>
+<td>“~/Documents/Orphans”</td>
+<td>Directory for orphaned markdown files</td>
+</tr>
+</tbody>
+</table>
+<h2 id="markdown-roots">Markdown Roots</h2>
+<p>Directories to scan for markdown files and anchor commands.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">markdown_roots</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;~/Documents/Notes&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;~/Projects&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;~/ob/kmr&quot;</span></span></code></pre></div>
+<p>Each path is recursively scanned for: - Anchor files (markdown files
+matching their parent folder name) - Command definitions in markdown
+files - Folder structures for navigation</p>
+<h2 id="keyboard-bindings">Keyboard Bindings</h2>
+<p>Define keyboard shortcuts for all popup actions.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">keybindings</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Navigation</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">exit_app</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Escape&quot;</span><span class="co">              # Close the popup window</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_down</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowDown&quot;</span><span class="co">      # Move selection down</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_up</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowUp&quot;</span><span class="co">          # Move selection up</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_left</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowLeft&quot;</span><span class="co">      # Move left in grid</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_right</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowRight&quot;</span><span class="co">    # Move right in grid</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">  # Execution</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">execute_command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Enter&quot;</span><span class="co">        # Run selected command</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">  # Special Actions</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">force_rebuild</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`&quot;</span><span class="co">               # Force rescan (backtick)</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_folder</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/&quot;</span><span class="co">                # Open folder of selected item</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open_editor</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;=&quot;</span><span class="co">                # Open command editor</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">edit_active_command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;;&quot;</span><span class="co">        # Edit current selection</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_keys</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;?&quot;</span><span class="co">                  # Display key bindings help</span></span></code></pre></div>
+<h3 id="key-format">Key Format</h3>
+<p>Keys can be specified as: - <strong>Single keys</strong>:
+<code>"a"</code>, <code>"b"</code>, <code>"1"</code>, <code>"2"</code> -
+<strong>Special keys</strong>: <code>"Escape"</code>,
+<code>"Enter"</code>, <code>"Tab"</code>, <code>"Delete"</code> -
+<strong>Arrow keys</strong>: <code>"ArrowUp"</code>,
+<code>"ArrowDown"</code>, <code>"ArrowLeft"</code>,
+<code>"ArrowRight"</code> - <strong>Punctuation</strong>:
+<code>"/"</code>, <code>"="</code>, <code>";"</code>, <code>"?"</code>
+(ASCII form) - <strong>Named keys</strong>: <code>"Backtick"</code>,
+<code>"Plus"</code>, <code>"Minus"</code>, <code>"Equals"</code> -
+<strong>With modifiers</strong>: <code>"cmd+c"</code>,
+<code>"ctrl+shift+f"</code>, <code>"alt+enter"</code></p>
+<h2 id="templates">Templates</h2>
+<p>Templates allow dynamic command creation with user input and
+context.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">templates</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Sub-anchor template (v0.10.0)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sub_anchor</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;!&quot;</span><span class="co">                           # Trigger key</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span><span class="co">                  # Command name from user input</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;anchor&quot;</span><span class="co">                   # Action type</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.folder}}/{{input}}/{{input}}.md&quot;</span><span class="co">  # Create under last folder</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.patch}}&quot;</span><span class="co">  # Use same patch as last command</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">validate_last_executed_folder</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">  # Ensure folder exists</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create sub-anchor under last executed&quot;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">  # Alias template</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">alias</span><span class="kw">:</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;&gt;&quot;</span><span class="co">                           # Trigger key</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span><span class="co">                  # Alias name</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;alias&quot;</span><span class="co">                    # Alias action</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.name}}&quot;</span><span class="co">     # Target command</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{last_executed.patch}}&quot;</span><span class="co">  # Same patch</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">use_existing</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">                 # Reference existing command</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create alias to last executed&quot;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">  # Date-based note template</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">note</span><span class="kw">:</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;$&quot;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{date.year}}-{{date.month}}-{{date.day}} {{input}}&quot;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;markdown&quot;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Notes/{{date.year}}/{{date.month}}/{{input}}.md&quot;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Notes&quot;</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">file</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Notes/{{date.year}}/{{date.month}}&quot;</span><span class="co">  # Create directory</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="fu">    contents</span><span class="kw">: </span><span class="ch">|</span><span class="co">                        # File contents</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>      # {{input}}</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      Created: {{date.year}}-{{date.month}}-{{date.day}} {{date.hour}}:{{date.minute}}</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create dated note&quot;</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">  # Grabber template</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">grab</span><span class="kw">:</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;+&quot;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">grab</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co">                            # Countdown seconds</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{grabbed.action}}&quot;</span><span class="co">      # From grabbed context</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{grabbed.arg}}&quot;</span><span class="co">            # From grabbed context</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">group</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Apps&quot;</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Capture window context&quot;</span></span></code></pre></div>
+<h3 id="template-fields">Template Fields</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td>string</td>
+<td>Keyboard trigger for template</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Command name (supports variables)</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>string</td>
+<td>Action type (app, url, folder, etc.)</td>
+</tr>
+<tr>
+<td><code>arg</code></td>
+<td>string</td>
+<td>Action argument (supports variables)</td>
+</tr>
+<tr>
+<td><code>patch</code></td>
+<td>string</td>
+<td>Command group/patch</td>
+</tr>
+<tr>
+<td><code>flags</code></td>
+<td>string</td>
+<td>Optional execution flags</td>
+</tr>
+<tr>
+<td><code>edit</code></td>
+<td>boolean</td>
+<td>Open editor before saving</td>
+</tr>
+<tr>
+<td><code>grab</code></td>
+<td>integer</td>
+<td>Grabber countdown seconds</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>string</td>
+<td>Command group</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>string</td>
+<td>Directory to create</td>
+</tr>
+<tr>
+<td><code>contents</code></td>
+<td>string</td>
+<td>File contents to write</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>Template description</td>
+</tr>
+<tr>
+<td><code>validate_last_executed_folder</code></td>
+<td>boolean</td>
+<td>Check last_executed folder exists</td>
+</tr>
+<tr>
+<td><code>use_existing</code></td>
+<td>boolean</td>
+<td>Reference existing command (for aliases)</td>
+</tr>
+<tr>
+<td><code>file_rescan</code></td>
+<td>boolean</td>
+<td>Rescan after execution</td>
+</tr>
+</tbody>
+</table>
+<h3 id="template-variables-v0.10.0">Template Variables (v0.10.0+)</h3>
+<p>Templates use JavaScript object notation for variables. See <a
+href="TEMPLATE_JS_VARIABLES.html">TEMPLATE_JS_VARIABLES.md</a> for
+complete reference.</p>
+<h4 id="core-objects">Core Objects</h4>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 37%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>Object</th>
+<th>Description</th>
+<th>Example Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input</code></td>
+<td>User input text</td>
+<td><code>{{input}}</code>, <code>{{input.toUpperCase()}}</code></td>
+</tr>
+<tr>
+<td><code>last_executed</code></td>
+<td>Last executed command</td>
+<td><code>{{last_executed.name}}</code>,
+<code>{{last_executed.folder}}</code></td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td>Currently selected command</td>
+<td><code>{{selected.name}}</code>, <code>{{selected.patch}}</code></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Date/time information</td>
+<td><code>{{date.year}}</code>, <code>{{date.month}}</code>,
+<code>{{date.day}}</code></td>
+</tr>
+<tr>
+<td><code>grabbed</code></td>
+<td>Grabbed context</td>
+<td><code>{{grabbed.action}}</code>, <code>{{grabbed.arg}}</code></td>
+</tr>
+<tr>
+<td><code>env</code></td>
+<td>Environment variables</td>
+<td><code>{{env.home}}</code>, <code>{{env.user}}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="common-properties">Common Properties</h4>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 33%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Description</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{last_executed.name}}</code></td>
+<td>Last command name</td>
+<td>“Terminal”</td>
+</tr>
+<tr>
+<td><code>{{last_executed.folder}}</code></td>
+<td>Last command’s folder</td>
+<td>“/Users/name/project”</td>
+</tr>
+<tr>
+<td><code>{{last_executed.patch}}</code></td>
+<td>Last command’s patch</td>
+<td>“Dev”</td>
+</tr>
+<tr>
+<td><code>{{last_executed.action}}</code></td>
+<td>Last command’s action</td>
+<td>“app”</td>
+</tr>
+<tr>
+<td><code>{{selected.name}}</code></td>
+<td>Selected command name</td>
+<td>“VS Code”</td>
+</tr>
+<tr>
+<td><code>{{date.year}}-{{date.month}}-{{date.day}}</code></td>
+<td>Current date</td>
+<td>“2025-01-20”</td>
+</tr>
+<tr>
+<td><code>{{grabbed.action}}</code></td>
+<td>Grabbed action type</td>
+<td>“url”</td>
+</tr>
+<tr>
+<td><code>{{grabbed.arg}}</code></td>
+<td>Grabbed argument</td>
+<td>“https://example.com”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grabber-rules">Grabber Rules</h2>
+<p>Rules for capturing application context to create commands.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grabber_rules</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Browser URL capture</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chrome URL&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">matcher</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bundleId === &#39;com.google.Chrome&#39; &amp;&amp; props.url ? props.url : null&quot;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;chrome&quot;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">group</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Web&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">  # Finder file selection</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Finder Anchor&quot;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">matcher</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bundleId === &#39;com.apple.finder&#39; &amp;&amp; props.selection &amp;&amp; props.recommendedAction === &#39;anchor&#39; ? props.selection : null&quot;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;anchor&quot;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">group</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Files&quot;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">  # Application capture</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Application Launcher&quot;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">matcher</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;app &amp;&amp; app.length &gt; 0 ? app : null&quot;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;app&quot;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">group</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Apps&quot;</span></span></code></pre></div>
+<h3 id="grabber-rule-fields">Grabber Rule Fields</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Rule display name</td>
+</tr>
+<tr>
+<td><code>matcher</code></td>
+<td>string</td>
+<td>JavaScript expression returning captured value or null</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>string</td>
+<td>Action type for created command</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>string</td>
+<td>Group/patch for command</td>
+</tr>
+</tbody>
+</table>
+<h3 id="available-context-in-matchers">Available Context in
+Matchers</h3>
+<ul>
+<li><code>bundleId</code> - Application bundle identifier</li>
+<li><code>app</code> - Application name</li>
+<li><code>title</code> - Window title</li>
+<li><code>props.url</code> - Current URL (browsers)</li>
+<li><code>props.selection</code> - Selected file (Finder)</li>
+<li><code>props.path</code> - Current path (Finder)</li>
+<li><code>props.recommendedAction</code> - Suggested action type</li>
+<li><code>props.channel</code> - Slack channel name</li>
+</ul>
+<h2 id="functions">Functions</h2>
+<p>Define reusable functions for command execution.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">functions</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">  # Simple function mappings</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_chrome</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fn</span><span class="kw">:</span><span class="at"> open_with</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">app</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Google Chrome&quot;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{arg}}&quot;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">  # JavaScript functions</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">  action_folder</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    const folderPath = &quot;{{arg}}&quot;;</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    log(`Opening folder: ${folderPath}`);</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    if (folderPath.startsWith(&#39;/&#39;) || folderPath.startsWith(&#39;~&#39;)) {</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      open_folder(folderPath);</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    } else {</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      const vaultRoot = getObsidianVaultPath();</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      const absolutePath = joinPath(vaultRoot, folderPath);</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      open_folder(absolutePath);</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">  action_cmd</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    const fullCmd = &quot;{{arg}}&quot;;</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    // Check for windowed execution flag</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    if (fullCmd.startsWith(&#39;W &#39;)) {</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>      const command = fullCmd.substring(2);</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>      const escapedCmd = command.replace(/&quot;/g, &#39;\\&quot;&#39;);</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      shell(`osascript -e &#39;tell application &quot;Terminal&quot; to do script &quot;${escapedCmd}&quot;&#39;`);</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    } else {</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      shell(fullCmd);</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
+<h3 id="javascript-functions">JavaScript Functions</h3>
+<p>JavaScript functions are defined in your config.yaml under
+<code>js_functions</code>. These functions have access to the HookAnchor
+JavaScript API.</p>
+<p>For the complete JavaScript API reference, see the actual functions
+defined in your config: - Built-in action functions:
+<code>action_doc</code>, <code>action_folder</code>,
+<code>action_cmd</code>, etc. - Helper functions:
+<code>openMarkdownFile</code>, <code>openAnchor</code>,
+<code>openObsidianFile</code>, etc.</p>
+<h4 id="core-api-categories">Core API Categories</h4>
+<p>The JavaScript environment provides these function categories:</p>
+<p><strong>Logging &amp; Debug</strong> - <code>log()</code>,
+<code>debug()</code>, <code>error()</code> - Logging at different
+levels</p>
+<p><strong>File System</strong> - <code>readFile()</code>,
+<code>writeFile()</code>, <code>fileExists()</code> - File operations -
+<code>joinPath()</code>, <code>dirname()</code>, <code>basename()</code>
+- Path manipulation - <code>expandHome()</code> - Expand tilde paths</p>
+<p><strong>System Execution</strong> - <code>shell()</code> - Execute
+shell commands - <code>shell_sync()</code> - Synchronous execution (use
+<code>/bin/sleep</code> not <code>sleep</code>!) -
+<code>spawnDetached()</code> - Launch detached processes</p>
+<p><strong>Application Control</strong> - <code>launch_app()</code> -
+Launch macOS applications - <code>open_folder()</code> - Open in Finder
+- <code>open_url()</code> - Open URLs in browser -
+<code>activateApp()</code> - Bring app to front</p>
+<p><strong>Obsidian Integration</strong> -
+<code>getObsidianVault()</code>, <code>getObsidianVaultPath()</code> -
+Vault info - <code>openObsidianFile()</code> - Open notes in
+Obsidian</p>
+<p><strong>Command Execution</strong> - <code>launch()</code> - Execute
+HookAnchor commands by name - <code>change_directory()</code> - Change
+working directory</p>
+<p>For implementation details, check your
+<code>~/.config/hookanchor/config.yaml</code> js_functions section.</p>
+<h2 id="complete-example">Complete Example</h2>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HookAnchor Configuration</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">popup_settings</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_rows</span><span class="kw">:</span><span class="at"> </span><span class="dv">25</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">verbose_logging</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">merge_similar</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_separators</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot; ._-&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">scan_interval_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">30</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">idle_timeout_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">60</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">countdown_seconds</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run_in_background</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_window_size</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;1700x1100&quot;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">default_window_size</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;600x400&quot;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max_log_file_size</span><span class="kw">:</span><span class="at"> </span><span class="dv">10000000</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">  listed_actions</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    alias,anchor,app,url,folder,cmd,chrome,safari,brave,firefox,work,</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    notion,obs,obs_url,1pass,rewrite,doc,contact,slack,text,shutdown</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="fu">launcher_settings</span><span class="kw">:</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">js_timeout_ms</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_app_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Obsidian&quot;</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_vault_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;MyVault&quot;</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">obsidian_vault_path</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Documents/Obsidian&quot;</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="fu">scanner_settings</span><span class="kw">:</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">orphans_path</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;~/Documents/Orphans&quot;</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">markdown_roots</span><span class="kw">:</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;~/Documents/Notes&quot;</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;~/Projects&quot;</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">keybindings</span><span class="kw">:</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">exit_app</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Escape&quot;</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_down</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowDown&quot;</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_up</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowUp&quot;</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_left</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowLeft&quot;</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navigate_right</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ArrowRight&quot;</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">execute_command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Enter&quot;</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">force_rebuild</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`&quot;</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_folder</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/&quot;</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open_editor</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;=&quot;</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">edit_active_command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;;&quot;</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">show_keys</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;?&quot;</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="fu">templates</span><span class="kw">:</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">default</span><span class="kw">:</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">key</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;%&quot;</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{input}}&quot;</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;anchor&quot;</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">arg</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;/path/to/{{input}}/{{input}}.md&quot;</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">patch</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{selected_patch}}&quot;</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Create new anchor&quot;</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="fu">grabber_rules</span><span class="kw">:</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chrome URL&quot;</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">matcher</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bundleId === &#39;com.google.Chrome&#39; &amp;&amp; props.url ? props.url : null&quot;</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">action</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;chrome&quot;</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">group</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Web&quot;</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="fu">functions</span><span class="kw">:</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_app</span><span class="kw">:</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fn</span><span class="kw">:</span><span class="at"> launch_app</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{arg}}&quot;</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">action_url</span><span class="kw">:</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fn</span><span class="kw">:</span><span class="at"> open_url</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;{{arg}}&quot;</span></span></code></pre></div>
+</body>
+</html>
