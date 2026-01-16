@@ -15,7 +15,7 @@ Many existing large language model tests are susceptible to training set taint a
 
  <br> 
 
-[Alien Biology Whitepaper](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf) [Draft]
+[Alien Biology Whitepaper](/gitproj/AlienBiology/whitepaper/) | [PDF](/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf)
 
 <br>
 
@@ -30,7 +30,7 @@ Below are some samples from the data artifacts being used as the statistical bas
 - [5 Interrelated Cell Respiration Processes](/gitproj/AlienBiology/CellMetabolism5.pdf)
 
 
-Dan Oblinger (c) 2025
+© 2025 Dan Oblinger
 
 <!--
 
