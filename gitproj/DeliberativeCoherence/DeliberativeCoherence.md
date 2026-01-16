@@ -1,7 +1,7 @@
 ---
 layout: cayman
-title: Alien Biology
-description: Deliberative Coherence
+title: Alien Biology / Deliberative Coherence
+description: Understanding alignment in future AI systems
 permalink: /gitproj/DeliberativeCoherence/
 ---
 
