@@ -5,11 +5,15 @@ description: Understanding alignment in future AI systems
 permalink: /gitproj/DeliberativeCoherence/
 ---
 
-## Documents
+<div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 2px solid #4a9eff; border-radius: 12px; padding: 30px; margin: 20px 0; box-shadow: 0 4px 20px rgba(74, 158, 255, 0.3);">
+<h2 style="color: #4a9eff; margin-top: 0; text-align: center; font-size: 1.4em;">Documents</h2>
 
-- [Alien Biology: A Framework for Untainted Agentic Testing](https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf)
-- [Deliberative Coherence: A Research Agenda for Alignment in Future AI Systems](DeliberativeCoherence_Paper.html)
-- [Experiments in AI Alignment: Testing Deliberative Coherence with Alien Biology](Experiments_Paper.html)
+<p style="font-size: 1.5em; line-height: 2.2; margin: 0;">
+<strong>1.</strong>&nbsp; <a href="https://oblinger.github.io/gitproj/AlienBiology/AlienBiologyWhitepaper.pdf" style="color: #fff;">Alien Biology: A Framework for Untainted Agentic Testing</a><br>
+<strong>2.</strong>&nbsp; <a href="DeliberativeCoherence_Paper.html" style="color: #fff;">Deliberative Coherence: A Research Agenda</a><br>
+<strong>3.</strong>&nbsp; <a href="Experiments_Paper.html" style="color: #fff;">Experiments in AI Alignment</a>
+</p>
+</div>
 
 <br>
 
