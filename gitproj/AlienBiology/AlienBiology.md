@@ -1,10 +1,5 @@
----
-layout: cayman
-title: Alien Biology
-description: A next-generation agentic AI testing framework
-permalink: /gitproj/AlienBiology/
----
-Many existing large language model tests are susceptible to training set taint and are not designed to test the very long interaction chains expected with Agentic AI.  Alien Biology aims to address these concerns:
+:>> [[_]] > [[Code]] > [[binproj]] > [[Website]] > [[gitproj/gitproj]] > [AlienBiology markdown](hook://p/AlienBiology%20markdown)
+    [[AlienBiologyWhitepaper.pdf]], [[AlienBiologyWhitepaper]], [[CellMetabolism5.pdf]], [[CellReactions.pdf]], [[AlienBiology/CellReactions]], [[Photosynthesis.pdf]]
 
 
 **Alien Biology**:
