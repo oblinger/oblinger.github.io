@@ -1,5 +1,5 @@
 :>> [[_]] > [[Code]] > [[binproj]] > [[Website]] > [[gitproj/gitproj]] > [AlienBiology markdown](hook://p/AlienBiology%20markdown)
-    [[AlienBiologyWhitepaper.pdf]], [[AlienBiologyWhitepaper]], [[CellMetabolism5.pdf]], [[CellReactions.pdf]], [[AlienBiology/CellReactions]], [[Photosynthesis.pdf]]
+    [[AlienBiologyWhitepaper.pdf]], [[AlienBiology/AlienBiologyWhitepaper]], [[CellMetabolism5.pdf]], [[CellReactions.pdf]], [[AlienBiology/CellReactions]], [[Photosynthesis.pdf]]
 
 
 **Alien Biology**:
