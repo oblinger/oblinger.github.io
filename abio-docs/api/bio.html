@@ -3910,6 +3910,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#alienbio.bio.MockDat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MockDat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#alienbio.bio.AtomImpl" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7981,6 +7992,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alienbio.bio.MockDat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MockDat
+      
+    </span>
+  </a>
   
 </li>
         
@@ -13616,6 +13638,87 @@ Applies reactions within compartments and flows across membranes.</p>
 
 
 
+<h3 id="alienbio.bio.MockDat" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>MockDat</code>
+
+
+<a href="#alienbio.bio.MockDat" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Lightweight mock DAT for hydrating entities without a real DAT.</p>
+<p>Used when creating entities from YAML specs that don't have
+backing DAT files. Provides the minimal interface needed by Entity.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src/alienbio/infra/entity.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-450">450</a></span>
+<span class="normal"><a href="#__codelineno-0-451">451</a></span>
+<span class="normal"><a href="#__codelineno-0-452">452</a></span>
+<span class="normal"><a href="#__codelineno-0-453">453</a></span>
+<span class="normal"><a href="#__codelineno-0-454">454</a></span>
+<span class="normal"><a href="#__codelineno-0-455">455</a></span>
+<span class="normal"><a href="#__codelineno-0-456">456</a></span>
+<span class="normal"><a href="#__codelineno-0-457">457</a></span>
+<span class="normal"><a href="#__codelineno-0-458">458</a></span>
+<span class="normal"><a href="#__codelineno-0-459">459</a></span>
+<span class="normal"><a href="#__codelineno-0-460">460</a></span>
+<span class="normal"><a href="#__codelineno-0-461">461</a></span>
+<span class="normal"><a href="#__codelineno-0-462">462</a></span>
+<span class="normal"><a href="#__codelineno-0-463">463</a></span>
+<span class="normal"><a href="#__codelineno-0-464">464</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-450" name="__codelineno-0-450"></a><span class="k">class</span><span class="w"> </span><span class="nc">MockDat</span><span class="p">:</span>
+<a id="__codelineno-0-451" name="__codelineno-0-451"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Lightweight mock DAT for hydrating entities without a real DAT.</span>
+<a id="__codelineno-0-452" name="__codelineno-0-452"></a>
+<a id="__codelineno-0-453" name="__codelineno-0-453"></a><span class="sd">    Used when creating entities from YAML specs that don&#39;t have</span>
+<a id="__codelineno-0-454" name="__codelineno-0-454"></a><span class="sd">    backing DAT files. Provides the minimal interface needed by Entity.</span>
+<a id="__codelineno-0-455" name="__codelineno-0-455"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-456" name="__codelineno-0-456"></a>
+<a id="__codelineno-0-457" name="__codelineno-0-457"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-458" name="__codelineno-0-458"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+<a id="__codelineno-0-459" name="__codelineno-0-459"></a>
+<a id="__codelineno-0-460" name="__codelineno-0-460"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_path_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-461" name="__codelineno-0-461"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span>
+<a id="__codelineno-0-462" name="__codelineno-0-462"></a>
+<a id="__codelineno-0-463" name="__codelineno-0-463"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-464" name="__codelineno-0-464"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;/mock/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h3 id="alienbio.bio.AtomImpl" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>AtomImpl</code>
 
@@ -14490,13 +14593,13 @@ representing chemical elements with their properties.</p>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        Returns:</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">            New MoleculeImpl instance</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;molecule&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>        <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mol/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mol/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-86" name="__codelineno-0-86"></a>
 <a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a>            <span class="n">name</span><span class="p">,</span>
@@ -15091,13 +15194,13 @@ representing chemical elements with their properties.</p>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    Returns:</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">        New MoleculeImpl instance</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;molecule&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mol/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mol/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-86" name="__codelineno-0-86"></a>
 <a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="n">name</span><span class="p">,</span>
@@ -15532,13 +15635,13 @@ Each reaction has:
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">        Returns:</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">            New ReactionImpl instance</span>
 <a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-92" name="__codelineno-0-92"></a>
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;reaction&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>        <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rxn/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rxn/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>        <span class="c1"># Build reactants dict: {MoleculeImpl: coefficient}</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="n">reactants</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Molecule</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -16222,13 +16325,13 @@ Each reaction has:
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">    Returns:</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">        New ReactionImpl instance</span>
 <a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-92" name="__codelineno-0-92"></a>
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;reaction&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rxn/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rxn/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="c1"># Build reactants dict: {MoleculeImpl: coefficient}</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">reactants</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Molecule</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -19414,13 +19517,13 @@ chem.reactions["step1"]  # -&gt; reaction1</p>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        Returns:</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">            New ChemistryImpl with hydrated molecules and reactions</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-103" name="__codelineno-0-103"></a>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;chemistry&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>        <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-107" name="__codelineno-0-107"></a>        <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chem/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>            <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chem/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="c1"># Extract molecules and reactions data</span>
 <a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="n">molecules_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;molecules&quot;</span><span class="p">,</span> <span class="p">{})</span>
@@ -19962,13 +20065,13 @@ chem.reactions["step1"]  # -&gt; reaction1</p>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">    Returns:</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">        New ChemistryImpl with hydrated molecules and reactions</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MockDat</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">..infra.entity</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockDat</span>
 <a id="__codelineno-0-103" name="__codelineno-0-103"></a>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span> <span class="ow">or</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;chemistry&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="c1"># Create mock dat if needed</span>
 <a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">_MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chem/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="n">dat</span> <span class="o">=</span> <span class="n">MockDat</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chem/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="c1"># Extract molecules and reactions data</span>
 <a id="__codelineno-0-111" name="__codelineno-0-111"></a>    <span class="n">molecules_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;molecules&quot;</span><span class="p">,</span> <span class="p">{})</span>
