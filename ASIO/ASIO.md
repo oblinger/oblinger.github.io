@@ -1,5 +1,4 @@
 :>> [[_]] > [[prj]] > [ASIO](hook://p/ASIO)
-    [[ASIO/ASIO Log]], [[ASIO/ASIO]]
 
   -
   ~~[[EOCP Median Path]]~~ 
@@ -13,6 +12,7 @@
   (See [[EOC]])
 
 . __ .
+[ASIO markdown](hook://ASIO%20markdown) -
 
 
 
