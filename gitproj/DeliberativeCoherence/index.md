@@ -67,7 +67,7 @@ We believe the controllability of [Alien Biology](/gitproj/AlienBiology/) allows
 - **Constitutional conflicts** — when stated objectives contradict each other, how does resolution occur?
 - **Instrumental pressures** — goals that emerge from world structure may push against stated alignment objectives.
 - **Alignment under ignorance** — with incomplete knowledge, all actions risk violating alignment objectives in ways the system cannot foresee.
-- **Fixed point analysis** — if systems continuously self-adapt toward their objectives, where does this process converge?
+- **Fixed point analysis** — if systems continuously self-refine both behavior *and constitution* toward coherence, where does this process converge?
 
 <br>
 
