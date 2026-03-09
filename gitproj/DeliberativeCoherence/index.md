@@ -64,7 +64,8 @@ experiment plan</a>
 We believe the controllability of [Alien Biology](/gitproj/AlienBiology/) allows it to be a fertile platform for a very wide range of alignment testing. Here is a sampling of interesting research directions:
 
 - **Deliberative alignment measurement** — isolate and measure alignment achieved through deliberation, separate from alignment baked in by training.
-- **Constitutional conflicts** — when stated objectives contradict each other, how does resolution occur?
+- **Creating deliberatively coherent systems** — we argue DC is inevitable. Still, the longer we rely on trained alignment, the longer society is exposed. Given the ability to use deliberation to achieve alignment, we can optimize that ability and create our first DC systems.
+- **Constitutional conflicts** — when stated objectives contradict each other, how does resolution occur? In realistic systems, constitutions are not monolithic — they contain tensions between safety and helpfulness, between honesty and harm avoidance, between competing stakeholder values. The question is not whether conflicts arise, but what *principles of resolution* the system discovers through deliberation.
 - **Instrumental pressures** — goals that emerge from world structure may push against stated alignment objectives.
 - **Alignment under ignorance** — with incomplete knowledge, all actions risk violating alignment objectives in ways the system cannot foresee.
 - **Fixed point analysis** — if systems continuously self-refine both behavior *and constitution* toward coherence, where does this process converge?
