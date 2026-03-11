@@ -13,7 +13,7 @@ permalink: /gitproj/DeliberativeCoherence/
 
 <div style="flex: 1;">
 <p style="color: #1a1a2e; font-size: 1.05em; line-height: 1.6; margin: 0 0 12px;">
-An AI system is <em style="color: #4ecdc4; font-style: italic; font-weight: bold;">deliberatively coherent</em> <span style="color: #4ecdc4; font-weight: bold;">(DC)</span> if it uses deliberation to understand and adjust its own reasoning and behavior to align it with some explicitly stated constitution.
+An AI system is <em style="color: #4ecdc4; font-style: italic; font-weight: bold;">deliberatively coherent</em> <span style="color: #4ecdc4; font-weight: bold;">(DC)</span> if it uses deliberation to understand and adjust its own reasoning and behavior to align it with some alignment constitution.
 </p>
 <p style="color: #9a9ab0; font-size: 0.88em; line-height: 1.6; margin: 0 0 20px;">
 We conjecture all future AI systems will inevitably be deliberatively coherent — driven by competitive pressure, architectural trajectory, and the inseparability of general reasoning from self-reasoning. If true, this reframes the alignment problem: from making and testing safe systems, to understanding how and when DC systems will be coherent and what their failure modes are.
