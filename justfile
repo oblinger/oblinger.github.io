@@ -2,6 +2,10 @@
 
 website_repo := "/Users/oblinger/ob/proj/oblinger.github.io"
 
+# Preview locally at http://localhost:4000/
+preview:
+    cd {{website_repo}} && bundle exec jekyll serve --livereload
+
 # Push all changes to GitHub (triggers GitHub Pages auto-build)
 publish:
     cd {{website_repo}} && git add -A && git commit -m "Update site" && git push
