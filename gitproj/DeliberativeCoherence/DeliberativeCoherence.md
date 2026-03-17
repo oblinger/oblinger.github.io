@@ -1,4 +1,4 @@
-:>> [[_]] → [[Code]] → [Code Proj](hook://Code%20Proj) → [DeliberativeCoherence](hook://p/DeliberativeCoherence)
+:>> [DeliberativeCoherence](hook://p/DeliberativeCoherence)
 
 <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 2px solid #4a9eff; border-radius: 12px; padding: 30px; margin: 20px 0; box-shadow: 0 4px 20px rgba(74, 158, 255, 0.3);">
 <h2 style="color: #4a9eff; margin-top: 0; text-align: center; font-size: 1.4em;">Documents</h2>
