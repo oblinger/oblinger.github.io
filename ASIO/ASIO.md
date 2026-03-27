@@ -7,7 +7,7 @@
   [[Needle_Hiding]] 
   [[Uncertainty_Breeds_Inaction]] 
   -
-  [[Self-Reflected Objectives]] 
+  ~~[[Self-Reflected Objectives]]~~ 
 
   (See [[EOC]])
 
