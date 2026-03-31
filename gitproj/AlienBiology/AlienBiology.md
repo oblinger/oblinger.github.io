@@ -1,4 +1,5 @@
-:>> [[kmr]] → [[SYS]] → [[Bespoke]] → [[Website]] → [gitproj markdown](hook://gitproj%20markdown) → [AlienBiology markdown](hook://p/AlienBiology%20markdown)
+| -[[AlienBiology]]- | +> |
+
     [[AlienBiologyWhitepaper.pdf]], [[AlienBiology/AlienBiologyWhitepaper]], [[CellMetabolism5.pdf]], [[CellReactions.pdf]], [[AlienBiology/CellReactions]], [[Photosynthesis.pdf]]
 
 
