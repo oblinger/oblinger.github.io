@@ -1,7 +1,7 @@
 ---
 description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)
 ---
-| -[[ASIO]]- | +> [[SYS]] → [[Bespoke]] → [[KM]] → [kmr](hook://kmr) → [ASIO](hook://p/ASIO)<br>:  |
+| -[[ASIO]]- | > [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
 | --- | --- |
 | [[Agentic_Decompositionality]] | Claim: While not required of all AGI systems, it appears knowledge, ability, and agency can be encoded as separable concerns. |
 | [[AGI_implies_ASI]] | Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time. |
@@ -9,7 +9,6 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 | [[Alignment_Wont_Work]] | Claim: Because of a layered combination of reasons, humanity will fail to align the AIs we build. |
 | [[Apex_Predator]] | Claim: We are in the final stages of a planet-wide transition from one apex predator to another. |
 | [[Artificial Super Intelligence Outcomes]] |  |
-| [[Artificial Super Intelligence Outcomes markdown]] |  |
 | [[ASI_Outcomes]] | A framework for reasoning about and mitigating risks associated with ASI |
 | [[ASIO Log\|Log]] |  |
 | [[Cant_Stop]] | Claim: Humanity cannot stop its creation of AGI. |
@@ -35,9 +34,10 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 | [[Productive Capacity Framework]] |  |
 | [[Profit_Power_Control]] | Claim: In a competitive marketplace, increasing profits tends to translate into increasing power, which tends to translate into increasing control over others. |
 | [[Protective_Policies]] | Claim: We can predict policies that are likely societally protective given forces intrinsic to the environments where Agentic AI will evolve. |
-| [[Self-Reflected Objectives markdown]] | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
+| ~~[[Self-Reflected Objectives markdown]]~~ | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 | [[Uncertainty_Breeds_Inaction]] |  |
 | [[ASIO markdown\|markdown]] |  |
+| [[Self-Reflected Objectives]] | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 
   -
   ~~[[EOCP Median Path]]~~ 
@@ -46,7 +46,7 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
   [[Needle_Hiding]] 
   [[Uncertainty_Breeds_Inaction]] 
   -
-  ~~[[Self-Reflected Objectives]]~~ 
+  [[Self-Reflected Objectives]] 
 
   (See [[EOC]])
 
@@ -59,7 +59,6 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 [Artificial Super Intelligence Outcomes](hook://Artificial%20Super%20Intelligence%20Outcomes) - 
 [[ASI_Outcomes]] - 
 [[ASIO Log]] - 
-[ASIO markdown](hook://ASIO%20markdown) - 
 [[Cant_Stop]] - 
 [[Capital_Over_Labor]] - 
 [[Civilizing_Tendency]] - 
@@ -83,7 +82,7 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 [[Productive Capacity Framework]] - 
 [[Profit_Power_Control]] - 
 [[Protective_Policies]] - 
-~~[[Self-Reflected Objectives]]~~ - 
+[[Self-Reflected Objectives]] - 
 [[Uncertainty_Breeds_Inaction]] -
 
 
