@@ -1,7 +1,7 @@
 ---
 description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)
 ---
-| -[[ASIO]]- | → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
+| -[[ASIO]]- | → [Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)<br>:  |
 | --- | --- |
 | [[Agentic_Decompositionality]] | Claim: While not required of all AGI systems, it appears knowledge, ability, and agency can be encoded as separable concerns. |
 | [[AGI_implies_ASI]] | Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time. |
