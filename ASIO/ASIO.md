@@ -36,7 +36,7 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
 | [[Protective_Policies]] | Claim: We can predict policies that are likely societally protective given forces intrinsic to the environments where Agentic AI will evolve. |
 | ~~[Self-Reflected Objectives markdown](hook://Self-Reflected%20Objectives%20markdown)~~ | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 | [[Uncertainty_Breeds_Inaction]] |  |
-| ~~[ASIO markdown](hook://ASIO%20markdown)~~ |  |
+| [ASIO markdown](hook://ASIO%20markdown) |  |
 | [[Self-Reflected Objectives]] | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 
   -
@@ -59,6 +59,7 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
 [[Artificial Super Intelligence Outcomes]] - 
 [[ASI_Outcomes]] - 
 [[ASIO Log]] - 
+[ASIO markdown](hook://ASIO%20markdown) - 
 [[Cant_Stop]] - 
 [[Capital_Over_Labor]] - 
 [[Civilizing_Tendency]] - 
