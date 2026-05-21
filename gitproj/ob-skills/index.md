@@ -2,7 +2,7 @@
 layout: cayman
 title: Dan's Skills
 description: Reusable skill modules for Claude Code
-permalink: /gitproj/dans-skills/
+permalink: /gitproj/ob-skills/
 ---
 
 # Dan's Skills
@@ -11,7 +11,7 @@ A collection of reusable skill modules for [Claude Code](https://docs.anthropic.
 
 Skills extend what an AI coding agent can do — from structured development workflows and markdown formatting to product research, Google Workspace integration, and multi-agent role management.
 
-**[View on GitHub](https://github.com/oblinger/dans-skills)**
+**[View on GitHub](https://github.com/oblinger/ob-skills)**
 
 ## Skills
 
@@ -34,4 +34,4 @@ Skills are **declarative** (written in markdown, not code), **composable** (they
 
 ## License
 
-MIT License. See [LICENSE](https://github.com/oblinger/dans-skills/blob/main/LICENSE) for details.
+MIT License. See [LICENSE](https://github.com/oblinger/ob-skills/blob/main/LICENSE) for details.
