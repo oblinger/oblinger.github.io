@@ -1,7 +1,7 @@
 ---
 description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)~~
 ---
-| -[[ASIO]]- | → [ob](hook://ob) → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
+| -[[ASIO]]- | → ~~[[_]]~~ → [[Dir]] → [ob](hook://ob) → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
 | --- | --- |
 | [[Agentic_Decompositionality]] | Claim: While not required of all AGI systems, it appears knowledge, ability, and agency can be encoded as separable concerns. |
 | [[AGI_implies_ASI]] | Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time. |
@@ -25,7 +25,7 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
 | [[Machine_Centric_Coms]] | Claim: The fraction of machine-interpretable information will grow to eclipse human-interpretable communications.  This will be true both in terms of the importance of the communication and as a percentage of total volume.  It will also hold between and within intelligent agents. |
 | [[Natural_Selection]] | Claim: People, organizations, or AI-agents embedded within a process of natural selection cannot individually halt or escape this process of natural selection. |
 | [[Nature_of_AI_Progress]] | Claim: There are certain aspects of successful AI systems we can use to make informed guesses about the nature of future AI systems and about our likely progress in building these systems. |
-| ~~[Near Term Framework.pptx](hook://Near%20Term%20Framework.pptx)~~ |  |
+| [Near Term Framework.pptx](hook://Near%20Term%20Framework.pptx) |  |
 | [[Needle_Hiding]] | Claim: The task of finding a needle in a haystack grows ever larger than the task of hiding that needle as the haystack grows in complexity. |
 | [[No_Fast_Takeoff]] | Claim: A unilateral fast take-off scenario might be less likely while risks from a slow takeoff might be greater than often considered. |
 | [[Not_If_But_When]] | Claim: Execution lapses *will* eventually occur. Thus, safety guarantees are only meaningful if robust to those expected lapses. |
@@ -34,13 +34,13 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
 | [[Productive Capacity Framework]] |  |
 | [[Profit_Power_Control]] | Claim: In a competitive marketplace, increasing profits tends to translate into increasing power, which tends to translate into increasing control over others. |
 | [[Protective_Policies]] | Claim: We can predict policies that are likely societally protective given forces intrinsic to the environments where Agentic AI will evolve. |
-| ~~[Self-Reflected Objectives markdown](hook://Self-Reflected%20Objectives%20markdown)~~ | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
+| [Self-Reflected Objectives markdown](hook://Self-Reflected%20Objectives%20markdown) | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 | [[Uncertainty_Breeds_Inaction]] |  |
 | [ASIO markdown](hook://ASIO%20markdown) |  |
 | [[Self-Reflected Objectives]] | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 
   -
-  ~~[[EOCP Median Path]]~~ 
+  [[EOCP Median Path]] 
   [[Performant_Or_Predictable]] 
   -
   [[Needle_Hiding]] 
@@ -226,7 +226,7 @@ description: .
 
 
 
-  DELS: [[EOCI Keeping Secrets]], [[Agentic_Decompositionality]],~~[[EOCK Separation of Knowledge, Drive, and Agency]]~~, 
+  DELS: [[EOCI Keeping Secrets]], [[Agentic_Decompositionality]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
 
 
 
