@@ -1,7 +1,7 @@
 ---
-description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)~~
+description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)
 ---
-| -[[ASIO]]- | → ~~[[_]]~~ → [[Dir]] → [ob](hook://ob) → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
+| -[[ASIO]]- | → [[_]] → [[Dir]] → [ob](hook://ob) → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
 | --- | --- |
 | [[Agentic_Decompositionality]] | Claim: While not required of all AGI systems, it appears knowledge, ability, and agency can be encoded as separable concerns. |
 | [[AGI_implies_ASI]] | Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time. |
@@ -51,7 +51,6 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
   (See [[EOC]])
 
 . __ .
-[[Agentic_Decompositionality]] - 
 [[AGI_implies_ASI]] - 
 [[AGI_Will_Come]] - 
 [[Alignment_Wont_Work]] - 
@@ -75,16 +74,12 @@ description: ~~[Artificial Super Intelligence Outcomes markdown](hook://p/Artifi
 [[Natural_Selection]] - 
 [[Nature_of_AI_Progress]] - 
 [[Near Term Framework.pptx]] - 
-[[Needle_Hiding]] - 
 [[No_Fast_Takeoff]] - 
 [[Not_If_But_When]] - 
 [[Our_Best_Hope]] - 
-[[Performant_Or_Predictable]] - 
 [[Productive Capacity Framework]] - 
 [[Profit_Power_Control]] - 
-[[Protective_Policies]] - 
-[[Self-Reflected Objectives]] - 
-[[Uncertainty_Breeds_Inaction]] -
+[[Protective_Policies]] -
 
 
 
