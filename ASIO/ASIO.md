@@ -397,14 +397,7 @@ description: .
 
 # ASIO
 
-This is an auto-generated anchor file for patch 'ASIO'.
-
-Add your content here.
-
-
----
-
-# ASIO
+ASIO (Artificial Super-Intelligence Outcomes) is the umbrella anchor collecting the user's claims, frameworks, and notes on the trajectory and consequences of ASI emergence.
 
 This is an auto-generated anchor file for patch 'ASIO'.
 
@@ -553,6 +546,24 @@ Add your content here.
 This is an auto-generated anchor file for patch 'ASIO'.
 
 Add your content here.
+
+
+---
+
+# ASIO
+
+This is an auto-generated anchor file for patch 'ASIO'.
+
+Add your content here.
+
+# BRIEF
+
+- **This is the ASIO umbrella anchor page** — the dispatch table at the top routes to every individual claim, framework, log, and supporting doc that lives under the Artificial Super-Intelligence Outcomes scope.
+- **In-scope content:** claims about AGI/ASI trajectory, alignment, competition dynamics, agentic behavior, societal/economic outcomes, protective policies, and frameworks for reasoning about ASI risk. Individual claims live as their own files (e.g. `[[Cant_Stop]]`, `[[Loose_Control]]`) and are routed from the dispatch table here.
+- **NOT for:** general AI-tooling notes, day-to-day Claude/agent workflows, or unrelated futurism — those belong in their own anchors (SYS, SKA, MY, etc.). Don't pile prompt-engineering tips or model-comparison notes here.
+- **Inclusion test:** a thing belongs on this page when it is a named claim, framework, log entry, or supporting artifact whose subject is the *outcomes / dynamics / consequences* of ASI emergence and is referenced by other ASIO content.
+- **Linking conventions:** entries use `[[Name]]` wiki-links (snake_case for claim files like `[[Loop_Closing]]`, spaced names for framework docs); each row's right cell carries the one-line "Claim: …" summary from the target file. Preserve this shape when adding rows.
+- **Load-bearing constraints:** the file currently carries multiple legacy zones (a top dispatch table, a bare-link listing, a Jekyll YAML block, and many repeating auto-generated `# ASIO` H1 stubs from prior patches). Do NOT delete those zones in passing — a separate cleanup pass owns consolidation. Add new claims to the top dispatch table only.
 
 
 ---
