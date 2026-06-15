@@ -59,7 +59,6 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 [[ASI_Outcomes]] - 
 [[ASIO Log]] - 
 [ASIO markdown](hook://ASIO%20markdown) - 
-[[Cant_Stop]] - 
 [[Capital_Over_Labor]] - 
 [[Civilizing_Tendency]] - 
 [[Competition_Implies]] - 
@@ -68,8 +67,6 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 [[EOCK Shaping The Future]] - 
 [[Federated_Minds]] - 
 [[Hiding_Beats_Finding]] - 
-[[Loop_Closing]] - 
-[[Loose_Control]] - 
 [[Machine_Centric_Coms]] - 
 [[Natural_Selection]] - 
 [[Nature_of_AI_Progress]] - 
