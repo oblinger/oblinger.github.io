@@ -1,7 +1,7 @@
 ---
 layout: cayman
 title: .
-description: ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals.
+description: "ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals."
 ---
 
 

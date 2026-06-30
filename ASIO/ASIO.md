@@ -1,7 +1,7 @@
 ---
 description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artificial%20Super%20Intelligence%20Outcomes%20markdown)
 ---
-| -[[ASIO]]- | → [[SYS]] → [[Bespoke]] → [[KM]] → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
+| -[[ASIO]]- | → [[kmr]] → [ASIO](hook://p/ASIO)<br>:  |
 | --- | --- |
 | [[Agentic_Decompositionality]] | Claim: While not required of all AGI systems, it appears knowledge, ability, and agency can be encoded as separable concerns. |
 | [[AGI_implies_ASI]] | Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time. |
@@ -40,7 +40,7 @@ description: [Artificial Super Intelligence Outcomes markdown](hook://p/Artifici
 | [[Self-Reflected Objectives]] | ASI systems will never mindlessly make paperclips.  The cognition required to achieve ASI will include the capacity to deeply introspect on its own goals, the broader human context that gave rise to those goals, and the outcomes of counterfactual alternatives to those goals. |
 
   -
-  ~~[[EOCP Median Path]]~~ 
+  [[EOCP Median Path]] 
   [[Performant_Or_Predictable]] 
   -
   [[Needle_Hiding]] 
@@ -218,7 +218,7 @@ description: .
 
 
 
-  DELS: [[EOCI Keeping Secrets]], [[Agentic_Decompositionality]],~~[[EOCK Separation of Knowledge, Drive, and Agency]]~~, 
+  DELS: [[EOCI Keeping Secrets]], [[Agentic_Decompositionality]],[[EOCK Separation of Knowledge, Drive, and Agency]], 
 
 
 
@@ -559,7 +559,7 @@ Add your content here.
 - **In-scope content:** claims about AGI/ASI trajectory, alignment, competition dynamics, agentic behavior, societal/economic outcomes, protective policies, and frameworks for reasoning about ASI risk. Individual claims live as their own files (e.g. `[[Cant_Stop]]`, `[[Loose_Control]]`) and are routed from the dispatch table here.
 - **NOT for:** general AI-tooling notes, day-to-day Claude/agent workflows, or unrelated futurism — those belong in their own anchors (SYS, SKA, MY, etc.). Don't pile prompt-engineering tips or model-comparison notes here.
 - **Inclusion test:** a thing belongs on this page when it is a named claim, framework, log entry, or supporting artifact whose subject is the *outcomes / dynamics / consequences* of ASI emergence and is referenced by other ASIO content.
-- **Linking conventions:** entries use `~~[[Name]]~~` wiki-links (snake_case for claim files like `[[Loop_Closing]]`, spaced names for framework docs); each row's right cell carries the one-line "Claim: …" summary from the target file. Preserve this shape when adding rows.
+- **Linking conventions:** entries use `[[Name]]` wiki-links (snake_case for claim files like `[[Loop_Closing]]`, spaced names for framework docs); each row's right cell carries the one-line "Claim: …" summary from the target file. Preserve this shape when adding rows.
 - **Load-bearing constraints:** the file currently carries multiple legacy zones (a top dispatch table, a bare-link listing, a Jekyll YAML block, and many repeating auto-generated `# ASIO` H1 stubs from prior patches). Do NOT delete those zones in passing — a separate cleanup pass owns consolidation. Add new claims to the top dispatch table only.
 
 

@@ -31,4 +31,3 @@ Machine Interpretable communications are digital messages that are interpretable
 Human Interpretable communications are just the opposite:
 - They must involve shorter messages with less material to interpret
 - And they are able to handle poorly defined terms
-
