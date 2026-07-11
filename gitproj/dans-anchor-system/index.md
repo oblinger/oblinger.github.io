@@ -1,37 +1,43 @@
 ---
 layout: cayman
-title: Dan's Skills
-description: Reusable skill modules for Claude Code
-permalink: /gitproj/ob-skills/
+title: Dan's Anchor System
+description: A structured system for organizing everything an AI coding agent works with
+permalink: /gitproj/dans-anchor-system/
 ---
 
-# Dan's Skills
+# Dan's Anchor System
 
-A collection of reusable skill modules for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Each skill defines workflows, conventions, and domain knowledge that Claude Code agents can invoke during interactive sessions.
+Dan's Anchor System (DAS) is a structured system for organizing the documents, projects, and knowledge that an AI coding agent like [Claude Code](https://docs.anthropic.com/en/docs/claude-code) works with. It gives every project a predictable shape, so an agent can navigate, plan, and maintain it without re-learning the layout each time.
 
-Skills extend what an AI coding agent can do — from structured development workflows and markdown formatting to product research, Google Workspace integration, and multi-agent role management.
+The system is built from five kinds of parts:
 
-**[View on GitHub](https://github.com/oblinger/ob-skills)**
+- **Skills** are the `/`-invocable verbs (create, groom, mint, audit, and more), grouped by what they do.
+- **Facets** are per-document structural specs (backlog, roadmap, PRD, architecture, and so on).
+- **Disciplines** are cross-cutting conventions the agent reads (workflow, markdown, verification).
+- **Traits** are the paradigms a project declares in its `.anchor` file (Code, Paper, Topic, Drive, Commit).
+- **Rulesets** are the machine-checkable constraints that keep all of the above consistent.
 
-## Skills
+**[View on GitHub](https://github.com/oblinger/dans-anchor-system)**
 
-| Skill | Description |
+## Skill groups
+
+| Group | What it covers |
 |-------|-------------|
-| **CAB** | Common Anchor Blueprint — create, validate, and manage structured folder systems |
-| **Dev** | Development workflow — planning, execution, setup, forge, and publish |
-| **Edit** | Visual editing — Excalidraw diagrams, mockups, and visual content |
-| **Google** | Google Workspace — Sheets and Slides via CLI |
-| **MD** | Markdown formatting — heading spacing, file trees, TOCs, dispatch tables |
-| **Product** | Product research and purchasing — hunt, compare, buy |
-| **Research** | Investigation and synthesis — entity dossiers and topic surveys |
-| **Role** | Agent role definitions — persistent identity across sessions |
+| **Anchor** | Create, install, move, migrate, publish, and archive anchors |
+| **Track** | Plan and groom work: backlog, questions, workflow state |
+| **Drive** | Move work forward: feature, crank, mint, finalize, land |
+| **Dev** | Build software: architect, code, fix, PR flow |
+| **Doc** | Author documents: markdown, diagrams, editing |
+| **Hygiene** | Keep anchors healthy: audit, tidy, dedupe, rewire, maintain |
+| **Search** | Research and purchasing: find, survey, compare, buy |
+| **Utility** | Everyday helpers: cook, ctrl, exp, snip |
 
-## How Skills Work
+## How it works
 
-Each skill lives in its own folder with a `SKILL.md` entry point. When a user types `/skill-name action` (e.g., `/dev plan`, `/research dig`), Claude Code reads the corresponding action file and executes the workflow defined there.
+Each skill lives in its own folder with a `SKILL.md` entry point. When a user types `/skill-name action` (for example `/feature`, `/groom`, `/audit`), the agent reads the corresponding action file and runs the workflow defined there.
 
-Skills are **declarative** (written in markdown, not code), **composable** (they reference each other), and **stateless** (no runtime dependencies).
+The whole system is **declarative** (written in markdown, not code), **composable** (parts reference each other), and **auditable** (rulesets check that anchors conform).
 
 ## License
 
-MIT License. See [LICENSE](https://github.com/oblinger/ob-skills/blob/main/LICENSE) for details.
+MIT License. See [LICENSE](https://github.com/oblinger/dans-anchor-system/blob/main/LICENSE) for details.
