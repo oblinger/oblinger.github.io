@@ -6,3 +6,7 @@ vendor
 .DS_Store
 .mod_times
 .obsidian/
+
+# Vault machinery — HookAnchor writes these into ASIO/; never publish them
+.anchor
+**/.anchor
