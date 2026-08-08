@@ -1,6 +1,6 @@
 # oblinger.github.io — personal website
 
-website_repo := "/Users/oblinger/ob/proj/bespoke-repos/oblinger.github.io"
+website_repo := "/Users/oblinger/ob/grove/oblinger.github.io"
 vault_asio   := "/Users/oblinger/ob/kmr/ASIO"
 
 # Preview locally at http://localhost:4000/
