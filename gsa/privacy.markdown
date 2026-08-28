@@ -13,7 +13,7 @@ permalink: /gsa/privacy/
 
 ## Who operates this tool
 
-Dan Oblinger, operating it personally. Contact: **oblinger@gmail.com**.
+Dan Oblinger, operating it personally. Contact via [github.com/oblinger](https://github.com/oblinger).
 
 ## What data is accessed
 
@@ -41,4 +41,4 @@ Changes to this policy will be posted on this page with a revised date.
 
 ## Contact
 
-Questions: **oblinger@gmail.com**
+Questions: [github.com/oblinger](https://github.com/oblinger)

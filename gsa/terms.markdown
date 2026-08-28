@@ -33,4 +33,4 @@ These terms may change; revisions will be posted on this page with a revised dat
 
 ## 7. Contact
 
-**oblinger@gmail.com**
+[github.com/oblinger](https://github.com/oblinger)
