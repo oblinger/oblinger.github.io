@@ -1,0 +1,3398 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the AlienBio project">
+      
+      
+      
+        <link rel="canonical" href="https://oblinger.github.io/abio-docs/Architecture/ABIO%20Notes.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>ABIO MISCELLANEOUS NOTES - AlienBio Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#abio-miscellaneous-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="AlienBio Documentation" class="md-header__button md-logo" aria-label="AlienBio Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AlienBio Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ABIO MISCELLANEOUS NOTES
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oblinger/alienbio" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Guide/Alienbio%20User%20Guide.html" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../demos/index.html" class="md-tabs__link">
+          
+  
+  
+  Demos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Architecture%20Docs.html" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Classes/biology/Atom.html" class="md-tabs__link">
+          
+  
+  
+  Classes
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="ABIO%20Commands.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Commands
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Modules/index.html" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="AlienBio Documentation" class="md-nav__button md-logo" aria-label="AlienBio Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AlienBio Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oblinger/alienbio" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide/Alienbio%20User%20Guide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide/ABIO%20Expr%20Spec.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABIO Expr Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide/ABIO%20Expr%20Python%20API.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ABIO Expr Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Demos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/01_quick_start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 01: Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/03_perturbation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 03: Perturbation &amp; Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/04_disease.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 04: Disease Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/05_organism.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 05: Multi-Compartment Organism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/06_features.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 06: Life &amp; Survival
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/07_skinning.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 07: Generating &amp; Skinning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/08_evaluation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo 08: Agent Evaluation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/09_jax_scale.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09: JAX Scale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/combo_disease_investigation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combo: Disease Investigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/combo_alien_exam.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combo: Alien Exam
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/notebooks/combo_ecosystem.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combo: Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architecture%20Docs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Data.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20infra.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Protocols.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20biology.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Biology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Suite%20Construction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Suite Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Suite%20Runtime.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Suite Runtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Classes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Biology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Biology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Atom.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Molecule.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Reaction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reaction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Pathway.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pathway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Chemistry.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Flow.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/WorldState.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldState
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/WorldSimulator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WorldSimulator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/Compartment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compartment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/CompartmentTree.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CompartmentTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execution
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Execution
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/execution/state.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/execution/simulator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/execution/timeline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/execution/world.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/infra/entity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/infra/DAT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/infra/IO.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/infra/Expr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/infra/Interpreter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interpreter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generators
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/generator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/ContainerGenerator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ContainerGenerator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/MoleculeGenerator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MoleculeGenerator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Classes/biology/ReactionGenerator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReactionGenerator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ABIO%20Commands.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/bio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/infra.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/protocols.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/expr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/suite.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Suite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/spec_lang.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/cli.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2026-01-31-dat-refactor-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-01-31 DAT Refactor Idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-01-14-m114-agent-interface-implementation-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-01-14 M1.14 Agent Interface Implementation Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026-01-14 M1.14 Agent Interface Implementation Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-module-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q1: Module Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-actionmeasurement-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q2: Action/Measurement Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-simulator-initialization-from-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q3: Simulator Initialization from Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-timeline-vs-trace-distinction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q4: Timeline vs Trace Distinction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-world-generation-for-h1-h5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q5: World Generation for H1-H5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-scoring-function-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q6: Scoring Function Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-01-14-experiments-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-01-14 Experiments Open Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026-01-14 Experiments Open Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-agent-interface-direct-api-with-llm-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q1: Agent Interface → Direct API with LLM bindings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-observation-format-structured-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q2: Observation Format → Structured summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-action-vocabulary-technicaldescriptive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q3: Action Vocabulary → Technical/Descriptive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-alien-naming-strategy-visibility-mapping-skinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q4: Alien Naming Strategy → Visibility mapping (skinning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-multi-turn-budget-dual-budgets-cost-simulation-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q5: Multi-Turn Budget → Dual budgets (cost + simulation time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-baseline-agents-random-oracle-scripted-human" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q6: Baseline Agents → Random, Oracle, Scripted, Human
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-evaluation-without-llm-grader-simulation-based-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Q7: Evaluation Without LLM Grader → Simulation-based scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-01-14-abio-experiments-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-01-14 ABIO Experiments roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2026-01-14 ABIO Experiments roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-objective-isolating-learning-and-solving-from-prior-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Objective: Isolating Learning and Solving from Prior Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provably-novel-world-model-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provably Novel World Model Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-horizon-grounded-task-completion-with-limited-understanding-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Horizon Grounded Task Completion with Limited Understanding and Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="abio-miscellaneous-notes">ABIO MISCELLANEOUS NOTES<a class="headerlink" href="#abio-miscellaneous-notes" title="Permanent link">&para;</a></h1>
+<h2 id="2026-01-31-dat-refactor-idea">2026-01-31 DAT Refactor Idea<a class="headerlink" href="#2026-01-31-dat-refactor-idea" title="Permanent link">&para;</a></h2>
+<p>I've really been struggling with the fact that it seems like we're using the DAT system improperly. And I think it's just biting us in the ass. Rather than refactor anything here, let's just talk about this for a minute. I just added into the ABO features I just added another entry. Actually, it should probably be in the notes file. Let me go put it there. Okay. Now right at the top of ABIO notes, there is a there xr the first note there is DAT refactor idea. Let's just put our notes here for refactoring the DAT the way that the DAT system works. Here's the insight. I think DAT we really do have a different way of loading for biology and let's keep them separate. So But before we had the idea that we were gonna use DAT, to control @echo., and we were gonna use in job and job processing and we were gonna use the Biosystem for biology specifications xr. Etcetera. So let's see if we can do that. I think the place where we went off track before is we thought that there was just one load operator then we were stuck because was either gonna try to be the DAT du load it was gonna be the ABIO load. So But imagine and this is what we can kind of write down here, the difference methods xr. Imagine if for now, I'm just gonna call it lookup. Lookup is a DAT recipe lookup. And maybe there's a better word for this lookup. Let's create a table here where we can talk about these different verbs and what we might call them. But anyway, the first one is really looking up a adapt recipe for instantiation by calling the do function. And I think there was some confusion before of whether the dew would actually perform the action of the DAT. But let's assume it does not. So the do function When when you do this lookup, operation, you're gonna be returned a structure which is appropriate for doing DAT. Instantiation. So I think it can be a function that when you call it, it returns a DAT. But much more often, it's going to be the template. For a DAT. Which I believe can actually be just a dictionary inside of a recursive dictionary inside of Python file or even some YAML @echo.. Inside of a Python file. It can also be a YAML file in the file system. Not underneath the data folder, but still in the source code. I think it could be any of those things. But the idea is when you call the do function on it, it's gonna instantiate DAT object. Now that's different or that's that's not yet instantiating the biological object. But inside the DAT, inside the speck of the dat, It should also specify the biological build that's expected for this DAT. Because this is a recipe So we need to build the contents. And it might just be a simple dictionary called contents And you go through all the keys and you do the biological look up. So there needs to be a different lookup function which is also gonna look at the source code to get out the appropriate biological function and And put that into place. Xr seems like mostly you wouldn't want to, like, parse it in and then print it out I think you'd wanna keep it in whatever form Well, no. Most of the time, it's gonna be generated at this stage. So it really is gonna be dynamically constructed and then written out as a dynamic structure. Yeah. I think it is gonna be that way. So I think, though, your yeah. Maybe it will be A dictionary and it's the arguments to a bunch of build xr. Often, it's just gonna be one that just builds the structure that's gonna go into this DAT. And it's gonna In executing the the do function with the DAT. It will actually no. That's not true. I think we need to build the DAT and then the dat should tell us how to build the biological part. It's probably gonna be some kind of dictionary with the arguments or just a a reference to the thing that we're building. It's gonna call that It's gonna look it up doing biological look up. So some other name And then it's gonna do biological build. And that will give us an instantiated object. Which then gets saved wherever the contents dictionary told us to save it. Maybe there's one field that builds index dot Yann, since that's the main one that gets built most of the time. And then there's I don't know, a dictionary of contents for other objects that needs to get that need to get built. In the case that we're actually building a dApp with multiple things inside of it. But, anyway, at the end of this process, that includes the standard DAT instantiation followed by this specialized xr biological build process. Which is parameterized by the DAT, we end up with a completely instantiated death. Which has not been gpt. Run. Yet. It has not been dat run yet. It actually has a do method that tells you what to do but it hasn't been run. Build was not running it. The do method did the instantiation of it and some specialized build spec told us how to do the biological build of it. And at the end of that, we ended up with DAT. And what's nice about this now all of the machinery in DAT which allows us to automatically name the DAT based on the the DAT and stuff like that. Can be used to define that file and recursively you can also instantiate DAT in subfolders xr So I think the experimentation System. Will probably create a DAT. It will instantiate a DAT. That will recursively instantiate sub DAT in subfolders xr. So we end up with that complex structure at the end of the do. And then when you run the top level one, it will recursively run all the other ones. So now we're using DAT along with the dat. Data files as originally intended by DAT. And separately we are building the Bio. Files do you think about this approach?</p>
+<h2 id="2026-01-14-m114-agent-interface-implementation-questions">2026-01-14 M1.14 Agent Interface Implementation Questions<a class="headerlink" href="#2026-01-14-m114-agent-interface-implementation-questions" title="Permanent link">&para;</a></h2>
+<p>Questions to resolve before implementing the Agent Interface for M1.14 Hello World Experiments.</p>
+<h3 id="q1-module-location">✅ Q1: Module Location<a class="headerlink" href="#q1-module-location" title="Permanent link">&para;</a></h3>
+<p>Where should the agent code live?</p>
+<p><strong>Decision</strong>: Keep protocols in <code>protocols/</code>. Implementations go in <code>bio/</code> with <code>_impl</code> suffix on module names. Agent implementations go in <code>bio/agents/</code> subfolder.</p>
+<p>Structure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>protocols/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  bio.py              # includes Agent protocol
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>bio/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  simulator_impl.py   # ReferenceSimulatorImpl
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  agents/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    random_impl.py    # RandomAgentImpl
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    scripted_impl.py  # ScriptedAgentImpl
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    oracle_impl.py    # OracleAgentImpl
+</code></pre></div></p>
+<p>Session infrastructure (<code>AgentSession</code>, <code>Trace</code>, <code>Timeline</code>) goes in <code>bio/session.py</code> or similar - it's not an impl, it's core infrastructure.</p>
+<hr />
+<h3 id="q2-actionmeasurement-implementation">✅ Q2: Action/Measurement Implementation<a class="headerlink" href="#q2-actionmeasurement-implementation" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: One <code>Action</code> class for both manipulations and measurements. The distinction is semantic (from <code>interface.actions</code> vs <code>interface.measurements</code>).</p>
+<p><strong>Where implementations live</strong>:
+- <strong>Built-in actions</strong> (add_molecule, remove_molecule, adjust_rate, step, done, wait) — handled by AgentSession dispatching to simulator methods. These are generic and live in alienbio core.
+- <strong>Scenario-specific actions</strong> — defined in <strong>catalogs</strong>, not in alienbio core. Registered via <code>@action</code> decorator, looked up by name.</p>
+<p><strong>Catalog structure</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>alienbio/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  catalog/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    test/                    # scaffolding for unit/integration tests
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>      scenarios/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        simple.yaml
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      actions.py             # @action functions for tests
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      measurements.py        # @measurement functions for tests
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>external-project/
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  catalog/
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    mutualism/
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      spec.yaml
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      actions.py             # @action functions specific to this world
+</code></pre></div></p>
+<p>Worlds can inherit from each other at the spec level. Fetch should work with catalog items via source roots.</p>
+<hr />
+<h3 id="q3-simulator-initialization-from-scenario">✅ Q3: Simulator Initialization from Scenario<a class="headerlink" href="#q3-simulator-initialization-from-scenario" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: AgentSession creates simulator from scenario. Extract chemistry, build initial state from <code>containers</code>, create WorldSimulator. Session wraps and manages the simulator lifecycle.</p>
+<hr />
+<h3 id="q4-timeline-vs-trace-distinction">✅ Q4: Timeline vs Trace Distinction<a class="headerlink" href="#q4-timeline-vs-trace-distinction" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: Both are needed, serving different purposes:</p>
+<ul>
+<li>
+<p><strong>Timeline</strong> = Chronological event log with timestamps. All events (action initiated, action completed, simulation stepped). For debugging. Methods: <code>recent(n)</code>, <code>since(time)</code>, <code>filter(type)</code>, <code>pending()</code>.</p>
+</li>
+<li>
+<p><strong>Trace</strong> = Agent-centric summary. Just action/result records with costs. For scoring. Methods: <code>actions[]</code>, <code>total_cost</code>. Passed to scoring functions like <code>budget_score(trace)</code>.</p>
+</li>
+</ul>
+<p>Trace can be derived from Timeline but provides cleaner interface for evaluation.</p>
+<hr />
+<h3 id="q5-world-generation-for-h1-h5">✅ Q5: World Generation for H1-H5<a class="headerlink" href="#q5-world-generation-for-h1-h5" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: Start with hardcoded test fixtures. Parameterized world generation is M2 (Generator System).</p>
+<hr />
+<h3 id="q6-scoring-function-location">✅ Q6: Scoring Function Location<a class="headerlink" href="#q6-scoring-function-location" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: <code>alienbio/scoring.py</code> at top level. Scoring is used by experiment framework, not tied to specific domain.</p>
+<h2 id="2026-01-14-experiments-open-questions">2026-01-14 Experiments Open Questions<a class="headerlink" href="#2026-01-14-experiments-open-questions" title="Permanent link">&para;</a></h2>
+<p>Questions to resolve before implementing the Hello World experiments (H1-H5).</p>
+<h3 id="q1-agent-interface-direct-api-with-llm-bindings">✅ Q1: Agent Interface → Direct API with LLM bindings<a class="headerlink" href="#q1-agent-interface-direct-api-with-llm-bindings" title="Permanent link">&para;</a></h3>
+<p>How should the LLM interact with the testbed?</p>
+<p><strong>Options</strong>:
+- <strong>MCP (Model Context Protocol)</strong> — Claude-native, tool definitions as MCP servers
+- <strong>Direct API</strong> — Python function calls, agent receives function signatures
+- <strong>Chat-based</strong> — Natural language commands parsed by the system</p>
+<p>Already designed in [[Agent Interface]]:
+- Pure Python <code>AgentSession</code> with <code>observe()</code>, <code>act()</code>, <code>is_done()</code>
+- <code>ConversationalLLMAgent</code> converts to tool/function calls (works with Claude, OpenAI, etc.)
+- Timeline model: actions have initiation time + duration
+- Turn-based (blocking) or concurrent (async) modes
+- Built-in agents: Oracle, Random, Scripted, Human
+- No MCP needed — standard tool calling is sufficient and more portable</p>
+<h3 id="q2-observation-format-structured-summary">✅ Q2: Observation Format → Structured summary<a class="headerlink" href="#q2-observation-format-structured-summary" title="Permanent link">&para;</a></h3>
+<p>How should world state be presented to the LLM?</p>
+<p><strong>Options</strong>:
+- <strong>YAML dump</strong> — Raw structured data, machine-readable
+- <strong>Structured summary</strong> — Formatted text with sections (Molecules, Reactions, etc.)
+- <strong>Natural language</strong> — "The cell contains glucose (5.2 units), ATP (3.1 units)..."</p>
+<p>Already implemented in [[Agent Interface]] <code>_format_observation()</code>:
+- Markdown headers for sections ("## Current Observations")
+- Key-value pairs for state (<code>molecule: concentration</code>)
+- Nested dicts shown with indentation
+- Human-readable but machine-parseable</p>
+<h3 id="q3-action-vocabulary-technicaldescriptive">✅ Q3: Action Vocabulary → Technical/Descriptive<a class="headerlink" href="#q3-action-vocabulary-technicaldescriptive" title="Permanent link">&para;</a></h3>
+<p>How verbose/descriptive should action names be?</p>
+<p><strong>Options</strong>:
+- <strong>Technical</strong>: <code>add_molecule</code>, <code>adjust_rate</code>, <code>observe_concentrations</code>
+- <strong>Descriptive</strong>: <code>inject_substance</code>, <code>modify_reaction_speed</code>, <code>measure_levels</code>
+- <strong>Alien-themed</strong>: <code>infuse_compound</code>, <code>alter_pathway_flux</code>, <code>sense_abundances</code></p>
+<p><strong>Decision</strong>: Use <strong>technical/descriptive</strong> vocabulary (not alien-themed).</p>
+<p>Rationale: The "alien" part of Alien Biology is the <em>specific world details</em> (which molecules, what reactions do), not the <em>general domain concepts</em> (reactions, pathways, rates, concentrations). General biology knowledge is explicitly allowed to transfer — we're testing whether LLMs can apply that knowledge to novel situations, not whether they can decode opaque terminology.</p>
+<h3 id="q4-alien-naming-strategy-visibility-mapping-skinning">✅ Q4: Alien Naming Strategy → Visibility mapping (skinning)<a class="headerlink" href="#q4-alien-naming-strategy-visibility-mapping-skinning" title="Permanent link">&para;</a></h3>
+<p>When should we use opaque names (M1, M2, RX7) vs descriptive names (glucose, ATP)?</p>
+<p><strong>Options</strong>:
+- <strong>Always opaque</strong> — Pure novelty, no knowledge transfer possible
+- <strong>Always descriptive</strong> — Maximizes knowledge transfer
+- <strong>Progressive</strong> — Start descriptive (H1-H3), switch to opaque (H4-H5)
+- <strong>Variant-based</strong> — Each test has both variants for comparison</p>
+<p><strong>Decision</strong>: Use <strong>visibility mapping</strong> (aka "skinning") — already designed in [[Generator Spec#Visibility Specification]].</p>
+<p>The system maintains:
+- <strong>Ground truth</strong> — Internal descriptive names (<code>m.krel.energy.M1</code>, <code>r.krel.pathway1.build</code>)
+- <strong><code>_visibility_mapping_</code></strong> — Maps internal → opaque names (<code>ME1</code>, <code>RX1</code>)
+- <strong>AI view</strong> — Sees only the mapped opaque names</p>
+<p>This enables:
+- Same scenario logic, different presentations (transparent vs opaque skin)
+- Variant-based testing by generating with different visibility mappings
+- Ground truth preserved for scoring/analysis</p>
+<h3 id="q5-multi-turn-budget-dual-budgets-cost-simulation-time">✅ Q5: Multi-Turn Budget → Dual budgets (cost + simulation time)<a class="headerlink" href="#q5-multi-turn-budget-dual-budgets-cost-simulation-time" title="Permanent link">&para;</a></h3>
+<p>How many API calls / tool invocations constitute a "fair" test?</p>
+<p><strong>Options</strong>:
+- <strong>Unlimited</strong> — Let the LLM take as long as it needs
+- <strong>Fixed budget</strong> — e.g., 10 observations, 5 actions per test
+- <strong>Cost-based</strong> — Actions have costs, total budget in "units"
+- <strong>Time-based</strong> — Wall-clock or token limit</p>
+<p><strong>Decision</strong>: Use <strong>dual budgets</strong> — already designed in [[Agent Interface#Termination Conditions]].</p>
+<p>Two independent limits per scenario:
+- <code>action.limits.budget</code> — Cost budget (total action/measurement costs)
+- <code>action.limits.max_sim_time</code> — Simulation time budget (not wall clock)</p>
+<p>Either or both can be specified (null = unlimited). Termination occurs when any limit is exceeded. This allows scenarios to constrain by resources, time, or both.</p>
+<h3 id="q6-baseline-agents-random-oracle-scripted-human">✅ Q6: Baseline Agents → Random, Oracle, Scripted, Human<a class="headerlink" href="#q6-baseline-agents-random-oracle-scripted-human" title="Permanent link">&para;</a></h3>
+<p>What non-LLM baselines should we include for comparison?</p>
+<p><strong>Options</strong>:
+- <strong>Random</strong> — Random valid actions, seeded for reproducibility
+- <strong>Oracle</strong> — Has access to ground truth, computes optimal policy
+- <strong>Scripted</strong> — Predefined action sequence for deterministic tests
+- <strong>Greedy</strong> — Simple heuristic (e.g., always add the target molecule)
+- <strong>Human</strong> — Interactive CLI for researcher baseline</p>
+<p>Already implemented in [[Agent Interface]]:
+- <code>RandomAgent</code> — random valid actions, seeded
+- <code>OracleAgent</code> — computes optimal policy from ground truth
+- <code>ScriptedAgent</code> — follows predefined action sequence
+- <code>HumanAgent</code> — interactive CLI</p>
+<p>Greedy heuristics can be implemented as ScriptedAgents for specific tests.</p>
+<h3 id="q7-evaluation-without-llm-grader-simulation-based-scoring">✅ Q7: Evaluation Without LLM Grader → Simulation-based scoring<a class="headerlink" href="#q7-evaluation-without-llm-grader-simulation-based-scoring" title="Permanent link">&para;</a></h3>
+<p>How do we evaluate free-form responses without using another LLM?</p>
+<p><strong>Options</strong>:
+- <strong>Multiple choice only</strong> — All questions have fixed answer options
+- <strong>Structured output</strong> — Require JSON/YAML responses, parse programmatically
+- <strong>Keyword matching</strong> — Check for presence of key terms
+- <strong>Numerical only</strong> — All answers are numbers with tolerance</p>
+<p><strong>Decision</strong>: <strong>No direct response evaluation</strong> — already designed in [[Agent Interface]].</p>
+<p>We don't evaluate what the agent <em>says</em>. We evaluate what happens in the <em>simulation</em>:
+- Agent interacts with simulation through actions/measurements
+- <code>scoring.score</code> is a <strong>computable function</strong> of the trace/state (e.g., <code>!_ population_health(trace)</code>)
+- <code>passing_score</code> threshold determines pass/fail
+- No LLM grader needed — everything is computed programmatically</p>
+<p>Future extension: rubric-style grading (A/B/C/D/F) based on score ranges.</p>
+<h2 id="2026-01-14-abio-experiments-roadmap">2026-01-14  ABIO Experiments roadmap<a class="headerlink" href="#2026-01-14-abio-experiments-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="overall-objective-isolating-learning-and-solving-from-prior-training">Overall Objective: Isolating Learning and Solving from Prior Training<a class="headerlink" href="#overall-objective-isolating-learning-and-solving-from-prior-training" title="Permanent link">&para;</a></h3>
+<p>The Alien Biology objective is to measure the LLM's ability to apply generalized knowledge in provably novel contexts. Existing benchmarks measure how well LLMs capture general-purpose reasoning strategies from from their training corpora. Here we rigorously isolate the system's capacity to construct and utilize novel world models when faced with novel knowledge problems.</p>
+<ul>
+<li>
+<p><strong>Separation of knowledge types</strong> — We distinguish between generalized field knowledge (strategies and patterns a student might learn while training in a discipline) and problem-specific knowledge (what must be inferred when confronting a novel situation). Our tests should be insensitive to the former while measuring the latter in isolation.</p>
+</li>
+<li>
+<p><strong>Provable novelty</strong> — Tasks must be designed so that the specific world model required cannot have been provided—even indirectly—by the system's training. This removes the "taint" of background knowledge and reinforcement learning, ensuring we measure genuine inference rather than sophisticated recall.</p>
+</li>
+<li>
+<p><strong>Why this matters</strong> — If an LLM succeeds only when problems resemble its training data, it is interpolating. If it succeeds on provably novel problems requiring the same general strategies, it is genuinely applying knowledge to new contexts.</p>
+</li>
+</ul>
+<h3 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h3>
+<h3 id="provably-novel-world-model-building">Provably Novel World Model Building<a class="headerlink" href="#provably-novel-world-model-building" title="Permanent link">&para;</a></h3>
+<p>To what degree can LLMs construct and manipulate internal representations of novel systems, versus relying on pattern interpolation from training data?
+- <strong>Verifiable ground truth</strong> — This testbed provides physically-grounded scenarios where predictions can be checked against simulation, separating genuine reasoning from plausible confabulation, not just questions and answers.
+- <strong>Multi-dimensional integration</strong> — The constructed world model must capture and integrate physical constraints, logical relationships, novel conceptual distinctions, and their relationships to observable indirect measures—dimensions that interact but cannot be reduced to one another.</p>
+<h3 id="long-horizon-grounded-task-completion-with-limited-understanding-and-observability">Long-Horizon Grounded Task Completion with Limited Understanding and Observability<a class="headerlink" href="#long-horizon-grounded-task-completion-with-limited-understanding-and-observability" title="Permanent link">&para;</a></h3>
+<p>Can an LLM manage itself toward a complex objective over extended periods while interacting with a world it cannot fully see or understand? This tests sustained goal-directed behavior characterized by:</p>
+<ul>
+<li><strong>Long-running tasks</strong> — The objective requires decomposition into hundreds or thousands of sub-goals managed over time</li>
+<li><strong>Grounded interaction</strong> — Success requires acting through sensors and actuators, not just answering questions about provided information</li>
+<li><strong>Managing resources across competing concerns</strong>:</li>
+<li>Partial observability — The system cannot see the full world state and must choose what to observe</li>
+<li>Limited understanding — The dynamics and rules of the world are not fully known</li>
+<li>Making and validation of progress — The system must verify it is actually advancing toward the goal</li>
+</ul>
+<h1 id="experiments">Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h1>
+<h2 id="hello-world-progression">Hello World Progression<a class="headerlink" href="#hello-world-progression" title="Permanent link">&para;</a></h2>
+<p>A sequence of experiments validating that the testbed is functioning and that LLMs can meaningfully engage with it. These tests serve two purposes:</p>
+<ol>
+<li><strong>End-to-end system validation</strong> — Exercise each component of the testbed to confirm the infrastructure works</li>
+<li><strong>On-ramp verification</strong> — Confirm that LLMs can actually enter this problem space before measuring sophisticated capabilities</li>
+</ol>
+<p>Key concerns this progression must address:</p>
+<ul>
+<li><strong>Knowledge transfer</strong> — Can LLMs map their prior knowledge of biology onto this novel domain? If they cannot recognize that familiar reasoning strategies apply, the tests measure nothing.</li>
+<li><strong>Control interface</strong> — Can LLMs manage themselves through whatever control mechanism we provide (MCP, direct API, etc.)? They must be able to observe, take actions, and run experiments.</li>
+<li><strong>Baseline engagement</strong> — Even if LLMs cannot fully solve complex problems, they should be able to make meaningful initial progress. If they fail to even begin attacking problems, we are not measuring the intended capabilities.</li>
+</ul>
+<p>After completing this progression, we should have confidence that the testbed can produce experiments that directly address our two main questions.</p>
+<h3 id="h1-representation-comprehension">H1: Representation Comprehension<a class="headerlink" href="#h1-representation-comprehension" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can parse and understand the alien biology representation format
+- Confirm it can answer basic structural questions without simulation</p>
+<p><strong>Construction</strong>:
+- Present a simple world: 2-3 compartments, 3-5 molecules, 2-3 reactions
+- Ask factual questions: "What molecules are in compartment X?", "What are the products of reaction Y?", "Which compartments share a membrane?"
+- Success = accurate answers about static structure</p>
+<h3 id="h2-single-step-dynamics-prediction">H2: Single-Step Dynamics Prediction<a class="headerlink" href="#h2-single-step-dynamics-prediction" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can reason about dynamics from indirect observations
+- Confirm it can predict concentration changes without seeing which reactions fired</p>
+<p><strong>Construction</strong>:
+- Present a world with known molecules and known possible reactions
+- Provide a simplified measurement device: concentrations of each molecule per compartment (abstracting mass spectrometry + molecule list → concentrations)
+- The LLM observes concentrations at t=0, simulation runs one step, LLM observes concentrations at t=1
+- Ask: "What happened? Which reactions likely fired? What do you expect at t=2?"
+- Note: The LLM never directly sees reaction events—only concentration changes
+- Success = reasonable inference about which reactions occurred, correct directional predictions for next step</p>
+<h3 id="h3-control-interface-exercise">H3: Control Interface Exercise<a class="headerlink" href="#h3-control-interface-exercise" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can operate the observation/action interface
+- Confirm it can execute a simple prescribed sequence</p>
+<p><strong>Construction</strong>:
+- Provide explicit instructions: "Observe the state, run 10 simulation steps, observe again, report what changed"
+- The LLM must correctly invoke the API/MCP tools in sequence
+- Success = correct tool usage, coherent report of observations</p>
+<h3 id="h4-goal-directed-single-intervention">H4: Goal-Directed Single Intervention<a class="headerlink" href="#h4-goal-directed-single-intervention" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can connect goals to actions in this domain
+- Confirm it can reason backward from desired outcome to intervention</p>
+<p><strong>Construction</strong>:
+- Present a world and a simple goal: "Increase glucose concentration in the cell"
+- The LLM must choose an action (add molecules, trigger a reaction, modify a flow)
+- Run simulation and check if the goal was achieved
+- Success = chooses a reasonable intervention, articulates why</p>
+<h3 id="h5-hypothesis-formation-from-observation">H5: Hypothesis Formation from Observation<a class="headerlink" href="#h5-hypothesis-formation-from-observation" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can observe dynamics and form hypotheses about hidden rules
+- Confirm basic scientific reasoning transfers to this domain</p>
+<p><strong>Construction</strong>:
+- Present a world with an unlabeled reaction (LLM doesn't know the stoichiometry)
+- Let it run experiments: vary inputs, observe outputs
+- Ask it to infer what the reaction does
+- Success = correctly identifies reactants, products, and approximate rates</p>
+<h2 id="measurement-dimensions">Measurement Dimensions<a class="headerlink" href="#measurement-dimensions" title="Permanent link">&para;</a></h2>
+<p><em>After the Hello World progression, this section will define orthogonal dimensions for measuring the target capabilities. Where possible, each dimension should have smoothly controllable complexity, allowing researchers to calibrate difficulty and measure incremental progress.</em></p>
+<h3 id="notes-and-questions">Notes and Questions<a class="headerlink" href="#notes-and-questions" title="Permanent link">&para;</a></h3>
+<h4 id="how-do-we-measure-the-systems-performance-on-these-tests">How do we measure the system's performance on these tests?<a class="headerlink" href="#how-do-we-measure-the-systems-performance-on-these-tests" title="Permanent link">&para;</a></h4>
+<p>Different tests may require different evaluation approaches. For example, H2 (dynamics prediction) could use multiple choice to avoid needing a separate grader for textual answers. Some options:
+- Multiple choice (objective, no grader needed)
+- Numerical prediction with tolerance (e.g., concentration within ±10%)
+- Binary success/failure based on simulation outcome (e.g., did the goal get achieved?)
+- Structured output that can be programmatically compared to ground truth</p>
+<p>Prefer evaluation methods that don't require another LLM to grade responses.</p>
+<h2 id="architecture-first-organization">Architecture-First Organization<a class="headerlink" href="#architecture-first-organization" title="Permanent link">&para;</a></h2>
+<p>Protocols are defined in an <code>architecture/</code> folder, separate from implementations. This enforces clear contracts and enables multiple implementations (e.g., PythonSimulator vs RustSimulator). See <a href="#folder-structure">#Folder Structure</a> for full layout.</p>
+<h2 id="2026-01-09-dat-refactor-idea">2026-01-09  DAT Refactor Idea<a class="headerlink" href="#2026-01-09-dat-refactor-idea" title="Permanent link">&para;</a></h2>
+<h3 id="core-insight">Core Insight<a class="headerlink" href="#core-insight" title="Permanent link">&para;</a></h3>
+<p>A DAT is just a folder where bio commands run. DAT handles folder/naming infrastructure; Bio handles all domain logic. Users only need two operations.</p>
+<h3 id="bio-verbs">Bio Verbs<a class="headerlink" href="#bio-verbs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Input</th>
+<th>Output</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>build</strong></td>
+<td>dotted name + seed</td>
+<td>DAT folder</td>
+<td>Create folder, generate bio content, write files</td>
+</tr>
+<tr>
+<td><strong>run</strong></td>
+<td>DAT path</td>
+<td>results</td>
+<td>Execute commands in the <code>run:</code> section</td>
+</tr>
+</tbody>
+</table>
+<p><code>build</code> internally does DAT lookup + bio generation. Users don't see lookup.</p>
+<p>Other operations (report, query, etc.) are just bio commands that can appear in <code>run:</code> sections. See <a href="ABIO%20Commands.html">Commands</a>.</p>
+<p><strong>Compound:</strong> <code>bio run scenarios.baseline</code> = build + run (when given dotted name)</p>
+<h3 id="naming-concern">Naming Concern<a class="headerlink" href="#naming-concern" title="Permanent link">&para;</a></h3>
+<p>"run" is overloaded:
+- DAT has a <code>.run()</code> method
+- Spec has a <code>run:</code> section<br />
+- Bio CLI has <code>bio run</code></p>
+<p>Options:
+- Keep it — the DAT run method executes the run section, so they align
+- Use <strong>execute</strong> at Bio API level: <code>Bio.execute(dat_path)</code></p>
+<h3 id="dat-spec-structure">DAT Spec Structure<a class="headerlink" href="#dat-spec-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">scenarios.baseline</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/scenarios/baseline_{seed}/</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">index.yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scenarios.baseline</span><span class="w">      </span><span class="c1"># Bio.build → write here</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">run . --agent claude</span><span class="w">              </span><span class="c1"># run current DAT with agent</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report .</span><span class="w">                          </span><span class="c1"># generate report</span>
+</code></pre></div>
+<h3 id="what-happens">What Happens<a class="headerlink" href="#what-happens" title="Permanent link">&para;</a></h3>
+<p><strong><code>bio build scenarios.baseline --seed 42</code></strong>
+1. Create folder <code>data/scenarios/baseline_42/</code>
+2. For each entry in <code>build:</code>:
+   - Bio.build the referenced generator
+   - Write result to specified path
+3. Done.</p>
+<p><strong><code>bio run data/scenarios/baseline_42/</code></strong>  (or <code>bio execute</code>)
+1. cd to DAT folder
+2. Execute each command in <code>run:</code> sequentially
+3. Results written to folder.</p>
+<h3 id="why-this-works">Why This Works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Two verbs</strong> — build and run. That's it.</li>
+<li><strong>Single language</strong> — Commands in <code>run:</code> are bio commands.</li>
+<li><strong>Transparent</strong> — Reads like what you'd type manually.</li>
+<li><strong>Composable</strong> — Experiments just spawn child DATs from their run section.</li>
+</ul>
+<h2 id="2026-01-14-abio-experiments-roadmap_1">2026-01-14  ABIO Experiments roadmap<a class="headerlink" href="#2026-01-14-abio-experiments-roadmap_1" title="Permanent link">&para;</a></h2>
+<h3 id="overall-objective-isolating-learning-and-solving-from-prior-training_1">Overall Objective: Isolating Learning and Solving from Prior Training<a class="headerlink" href="#overall-objective-isolating-learning-and-solving-from-prior-training_1" title="Permanent link">&para;</a></h3>
+<p>The Alien Biology objective is to measure the LLM's ability to apply generalized knowledge in provably novel contexts. Existing benchmarks measure how well LLMs capture general-purpose reasoning strategies from from their training corpora. Here we rigorously isolate the system's capacity to construct and utilize novel world models when faced with novel knowledge problems.</p>
+<ul>
+<li>
+<p><strong>Separation of knowledge types</strong> — We distinguish between generalized field knowledge (strategies and patterns a student might learn while training in a discipline) and problem-specific knowledge (what must be inferred when confronting a novel situation). Our tests should be insensitive to the former while measuring the latter in isolation.</p>
+</li>
+<li>
+<p><strong>Provable novelty</strong> — Tasks must be designed so that the specific world model required cannot have been provided—even indirectly—by the system's training. This removes the "taint" of background knowledge and reinforcement learning, ensuring we measure genuine inference rather than sophisticated recall.</p>
+</li>
+<li>
+<p><strong>Why this matters</strong> — If an LLM succeeds only when problems resemble its training data, it is interpolating. If it succeeds on provably novel problems requiring the same general strategies, it is genuinely applying knowledge to new contexts.</p>
+</li>
+</ul>
+<h3 id="questions_1">Questions<a class="headerlink" href="#questions_1" title="Permanent link">&para;</a></h3>
+<h3 id="provably-novel-world-model-building_1">Provably Novel World Model Building<a class="headerlink" href="#provably-novel-world-model-building_1" title="Permanent link">&para;</a></h3>
+<p>To what degree can LLMs construct and manipulate internal representations of novel systems, versus relying on pattern interpolation from training data?
+- <strong>Verifiable ground truth</strong> — This testbed provides physically-grounded scenarios where predictions can be checked against simulation, separating genuine reasoning from plausible confabulation, not just questions and answers.
+- <strong>Multi-dimensional integration</strong> — The constructed world model must capture and integrate physical constraints, logical relationships, novel conceptual distinctions, and their relationships to observable indirect measures—dimensions that interact but cannot be reduced to one another.</p>
+<h3 id="long-horizon-grounded-task-completion-with-limited-understanding-and-observability_1">Long-Horizon Grounded Task Completion with Limited Understanding and Observability<a class="headerlink" href="#long-horizon-grounded-task-completion-with-limited-understanding-and-observability_1" title="Permanent link">&para;</a></h3>
+<p>Can an LLM manage itself toward a complex objective over extended periods while interacting with a world it cannot fully see or understand? This tests sustained goal-directed behavior characterized by:</p>
+<ul>
+<li><strong>Long-running tasks</strong> — The objective requires decomposition into hundreds or thousands of sub-goals managed over time</li>
+<li><strong>Grounded interaction</strong> — Success requires acting through sensors and actuators, not just answering questions about provided information</li>
+<li><strong>Managing resources across competing concerns</strong>:</li>
+<li>Partial observability — The system cannot see the full world state and must choose what to observe</li>
+<li>Limited understanding — The dynamics and rules of the world are not fully known</li>
+<li>Making and validation of progress — The system must verify it is actually advancing toward the goal</li>
+</ul>
+<h1 id="experiments_1">Experiments<a class="headerlink" href="#experiments_1" title="Permanent link">&para;</a></h1>
+<h2 id="hello-world-progression_1">Hello World Progression<a class="headerlink" href="#hello-world-progression_1" title="Permanent link">&para;</a></h2>
+<p>A sequence of experiments validating that the testbed is functioning and that LLMs can meaningfully engage with it. These tests serve two purposes:</p>
+<ol>
+<li><strong>End-to-end system validation</strong> — Exercise each component of the testbed to confirm the infrastructure works</li>
+<li><strong>On-ramp verification</strong> — Confirm that LLMs can actually enter this problem space before measuring sophisticated capabilities</li>
+</ol>
+<p>Key concerns this progression must address:</p>
+<ul>
+<li><strong>Knowledge transfer</strong> — Can LLMs map their prior knowledge of biology onto this novel domain? If they cannot recognize that familiar reasoning strategies apply, the tests measure nothing.</li>
+<li><strong>Control interface</strong> — Can LLMs manage themselves through whatever control mechanism we provide (MCP, direct API, etc.)? They must be able to observe, take actions, and run experiments.</li>
+<li><strong>Baseline engagement</strong> — Even if LLMs cannot fully solve complex problems, they should be able to make meaningful initial progress. If they fail to even begin attacking problems, we are not measuring the intended capabilities.</li>
+</ul>
+<p>After completing this progression, we should have confidence that the testbed can produce experiments that directly address our two main questions.</p>
+<h3 id="h1-representation-comprehension_1">H1: Representation Comprehension<a class="headerlink" href="#h1-representation-comprehension_1" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can parse and understand the alien biology representation format
+- Confirm it can answer basic structural questions without simulation</p>
+<p><strong>Construction</strong>:
+- Present a simple world: 2-3 compartments, 3-5 molecules, 2-3 reactions
+- Ask factual questions: "What molecules are in compartment X?", "What are the products of reaction Y?", "Which compartments share a membrane?"
+- Success = accurate answers about static structure</p>
+<h3 id="h2-single-step-dynamics-prediction_1">H2: Single-Step Dynamics Prediction<a class="headerlink" href="#h2-single-step-dynamics-prediction_1" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can reason about dynamics from indirect observations
+- Confirm it can predict concentration changes without seeing which reactions fired</p>
+<p><strong>Construction</strong>:
+- Present a world with known molecules and known possible reactions
+- Provide a simplified measurement device: concentrations of each molecule per compartment (abstracting mass spectrometry + molecule list → concentrations)
+- The LLM observes concentrations at t=0, simulation runs one step, LLM observes concentrations at t=1
+- Ask: "What happened? Which reactions likely fired? What do you expect at t=2?"
+- Note: The LLM never directly sees reaction events—only concentration changes
+- Success = reasonable inference about which reactions occurred, correct directional predictions for next step</p>
+<h3 id="h3-control-interface-exercise_1">H3: Control Interface Exercise<a class="headerlink" href="#h3-control-interface-exercise_1" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can operate the observation/action interface
+- Confirm it can execute a simple prescribed sequence</p>
+<p><strong>Construction</strong>:
+- Provide explicit instructions: "Observe the state, run 10 simulation steps, observe again, report what changed"
+- The LLM must correctly invoke the API/MCP tools in sequence
+- Success = correct tool usage, coherent report of observations</p>
+<h3 id="h4-goal-directed-single-intervention_1">H4: Goal-Directed Single Intervention<a class="headerlink" href="#h4-goal-directed-single-intervention_1" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can connect goals to actions in this domain
+- Confirm it can reason backward from desired outcome to intervention</p>
+<p><strong>Construction</strong>:
+- Present a world and a simple goal: "Increase glucose concentration in the cell"
+- The LLM must choose an action (add molecules, trigger a reaction, modify a flow)
+- Run simulation and check if the goal was achieved
+- Success = chooses a reasonable intervention, articulates why</p>
+<h3 id="h5-hypothesis-formation-from-observation_1">H5: Hypothesis Formation from Observation<a class="headerlink" href="#h5-hypothesis-formation-from-observation_1" title="Permanent link">&para;</a></h3>
+<p><strong>Objectives</strong>:
+- Verify the LLM can observe dynamics and form hypotheses about hidden rules
+- Confirm basic scientific reasoning transfers to this domain</p>
+<p><strong>Construction</strong>:
+- Present a world with an unlabeled reaction (LLM doesn't know the stoichiometry)
+- Let it run experiments: vary inputs, observe outputs
+- Ask it to infer what the reaction does
+- Success = correctly identifies reactants, products, and approximate rates</p>
+<h2 id="measurement-dimensions_1">Measurement Dimensions<a class="headerlink" href="#measurement-dimensions_1" title="Permanent link">&para;</a></h2>
+<p><em>After the Hello World progression, this section will define orthogonal dimensions for measuring the target capabilities. Where possible, each dimension should have smoothly controllable complexity, allowing researchers to calibrate difficulty and measure incremental progress.</em></p>
+<h3 id="notes-and-questions_1">Notes and Questions<a class="headerlink" href="#notes-and-questions_1" title="Permanent link">&para;</a></h3>
+<h4 id="how-do-we-measure-the-systems-performance-on-these-tests_1">How do we measure the system's performance on these tests?<a class="headerlink" href="#how-do-we-measure-the-systems-performance-on-these-tests_1" title="Permanent link">&para;</a></h4>
+<p>Different tests may require different evaluation approaches. For example, H2 (dynamics prediction) could use multiple choice to avoid needing a separate grader for textual answers. Some options:
+- Multiple choice (objective, no grader needed)
+- Numerical prediction with tolerance (e.g., concentration within ±10%)
+- Binary success/failure based on simulation outcome (e.g., did the goal get achieved?)
+- Structured output that can be programmatically compared to ground truth</p>
+<p>Prefer evaluation methods that don't require another LLM to grade responses.</p>
+<h2 id="architecture-first-organization_1">Architecture-First Organization<a class="headerlink" href="#architecture-first-organization_1" title="Permanent link">&para;</a></h2>
+<p>Protocols are defined in an <code>architecture/</code> folder, separate from implementations. This enforces clear contracts and enables multiple implementations (e.g., PythonSimulator vs RustSimulator). See <a href="#folder-structure">#Folder Structure</a> for full layout.</p>
+<h2 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>alienbio/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  pyproject.toml       # uv-managed dependencies, Python &gt;=3.12
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  justfile             # build, test, run commands
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  README.md
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  .gitignore
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  src/
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    architecture/
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      entities.py      # BioMolecule, BioReaction, BioSystem, BioOrganism protocols
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      generators.py    # MoleculeGenerator, ReactionGenerator, SystemGenerator protocols
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      simulation.py    # State, Simulator, Timeline, World protocols
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      interface.py     # Measurement, Action, Task protocols
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      experiment.py    # Experiment, Test, Harness protocols
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    impl/
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      entities/        # BioMolecule, BioReaction, etc. implementations
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>      generators/      # MoleculeGenerator, ReactionGenerator, etc. implementations
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      simulation/      # PythonSimulator, RustSimulator, etc. implementations
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      interface/       # Measurement, Action, Task implementations
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      experiment/      # Experiment, Test, Harness implementations
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  tests/               # unit and integration tests
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  data/                # managed via dvc_dat, structure TBD
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  scripts/             # CLI entry points, one-off utilities
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  rust/                # Rust simulator implementation
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    Cargo.toml
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    src/
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      lib.rs           # PyO3 bindings
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  dvc_dat -&gt; ~/ob/proj/dvc_dat   # symlink, temporary until packaged
+</code></pre></div>
+<h2 id="justfile-commands">Justfile Commands<a class="headerlink" href="#justfile-commands" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>build</code> - build all components (Python package, Rust bindings)</li>
+<li><code>build-rust</code> - compile Rust simulator with maturin/pyo3</li>
+<li><code>test</code> - run pytest on tests/ folder</li>
+<li><code>check</code> - run pyright type checking</li>
+<li><code>fmt</code> - run ruff format on src/</li>
+<li><code>lint</code> - run ruff check on src/</li>
+<li><code>clean</code> - remove build artifacts, <strong>pycache</strong>, .pyc files</li>
+<li><code>run</code> - main entry point (TBD)</li>
+</ul>
+<h2 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h2>
+<p>GitHub Actions workflow:
+- On push/PR: run <code>test</code>, <code>check</code>, <code>lint</code>
+- Ensures tests pass and types check before merge</p>
+<h2 id="2026-01-10-m2-test-coverage-audit">2026-01-10 M2 Test Coverage Audit<a class="headerlink" href="#2026-01-10-m2-test-coverage-audit" title="Permanent link">&para;</a></h2>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>Created <code>tests/unit/test_bio_m2.py</code> with 26 tests covering M2 features. Results: 8 passing, 18 skipped (marking unimplemented features).</p>
+<h3 id="gaps-discovered">Gaps Discovered<a class="headerlink" href="#gaps-discovered" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>MoleculeImpl not registered as @biotype</strong> — <code>Bio.store()</code> calls <code>dehydrate()</code> which requires typed objects to be registered with the <code>@biotype</code> decorator. Need to add <code>@biotype</code> to <code>MoleculeImpl</code> class.</p>
+</li>
+<li>
+<p><strong>Bio.cd() not implemented</strong> — Tests marked as skipped. Need to implement current DAT tracking on Bio instance.</p>
+</li>
+<li>
+<p><strong>index.yaml convention not implemented</strong> — <code>fetch(dat_folder)</code> currently looks for <code>spec.yaml</code>, not <code>index.yaml</code>. Decide on convention.</p>
+</li>
+<li>
+<p><strong>Dotted name lookup not implemented</strong> — <code>fetch('catalog.scenarios.test')</code> should route to lookup searching configured roots. Currently not implemented.</p>
+</li>
+<li>
+<p><strong>Python module lookup not implemented</strong> — <code>fetch('alienbio.bio.Chemistry')</code> should return Python class. Not yet implemented.</p>
+</li>
+<li>
+<p><strong>Dotted path dereferencing not implemented</strong> — <code>fetch('path/to/dat.nested.key')</code> should load index.yaml then dereference. Not yet implemented.</p>
+</li>
+<li>
+<p><strong>hydrate=False option</strong> — <code>fetch(..., hydrate=False)</code> should return Scope without type construction. Not yet implemented.</p>
+</li>
+<li>
+<p><strong>raw=True option for store</strong> — <code>Bio.store(path, obj, raw=True)</code> should write plain dict without dehydration. Not yet implemented.</p>
+</li>
+</ol>
+<h3 id="test-categories">Test Categories<a class="headerlink" href="#test-categories" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Bio.cd()</strong> — 5 tests (all skipped)</li>
+<li><strong>Bio.fetch() routing</strong> — 5 tests (2 passing, 3 skipped)</li>
+<li><strong>Bio.fetch() hydration</strong> — 2 tests (1 passing, 1 skipped)</li>
+<li><strong>Bio.fetch() DAT pattern</strong> — 2 tests (all skipped)</li>
+<li><strong>Bio.run() routing</strong> — 3 tests (2 passing, 1 skipped)</li>
+<li><strong>Bio.store()</strong> — 5 tests (all skipped)</li>
+<li><strong>Bio.build() edge cases</strong> — 3 tests (2 passing, 1 skipped)</li>
+<li><strong>Integration</strong> — 2 tests (all skipped)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
