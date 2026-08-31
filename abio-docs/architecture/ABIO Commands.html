@@ -2598,7 +2598,7 @@
 <tr>
 <td>suite</td>
 <td><code>bio suite run &lt;spec.yaml&gt; [--out DIR] [--dry]</code></td>
-<td>Run a declared experiment (<a href="../Guide/ABIO%20Expr%20Spec.html">ABIO Expr Spec</a> § experiments): drafts the grid, runs every trial, writes <code>records.jsonl</code>, <code>manifest.json</code>, <code>map.json</code>/<code>map.csv</code>, <code>report.txt</code>. <code>--dry</code> prints the grid, the no-peeking verdict and the cost estimate without running.</td>
+<td>Run a declared experiment (<a href="../Guide/ABIO%20Expr%20Spec.html">ABIO Expr Spec</a> § experiments): drafts the grid, runs every trial, writes <code>records.jsonl</code>, <code>manifest.json</code>, <code>map.json</code>/<code>map.csv</code>, <code>report.txt</code>, and the run's one key figure <code>key.png</code> (+ <code>key.json</code>: readout and caption). <code>--dry</code> prints the grid, the no-peeking verdict and the cost estimate without running.</td>
 </tr>
 <tr>
 <td></td>
@@ -2613,7 +2613,17 @@
 <tr>
 <td></td>
 <td><code>bio suite report &lt;DIR&gt;</code></td>
-<td>Render the text report from the record store.</td>
+<td>Render the text report and the key figure (<code>key.png</code>, <code>key.json</code>) from the record store alone.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>bio suite models</code></td>
+<td>Refresh the recorded <code>models.list</code> snapshot (<code>suite/models_snapshot.json</code>, id → <code>created_at</code>) that lets an undated generation id count as pinned; a free call.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>bio report [--open] [--no-examples]</code></td>
+<td>Run the suite once and write what it tested, and whether it passed, as one page: the capability matrix with each proving test's sentence, the broader suites, the examples run fresh, the runs on disk — each with its key figure embedded (<code>reports/report.md</code> + <code>.html</code>, the HTML self-contained; <code>just report</code>).</td>
 </tr>
 <tr>
 <td>config</td>

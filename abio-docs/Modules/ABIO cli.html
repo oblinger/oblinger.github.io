@@ -2879,7 +2879,8 @@ echo '{name: test}' | bio store ./test   # Store data to relative path</p>
 <span class="normal"><a href="#__codelineno-0-90">90</a></span>
 <span class="normal"><a href="#__codelineno-0-91">91</a></span>
 <span class="normal"><a href="#__codelineno-0-92">92</a></span>
-<span class="normal"><a href="#__codelineno-0-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-93">93</a></span>
+<span class="normal"><a href="#__codelineno-0-94">94</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Main entry point for bio CLI.</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">    Args:</span>
@@ -2901,47 +2902,48 @@ echo '{name: test}' | bio store ./test   # Store data to relative path</p>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="s2">  suite resume|aggregate|report &lt;DIR&gt;         continue / rebuild / print a run directory</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="s2">  config [show | set KEY VALUE]               the framework configuration (keys, model)</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="s2">  test-matrix [--markdown] [--check]          the capability matrix (roadmap M48.1)</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="s2">Examples:</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="s2">  bio suite run catalog/experiments/exp4-zero.yaml --dry</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="s2">  bio suite run catalog/examples/ecosystem/ecosystem.yaml</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="s2">  bio test-matrix --check</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="p">)</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="s2">&quot;command&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Command (report, run, expand) or path to run as report&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="p">)</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="s2">&quot;args&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">REMAINDER</span><span class="p">,</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Command arguments (everything after the command, flags included, &quot;</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="s2">&quot;is handed to the subcommand verbatim; put -v/--version BEFORE the command)&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="p">)</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="s2">&quot;--version&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;version&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="n">version</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;%(prog)s </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="p">)</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enable verbose output&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="p">)</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="p">:</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="n">parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="c1"># Check if command is a registered command</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="ow">in</span> <span class="n">COMMANDS</span><span class="p">:</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="k">return</span> <span class="n">COMMANDS</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="p">](</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="c1"># Otherwise, treat as path and run report (default behavior)</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="k">return</span> <span class="n">COMMANDS</span><span class="p">[</span><span class="s2">&quot;report&quot;</span><span class="p">]([</span><span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="p">]</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="s2">  report [--open] [--no-examples]             run the suite; write what it tested + whether it passed (reports/)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="s2">Examples:</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="s2">  bio suite run catalog/experiments/exp04-zero.yaml --dry</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="s2">  bio suite run catalog/examples/ecosystem/ecosystem.yaml</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="s2">  bio test-matrix --check</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="p">)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="s2">&quot;command&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Command (report, run, expand) or path to run as report&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="p">)</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="s2">&quot;args&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">REMAINDER</span><span class="p">,</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Command arguments (everything after the command, flags included, &quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="s2">&quot;is handed to the subcommand verbatim; put -v/--version BEFORE the command)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="p">)</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="s2">&quot;--version&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;version&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="n">version</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;%(prog)s </span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enable verbose output&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="p">)</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="p">:</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="n">parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="c1"># Check if command is a registered command</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="ow">in</span> <span class="n">COMMANDS</span><span class="p">:</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="k">return</span> <span class="n">COMMANDS</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="p">](</span><span class="n">args</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bio: unknown command </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="si">!r}</span><span class="s2">; one of </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">COMMANDS</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="k">return</span> <span class="mi">2</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
