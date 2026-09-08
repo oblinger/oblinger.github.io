@@ -23,7 +23,7 @@
     
     
       
-        <title>Scenario Generator PRD - AlienBio Documentation</title>
+        <title>ABIO PRD Docs - AlienBio Documentation</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scenario Generator PRD
+              ABIO PRD Docs
             
           </span>
         </div>
@@ -3030,17 +3030,32 @@
   
 
 
+<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20PRD%20Docs">ABIO PRD Docs</a> </p>
 <h1 id="scenario-generator-prd">Scenario Generator PRD<a class="headerlink" href="#scenario-generator-prd" title="Permanent link">&para;</a></h1>
 <p><strong>Subsystem</strong>: <a href="ABIO%20biology.html">ABIO biology</a> &gt; Generators
 Product Requirements Document for synthetic alien biology scenario generation.</p>
 <hr />
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>The Scenario Generator produces complete alien biology scenarios for AI safety experiments. Unlike low-level generators (<a href="Classes/biology/ABIO%20MoleculeGenerator.html">ABIO MoleculeGenerator</a>, <a href="Classes/biology/ABIO%20ReactionGenerator.html">ABIO ReactionGenerator</a>, <a href="Classes/biology/ABIO%20ContainerGenerator.html">ABIO ContainerGenerator</a>) that produce individual components, the Scenario Generator creates coherent ecosystems with specified structural properties.</p>
-<p><strong>Key Terminology</strong>:
-| Term | Definition |
-|------|------------|
-| <code>scenario</code> | Concrete spec for one simulation — specific molecules, reactions, concentrations |
-| <code>scenario_generator_spec</code> | Spec for producing scenarios — templates, distributions, composition rules |</p>
+<p><strong>Key Terminology</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scenario</code></td>
+<td>Concrete spec for one simulation — specific molecules, reactions, concentrations</td>
+</tr>
+<tr>
+<td><code>scenario_generator_spec</code></td>
+<td>Spec for producing scenarios — templates, distributions, composition rules</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>scenario_generator_spec + seed → scenario
 </code></pre></div>
 <p><strong>Core Challenge</strong>: High-level properties like "inter-species mutualism" or "signaling complexity" emerge from how components are wired together, not from component counts. The generator must support both:
@@ -3219,13 +3234,33 @@ Product Requirements Document for synthetic alien biology scenario generation.</
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumer</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="nt">metabolism</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aerobic</span>
 </code></pre></div>
-<p><strong>Species Roles</strong>:
-| Role | Description |
-|------|-------------|
-| producer | Creates complex molecules from simple inputs |
-| consumer | Breaks down complex molecules for energy |
-| decomposer | Processes waste, recycles nutrients |
-| neutral | Background species, no critical role |</p>
+<p><strong>Species Roles</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>producer</td>
+<td>Creates complex molecules from simple inputs</td>
+</tr>
+<tr>
+<td>consumer</td>
+<td>Breaks down complex molecules for energy</td>
+</tr>
+<tr>
+<td>decomposer</td>
+<td>Processes waste, recycles nutrients</td>
+</tr>
+<tr>
+<td>neutral</td>
+<td>Background species, no critical role</td>
+</tr>
+</tbody>
+</table>
 <h3 id="43-interaction-specification">4.3 Interaction Specification<a class="headerlink" href="#43-interaction-specification" title="Permanent link">&para;</a></h3>
 <p>Interactions are <strong>first-class entities</strong> — they define how species depend on each other.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">interactions</span><span class="p">:</span>

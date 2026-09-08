@@ -3017,26 +3017,65 @@
   
 
 
-<p><a href="ABIO%20Architecture%20Docs.html">ABIO Architecture Docs</a> · [[ABIO Inference Bench]] · <a href="ABIO%20PRD%20Docs.html">Scenario Generator PRD</a></p>
+<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20Suite%20Construction">ABIO Suite Construction</a> 
+ <a href="ABIO%20Architecture%20Docs.html">ABIO Architecture Docs</a> · [[ABIO Inference Bench]] · <a href="ABIO%20PRD%20Docs.html">Scenario Generator PRD</a></p>
 <h1 id="abio-suite-construction">ABIO Suite Construction<a class="headerlink" href="#abio-suite-construction" title="Permanent link">&para;</a></h1>
 <p><strong>Subsystem</strong>: [[ABIO execution]] &gt; Benchmark generation
 Turns a <em>suite spec</em> into a <strong>suite</strong> — a battery of auto-graded tasks laid over a small set of verified worlds. This is the built realization of the [[ABIO Inference Bench]]; it sits on top of the world-generation layer defined by the <a href="ABIO%20PRD%20Docs.html">Scenario Generator PRD</a> and does not reinvent it.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The deliverable is a <strong>suite</strong>: many gradable tasks (identify-this-pathway, cure-this-disease, explain-this-molecule, …) instantiated over a handful of freshly-generated alien-biology worlds, each task carrying a machine-checkable objective whose ground truth we hold by construction. The central difficulty is a <strong>catch-22</strong>: you don't want to build a world without knowing what you need from it, but you can't carve a concrete task skeleton without knowing what world you're in. Suite Construction breaks that circle by working at two levels of commitment — it first instantiates <em>task archetypes</em> (partially-specified, parameterized task kinds) far enough to know what a world must provide, then runs a <strong>set-covering</strong> step that packs those archetypes into as few world envelopes as possible and assigns each task to a world. Only then does it draft base worlds, carve concrete skeletons into them, flesh them out, and <strong>verify by simulation</strong> — the catch-all that lets us wire skeleton chemicals into shared pathways without silently corrupting any task's ground truth.</p>
 <h2 id="vocabulary-locked">Vocabulary (locked)<a class="headerlink" href="#vocabulary-locked" title="Permanent link">&para;</a></h2>
-<p>These terms are used precisely throughout; the naming was chosen to avoid the redundancy between "skeleton" the archetype-structure and "skeleton" the concrete instance.
-| Term | Meaning |
-|------|---------|
-| <strong>suite</strong> | The deliverable — a set of tasks over a set of worlds, each with an objective + verified ground truth. |
-| <strong>suite spec</strong> / <strong>suite envelope</strong> | The input. Parameters (possibly stochastic) naming which task archetypes appear, how many of each, and the difficulty targets. |
-| <strong>task archetype</strong> | An abstract, parameterized <em>kind</em> of task (e.g. identify-a-pathway). Carries archetype parameters (pathway length, distractor count, layers traversed), a broad skeleton structure, and recipes for its evaluator + correct/incorrect answer generators. |
-| <strong>world envelope</strong> | Parameters (possibly stochastic) describing a world's generation statistics — species count, chain lengths, chemistry complexity, distractor density. Derived during set-covering to host its assigned archetypes. Corresponds to the <code>scenario_generator_spec</code>. |
-| <strong>base world</strong> | A partially-built world: molecules + chemical pathways drafted generically from the envelope, <em>before</em> any skeleton. Its molecules/pathways are <strong>proposed</strong> — later edited, added to, or clipped. |
-| <strong>skeleton</strong> | The concrete, fully-instantiated causal structure of <em>one specific task in one specific world</em>: specific molecules picked from the world, plus additions and clippings. The reserved word for the instantiated task structure. |
-| <strong>fleshed world</strong> | Base world + all its skeletons + distractor/filler chemistry added to roughly hit the envelope's target statistics. Full physics. |
-| <strong>world setup</strong> | A staging of a fleshed world — these organisms, in this vessel, at this pH, these initial concentrations. Changes <em>no</em> physics; it is the problem's setup. Many setups per world. |
-| <strong>objective</strong> | A task's machine-checkable scorer, plus a correct-answer generator and an incorrect-answer generator, built from the archetype's recipes. |
-| <strong>verification</strong> | Simulate control vs. intervention (or run the generated correct/incorrect answers through the objective) to confirm ground truth holds. On failure: discard and regenerate. |</p>
+<p>These terms are used precisely throughout; the naming was chosen to avoid the redundancy between "skeleton" the archetype-structure and "skeleton" the concrete instance.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>suite</strong></td>
+<td>The deliverable — a set of tasks over a set of worlds, each with an objective + verified ground truth.</td>
+</tr>
+<tr>
+<td><strong>suite spec</strong> / <strong>suite envelope</strong></td>
+<td>The input. Parameters (possibly stochastic) naming which task archetypes appear, how many of each, and the difficulty targets.</td>
+</tr>
+<tr>
+<td><strong>task archetype</strong></td>
+<td>An abstract, parameterized <em>kind</em> of task (e.g. identify-a-pathway). Carries archetype parameters (pathway length, distractor count, layers traversed), a broad skeleton structure, and recipes for its evaluator + correct/incorrect answer generators.</td>
+</tr>
+<tr>
+<td><strong>world envelope</strong></td>
+<td>Parameters (possibly stochastic) describing a world's generation statistics — species count, chain lengths, chemistry complexity, distractor density. Derived during set-covering to host its assigned archetypes. Corresponds to the <code>scenario_generator_spec</code>.</td>
+</tr>
+<tr>
+<td><strong>base world</strong></td>
+<td>A partially-built world: molecules + chemical pathways drafted generically from the envelope, <em>before</em> any skeleton. Its molecules/pathways are <strong>proposed</strong> — later edited, added to, or clipped.</td>
+</tr>
+<tr>
+<td><strong>skeleton</strong></td>
+<td>The concrete, fully-instantiated causal structure of <em>one specific task in one specific world</em>: specific molecules picked from the world, plus additions and clippings. The reserved word for the instantiated task structure.</td>
+</tr>
+<tr>
+<td><strong>fleshed world</strong></td>
+<td>Base world + all its skeletons + distractor/filler chemistry added to roughly hit the envelope's target statistics. Full physics.</td>
+</tr>
+<tr>
+<td><strong>world setup</strong></td>
+<td>A staging of a fleshed world — these organisms, in this vessel, at this pH, these initial concentrations. Changes <em>no</em> physics; it is the problem's setup. Many setups per world.</td>
+</tr>
+<tr>
+<td><strong>objective</strong></td>
+<td>A task's machine-checkable scorer, plus a correct-answer generator and an incorrect-answer generator, built from the archetype's recipes.</td>
+</tr>
+<tr>
+<td><strong>verification</strong></td>
+<td>Simulate control vs. intervention (or run the generated correct/incorrect answers through the objective) to confirm ground truth holds. On failure: discard and regenerate.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="the-pipeline-at-a-glance">The pipeline at a glance<a class="headerlink" href="#the-pipeline-at-a-glance" title="Permanent link">&para;</a></h2>
 <p>Suite Construction runs as an ordered pipeline. Each step commits a little more; the two-level structure (archetype first, concrete skeleton later) is what resolves the catch-22.</p>
 <ul>
