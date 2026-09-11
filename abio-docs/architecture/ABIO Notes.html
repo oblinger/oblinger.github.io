@@ -1692,7 +1692,7 @@
   <span class="md-ellipsis">
     
   
-    Execution
+    Infrastructure
   
 
     
@@ -1705,180 +1705,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Execution
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Classes/execution/ABIO%20state.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    State
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Classes/execution/ABIO%20simulator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Simulator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Classes/execution/ABIO%20timeline.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Timeline
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Classes/execution/ABIO%20world.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    World
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Infrastructure
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2058,10 +1884,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   
@@ -2079,8 +1905,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2824,8 +2650,11 @@
   
 
 
-<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20Notes">ABIO Notes</a> </p>
+<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="ha://p/ABIO%20Notes">ABIO Notes</a> </p>
 <h1 id="abio-miscellaneous-notes">ABIO MISCELLANEOUS NOTES<a class="headerlink" href="#abio-miscellaneous-notes" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Design notes from the M1 era (2026-01 to 2026-02), kept as history. The <code>bio build|run</code> verbs, <code>BioSystem</code>, <code>AgentSession</code> and the scenario runtime they discuss were deleted in M47.7 and T056; the shipped design is [[ABIO Architecture]].</p>
+</blockquote>
 <h2 id="2026-01-31-dat-refactor-idea">2026-01-31 DAT Refactor Idea<a class="headerlink" href="#2026-01-31-dat-refactor-idea" title="Permanent link">&para;</a></h2>
 <p>I've really been struggling with the fact that it seems like we're using the DAT system improperly. And I think it's just biting us in the ass. Rather than refactor anything here, let's just talk about this for a minute. I just added into the ABO features I just added another entry. Actually, it should probably be in the notes file. Let me go put it there. Okay. Now right at the top of ABIO notes, there is a there xr the first note there is DAT refactor idea. Let's just put our notes here for refactoring the DAT the way that the DAT system works. Here's the insight. I think DAT we really do have a different way of loading for biology and let's keep them separate. So But before we had the idea that we were gonna use DAT, to control @echo., and we were gonna use in job and job processing and we were gonna use the Biosystem for biology specifications xr. Etcetera. So let's see if we can do that. I think the place where we went off track before is we thought that there was just one load operator then we were stuck because was either gonna try to be the DAT du load it was gonna be the ABIO load. So But imagine and this is what we can kind of write down here, the difference methods xr. Imagine if for now, I'm just gonna call it lookup. Lookup is a DAT recipe lookup. And maybe there's a better word for this lookup. Let's create a table here where we can talk about these different verbs and what we might call them. But anyway, the first one is really looking up a adapt recipe for instantiation by calling the do function. And I think there was some confusion before of whether the dew would actually perform the action of the DAT. But let's assume it does not. So the do function When when you do this lookup, operation, you're gonna be returned a structure which is appropriate for doing DAT. Instantiation. So I think it can be a function that when you call it, it returns a DAT. But much more often, it's going to be the template. For a DAT. Which I believe can actually be just a dictionary inside of a recursive dictionary inside of Python file or even some YAML @echo.. Inside of a Python file. It can also be a YAML file in the file system. Not underneath the data folder, but still in the source code. I think it could be any of those things. But the idea is when you call the do function on it, it's gonna instantiate DAT object. Now that's different or that's that's not yet instantiating the biological object. But inside the DAT, inside the speck of the dat, It should also specify the biological build that's expected for this DAT. Because this is a recipe So we need to build the contents. And it might just be a simple dictionary called contents And you go through all the keys and you do the biological look up. So there needs to be a different lookup function which is also gonna look at the source code to get out the appropriate biological function and And put that into place. Xr seems like mostly you wouldn't want to, like, parse it in and then print it out I think you'd wanna keep it in whatever form Well, no. Most of the time, it's gonna be generated at this stage. So it really is gonna be dynamically constructed and then written out as a dynamic structure. Yeah. I think it is gonna be that way. So I think, though, your yeah. Maybe it will be A dictionary and it's the arguments to a bunch of build xr. Often, it's just gonna be one that just builds the structure that's gonna go into this DAT. And it's gonna In executing the the do function with the DAT. It will actually no. That's not true. I think we need to build the DAT and then the dat should tell us how to build the biological part. It's probably gonna be some kind of dictionary with the arguments or just a a reference to the thing that we're building. It's gonna call that It's gonna look it up doing biological look up. So some other name And then it's gonna do biological build. And that will give us an instantiated object. Which then gets saved wherever the contents dictionary told us to save it. Maybe there's one field that builds index dot Yann, since that's the main one that gets built most of the time. And then there's I don't know, a dictionary of contents for other objects that needs to get that need to get built. In the case that we're actually building a dApp with multiple things inside of it. But, anyway, at the end of this process, that includes the standard DAT instantiation followed by this specialized xr biological build process. Which is parameterized by the DAT, we end up with a completely instantiated death. Which has not been gpt. Run. Yet. It has not been dat run yet. It actually has a do method that tells you what to do but it hasn't been run. Build was not running it. The do method did the instantiation of it and some specialized build spec told us how to do the biological build of it. And at the end of that, we ended up with DAT. And what's nice about this now all of the machinery in DAT which allows us to automatically name the DAT based on the the DAT and stuff like that. Can be used to define that file and recursively you can also instantiate DAT in subfolders xr So I think the experimentation System. Will probably create a DAT. It will instantiate a DAT. That will recursively instantiate sub DAT in subfolders xr. So we end up with that complex structure at the end of the do. And then when you run the top level one, it will recursively run all the other ones. So now we're using DAT along with the dat. Data files as originally intended by DAT. And separately we are building the Bio. Files do you think about this approach?</p>
 <h2 id="2026-01-14-m114-agent-interface-implementation-questions">2026-01-14 M1.14 Agent Interface Implementation Questions<a class="headerlink" href="#2026-01-14-m114-agent-interface-implementation-questions" title="Permanent link">&para;</a></h2>
@@ -2895,7 +2724,7 @@
 - <strong>MCP (Model Context Protocol)</strong> — Claude-native, tool definitions as MCP servers
 - <strong>Direct API</strong> — Python function calls, agent receives function signatures
 - <strong>Chat-based</strong> — Natural language commands parsed by the system</p>
-<p>Already designed in [[Agent Interface]]:
+<p>Already designed in ~~[[Agent Interface]]~~:
 - Pure Python <code>AgentSession</code> with <code>observe()</code>, <code>act()</code>, <code>is_done()</code>
 - <code>ConversationalLLMAgent</code> converts to tool/function calls (works with Claude, OpenAI, etc.)
 - Timeline model: actions have initiation time + duration
@@ -2908,7 +2737,7 @@
 - <strong>YAML dump</strong> — Raw structured data, machine-readable
 - <strong>Structured summary</strong> — Formatted text with sections (Molecules, Reactions, etc.)
 - <strong>Natural language</strong> — "The cell contains glucose (5.2 units), ATP (3.1 units)..."</p>
-<p>Already implemented in [[Agent Interface]] <code>_format_observation()</code>:
+<p>Already implemented in ~~[[Agent Interface]]~~ <code>_format_observation()</code>:
 - Markdown headers for sections ("## Current Observations")
 - Key-value pairs for state (<code>molecule: concentration</code>)
 - Nested dicts shown with indentation
@@ -2928,7 +2757,7 @@
 - <strong>Always descriptive</strong> — Maximizes knowledge transfer
 - <strong>Progressive</strong> — Start descriptive (H1-H3), switch to opaque (H4-H5)
 - <strong>Variant-based</strong> — Each test has both variants for comparison</p>
-<p><strong>Decision</strong>: Use <strong>visibility mapping</strong> (aka "skinning") — already designed in [[Generator Spec#Visibility Specification]].</p>
+<p><strong>Decision</strong>: Use <strong>visibility mapping</strong> (aka "skinning") — already designed in ~~[[Generator Spec#Visibility Specification]]~~.</p>
 <p>The system maintains:
 - <strong>Ground truth</strong> — Internal descriptive names (<code>m.krel.energy.M1</code>, <code>r.krel.pathway1.build</code>)
 - <strong><code>_visibility_mapping_</code></strong> — Maps internal → opaque names (<code>ME1</code>, <code>RX1</code>)
@@ -2944,7 +2773,7 @@
 - <strong>Fixed budget</strong> — e.g., 10 observations, 5 actions per test
 - <strong>Cost-based</strong> — Actions have costs, total budget in "units"
 - <strong>Time-based</strong> — Wall-clock or token limit</p>
-<p><strong>Decision</strong>: Use <strong>dual budgets</strong> — already designed in [[Agent Interface#Termination Conditions]].</p>
+<p><strong>Decision</strong>: Use <strong>dual budgets</strong> — already designed in ~~[[Agent Interface#Termination Conditions]]~~.</p>
 <p>Two independent limits per scenario:
 - <code>action.limits.budget</code> — Cost budget (total action/measurement costs)
 - <code>action.limits.max_sim_time</code> — Simulation time budget (not wall clock)</p>
@@ -2957,7 +2786,7 @@
 - <strong>Scripted</strong> — Predefined action sequence for deterministic tests
 - <strong>Greedy</strong> — Simple heuristic (e.g., always add the target molecule)
 - <strong>Human</strong> — Interactive CLI for researcher baseline</p>
-<p>Already implemented in [[Agent Interface]]:
+<p>Already implemented in ~~[[Agent Interface]]~~:
 - <code>RandomAgent</code> — random valid actions, seeded
 - <code>OracleAgent</code> — computes optimal policy from ground truth
 - <code>ScriptedAgent</code> — follows predefined action sequence
@@ -2970,7 +2799,7 @@
 - <strong>Structured output</strong> — Require JSON/YAML responses, parse programmatically
 - <strong>Keyword matching</strong> — Check for presence of key terms
 - <strong>Numerical only</strong> — All answers are numbers with tolerance</p>
-<p><strong>Decision</strong>: <strong>No direct response evaluation</strong> — already designed in [[Agent Interface]].</p>
+<p><strong>Decision</strong>: <strong>No direct response evaluation</strong> — already designed in ~~[[Agent Interface]]~~.</p>
 <p>We don't evaluate what the agent <em>says</em>. We evaluate what happens in the <em>simulation</em>:
 - Agent interacts with simulation through actions/measurements
 - <code>scoring.score</code> is a <strong>computable function</strong> of the trace/state (e.g., <code>!_ population_health(trace)</code>)
@@ -3111,7 +2940,7 @@
 <h3 id="naming-concern">Naming Concern<a class="headerlink" href="#naming-concern" title="Permanent link">&para;</a></h3>
 <p>"run" is overloaded:
 - DAT has a <code>.run()</code> method
-- Spec has a <code>run:</code> section<br />
+- Spec has a <code>run:</code> section
 - Bio CLI has <code>bio run</code></p>
 <p>Options:
 - Keep it — the DAT run method executes the run section, so they align
