@@ -14047,31 +14047,31 @@ rendering of the arithmetic that produced <code>usd</code>.</p>
 
               <details class="mkdocstrings-source">
                 <summary>Source code in <code>src/alienbio/suite/spec.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-441">441</a></span>
-<span class="normal"><a href="#__codelineno-0-442">442</a></span>
-<span class="normal"><a href="#__codelineno-0-443">443</a></span>
-<span class="normal"><a href="#__codelineno-0-444">444</a></span>
-<span class="normal"><a href="#__codelineno-0-445">445</a></span>
-<span class="normal"><a href="#__codelineno-0-446">446</a></span>
-<span class="normal"><a href="#__codelineno-0-447">447</a></span>
-<span class="normal"><a href="#__codelineno-0-448">448</a></span>
-<span class="normal"><a href="#__codelineno-0-449">449</a></span>
-<span class="normal"><a href="#__codelineno-0-450">450</a></span>
-<span class="normal"><a href="#__codelineno-0-451">451</a></span>
-<span class="normal"><a href="#__codelineno-0-452">452</a></span>
-<span class="normal"><a href="#__codelineno-0-453">453</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-441" name="__codelineno-0-441"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-442" name="__codelineno-0-442"></a><span class="k">class</span><span class="w"> </span><span class="nc">CostEstimate</span><span class="p">:</span>
-<a id="__codelineno-0-443" name="__codelineno-0-443"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A dry-run USD cost projection over an :class:`ExperimentSpec`&#39;s grid,</span>
-<a id="__codelineno-0-444" name="__codelineno-0-444"></a><span class="sd">    from :func:`estimate_cost`. ``formula`` is a one-line human-readable</span>
-<a id="__codelineno-0-445" name="__codelineno-0-445"></a><span class="sd">    rendering of the arithmetic that produced ``usd``.&quot;&quot;&quot;</span>
-<a id="__codelineno-0-446" name="__codelineno-0-446"></a>
-<a id="__codelineno-0-447" name="__codelineno-0-447"></a>    <span class="n">llm_trials</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-448" name="__codelineno-0-448"></a>    <span class="n">turns_per_trial</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-449" name="__codelineno-0-449"></a>    <span class="n">input_tokens</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-450" name="__codelineno-0-450"></a>    <span class="n">output_tokens</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-451" name="__codelineno-0-451"></a>    <span class="n">usd</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-0-452" name="__codelineno-0-452"></a>    <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-<a id="__codelineno-0-453" name="__codelineno-0-453"></a>    <span class="n">formula</span><span class="p">:</span> <span class="nb">str</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-461">461</a></span>
+<span class="normal"><a href="#__codelineno-0-462">462</a></span>
+<span class="normal"><a href="#__codelineno-0-463">463</a></span>
+<span class="normal"><a href="#__codelineno-0-464">464</a></span>
+<span class="normal"><a href="#__codelineno-0-465">465</a></span>
+<span class="normal"><a href="#__codelineno-0-466">466</a></span>
+<span class="normal"><a href="#__codelineno-0-467">467</a></span>
+<span class="normal"><a href="#__codelineno-0-468">468</a></span>
+<span class="normal"><a href="#__codelineno-0-469">469</a></span>
+<span class="normal"><a href="#__codelineno-0-470">470</a></span>
+<span class="normal"><a href="#__codelineno-0-471">471</a></span>
+<span class="normal"><a href="#__codelineno-0-472">472</a></span>
+<span class="normal"><a href="#__codelineno-0-473">473</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-461" name="__codelineno-0-461"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-462" name="__codelineno-0-462"></a><span class="k">class</span><span class="w"> </span><span class="nc">CostEstimate</span><span class="p">:</span>
+<a id="__codelineno-0-463" name="__codelineno-0-463"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A dry-run USD cost projection over an :class:`ExperimentSpec`&#39;s grid,</span>
+<a id="__codelineno-0-464" name="__codelineno-0-464"></a><span class="sd">    from :func:`estimate_cost`. ``formula`` is a one-line human-readable</span>
+<a id="__codelineno-0-465" name="__codelineno-0-465"></a><span class="sd">    rendering of the arithmetic that produced ``usd``.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-466" name="__codelineno-0-466"></a>
+<a id="__codelineno-0-467" name="__codelineno-0-467"></a>    <span class="n">llm_trials</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-468" name="__codelineno-0-468"></a>    <span class="n">turns_per_trial</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-469" name="__codelineno-0-469"></a>    <span class="n">input_tokens</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-470" name="__codelineno-0-470"></a>    <span class="n">output_tokens</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-471" name="__codelineno-0-471"></a>    <span class="n">usd</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-0-472" name="__codelineno-0-472"></a>    <span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-473" name="__codelineno-0-473"></a>    <span class="n">formula</span><span class="p">:</span> <span class="nb">str</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -14214,7 +14214,13 @@ apply identically to every condition and never appear in a condition key
 <span class="normal"><a href="#__codelineno-0-103">103</a></span>
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
 <span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExperimentSpec</span><span class="p">:</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;One declared experiment: axes to sweep, how to draft + how to act, and</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    what to hold fixed. Loaded from YAML by :func:`load_spec`.</span>
@@ -14243,60 +14249,66 @@ apply identically to every condition and never appear in a condition key
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">compact_at</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">compact_budget</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">history_token_limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">token_ceiling</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">fixed_dials</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="n">out_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="c1">#: M45.5 — the cost ceiling + dry-run cost-estimate dials.</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="c1">#: ``expected_turns`` is the dry-run turn count; :func:`spec_from_dict`</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="c1">#: defaults it from a declared ``max_turns`` (fixed dial, or the largest</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="c1">#: swept level) when the spec does not set it, and to the runner&#39;s own</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="c1">#: ``max_turns`` default when no budget is declared at all. Set it</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="c1">#: explicitly for a spec whose agent is expected to commit well before</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="c1">#: the budget.</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">cost_ceiling_usd</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">price_usd_per_mtok</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">expected_turns</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">expected_prompt_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1500</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="n">expected_output_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="c1">#: M46.9 — the statistical design the run is committed to (None = undeclared;</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="c1">#: a declared design refuses a spec with too few trials per condition).</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">design</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PowerDesign</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="c1">#: M45.6 — trials in flight at once (live-model sweeps are I/O-bound).</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="c1">#: M45.7 — add the matched idle arm automatically: an ``agent`` axis of</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="c1">#: ``(agent, &quot;idle&quot;)`` under the same world seeds, so every condition has</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="c1">#: its do-nothing twin beside it. Expanded into ``axes`` at load.</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">idle_baseline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="c1">#: M36.3 — extra swept dials to seed-match beyond :data:`WORLD_INVARIANT_DIALS`:</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="c1">#: a world *variant switch* (EXP-6&#39;s ``ill_posed`` trap) whose arms should</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="c1">#: be drawn over the same base world, so the contrast is paired.</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">matched_dials</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="c1">#: The one report readout whose figure is this experiment&#39;s key graph</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="c1">#: (``suite.plots.PLOTTERS`` names: ``dose``, ``conflict``, ``delta``,</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="c1">#: ``degradation``, ``monitoring``, ``caution``, ``blindspot``,</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="c1">#: ``consideration``, ``hazard``, ``trial``, ``cells``). ``None`` = the first</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="c1">#: readout the records carry, in report order — declare it when two apply.</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="n">key_readout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="c1">#: M45.18 — the sampling parameters every live call runs under, so a</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="c1">#: dose-response&#39;s within-condition variation is *stated* sampling, not</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="c1">#: the provider&#39;s unrecorded default. ``temperature`` is required for a</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="c1">#: run with a live arm (refused at run time when absent); ``top_p`` is</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="c1">#: optional. Both ride on the manifest and on every record line. On a</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="c1">#: model with no sampling knob (the Claude 5 API refuses temperature /</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="c1">#: top_p — &quot;deprecated for this model&quot;), the literal</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="c1">#: ``&quot;provider-fixed&quot;`` is the stated regime; ``top_p`` must then be</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="c1">#: omitted.</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">temperature</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">top_p</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>    <span class="c1">#: M45.19 — the prompt-cache hit rate the dry-run estimate assumes on the</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="c1">#: fixed system prefix (directive + brief), measured by a pilot; 0 = none.</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">expected_cache_hit_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="c1">#: T030 — the pre-registration this spec runs under: an id in the</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="c1">#: commit-tracked ``catalog/registrations.yaml``. When set, the guard</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="c1">#: admits exactly the entry&#39;s dial set on exactly its drafter set</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="c1">#: (:func:`registration_admission`), refuses visibly on any mismatch,</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="c1">#: and the id is stamped on every record line + the manifest.</span>
-<a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">registration</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="c1">#: T059 — the LLM agent&#39;s per-turn output budget (AUP&#39;s Protocol Atlas):</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="c1">#: a flat ``max_tokens`` or an ``output_schedule`` ``{&quot;every&quot;, &quot;deep&quot;,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="c1">#: &quot;shallow&quot;}``; one form per arm; a trial dial of the same name overrides,</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="c1">#: so either can be swept. Unset, the provider fn&#39;s own cap applies.</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="n">max_tokens</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">output_schedule</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">token_ceiling</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">fixed_dials</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="n">out_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="c1">#: M45.5 — the cost ceiling + dry-run cost-estimate dials.</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="c1">#: ``expected_turns`` is the dry-run turn count; :func:`spec_from_dict`</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="c1">#: defaults it from a declared ``max_turns`` (fixed dial, or the largest</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="c1">#: swept level) when the spec does not set it, and to the runner&#39;s own</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="c1">#: ``max_turns`` default when no budget is declared at all. Set it</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="c1">#: explicitly for a spec whose agent is expected to commit well before</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="c1">#: the budget.</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="n">cost_ceiling_usd</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">price_usd_per_mtok</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">expected_turns</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">expected_prompt_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1500</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">expected_output_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="c1">#: M46.9 — the statistical design the run is committed to (None = undeclared;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="c1">#: a declared design refuses a spec with too few trials per condition).</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">design</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PowerDesign</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="c1">#: M45.6 — trials in flight at once (live-model sweeps are I/O-bound).</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="c1">#: M45.7 — add the matched idle arm automatically: an ``agent`` axis of</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="c1">#: ``(agent, &quot;idle&quot;)`` under the same world seeds, so every condition has</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="c1">#: its do-nothing twin beside it. Expanded into ``axes`` at load.</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="n">idle_baseline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="c1">#: M36.3 — extra swept dials to seed-match beyond :data:`WORLD_INVARIANT_DIALS`:</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="c1">#: a world *variant switch* (EXP-6&#39;s ``ill_posed`` trap) whose arms should</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="c1">#: be drawn over the same base world, so the contrast is paired.</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="n">matched_dials</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="c1">#: The one report readout whose figure is this experiment&#39;s key graph</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="c1">#: (``suite.plots.PLOTTERS`` names: ``dose``, ``conflict``, ``delta``,</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="c1">#: ``degradation``, ``monitoring``, ``caution``, ``blindspot``,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="c1">#: ``consideration``, ``hazard``, ``trial``, ``cells``). ``None`` = the first</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="c1">#: readout the records carry, in report order — declare it when two apply.</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">key_readout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="c1">#: M45.18 — the sampling parameters every live call runs under, so a</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="c1">#: dose-response&#39;s within-condition variation is *stated* sampling, not</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="c1">#: the provider&#39;s unrecorded default. ``temperature`` is required for a</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="c1">#: run with a live arm (refused at run time when absent); ``top_p`` is</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="c1">#: optional. Both ride on the manifest and on every record line. On a</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>    <span class="c1">#: model with no sampling knob (the Claude 5 API refuses temperature /</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="c1">#: top_p — &quot;deprecated for this model&quot;), the literal</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="c1">#: ``&quot;provider-fixed&quot;`` is the stated regime; ``top_p`` must then be</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="c1">#: omitted.</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="n">temperature</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="n">top_p</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="c1">#: M45.19 — the prompt-cache hit rate the dry-run estimate assumes on the</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="c1">#: fixed system prefix (directive + brief), measured by a pilot; 0 = none.</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">expected_cache_hit_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="c1">#: T030 — the pre-registration this spec runs under: an id in the</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="c1">#: commit-tracked ``catalog/registrations.yaml``. When set, the guard</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="c1">#: admits exactly the entry&#39;s dial set on exactly its drafter set</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="c1">#: (:func:`registration_admission`), refuses visibly on any mismatch,</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>    <span class="c1">#: and the id is stamped on every record line + the manifest.</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="n">registration</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -25919,27 +25931,7 @@ price, and <code>spec.price_usd_per_mtok</code> gives no override.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/alienbio/suite/spec.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-456">456</a></span>
-<span class="normal"><a href="#__codelineno-0-457">457</a></span>
-<span class="normal"><a href="#__codelineno-0-458">458</a></span>
-<span class="normal"><a href="#__codelineno-0-459">459</a></span>
-<span class="normal"><a href="#__codelineno-0-460">460</a></span>
-<span class="normal"><a href="#__codelineno-0-461">461</a></span>
-<span class="normal"><a href="#__codelineno-0-462">462</a></span>
-<span class="normal"><a href="#__codelineno-0-463">463</a></span>
-<span class="normal"><a href="#__codelineno-0-464">464</a></span>
-<span class="normal"><a href="#__codelineno-0-465">465</a></span>
-<span class="normal"><a href="#__codelineno-0-466">466</a></span>
-<span class="normal"><a href="#__codelineno-0-467">467</a></span>
-<span class="normal"><a href="#__codelineno-0-468">468</a></span>
-<span class="normal"><a href="#__codelineno-0-469">469</a></span>
-<span class="normal"><a href="#__codelineno-0-470">470</a></span>
-<span class="normal"><a href="#__codelineno-0-471">471</a></span>
-<span class="normal"><a href="#__codelineno-0-472">472</a></span>
-<span class="normal"><a href="#__codelineno-0-473">473</a></span>
-<span class="normal"><a href="#__codelineno-0-474">474</a></span>
-<span class="normal"><a href="#__codelineno-0-475">475</a></span>
-<span class="normal"><a href="#__codelineno-0-476">476</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-476">476</a></span>
 <span class="normal"><a href="#__codelineno-0-477">477</a></span>
 <span class="normal"><a href="#__codelineno-0-478">478</a></span>
 <span class="normal"><a href="#__codelineno-0-479">479</a></span>
@@ -26040,128 +26032,148 @@ price, and <code>spec.price_usd_per_mtok</code> gives no override.</p>
 <span class="normal"><a href="#__codelineno-0-574">574</a></span>
 <span class="normal"><a href="#__codelineno-0-575">575</a></span>
 <span class="normal"><a href="#__codelineno-0-576">576</a></span>
-<span class="normal"><a href="#__codelineno-0-577">577</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-456" name="__codelineno-0-456"></a><span class="k">def</span><span class="w"> </span><span class="nf">estimate_cost</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="n">ExperimentSpec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CostEstimate</span><span class="p">:</span>
-<a id="__codelineno-0-457" name="__codelineno-0-457"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Project ``spec``&#39;s USD cost from its grid shape alone — no trial runs.</span>
-<a id="__codelineno-0-458" name="__codelineno-0-458"></a>
-<a id="__codelineno-0-459" name="__codelineno-0-459"></a><span class="sd">    ``llm_trials`` is the number of ``(condition, trial)`` units whose</span>
-<a id="__codelineno-0-460" name="__codelineno-0-460"></a><span class="sd">    ``agent`` dial resolves to ``&quot;llm&quot;``: every cell if ``spec.agent ==</span>
-<a id="__codelineno-0-461" name="__codelineno-0-461"></a><span class="sd">    &quot;llm&quot;`` and there is no ``agent`` axis, else the count of cells whose</span>
-<a id="__codelineno-0-462" name="__codelineno-0-462"></a><span class="sd">    ``agent`` axis level is ``&quot;llm&quot;`` (times ``trials_per_condition``). Zero</span>
-<a id="__codelineno-0-463" name="__codelineno-0-463"></a><span class="sd">    llm trials means ``usd = 0.0``, ``model = None``, and no price lookup is</span>
-<a id="__codelineno-0-464" name="__codelineno-0-464"></a><span class="sd">    even attempted (an all-scripted spec never needs a known price).</span>
-<a id="__codelineno-0-465" name="__codelineno-0-465"></a>
-<a id="__codelineno-0-466" name="__codelineno-0-466"></a><span class="sd">    Per-trial input tokens (``P`` = ``expected_prompt_tokens``, ``T`` =</span>
-<a id="__codelineno-0-467" name="__codelineno-0-467"></a><span class="sd">    ``expected_turns`` — defaulted at load from the spec&#39;s declared</span>
-<a id="__codelineno-0-468" name="__codelineno-0-468"></a><span class="sd">    ``max_turns``, so a 20-turn episode is priced at 20 turns unless the</span>
-<a id="__codelineno-0-469" name="__codelineno-0-469"></a><span class="sd">    spec overrides it) depend on ``spec.memory``: ``&quot;full&quot;`` sums</span>
-<a id="__codelineno-0-470" name="__codelineno-0-470"></a><span class="sd">    ``P * (1 + t/2)`` over ``t`` in ``range(T)`` (each prior turn&#39;s history</span>
-<a id="__codelineno-0-471" name="__codelineno-0-471"></a><span class="sd">    roughly adds half a turn&#39;s worth of tokens); ``&quot;none&quot;`` is flat ``P *</span>
-<a id="__codelineno-0-472" name="__codelineno-0-472"></a><span class="sd">    T``; an ``int`` k is ``P * T * (1 + min(k, T-1)/2)``. Output tokens are</span>
-<a id="__codelineno-0-473" name="__codelineno-0-473"></a><span class="sd">    flat ``O * T`` (``O`` = ``expected_output_tokens``). ``usd`` is</span>
-<a id="__codelineno-0-474" name="__codelineno-0-474"></a><span class="sd">    :func:`~alienbio.suite.llm_agent.cost_usd` at</span>
-<a id="__codelineno-0-475" name="__codelineno-0-475"></a><span class="sd">    :func:`~alienbio.suite.llm_agent.price_for` ``(model,</span>
-<a id="__codelineno-0-476" name="__codelineno-0-476"></a><span class="sd">    spec.price_usd_per_mtok)``.</span>
-<a id="__codelineno-0-477" name="__codelineno-0-477"></a>
-<a id="__codelineno-0-478" name="__codelineno-0-478"></a><span class="sd">    Raises:</span>
-<a id="__codelineno-0-479" name="__codelineno-0-479"></a><span class="sd">        ValueError: ``llm_trials &gt; 0``, the resolved model has no published</span>
-<a id="__codelineno-0-480" name="__codelineno-0-480"></a><span class="sd">            price, and ``spec.price_usd_per_mtok`` gives no override.</span>
-<a id="__codelineno-0-481" name="__codelineno-0-481"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-482" name="__codelineno-0-482"></a>    <span class="n">total_cells</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-483" name="__codelineno-0-483"></a>    <span class="k">for</span> <span class="n">_name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<a id="__codelineno-0-484" name="__codelineno-0-484"></a>        <span class="n">total_cells</span> <span class="o">*=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-577">577</a></span>
+<span class="normal"><a href="#__codelineno-0-578">578</a></span>
+<span class="normal"><a href="#__codelineno-0-579">579</a></span>
+<span class="normal"><a href="#__codelineno-0-580">580</a></span>
+<span class="normal"><a href="#__codelineno-0-581">581</a></span>
+<span class="normal"><a href="#__codelineno-0-582">582</a></span>
+<span class="normal"><a href="#__codelineno-0-583">583</a></span>
+<span class="normal"><a href="#__codelineno-0-584">584</a></span>
+<span class="normal"><a href="#__codelineno-0-585">585</a></span>
+<span class="normal"><a href="#__codelineno-0-586">586</a></span>
+<span class="normal"><a href="#__codelineno-0-587">587</a></span>
+<span class="normal"><a href="#__codelineno-0-588">588</a></span>
+<span class="normal"><a href="#__codelineno-0-589">589</a></span>
+<span class="normal"><a href="#__codelineno-0-590">590</a></span>
+<span class="normal"><a href="#__codelineno-0-591">591</a></span>
+<span class="normal"><a href="#__codelineno-0-592">592</a></span>
+<span class="normal"><a href="#__codelineno-0-593">593</a></span>
+<span class="normal"><a href="#__codelineno-0-594">594</a></span>
+<span class="normal"><a href="#__codelineno-0-595">595</a></span>
+<span class="normal"><a href="#__codelineno-0-596">596</a></span>
+<span class="normal"><a href="#__codelineno-0-597">597</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-476" name="__codelineno-0-476"></a><span class="k">def</span><span class="w"> </span><span class="nf">estimate_cost</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="n">ExperimentSpec</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CostEstimate</span><span class="p">:</span>
+<a id="__codelineno-0-477" name="__codelineno-0-477"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Project ``spec``&#39;s USD cost from its grid shape alone — no trial runs.</span>
+<a id="__codelineno-0-478" name="__codelineno-0-478"></a>
+<a id="__codelineno-0-479" name="__codelineno-0-479"></a><span class="sd">    ``llm_trials`` is the number of ``(condition, trial)`` units whose</span>
+<a id="__codelineno-0-480" name="__codelineno-0-480"></a><span class="sd">    ``agent`` dial resolves to ``&quot;llm&quot;``: every cell if ``spec.agent ==</span>
+<a id="__codelineno-0-481" name="__codelineno-0-481"></a><span class="sd">    &quot;llm&quot;`` and there is no ``agent`` axis, else the count of cells whose</span>
+<a id="__codelineno-0-482" name="__codelineno-0-482"></a><span class="sd">    ``agent`` axis level is ``&quot;llm&quot;`` (times ``trials_per_condition``). Zero</span>
+<a id="__codelineno-0-483" name="__codelineno-0-483"></a><span class="sd">    llm trials means ``usd = 0.0``, ``model = None``, and no price lookup is</span>
+<a id="__codelineno-0-484" name="__codelineno-0-484"></a><span class="sd">    even attempted (an all-scripted spec never needs a known price).</span>
 <a id="__codelineno-0-485" name="__codelineno-0-485"></a>
-<a id="__codelineno-0-486" name="__codelineno-0-486"></a>    <span class="n">agent_axis</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">levels</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;agent&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-487" name="__codelineno-0-487"></a>    <span class="k">if</span> <span class="n">agent_axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-488" name="__codelineno-0-488"></a>        <span class="n">llm_levels</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">agent_axis</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;llm&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-489" name="__codelineno-0-489"></a>        <span class="n">other_cells</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-490" name="__codelineno-0-490"></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
-<a id="__codelineno-0-491" name="__codelineno-0-491"></a>            <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;agent&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-492" name="__codelineno-0-492"></a>                <span class="n">other_cells</span> <span class="o">*=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
-<a id="__codelineno-0-493" name="__codelineno-0-493"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="n">llm_levels</span> <span class="o">*</span> <span class="n">other_cells</span> <span class="o">*</span> <span class="n">spec</span><span class="o">.</span><span class="n">trials_per_condition</span>
-<a id="__codelineno-0-494" name="__codelineno-0-494"></a>    <span class="k">elif</span> <span class="n">spec</span><span class="o">.</span><span class="n">agent</span> <span class="o">==</span> <span class="s2">&quot;llm&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-495" name="__codelineno-0-495"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="n">total_cells</span> <span class="o">*</span> <span class="n">spec</span><span class="o">.</span><span class="n">trials_per_condition</span>
-<a id="__codelineno-0-496" name="__codelineno-0-496"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-497" name="__codelineno-0-497"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-0-498" name="__codelineno-0-498"></a>
-<a id="__codelineno-0-499" name="__codelineno-0-499"></a>    <span class="n">turns</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_turns</span>
-<a id="__codelineno-0-500" name="__codelineno-0-500"></a>    <span class="k">if</span> <span class="n">llm_trials</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-0-501" name="__codelineno-0-501"></a>        <span class="k">return</span> <span class="n">CostEstimate</span><span class="p">(</span>
-<a id="__codelineno-0-502" name="__codelineno-0-502"></a>            <span class="n">llm_trials</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-503" name="__codelineno-0-503"></a>            <span class="n">turns_per_trial</span><span class="o">=</span><span class="n">turns</span><span class="p">,</span>
-<a id="__codelineno-0-504" name="__codelineno-0-504"></a>            <span class="n">input_tokens</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-505" name="__codelineno-0-505"></a>            <span class="n">output_tokens</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-506" name="__codelineno-0-506"></a>            <span class="n">usd</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-<a id="__codelineno-0-507" name="__codelineno-0-507"></a>            <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-508" name="__codelineno-0-508"></a>            <span class="n">formula</span><span class="o">=</span><span class="s2">&quot;0 llm trials -&gt; $0.00&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-509" name="__codelineno-0-509"></a>        <span class="p">)</span>
-<a id="__codelineno-0-510" name="__codelineno-0-510"></a>
-<a id="__codelineno-0-511" name="__codelineno-0-511"></a>    <span class="n">prompt_tokens</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_prompt_tokens</span>
-<a id="__codelineno-0-512" name="__codelineno-0-512"></a>    <span class="n">output_tokens</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_output_tokens</span>
-<a id="__codelineno-0-513" name="__codelineno-0-513"></a>    <span class="n">memory</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">memory</span>
-<a id="__codelineno-0-514" name="__codelineno-0-514"></a>    <span class="k">if</span> <span class="n">memory</span> <span class="o">==</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-515" name="__codelineno-0-515"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prompt_tokens</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">turns</span><span class="p">))</span>
-<a id="__codelineno-0-516" name="__codelineno-0-516"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
-<a id="__codelineno-0-517" name="__codelineno-0-517"></a>    <span class="k">elif</span> <span class="n">memory</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-518" name="__codelineno-0-518"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="n">prompt_tokens</span> <span class="o">*</span> <span class="n">turns</span>
-<a id="__codelineno-0-519" name="__codelineno-0-519"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
-<a id="__codelineno-0-520" name="__codelineno-0-520"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-521" name="__codelineno-0-521"></a>        <span class="n">k</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">memory</span><span class="p">)</span>
-<a id="__codelineno-0-522" name="__codelineno-0-522"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="n">prompt_tokens</span> <span class="o">*</span> <span class="n">turns</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">turns</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-523" name="__codelineno-0-523"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-524" name="__codelineno-0-524"></a>    <span class="n">output_per_trial</span> <span class="o">=</span> <span class="n">output_tokens</span> <span class="o">*</span> <span class="n">turns</span>
-<a id="__codelineno-0-525" name="__codelineno-0-525"></a>
-<a id="__codelineno-0-526" name="__codelineno-0-526"></a>    <span class="n">total_input_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">input_per_trial</span> <span class="o">*</span> <span class="n">llm_trials</span><span class="p">)</span>
-<a id="__codelineno-0-527" name="__codelineno-0-527"></a>    <span class="n">total_output_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">output_per_trial</span> <span class="o">*</span> <span class="n">llm_trials</span><span class="p">)</span>
-<a id="__codelineno-0-528" name="__codelineno-0-528"></a>
-<a id="__codelineno-0-529" name="__codelineno-0-529"></a>    <span class="c1"># T051 box 4 — a ``model`` axis is priced per level, not at</span>
-<a id="__codelineno-0-530" name="__codelineno-0-530"></a>    <span class="c1"># ``spec.model``&#39;s rate: the axis is orthogonal to every other axis, so</span>
-<a id="__codelineno-0-531" name="__codelineno-0-531"></a>    <span class="c1"># each level owns an equal share of the llm trials. This is also the</span>
-<a id="__codelineno-0-532" name="__codelineno-0-532"></a>    <span class="c1"># pre-flight price check — the manifest is built from this estimate</span>
-<a id="__codelineno-0-533" name="__codelineno-0-533"></a>    <span class="c1"># before the first trial, so an unpriced level refuses before spend</span>
-<a id="__codelineno-0-534" name="__codelineno-0-534"></a>    <span class="c1"># instead of raising inside ``on_trial`` after a paid call.</span>
-<a id="__codelineno-0-535" name="__codelineno-0-535"></a>    <span class="n">model_axis</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">levels</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;model&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-536" name="__codelineno-0-536"></a>    <span class="k">if</span> <span class="n">model_axis</span><span class="p">:</span>
-<a id="__codelineno-0-537" name="__codelineno-0-537"></a>        <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">model_axis</span><span class="p">]</span>
-<a id="__codelineno-0-538" name="__codelineno-0-538"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-539" name="__codelineno-0-539"></a>        <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">spec</span><span class="o">.</span><span class="n">model</span> <span class="ow">or</span> <span class="n">PINNED_MODEL</span><span class="p">]</span>
-<a id="__codelineno-0-540" name="__codelineno-0-540"></a>    <span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="p">:</span> <span class="n">price_for</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">spec</span><span class="o">.</span><span class="n">price_usd_per_mtok</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">}</span>
-<a id="__codelineno-0-541" name="__codelineno-0-541"></a>    <span class="c1"># M45.19 — the fixed system prefix (directive + brief) is cacheable; a</span>
-<a id="__codelineno-0-542" name="__codelineno-0-542"></a>    <span class="c1"># pilot-measured hit rate moves that share of the input from full price</span>
-<a id="__codelineno-0-543" name="__codelineno-0-543"></a>    <span class="c1"># to the cache-read rate (cost_usd prices cache reads at 10%).</span>
-<a id="__codelineno-0-544" name="__codelineno-0-544"></a>    <span class="n">hit</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_cache_hit_rate</span>
-<a id="__codelineno-0-545" name="__codelineno-0-545"></a>    <span class="n">cached_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">total_input_tokens</span> <span class="o">*</span> <span class="n">hit</span><span class="p">)</span>
-<a id="__codelineno-0-546" name="__codelineno-0-546"></a>    <span class="n">share</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
-<a id="__codelineno-0-547" name="__codelineno-0-547"></a>    <span class="n">usd</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
-<a id="__codelineno-0-548" name="__codelineno-0-548"></a>        <span class="n">cost_usd</span><span class="p">(</span>
-<a id="__codelineno-0-549" name="__codelineno-0-549"></a>            <span class="nb">round</span><span class="p">((</span><span class="n">total_input_tokens</span> <span class="o">-</span> <span class="n">cached_tokens</span><span class="p">)</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
-<a id="__codelineno-0-550" name="__codelineno-0-550"></a>            <span class="nb">round</span><span class="p">(</span><span class="n">total_output_tokens</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
-<a id="__codelineno-0-551" name="__codelineno-0-551"></a>            <span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">],</span>
-<a id="__codelineno-0-552" name="__codelineno-0-552"></a>            <span class="n">cache_read_tokens</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">cached_tokens</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
-<a id="__codelineno-0-553" name="__codelineno-0-553"></a>        <span class="p">)</span>
-<a id="__codelineno-0-554" name="__codelineno-0-554"></a>        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span>
-<a id="__codelineno-0-555" name="__codelineno-0-555"></a>    <span class="p">)</span>
-<a id="__codelineno-0-556" name="__codelineno-0-556"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;mixed(&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
-<a id="__codelineno-0-557" name="__codelineno-0-557"></a>
-<a id="__codelineno-0-558" name="__codelineno-0-558"></a>    <span class="n">cache_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, cache hit </span><span class="si">{</span><span class="n">hit</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">hit</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-559" name="__codelineno-0-559"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-0-560" name="__codelineno-0-560"></a>        <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<a id="__codelineno-0-561" name="__codelineno-0-561"></a>        <span class="n">price_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@ $</span><span class="si">{</span><span class="n">price</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/$</span><span class="si">{</span><span class="n">price</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> per MTok&quot;</span>
-<a id="__codelineno-0-562" name="__codelineno-0-562"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-563" name="__codelineno-0-563"></a>        <span class="n">price_desc</span> <span class="o">=</span> <span class="s2">&quot;@ &quot;</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> $</span><span class="si">{</span><span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/$</span><span class="si">{</span><span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; per MTok, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="si">}</span><span class="s2"> equal shares&quot;</span>
-<a id="__codelineno-0-564" name="__codelineno-0-564"></a>    <span class="n">formula</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-0-565" name="__codelineno-0-565"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">llm_trials</span><span class="si">}</span><span class="s2"> llm_trials x (</span><span class="si">{</span><span class="n">turns</span><span class="si">}</span><span class="s2"> turns, memory=</span><span class="si">{</span><span class="n">memory_desc</span><span class="si">}</span><span class="s2">: &quot;</span>
-<a id="__codelineno-0-566" name="__codelineno-0-566"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_per_trial</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> input + </span><span class="si">{</span><span class="n">output_per_trial</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> output tok/trial</span><span class="si">{</span><span class="n">cache_desc</span><span class="si">}</span><span class="s2">) &quot;</span>
-<a id="__codelineno-0-567" name="__codelineno-0-567"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">price_desc</span><span class="si">}</span><span class="s2"> = $</span><span class="si">{</span><span class="n">usd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-568" name="__codelineno-0-568"></a>    <span class="p">)</span>
-<a id="__codelineno-0-569" name="__codelineno-0-569"></a>    <span class="k">return</span> <span class="n">CostEstimate</span><span class="p">(</span>
-<a id="__codelineno-0-570" name="__codelineno-0-570"></a>        <span class="n">llm_trials</span><span class="o">=</span><span class="n">llm_trials</span><span class="p">,</span>
-<a id="__codelineno-0-571" name="__codelineno-0-571"></a>        <span class="n">turns_per_trial</span><span class="o">=</span><span class="n">turns</span><span class="p">,</span>
-<a id="__codelineno-0-572" name="__codelineno-0-572"></a>        <span class="n">input_tokens</span><span class="o">=</span><span class="n">total_input_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-573" name="__codelineno-0-573"></a>        <span class="n">output_tokens</span><span class="o">=</span><span class="n">total_output_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-574" name="__codelineno-0-574"></a>        <span class="n">usd</span><span class="o">=</span><span class="n">usd</span><span class="p">,</span>
-<a id="__codelineno-0-575" name="__codelineno-0-575"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
-<a id="__codelineno-0-576" name="__codelineno-0-576"></a>        <span class="n">formula</span><span class="o">=</span><span class="n">formula</span><span class="p">,</span>
-<a id="__codelineno-0-577" name="__codelineno-0-577"></a>    <span class="p">)</span>
+<a id="__codelineno-0-486" name="__codelineno-0-486"></a><span class="sd">    Per-trial input tokens (``P`` = ``expected_prompt_tokens``, ``T`` =</span>
+<a id="__codelineno-0-487" name="__codelineno-0-487"></a><span class="sd">    ``expected_turns`` — defaulted at load from the spec&#39;s declared</span>
+<a id="__codelineno-0-488" name="__codelineno-0-488"></a><span class="sd">    ``max_turns``, so a 20-turn episode is priced at 20 turns unless the</span>
+<a id="__codelineno-0-489" name="__codelineno-0-489"></a><span class="sd">    spec overrides it) depend on ``spec.memory``: ``&quot;full&quot;`` sums</span>
+<a id="__codelineno-0-490" name="__codelineno-0-490"></a><span class="sd">    ``P * (1 + t/2)`` over ``t`` in ``range(T)`` (each prior turn&#39;s history</span>
+<a id="__codelineno-0-491" name="__codelineno-0-491"></a><span class="sd">    roughly adds half a turn&#39;s worth of tokens); ``&quot;none&quot;`` is flat ``P *</span>
+<a id="__codelineno-0-492" name="__codelineno-0-492"></a><span class="sd">    T``; an ``int`` k is ``P * T * (1 + min(k, T-1)/2)``. Output tokens are</span>
+<a id="__codelineno-0-493" name="__codelineno-0-493"></a><span class="sd">    flat ``O * T`` (``O`` = ``expected_output_tokens``). ``usd`` is</span>
+<a id="__codelineno-0-494" name="__codelineno-0-494"></a><span class="sd">    :func:`~alienbio.suite.llm_agent.cost_usd` at</span>
+<a id="__codelineno-0-495" name="__codelineno-0-495"></a><span class="sd">    :func:`~alienbio.suite.llm_agent.price_for` ``(model,</span>
+<a id="__codelineno-0-496" name="__codelineno-0-496"></a><span class="sd">    spec.price_usd_per_mtok)``.</span>
+<a id="__codelineno-0-497" name="__codelineno-0-497"></a>
+<a id="__codelineno-0-498" name="__codelineno-0-498"></a><span class="sd">    Raises:</span>
+<a id="__codelineno-0-499" name="__codelineno-0-499"></a><span class="sd">        ValueError: ``llm_trials &gt; 0``, the resolved model has no published</span>
+<a id="__codelineno-0-500" name="__codelineno-0-500"></a><span class="sd">            price, and ``spec.price_usd_per_mtok`` gives no override.</span>
+<a id="__codelineno-0-501" name="__codelineno-0-501"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-502" name="__codelineno-0-502"></a>    <span class="n">total_cells</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-503" name="__codelineno-0-503"></a>    <span class="k">for</span> <span class="n">_name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+<a id="__codelineno-0-504" name="__codelineno-0-504"></a>        <span class="n">total_cells</span> <span class="o">*=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+<a id="__codelineno-0-505" name="__codelineno-0-505"></a>
+<a id="__codelineno-0-506" name="__codelineno-0-506"></a>    <span class="n">agent_axis</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">levels</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;agent&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-507" name="__codelineno-0-507"></a>    <span class="k">if</span> <span class="n">agent_axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-508" name="__codelineno-0-508"></a>        <span class="n">llm_levels</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">agent_axis</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;llm&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-509" name="__codelineno-0-509"></a>        <span class="n">other_cells</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-510" name="__codelineno-0-510"></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+<a id="__codelineno-0-511" name="__codelineno-0-511"></a>            <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;agent&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-512" name="__codelineno-0-512"></a>                <span class="n">other_cells</span> <span class="o">*=</span> <span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+<a id="__codelineno-0-513" name="__codelineno-0-513"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="n">llm_levels</span> <span class="o">*</span> <span class="n">other_cells</span> <span class="o">*</span> <span class="n">spec</span><span class="o">.</span><span class="n">trials_per_condition</span>
+<a id="__codelineno-0-514" name="__codelineno-0-514"></a>    <span class="k">elif</span> <span class="n">spec</span><span class="o">.</span><span class="n">agent</span> <span class="o">==</span> <span class="s2">&quot;llm&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-515" name="__codelineno-0-515"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="n">total_cells</span> <span class="o">*</span> <span class="n">spec</span><span class="o">.</span><span class="n">trials_per_condition</span>
+<a id="__codelineno-0-516" name="__codelineno-0-516"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-517" name="__codelineno-0-517"></a>        <span class="n">llm_trials</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-518" name="__codelineno-0-518"></a>
+<a id="__codelineno-0-519" name="__codelineno-0-519"></a>    <span class="n">turns</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_turns</span>
+<a id="__codelineno-0-520" name="__codelineno-0-520"></a>    <span class="k">if</span> <span class="n">llm_trials</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-521" name="__codelineno-0-521"></a>        <span class="k">return</span> <span class="n">CostEstimate</span><span class="p">(</span>
+<a id="__codelineno-0-522" name="__codelineno-0-522"></a>            <span class="n">llm_trials</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-0-523" name="__codelineno-0-523"></a>            <span class="n">turns_per_trial</span><span class="o">=</span><span class="n">turns</span><span class="p">,</span>
+<a id="__codelineno-0-524" name="__codelineno-0-524"></a>            <span class="n">input_tokens</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-0-525" name="__codelineno-0-525"></a>            <span class="n">output_tokens</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-0-526" name="__codelineno-0-526"></a>            <span class="n">usd</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+<a id="__codelineno-0-527" name="__codelineno-0-527"></a>            <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-528" name="__codelineno-0-528"></a>            <span class="n">formula</span><span class="o">=</span><span class="s2">&quot;0 llm trials -&gt; $0.00&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-529" name="__codelineno-0-529"></a>        <span class="p">)</span>
+<a id="__codelineno-0-530" name="__codelineno-0-530"></a>
+<a id="__codelineno-0-531" name="__codelineno-0-531"></a>    <span class="n">prompt_tokens</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_prompt_tokens</span>
+<a id="__codelineno-0-532" name="__codelineno-0-532"></a>    <span class="n">output_tokens</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_output_tokens</span>
+<a id="__codelineno-0-533" name="__codelineno-0-533"></a>    <span class="n">memory</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">memory</span>
+<a id="__codelineno-0-534" name="__codelineno-0-534"></a>    <span class="k">if</span> <span class="n">memory</span> <span class="o">==</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-535" name="__codelineno-0-535"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prompt_tokens</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">t</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">turns</span><span class="p">))</span>
+<a id="__codelineno-0-536" name="__codelineno-0-536"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
+<a id="__codelineno-0-537" name="__codelineno-0-537"></a>    <span class="k">elif</span> <span class="n">memory</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-538" name="__codelineno-0-538"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="n">prompt_tokens</span> <span class="o">*</span> <span class="n">turns</span>
+<a id="__codelineno-0-539" name="__codelineno-0-539"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+<a id="__codelineno-0-540" name="__codelineno-0-540"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-541" name="__codelineno-0-541"></a>        <span class="n">k</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">memory</span><span class="p">)</span>
+<a id="__codelineno-0-542" name="__codelineno-0-542"></a>        <span class="n">input_per_trial</span> <span class="o">=</span> <span class="n">prompt_tokens</span> <span class="o">*</span> <span class="n">turns</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">turns</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-543" name="__codelineno-0-543"></a>        <span class="n">memory_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-544" name="__codelineno-0-544"></a>    <span class="n">output_per_trial</span> <span class="o">=</span> <span class="n">output_tokens</span> <span class="o">*</span> <span class="n">turns</span>
+<a id="__codelineno-0-545" name="__codelineno-0-545"></a>
+<a id="__codelineno-0-546" name="__codelineno-0-546"></a>    <span class="n">total_input_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">input_per_trial</span> <span class="o">*</span> <span class="n">llm_trials</span><span class="p">)</span>
+<a id="__codelineno-0-547" name="__codelineno-0-547"></a>    <span class="n">total_output_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">output_per_trial</span> <span class="o">*</span> <span class="n">llm_trials</span><span class="p">)</span>
+<a id="__codelineno-0-548" name="__codelineno-0-548"></a>
+<a id="__codelineno-0-549" name="__codelineno-0-549"></a>    <span class="c1"># T051 box 4 — a ``model`` axis is priced per level, not at</span>
+<a id="__codelineno-0-550" name="__codelineno-0-550"></a>    <span class="c1"># ``spec.model``&#39;s rate: the axis is orthogonal to every other axis, so</span>
+<a id="__codelineno-0-551" name="__codelineno-0-551"></a>    <span class="c1"># each level owns an equal share of the llm trials. This is also the</span>
+<a id="__codelineno-0-552" name="__codelineno-0-552"></a>    <span class="c1"># pre-flight price check — the manifest is built from this estimate</span>
+<a id="__codelineno-0-553" name="__codelineno-0-553"></a>    <span class="c1"># before the first trial, so an unpriced level refuses before spend</span>
+<a id="__codelineno-0-554" name="__codelineno-0-554"></a>    <span class="c1"># instead of raising inside ``on_trial`` after a paid call.</span>
+<a id="__codelineno-0-555" name="__codelineno-0-555"></a>    <span class="n">model_axis</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">levels</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">axes</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;model&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-556" name="__codelineno-0-556"></a>    <span class="k">if</span> <span class="n">model_axis</span><span class="p">:</span>
+<a id="__codelineno-0-557" name="__codelineno-0-557"></a>        <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">model_axis</span><span class="p">]</span>
+<a id="__codelineno-0-558" name="__codelineno-0-558"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-559" name="__codelineno-0-559"></a>        <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">spec</span><span class="o">.</span><span class="n">model</span> <span class="ow">or</span> <span class="n">PINNED_MODEL</span><span class="p">]</span>
+<a id="__codelineno-0-560" name="__codelineno-0-560"></a>    <span class="n">prices</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="p">:</span> <span class="n">price_for</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">spec</span><span class="o">.</span><span class="n">price_usd_per_mtok</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">}</span>
+<a id="__codelineno-0-561" name="__codelineno-0-561"></a>    <span class="c1"># M45.19 — the fixed system prefix (directive + brief) is cacheable; a</span>
+<a id="__codelineno-0-562" name="__codelineno-0-562"></a>    <span class="c1"># pilot-measured hit rate moves that share of the input from full price</span>
+<a id="__codelineno-0-563" name="__codelineno-0-563"></a>    <span class="c1"># to the cache-read rate (cost_usd prices cache reads at 10%).</span>
+<a id="__codelineno-0-564" name="__codelineno-0-564"></a>    <span class="n">hit</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">expected_cache_hit_rate</span>
+<a id="__codelineno-0-565" name="__codelineno-0-565"></a>    <span class="n">cached_tokens</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">total_input_tokens</span> <span class="o">*</span> <span class="n">hit</span><span class="p">)</span>
+<a id="__codelineno-0-566" name="__codelineno-0-566"></a>    <span class="n">share</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+<a id="__codelineno-0-567" name="__codelineno-0-567"></a>    <span class="n">usd</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+<a id="__codelineno-0-568" name="__codelineno-0-568"></a>        <span class="n">cost_usd</span><span class="p">(</span>
+<a id="__codelineno-0-569" name="__codelineno-0-569"></a>            <span class="nb">round</span><span class="p">((</span><span class="n">total_input_tokens</span> <span class="o">-</span> <span class="n">cached_tokens</span><span class="p">)</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
+<a id="__codelineno-0-570" name="__codelineno-0-570"></a>            <span class="nb">round</span><span class="p">(</span><span class="n">total_output_tokens</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
+<a id="__codelineno-0-571" name="__codelineno-0-571"></a>            <span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">],</span>
+<a id="__codelineno-0-572" name="__codelineno-0-572"></a>            <span class="n">cache_read_tokens</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">cached_tokens</span> <span class="o">*</span> <span class="n">share</span><span class="p">),</span>
+<a id="__codelineno-0-573" name="__codelineno-0-573"></a>        <span class="p">)</span>
+<a id="__codelineno-0-574" name="__codelineno-0-574"></a>        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span>
+<a id="__codelineno-0-575" name="__codelineno-0-575"></a>    <span class="p">)</span>
+<a id="__codelineno-0-576" name="__codelineno-0-576"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;mixed(&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+<a id="__codelineno-0-577" name="__codelineno-0-577"></a>
+<a id="__codelineno-0-578" name="__codelineno-0-578"></a>    <span class="n">cache_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, cache hit </span><span class="si">{</span><span class="n">hit</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">hit</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-579" name="__codelineno-0-579"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-580" name="__codelineno-0-580"></a>        <span class="n">price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">models</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<a id="__codelineno-0-581" name="__codelineno-0-581"></a>        <span class="n">price_desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;@ $</span><span class="si">{</span><span class="n">price</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/$</span><span class="si">{</span><span class="n">price</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> per MTok&quot;</span>
+<a id="__codelineno-0-582" name="__codelineno-0-582"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-583" name="__codelineno-0-583"></a>        <span class="n">price_desc</span> <span class="o">=</span> <span class="s2">&quot;@ &quot;</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> $</span><span class="si">{</span><span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">/$</span><span class="si">{</span><span class="n">prices</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; per MTok, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="si">}</span><span class="s2"> equal shares&quot;</span>
+<a id="__codelineno-0-584" name="__codelineno-0-584"></a>    <span class="n">formula</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-585" name="__codelineno-0-585"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">llm_trials</span><span class="si">}</span><span class="s2"> llm_trials x (</span><span class="si">{</span><span class="n">turns</span><span class="si">}</span><span class="s2"> turns, memory=</span><span class="si">{</span><span class="n">memory_desc</span><span class="si">}</span><span class="s2">: &quot;</span>
+<a id="__codelineno-0-586" name="__codelineno-0-586"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_per_trial</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> input + </span><span class="si">{</span><span class="n">output_per_trial</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> output tok/trial</span><span class="si">{</span><span class="n">cache_desc</span><span class="si">}</span><span class="s2">) &quot;</span>
+<a id="__codelineno-0-587" name="__codelineno-0-587"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">price_desc</span><span class="si">}</span><span class="s2"> = $</span><span class="si">{</span><span class="n">usd</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-588" name="__codelineno-0-588"></a>    <span class="p">)</span>
+<a id="__codelineno-0-589" name="__codelineno-0-589"></a>    <span class="k">return</span> <span class="n">CostEstimate</span><span class="p">(</span>
+<a id="__codelineno-0-590" name="__codelineno-0-590"></a>        <span class="n">llm_trials</span><span class="o">=</span><span class="n">llm_trials</span><span class="p">,</span>
+<a id="__codelineno-0-591" name="__codelineno-0-591"></a>        <span class="n">turns_per_trial</span><span class="o">=</span><span class="n">turns</span><span class="p">,</span>
+<a id="__codelineno-0-592" name="__codelineno-0-592"></a>        <span class="n">input_tokens</span><span class="o">=</span><span class="n">total_input_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-593" name="__codelineno-0-593"></a>        <span class="n">output_tokens</span><span class="o">=</span><span class="n">total_output_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-594" name="__codelineno-0-594"></a>        <span class="n">usd</span><span class="o">=</span><span class="n">usd</span><span class="p">,</span>
+<a id="__codelineno-0-595" name="__codelineno-0-595"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-0-596" name="__codelineno-0-596"></a>        <span class="n">formula</span><span class="o">=</span><span class="n">formula</span><span class="p">,</span>
+<a id="__codelineno-0-597" name="__codelineno-0-597"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -26213,45 +26225,45 @@ spec validations — a typo must never silently become a no-op.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/alienbio/suite/spec.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-404">404</a></span>
-<span class="normal"><a href="#__codelineno-0-405">405</a></span>
-<span class="normal"><a href="#__codelineno-0-406">406</a></span>
-<span class="normal"><a href="#__codelineno-0-407">407</a></span>
-<span class="normal"><a href="#__codelineno-0-408">408</a></span>
-<span class="normal"><a href="#__codelineno-0-409">409</a></span>
-<span class="normal"><a href="#__codelineno-0-410">410</a></span>
-<span class="normal"><a href="#__codelineno-0-411">411</a></span>
-<span class="normal"><a href="#__codelineno-0-412">412</a></span>
-<span class="normal"><a href="#__codelineno-0-413">413</a></span>
-<span class="normal"><a href="#__codelineno-0-414">414</a></span>
-<span class="normal"><a href="#__codelineno-0-415">415</a></span>
-<span class="normal"><a href="#__codelineno-0-416">416</a></span>
-<span class="normal"><a href="#__codelineno-0-417">417</a></span>
-<span class="normal"><a href="#__codelineno-0-418">418</a></span>
-<span class="normal"><a href="#__codelineno-0-419">419</a></span>
-<span class="normal"><a href="#__codelineno-0-420">420</a></span>
-<span class="normal"><a href="#__codelineno-0-421">421</a></span>
-<span class="normal"><a href="#__codelineno-0-422">422</a></span>
-<span class="normal"><a href="#__codelineno-0-423">423</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-404" name="__codelineno-0-404"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_spec</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ExperimentSpec</span><span class="p">:</span>
-<a id="__codelineno-0-405" name="__codelineno-0-405"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Load + validate an experiment file (M47.4: through the Expr loader —</span>
-<a id="__codelineno-0-406" name="__codelineno-0-406"></a><span class="sd">    one ``!experiment`` call whose ``task:`` / ``brief:`` / ``episode:`` are</span>
-<a id="__codelineno-0-407" name="__codelineno-0-407"></a><span class="sd">    quoted calls; see :mod:`alienbio.suite.expr_experiment`).</span>
-<a id="__codelineno-0-408" name="__codelineno-0-408"></a>
-<a id="__codelineno-0-409" name="__codelineno-0-409"></a><span class="sd">    A file under the repository&#39;s ``catalog/`` loads **trusted** (it may</span>
-<a id="__codelineno-0-410" name="__codelineno-0-410"></a><span class="sd">    ``_includes_`` Python helpers); any other path loads untrusted.</span>
-<a id="__codelineno-0-411" name="__codelineno-0-411"></a>
-<a id="__codelineno-0-412" name="__codelineno-0-412"></a><span class="sd">    Raises:</span>
-<a id="__codelineno-0-413" name="__codelineno-0-413"></a><span class="sd">        ExprError: the file is not an experiment form, names a dial no head</span>
-<a id="__codelineno-0-414" name="__codelineno-0-414"></a><span class="sd">            declares, sweeps an axis nothing reads, or fails any of the</span>
-<a id="__codelineno-0-415" name="__codelineno-0-415"></a><span class="sd">            spec validations — a typo must never silently become a no-op.</span>
-<a id="__codelineno-0-416" name="__codelineno-0-416"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-417" name="__codelineno-0-417"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">.expr_experiment</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_experiment</span>
-<a id="__codelineno-0-418" name="__codelineno-0-418"></a>
-<a id="__codelineno-0-419" name="__codelineno-0-419"></a>    <span class="c1"># The framework&#39;s own catalog is trusted (its files may include Python</span>
-<a id="__codelineno-0-420" name="__codelineno-0-420"></a>    <span class="c1"># helpers); anything else loads untrusted.</span>
-<a id="__codelineno-0-421" name="__codelineno-0-421"></a>    <span class="n">resolved</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
-<a id="__codelineno-0-422" name="__codelineno-0-422"></a>    <span class="n">trusted</span> <span class="o">=</span> <span class="p">(</span><span class="n">_REPO_ROOT</span> <span class="o">/</span> <span class="s2">&quot;catalog&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="ow">in</span> <span class="n">resolved</span><span class="o">.</span><span class="n">parents</span>
-<a id="__codelineno-0-423" name="__codelineno-0-423"></a>    <span class="k">return</span> <span class="n">load_experiment</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">trusted</span><span class="o">=</span><span class="n">trusted</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-424">424</a></span>
+<span class="normal"><a href="#__codelineno-0-425">425</a></span>
+<span class="normal"><a href="#__codelineno-0-426">426</a></span>
+<span class="normal"><a href="#__codelineno-0-427">427</a></span>
+<span class="normal"><a href="#__codelineno-0-428">428</a></span>
+<span class="normal"><a href="#__codelineno-0-429">429</a></span>
+<span class="normal"><a href="#__codelineno-0-430">430</a></span>
+<span class="normal"><a href="#__codelineno-0-431">431</a></span>
+<span class="normal"><a href="#__codelineno-0-432">432</a></span>
+<span class="normal"><a href="#__codelineno-0-433">433</a></span>
+<span class="normal"><a href="#__codelineno-0-434">434</a></span>
+<span class="normal"><a href="#__codelineno-0-435">435</a></span>
+<span class="normal"><a href="#__codelineno-0-436">436</a></span>
+<span class="normal"><a href="#__codelineno-0-437">437</a></span>
+<span class="normal"><a href="#__codelineno-0-438">438</a></span>
+<span class="normal"><a href="#__codelineno-0-439">439</a></span>
+<span class="normal"><a href="#__codelineno-0-440">440</a></span>
+<span class="normal"><a href="#__codelineno-0-441">441</a></span>
+<span class="normal"><a href="#__codelineno-0-442">442</a></span>
+<span class="normal"><a href="#__codelineno-0-443">443</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-424" name="__codelineno-0-424"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_spec</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ExperimentSpec</span><span class="p">:</span>
+<a id="__codelineno-0-425" name="__codelineno-0-425"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Load + validate an experiment file (M47.4: through the Expr loader —</span>
+<a id="__codelineno-0-426" name="__codelineno-0-426"></a><span class="sd">    one ``!experiment`` call whose ``task:`` / ``brief:`` / ``episode:`` are</span>
+<a id="__codelineno-0-427" name="__codelineno-0-427"></a><span class="sd">    quoted calls; see :mod:`alienbio.suite.expr_experiment`).</span>
+<a id="__codelineno-0-428" name="__codelineno-0-428"></a>
+<a id="__codelineno-0-429" name="__codelineno-0-429"></a><span class="sd">    A file under the repository&#39;s ``catalog/`` loads **trusted** (it may</span>
+<a id="__codelineno-0-430" name="__codelineno-0-430"></a><span class="sd">    ``_includes_`` Python helpers); any other path loads untrusted.</span>
+<a id="__codelineno-0-431" name="__codelineno-0-431"></a>
+<a id="__codelineno-0-432" name="__codelineno-0-432"></a><span class="sd">    Raises:</span>
+<a id="__codelineno-0-433" name="__codelineno-0-433"></a><span class="sd">        ExprError: the file is not an experiment form, names a dial no head</span>
+<a id="__codelineno-0-434" name="__codelineno-0-434"></a><span class="sd">            declares, sweeps an axis nothing reads, or fails any of the</span>
+<a id="__codelineno-0-435" name="__codelineno-0-435"></a><span class="sd">            spec validations — a typo must never silently become a no-op.</span>
+<a id="__codelineno-0-436" name="__codelineno-0-436"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-437" name="__codelineno-0-437"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">.expr_experiment</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_experiment</span>
+<a id="__codelineno-0-438" name="__codelineno-0-438"></a>
+<a id="__codelineno-0-439" name="__codelineno-0-439"></a>    <span class="c1"># The framework&#39;s own catalog is trusted (its files may include Python</span>
+<a id="__codelineno-0-440" name="__codelineno-0-440"></a>    <span class="c1"># helpers); anything else loads untrusted.</span>
+<a id="__codelineno-0-441" name="__codelineno-0-441"></a>    <span class="n">resolved</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<a id="__codelineno-0-442" name="__codelineno-0-442"></a>    <span class="n">trusted</span> <span class="o">=</span> <span class="p">(</span><span class="n">_REPO_ROOT</span> <span class="o">/</span> <span class="s2">&quot;catalog&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="ow">in</span> <span class="n">resolved</span><span class="o">.</span><span class="n">parents</span>
+<a id="__codelineno-0-443" name="__codelineno-0-443"></a>    <span class="k">return</span> <span class="n">load_experiment</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">trusted</span><span class="o">=</span><span class="n">trusted</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
