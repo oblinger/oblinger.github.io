@@ -57,6 +57,10 @@ title: Dan Oblinger
    	 Contact me at <a href="mailto:public@oblinger.us">public@oblinger.us</a>.
    </div>
 
+   <div style="font-size: 11pt; color: #888; text-align: center;">
+   	 Daniel Anthony Oblinger · 101 Bache Street, San Francisco, CA 94110 · <a href="mailto:oblinger@gmail.com">oblinger@gmail.com</a> · +1 415 494 9499
+   </div>
+
   </div>
 
 </div>
