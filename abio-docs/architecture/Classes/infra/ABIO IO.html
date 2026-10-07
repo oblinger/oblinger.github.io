@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://oblinger.github.io/abio-docs/Architecture/Classes/infra/ABIO%20IO.html">
       
       
-        <link rel="prev" href="ABIO%20DAT%20Class.html">
+        <link rel="prev" href="ABIO%20entity.html">
       
       
-        <link rel="next" href="ABIO%20Expr%20Class.html">
+        <link rel="next" href="../../ABIO%20Commands.html">
       
       
         
@@ -1477,34 +1477,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../biology/ABIO%20Pathway.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pathway
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../biology/ABIO%20Chemistry.html" class="md-nav__link">
         
   
@@ -1746,34 +1718,6 @@
     
   
     Entity
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ABIO%20DAT%20Class.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DAT
   
 
     
@@ -2078,239 +2022,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ABIO%20Expr%20Class.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Expr
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ABIO%20Interpreter.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Interpreter
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Generators
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Generators
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biology/ABIO%20generator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Generator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biology/ABIO%20ContainerGenerator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ContainerGenerator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biology/ABIO%20MoleculeGenerator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MoleculeGenerator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biology/ABIO%20ReactionGenerator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ReactionGenerator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2915,7 +2626,7 @@
 <h1 id="io">IO<a class="headerlink" href="#io" title="Permanent link">&para;</a></h1>
 <p>Entity I/O: prefix bindings, formatting, lookup, and persistence.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>IO handles all external representation concerns for entities: prefix bindings for short names, formatting to strings, lookup by reference, and persistence via DAT. It is accessed through Context and provides the implementation for top-level <code>load</code>, <code>save</code>, <code>lookup</code>, and <code>create_root</code> functions.</p>
+<p>IO handles all external representation concerns for entities: prefix bindings for short names, formatting to strings, lookup by reference, and persistence through dvc-dat. Its own methods (<code>lookup</code>, <code>load</code>, <code>save</code>, <code>bind_prefix</code>) are the interface — the M1 <code>Context</code> object that used to own an IO, and the top-level <code>load</code> / <code>save</code> / <code>lookup</code> / <code>create_root</code> functions it exposed, were deleted with the M1 runtime (M47.7 / T056; noted 2026-10-07, T068).</p>
 <table>
 <thead>
 <tr>
@@ -3200,7 +2911,6 @@
 </code></pre></div>
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[[Context]] - Parent container for IO</li>
 <li>[[Entity]] - Base class, tree invariants, serialization</li>
 <li><a href="../../ABIO%20DAT.html">ABIO DAT</a> - Underlying DAT persistence</li>
 </ul>

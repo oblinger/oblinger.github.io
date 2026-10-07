@@ -109,10 +109,6 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20ContainerGenerator.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
          <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20Flow.html</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
@@ -121,19 +117,7 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20MoleculeGenerator.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20Pathway.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
          <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20Reaction.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20ReactionGenerator.html</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
@@ -145,23 +129,7 @@
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/biology/ABIO%20generator.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/infra/ABIO%20DAT%20Class.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/infra/ABIO%20Expr%20Class.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
          <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/infra/ABIO%20IO.html</loc>
-         <lastmod>2026-10-07</lastmod>
-    </url>
-    <url>
-         <loc>https://oblinger.github.io/abio-docs/Architecture/Classes/infra/ABIO%20Interpreter.html</loc>
          <lastmod>2026-10-07</lastmod>
     </url>
     <url>
