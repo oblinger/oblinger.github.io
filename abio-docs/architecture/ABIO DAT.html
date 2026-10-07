@@ -2404,21 +2404,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operators" class="md-nav__link">
+  <a href="#the-surface-as-the-package-sees-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operators
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
+        The surface, as the package sees it
       
     </span>
   </a>
@@ -2429,7 +2418,7 @@
   <a href="#development-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Development Setup
+        Development setup
       
     </span>
   </a>
@@ -2467,82 +2456,95 @@
   
 
 
-<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20DAT">ABIO DAT</a> </p>
+<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="ha://p/ABIO%20DAT">ABIO DAT</a> </p>
 <h1 id="abio-dat">ABIO DAT<a class="headerlink" href="#abio-dat" title="Permanent link">&para;</a></h1>
-<p><strong>Topic</strong>: [[ABIO Topics]] 
-Data management via dvc_dat integration.</p>
+<p><strong>Topic</strong>: ~~[[ABIO Topics]]~~ 
+What alienbio actually uses <a href="https://github.com/oblinger/dvc-dat">dvc_dat</a> for.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>ABIO uses <a href="https://github.com/oblinger/dvc-dat">dvc_dat</a> for data persistence. See the <a href="https://github.com/oblinger/dvc-dat/blob/main/docs/concepts.md">dvc_dat documentation</a> for full details.</p>
-<p><strong>Key concepts:</strong>
-- <strong>Dotted names</strong> (do-system): Reference source code templates via <code>do()</code> and <code>create()</code>
-- <strong>Slash paths</strong> (DAT storage): Reference data folders via <code>load()</code> and <code>save()</code>
-- <strong>Bio class</strong>: Higher-level interface for biology objects via <code>Bio.fetch()</code> and <code>Bio.store()</code> — see [[Bio]] 
-- <strong>Spec Language</strong>: YAML syntax extensions (<code>!ev</code>, <code>!ref</code>, <code>!include</code>, typed keys, jobs) — see [[Spec Language]] </p>
+<p>Rewritten 2026-10-07 (T067). dvc-dat moved to <code>~/ob/grove/dvc-dat</code> and went
+to <strong>3.0</strong>, which retired the module-level <code>do()</code> function, the <code>Dat.spec</code>
+attribute, the runnable-spec surface and <code>DatManager.sync_folder</code>. The page
+below describes the surface alienbio depends on, which is much smaller than
+the one it used to document.</p>
+<p><strong>What the package uses.</strong> <code>alienbio</code> imports exactly one name from the
+library — <code>Dat</code> — and uses it as a <em>duck-typed anchor</em>: the thing an
+<code>Entity</code> carries so it has an identity and a place on disk. Every synthetic
+object carries a <code>MockDat(f"{prefix}/{name}")</code> instead (<code>infra/mk.py</code>,
+<code>bio/molecule.py</code>, <code>bio/reaction.py</code>, <code>bio/chemistry.py</code>,
+<code>suite/runner.py</code>), so the overwhelming majority of a run never touches the
+store at all. <code>infra/io.py</code> is the only module that reads the live manager.</p>
+<p><strong>What it does not use.</strong> The do-system (dotted names resolved through
+<code>do()</code> / <code>Dat.do</code>), runnable specs (<code>dat.run()</code>), the ledger, and the
+artifact store. The do-system left alienbio with the M1 scenario runtime in
+M47.7; a spec is an <a href="../Guide/ABIO%20Expr%20Spec.html">Expr</a> document now, loaded by
+<code>suite/spec.py</code>, and an experiment is run by <code>bio suite run</code>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p><code>.dataconfig.yaml</code> in the project root:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">sync_folder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">mount_commands</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">catalog</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">folder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/alienbio/catalog</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">at</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fixtures</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tests.fixtures</span>
-</code></pre></div>
-<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<p><strong>There is none, deliberately.</strong> The repo carried a <code>.dataconfig.yaml</code>
+(<code>sync_folder:</code> + three <code>mount_commands:</code>) until 2026-10-07; 3.0 reads
+<code>.datconfig.yaml</code> and accepts only <code>dat_folders</code> / <code>art_folder</code> / <code>index</code> /
+<code>manager</code> / <code>verify</code>, so that file had been <strong>silently ignored</strong> — and the
+mounts it declared were do-namespaces nothing resolves any more. It was
+deleted rather than translated, because the translation is exactly 3.0's
+default:</p>
+<ul>
+<li>dat folders — <code>data/</code> beside the config root.</li>
+<li>artifact folder — <code>art/</code> beside it (gitignored; any test that touches a
+  real <code>Dat</code> creates it).</li>
+</ul>
+<p>A later need for a non-default location is a <code>.datconfig.yaml</code> with
+<code>dat_folders:</code>, not a revival of the old keys.</p>
+<h2 id="the-surface-as-the-package-sees-it">The surface, as the package sees it<a class="headerlink" href="#the-surface-as-the-package-sees-it" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Function</th>
-<th>Description</th>
+<th>Call</th>
+<th>What alienbio does with it</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>do(name)</code></td>
-<td>Load object by dotted name (returns dict, module, or callable)</td>
+<td><code>Dat</code></td>
+<td>the anchor type an <code>Entity</code> carries; also a <code>TYPE_CHECKING</code>-only import in the bio classes</td>
 </tr>
 <tr>
-<td><code>create(spec, path=)</code></td>
-<td>Create a Dat from spec string or dict</td>
+<td><code>Dat.create(path=…, spec=…)</code></td>
+<td>writes a dat folder; <code>infra/io.py</code> persistence and the unit round-trip</td>
 </tr>
 <tr>
-<td><code>load(path)</code></td>
-<td>Load a Dat from a data path</td>
+<td><code>Dat.load(path)</code></td>
+<td>reads one back</td>
 </tr>
 <tr>
-<td><code>save(obj, path)</code></td>
-<td>Save object as Dat to data path</td>
+<td><code>dat.get_spec()</code></td>
+<td>the spec dict (3.0's accessor; 2.x exposed a <code>spec</code> attribute)</td>
+</tr>
+<tr>
+<td><code>Dat.manager</code></td>
+<td>the world; <code>infra/io.py</code> reads its first dat folder for the <code>D:</code> prefix root</td>
+</tr>
+<tr>
+<td><code>MockDat</code></td>
+<td>alienbio's own stand-in, used everywhere a real folder is not wanted</td>
 </tr>
 </tbody>
 </table>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">alienbio</span><span class="w"> </span><span class="kn">import</span> <span class="n">do</span><span class="p">,</span> <span class="n">create</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">save</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Load a template</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">template</span> <span class="o">=</span> <span class="n">do</span><span class="p">(</span><span class="s2">&quot;fixtures.simple&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Create a Dat from template</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">dat</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span><span class="s2">&quot;fixtures.simple&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;runs/exp1&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Load existing Dat</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">dat</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">&quot;runs/exp1&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">get_spec</span><span class="p">()[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Save data</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">dat</span> <span class="o">=</span> <span class="n">save</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">},</span> <span class="s2">&quot;results/run1&quot;</span><span class="p">)</span>
+<h2 id="development-setup">Development setup<a class="headerlink" href="#development-setup" title="Permanent link">&para;</a></h2>
+<p><code>src/dvc_dat</code> is a <strong>gitignored dev symlink</strong> into the live repo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>src/dvc_dat -&gt; /Users/oblinger/ob/grove/dvc-dat/dvc_dat
 </code></pre></div>
-<h2 id="development-setup">Development Setup<a class="headerlink" href="#development-setup" title="Permanent link">&para;</a></h2>
-<p>During co-development, dvc_dat is symlinked:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/dvc_dat -&gt; ../../dvc-dat/dvc_dat
-</code></pre></div></p>
+<p>So alienbio tracks dvc-dat's <code>main</code> rather than a pinned release, and a
+breaking change there lands here on the next test run. That is how 3.0
+arrived: the symlink dangled after the repo moved and every test failed to
+collect until it was repointed (alienbio <code>80c6bef</code>). <code>pandas</code> is declared in
+the <code>dev</code> extra for the same reason — 3.0's <code>dat_tools</code> imports it at module
+scope.</p>
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/oblinger/dvc-dat/blob/main/docs/concepts.md">dvc_dat concepts</a> - Core mental model</li>
-<li><a href="https://github.com/oblinger/dvc-dat/blob/main/docs/spec-format.md">dvc_dat spec format</a> - <code>_spec_.yaml</code> reference</li>
-<li>[[Bio]] - Higher-level <code>Bio.fetch()</code>, <code>Bio.store()</code>, <code>Bio.run()</code> for biology objects</li>
-<li>[[Spec Language]] - YAML syntax extensions (<code>!ev</code>, <code>!ref</code>, <code>!include</code>, typed keys, jobs)</li>
-<li><a href="../Guide/ABIO%20Expr%20Python%20API.html">ABIO Expr Python API</a> - <code>@biotype</code> registration for hydration</li>
-<li><a href="ABIO%20Data.html">ABIO Data</a> - Organization of the <code>data/</code> folder</li>
-<li><a href="ABIO%20alienbio.html">ABIO alienbio</a> - Top-level operators API</li>
+<li><a href="https://github.com/oblinger/dvc-dat/blob/main/docs/concepts.md">dvc_dat concepts</a> — the library's own mental model</li>
+<li><a href="../Guide/ABIO%20Expr%20Spec.html">ABIO Expr Spec</a> — what a spec is in this package now</li>
+<li>~~<a href="ABIO%20Files.html">ABIO Files</a>~~ — where everything lives</li>
+<li><a href="ABIO%20Data.html">ABIO Data</a> — the <code>data/</code> folder</li>
+<li><a href="ABIO%20alienbio.html">ABIO alienbio</a> — the package's top-level exports</li>
 </ul>
 
 

@@ -1137,6 +1137,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-there-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is there now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-durable-things-live-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the durable things live instead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2449,6 +2471,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-there-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is there now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-durable-things-live-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the durable things live instead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2480,27 +2524,43 @@
 
 
 <p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20Data">ABIO Data</a> 
- <a href="ABIO%20Architecture%20Docs.html">ABIO Architecture Docs</a> → <a href="ABIO%20infra.html">ABIO infra</a></p>
+ <a href="ABIO%20Architecture%20Docs.html">ABIO Architecture Docs</a> → <a href="ABIO%20infra.html">ABIO infra</a> </p>
 <h1 id="abio-data">ABIO Data<a class="headerlink" href="#abio-data" title="Permanent link">&para;</a></h1>
-<p>Organization of the <code>data/</code> folder and intent-based categories.</p>
+<p>What the <code>data/</code> folder actually holds, and why nothing is filed there on purpose.</p>
+<p>Rewritten 2026-10-07 (T067). The page used to describe an intent-based tree
+— <code>chem/kegg1/</code> for a reusable chemistry, <code>world/simple1/chem/</code> for a
+world's own, <code>test/T1/world/chem/</code> for a test's — with the rule that a
+top-level category names the thing's primary purpose. <strong>None of it was ever
+built</strong>, and the design it belonged to (the M1 scenario runtime, its spec
+language and the do-system that resolved those names) was deleted in M47.7
+and T056.</p>
+<h2 id="what-is-there-now">What is there now<a class="headerlink" href="#what-is-there-now" title="Permanent link">&para;</a></h2>
+<p><code>data/</code> is <strong>gitignored scratch</strong>: the default dat folder
+<a href="https://github.com/oblinger/dvc-dat">dvc_dat</a> writes into when something
+creates a real <code>Dat</code> rather than a <code>MockDat</code> (<a href="ABIO%20DAT.html">ABIO DAT</a>). On this machine
+it is ~10 MB of <code>data/anonymous/Dat_&lt;n&gt;/</code> folders — 2,662 of them, each a
+<code>_spec_.yaml</code> left by a test that did not name its dat. Nothing reads them
+back, nothing is durable, and deleting the folder costs nothing.</p>
+<p>The outputs that <em>are</em> meant to be read each have their own place, all
+gitignored:</p>
 <ul>
-<li>The <code>data/</code> folder contains all persistent data managed by the <a href="ABIO%20DAT.html">ABIO DAT</a> system. </li>
-<li>Every folder containing a <code>_spec_.yaml</code> file is a self-describing DAT object with contents and provenance.</li>
-<li>Top-level categories represent <strong>intent</strong> - each is an intrinsic type:</li>
-<li>Each top-level category contains items of that intrinsic type. </li>
-<li>The <strong>top-level item</strong> determines the category  - it's the "primary" type. Nested DATs inside can be any type.</li>
-<li><strong>Placement answers:</strong> "What is this thing's primary purpose?"<ul>
-<li><code>chem/kegg1/</code> = "I built this chemistry to be shared/reused"</li>
-<li><code>world/simple1/chem/</code> = "I built this chemistry for this specific world"</li>
-<li><code>test/T1/world/chem/</code> = "I built this chemistry for this specific test"</li>
+<li><strong><code>runs/&lt;name&gt;/</code></strong> — one experiment run: <code>records.jsonl</code>, <code>manifest.json</code>,
+  <code>report.txt</code>, <code>key.png</code> / <code>key.json</code>. Written by <code>bio suite run</code>, read
+  back by <code>bio suite resume|aggregate|report</code>.</li>
+<li><strong><code>reports/</code></strong> — <code>bio report</code>'s page: <code>report.md</code>, <code>report.html</code>,
+  <code>junit.xml</code>.</li>
+<li><strong><code>art/</code></strong> — dvc-dat 3.0's artifact store, beside the dat folder.</li>
 </ul>
-</li>
-<li>This allows <strong>cohesion</strong> when things are built together, while still enabling <strong>sharing</strong> when components are used across multiple contexts.</li>
-</ul>
+<h2 id="where-the-durable-things-live-instead">Where the durable things live instead<a class="headerlink" href="#where-the-durable-things-live-instead" title="Permanent link">&para;</a></h2>
+<p>Nothing a later run depends on is in <code>data/</code>. The inputs are checked in:
+<code>catalog/experiments/*.yaml</code> (the thirteen zeros), <code>catalog/examples/*/</code>
+(the nine coverage worlds), <code>catalog/registrations.yaml</code> (the licences), and
+the goldens pinned in <code>tests/suite/test_golden_experiments.py</code>. That is the
+whole contract — a clone with an empty <code>data/</code> reproduces every zero.</p>
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="ABIO%20DAT.html">ABIO DAT</a> - dvc_dat integration, name resolution, <code>_spec_.yaml</code> format</li>
-<li><a href="ABIO%20Files.html">ABIO Files</a> - Full project directory layout</li>
+<li><a href="ABIO%20DAT.html">ABIO DAT</a> — the dvc-dat surface alienbio actually uses</li>
+<li><a href="ABIO%20Files.html">ABIO Files</a> — the full repository layout</li>
 </ul>
 
 
