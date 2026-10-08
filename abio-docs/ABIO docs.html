@@ -2089,6 +2089,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture &amp; design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2109,40 +2150,27 @@
 
 <h1 id="abio-docs-documentation">ABIO Docs — Documentation<a class="headerlink" href="#abio-docs-documentation" title="Permanent link">&para;</a></h1>
 <p>The documentation home for Alien Biology — architecture &amp; design, the usage guide, and generated module reference. This tree is mirrored with the <code>alienbio</code> repository <code>docs/</code> (same paths on both sides).</p>
-<table>
-<thead>
-<tr>
-<th>-<a href="ABIO%20Docs.html">ABIO Docs</a>-</th>
-<th>→ [[ABIO]] → <a href="ha://p/ABIO%20Docs">ABIO Docs</a><br>: documentation home; mirrored with the alienbio repo docs/</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Related</td>
-<td><a href="https://github.com/oblinger/alienbio/tree/main/docs">Repo docs</a>,  <a href="https://oblinger.github.io/abio-docs/">MkDocs site</a>,  [[ABIO]],  [[ABIO Track|Track]],  <a href="Modules/index/.md">API Reference</a>,</td>
-</tr>
-<tr>
-<td>[[ABIO Architecture Docs|Architecture]]</td>
-<td>[[ABIO biology|biology]],  [[ABIO infra|infra]],  [[ABIO Suite Construction|Suite Construction]],  [[ABIO PRD Docs|Scenario Gen PRD]],  [[ABIO Naming Conventions|Naming]],  [[ABIO Notes|Notes]],</td>
-</tr>
-<tr>
-<td>[[ABIO Alienbio User Guide|Guide]]</td>
-<td><a href="Guide/ABIO%20Expr%20Spec.html">ABIO Expr Spec</a>,  <a href="Guide/ABIO%20Expr%20Python%20API.html">ABIO Expr Python API</a>,</td>
-</tr>
-<tr>
-<td><a href="Modules/index/.md">Modules</a></td>
-<td>generated Python API reference (bio, infra, protocols, spec_lang, cli)</td>
-</tr>
-<tr>
-<td>Reference</td>
-<td>[[ABIO Alien Vocabulary|Alien Vocabulary]],  [[ABIO Commands|Commands]],  [[ABIO Protocols|Protocols]],  [[ABIO Data|Data]],  [[ABIO Factory Pegboard API|Factory Pegboard API]],</td>
-</tr>
-<tr>
-<td>...</td>
-<td><a href="ABIO Docs/README.md">ABIO Docs/README</a>,  <a href="ha://f/~/ob/kmr/prj/Alien%20Biology/Alien%20Biology%20Framework/ABIO%20Docs/Architecture">Architecture/</a>,  <a href="ha://f/~/ob/kmr/prj/Alien%20Biology/Alien%20Biology%20Framework/ABIO%20Docs/demos">demos/</a>,  <a href="ha://f/~/ob/kmr/prj/Alien%20Biology/Alien%20Biology%20Framework/ABIO%20Docs/diagrams">diagrams/</a>,  <a href="ha://f/~/ob/kmr/prj/Alien%20Biology/Alien%20Biology%20Framework/ABIO%20Docs/Guide">Guide/</a>,  <a href="ha://f/~/ob/kmr/prj/Alien%20Biology/Alien%20Biology%20Framework/ABIO%20Docs/Modules">Modules/</a>,</td>
-</tr>
-</tbody>
-</table>
+<h2 id="architecture-design">Architecture &amp; design<a class="headerlink" href="#architecture-design" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="Architecture/ABIO%20Architecture%20Docs.html">Architecture</a></strong> — the system's design and operation, and the index this tree hangs from.</li>
+<li><strong><a href="Architecture/ABIO%20biology.html">biology</a></strong> — molecules, reactions, chemistry, compartments, and the simulators over them.</li>
+<li><strong><a href="Architecture/ABIO%20infra.html">infra</a></strong> — entity base classes, serialization, data management, configuration.</li>
+<li><strong><a href="Architecture/ABIO%20Suite%20Construction.html">Suite Construction</a></strong> — how a suite spec becomes a battery of auto-graded tasks over verified worlds.</li>
+<li><strong><a href="Architecture/ABIO%20Suite%20Runtime.html">Suite Runtime</a></strong> — the layer that runs an agent against those tasks: turn loop, brief, record, sweep.</li>
+<li><strong><a href="Architecture/ABIO%20PRD%20Docs.html">Scenario Generator PRD</a></strong> — the world-generation layer Suite Construction sits on.</li>
+</ul>
+<h2 id="guide">Guide<a class="headerlink" href="#guide" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="Guide/ABIO%20Alienbio%20User%20Guide.html">Overview</a></strong> — usage tutorials.</li>
+<li><strong><a href="Guide/ABIO%20Expr%20Spec.html">ABIO Expr Spec</a></strong> — the Expr language by example.</li>
+<li><strong><a href="Guide/ABIO%20Expr%20Python%20API.html">ABIO Expr Python API</a></strong> — the Python-side surface.</li>
+</ul>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="Modules/index.html">API Reference</a></strong> — generated Python reference (bio, infra, protocols, spec_lang, cli, suite, expr).</li>
+<li><strong><a href="Architecture/ABIO%20Protocols.html">ABIO Protocols</a></strong> — alphabetical index of classes · <strong><a href="Architecture/ABIO%20Modules.html">ABIO Modules</a></strong> — of modules · <strong><a href="Architecture/ABIO%20Commands.html">ABIO Commands</a></strong> — CLI and Python commands.</li>
+<li><strong><a href="Architecture/ABIO%20Alien%20Vocabulary.html">Alien Vocabulary</a></strong> · <strong><a href="Architecture/ABIO%20Naming%20Conventions.html">Naming</a></strong> · <strong><a href="Architecture/ABIO%20Data.html">Data</a></strong> · <strong><a href="Architecture/ABIO%20Factory%20Pegboard%20API.html">Factory Pegboard</a></strong> · <strong><a href="Architecture/ABIO%20Notes.html">Notes</a></strong>.</li>
+</ul>
 
 
 

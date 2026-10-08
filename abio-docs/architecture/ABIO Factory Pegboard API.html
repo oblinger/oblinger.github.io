@@ -23,7 +23,7 @@
     
     
       
-        <title>ABIO Factory Pegboard API - AlienBio Documentation</title>
+        <title>Factory Pegboard API - AlienBio Documentation</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ABIO Factory Pegboard API
+              Factory Pegboard API
             
           </span>
         </div>
@@ -2309,7 +2309,6 @@
   
 
 
-<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="hook://p/ABIO%20Factory%20Pegboard%20API">ABIO Factory Pegboard API</a> </p>
 <h1 id="factory-pegboard-api">Factory Pegboard API<a class="headerlink" href="#factory-pegboard-api" title="Permanent link">&para;</a></h1>
 <p><strong>Status</strong>: IMPLEMENTED</p>
 <p>Bio serves as the pegboard for active component instances. The factory creates instances; Python assignment sets them.</p>
@@ -2472,7 +2471,8 @@
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># With the config above:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">sim</span> <span class="o">=</span> <span class="n">bio</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">Simulator</span><span class="p">)</span>  <span class="c1"># Creates FastSimulatorImpl</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">sim</span> <span class="o">=</span> <span class="n">bio</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">Simulator</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reference&quot;</span><span class="p">)</span>  <span class="c1"># Explicitly uses ReferenceSimulatorImpl</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Explicitly uses ReferenceSimulatorImpl</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">sim</span> <span class="o">=</span> <span class="n">bio</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">Simulator</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;reference&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h2>

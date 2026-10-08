@@ -23,7 +23,7 @@
     
     
       
-        <title>ABIO PRD Docs - AlienBio Documentation</title>
+        <title>Scenario Generator PRD - AlienBio Documentation</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ABIO PRD Docs
+              Scenario Generator PRD
             
           </span>
         </div>
@@ -2570,11 +2570,148 @@
   
 
 
-<p>:&gt;&gt; [[ABIO]] → <a href="../ABIO%20Docs.html">ABIO Docs</a> → <a href="ha://p/ABIO%20PRD%20Docs">ABIO PRD Docs</a> </p>
 <h1 id="scenario-generator-prd">Scenario Generator PRD<a class="headerlink" href="#scenario-generator-prd" title="Permanent link">&para;</a></h1>
 <p><strong>Subsystem</strong>: <a href="ABIO%20biology.html">ABIO biology</a> &gt; Generators
 Product Requirements Document for synthetic alien biology scenario generation.</p>
 <hr />
+<table>
+<thead>
+<tr>
+<th>Table of Contents</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="#1-overview">#1. Overview</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#2-design-approach-template-composition-background">#2. Design Approach: Template Composition + Background</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#phase-1-goal-directed-via-templates">#Phase 1: Goal-Directed via Templates</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#phase-2-background-fill">#Phase 2: Background Fill</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#3-template-system">#3. Template System</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#31-template-anatomy">#3.1 Template Anatomy</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#32-template-composition">#3.2 Template Composition</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#33-interaction-templates">#3.3 Interaction Templates</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#34-template-library-structure">#3.4 Template Library Structure</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#4-scenario-generator-spec-schema">#4. Scenario Generator Spec Schema</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#41-top-level-structure">#4.1 Top-Level Structure</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#42-species-specification">#4.2 Species Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#43-interaction-specification">#4.3 Interaction Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#44-pathway-specification">#4.4 Pathway Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#45-parameter-specification">#4.5 Parameter Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#46-background-specification">#4.6 Background Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#47-visibility-specification">#4.7 Visibility Specification</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#5-generation-pipeline">#5. Generation Pipeline</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#51-stage-details">#5.1 Stage Details</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#6-reproducibility-requirements">#6. Reproducibility Requirements</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#61-seed-based-generation">#6.1 Seed-Based Generation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#62-deterministic-output">#6.2 Deterministic Output</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#63-ground-truth-export">#6.3 Ground Truth Export</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#7-validation-and-metrics">#7. Validation and Metrics</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#71-structural-validation">#7.1 Structural Validation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#72-difficulty-metrics">#7.2 Difficulty Metrics</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#73-composability-validation">#7.3 Composability Validation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#8-api">#8. API</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#81-python-api">#8.1 Python API</a></td>
+<td></td>
+</tr>
+<tr>
+<td>   <a href="#82-cli">#8.2 CLI</a></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#9-example-complete-specification">#9. Example Complete Specification</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#10-see-also">#10. See Also</a></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>The Scenario Generator produces complete alien biology scenarios for AI safety experiments. Unlike the M1 low-level generators (<code>MoleculeGenerator</code>, <code>ReactionGenerator</code>, <code>ContainerGenerator</code>, all retired) that produce individual components, the Scenario Generator creates coherent ecosystems with specified structural properties.</p>
 <p><strong>Key Terminology</strong>:</p>
