@@ -2870,29 +2870,33 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  src/
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    architecture/
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      entities.py      # BioMolecule, BioReaction, BioSystem, BioOrganism protocols
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      generators.py    # MoleculeGenerator, ReactionGenerator, SystemGenerator protocols
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      simulation.py    # State, Simulator, Timeline, World protocols
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      interface.py     # Measurement, Action, Task protocols
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      experiment.py    # Experiment, Test, Harness protocols
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    impl/
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      entities/        # BioMolecule, BioReaction, etc. implementations
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>      generators/      # MoleculeGenerator, ReactionGenerator, etc. implementations
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      simulation/      # PythonSimulator, RustSimulator, etc. implementations
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      interface/       # Measurement, Action, Task implementations
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      experiment/      # Experiment, Test, Harness implementations
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  tests/               # unit and integration tests
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  data/                # managed via dvc_dat, structure TBD
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  scripts/             # CLI entry points, one-off utilities
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      # BioMolecule, BioReaction, BioSystem, BioOrganism protocols
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      entities.py
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      # MoleculeGenerator, ReactionGenerator, SystemGenerator protocols
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>      generators.py
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      simulation.py    # State, Simulator, Timeline, World protocols
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      interface.py     # Measurement, Action, Task protocols
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>      experiment.py    # Experiment, Test, Harness protocols
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    impl/
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      entities/        # BioMolecule, BioReaction, etc. implementations
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      # MoleculeGenerator, ReactionGenerator, etc. implementations
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>      generators/
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      # PythonSimulator, RustSimulator, etc. implementations
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>      simulation/
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      interface/       # Measurement, Action, Task implementations
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>      experiment/      # Experiment, Test, Harness implementations
 <a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  rust/                # Rust simulator implementation
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    Cargo.toml
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    src/
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>      lib.rs           # PyO3 bindings
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  dvc_dat -&gt; ~/ob/proj/dvc_dat   # symlink, temporary until packaged
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  tests/               # unit and integration tests
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  data/                # managed via dvc_dat, structure TBD
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>  scripts/             # CLI entry points, one-off utilities
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>  rust/                # Rust simulator implementation
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    Cargo.toml
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    src/
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>      lib.rs           # PyO3 bindings
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  dvc_dat -&gt; ~/ob/proj/dvc_dat   # symlink, temporary until packaged
 </code></pre></div>
 <h2 id="justfile-commands">Justfile Commands<a class="headerlink" href="#justfile-commands" title="Permanent link">&para;</a></h2>
 <ul>
