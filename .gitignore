@@ -10,3 +10,10 @@ vendor
 # Vault machinery — HookAnchor writes these into ASIO/; never publish them
 .anchor
 **/.anchor
+
+# Anchor (DAS repo-anchor shape, 2026-10-20): the root .anchor is tracked; Track folders are grout worktrees
+!/.anchor
+/doc/*Track/
+/doc/**/*Track/
+/doc/.obsidian/
+/.claude/settings.local.json

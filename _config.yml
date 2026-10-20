@@ -52,3 +52,8 @@ plugins: [] # remove empty list if adding a plugin
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# The WEB anchor's pages and agent file (DAS repo-anchor shape, 2026-10-20): never published
+exclude:
+  - doc/
+  - CLAUDE.md
