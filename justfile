@@ -1,7 +1,8 @@
 # oblinger.github.io — personal website
 
-website_repo := "/Users/oblinger/ob/grove/oblinger.github.io"
-vault_asio   := "/Users/oblinger/ob/kmr/ASIO"
+website_repo := justfile_directory()
+# The ASIO essays' source in the vault; override with WEB_VAULT_ASIO
+vault_asio   := env("WEB_VAULT_ASIO", home_directory() / "ob/kmr/ASIO")
 
 # Preview locally at http://localhost:4000/
 preview:
