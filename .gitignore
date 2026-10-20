@@ -17,3 +17,5 @@ vendor
 /doc/**/*Track/
 /doc/.obsidian/
 /.claude/settings.local.json
+# grout (HA F471)
+doc/*Track/
