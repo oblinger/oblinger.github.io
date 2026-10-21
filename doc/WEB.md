@@ -13,7 +13,7 @@ description: "Dan's personal website, oblinger.github.io: the live site, its per
 | Deliberative Coherence | Src `oblinger.github.io/gitproj/DeliberativeCoherence/*.qmd` (Quarto, in-repo)  →  [live page](https://oblinger.github.io/gitproj/DeliberativeCoherence)  ·  [[DCP]]                                                                                       |
 | ASI Outcomes           | Src `oblinger.github.io/ASIO/` (in-repo)  →  [live page](https://oblinger.github.io/ASIO/ASI_Outcomes/)  ·  [[ASIO]]                                                                                                                                       |
 | [[MYWEB]]              | dev / local-Jekyll / hosting notes                                                                                                                                                                                                                         |
-| ...                    | [[Web Hooks\|Hooks]],  [[Website]],  [[WSITE]],                                                                                                                                                                                                            |
+| ...                    | [[doc/Web Hooks]],  [[Website]],  [[WSITE]],                                                                                                                                                                                                               |
 
 # WEB
 Dispatch surface for the personal website published at https://oblinger.github.io/ — the live site, its per-project pages, and the deploy setup.
