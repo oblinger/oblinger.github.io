@@ -19,3 +19,6 @@ vendor
 /.claude/settings.local.json
 # grout (HA F471)
 doc/*Track/
+
+# Yore folders stay on disk, out of git: unzip there to look inside without it being swept in; restic backs up all of ~/ob (Dan, 2026-10-22)
+Yore/
