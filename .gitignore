@@ -5,6 +5,8 @@ _site
 vendor
 .DS_Store
 .mod_times
+# Python bytecode (importing tools/trip-index writes tools/__pycache__); `just publish` runs git add -A
+__pycache__/
 .obsidian/
 
 # Vault machinery — HookAnchor writes these into ASIO/; never publish them

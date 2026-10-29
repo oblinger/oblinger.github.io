@@ -32,11 +32,17 @@ def run(cmd, **kw):
     return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw).stdout
 
 
-def password():
-    m = re.search(r"^password::\s*(\S+)", CAT_TRIP.read_text(), re.M)
+def parse_password(text):
+    # The whole rest of the line, so a multi-word passphrase is not cut to its first word,
+    # and [ \t] (not \s) so an empty value never borrows the next line.
+    m = re.search(r"^password::[ \t]*(\S.*?)[ \t]*$", text, re.M)
     if not m:
-        sys.exit(f"trip-index: no 'password::' line in {CAT_TRIP}")
+        sys.exit(f"trip-index: no non-empty 'password::' line in {CAT_TRIP}")
     return m.group(1)
+
+
+def password():
+    return parse_password(CAT_TRIP.read_text())
 
 
 def trips():
