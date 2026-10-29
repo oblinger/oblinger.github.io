@@ -23,14 +23,15 @@ email: public@oblinger.us
 description: >- # this means to ignore newlines until "baseurl:"
   .
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://oblinger.github.io" # the base hostname & protocol; jekyll-sitemap writes absolute URLs from it
 twitter_username: danoblinger
 github_username:  oblinger
 
 # Build settings
 #theme: minima
 theme: jekyll-theme-cayman
-plugins: [] # remove empty list if adding a plugin
+plugins:
+  - jekyll-sitemap # /sitemap.xml, so Google can find the pages (2026-10-28)
 #  - jekyll-feed
 
 # Exclude from processing.

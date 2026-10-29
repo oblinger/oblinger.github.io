@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /hotline/
 Disallow: /assets/hotline/
+Sitemap: https://oblinger.github.io/sitemap.xml
