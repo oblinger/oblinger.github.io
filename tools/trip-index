@@ -45,8 +45,8 @@ def trips():
     for e in entries:
         name = e["Name"]
         link = run(["rclone", "link", f"{DRIVE_FOLDER}/{name}"]).strip()
-        if e.get("MimeType", "").startswith("application/vnd.google-apps") and not e["IsDir"]:
-            name = name.rsplit(".", 1)[0]
+        if not e["IsDir"]:
+            name = Path(name).stem  # rclone shows a Google Doc as .docx
         out.append((name, link))
     # Dated trips newest first, then the undated ones
     return sorted(out, key=lambda t: (t[0][:1].isdigit(), t[0]), reverse=True)
