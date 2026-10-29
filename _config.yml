@@ -58,3 +58,4 @@ plugins:
 exclude:
   - doc/
   - CLAUDE.md
+  - tools/ # trip-index and its StatiCrypt salt

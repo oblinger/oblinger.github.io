@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+"""Rebuild /trip/: a password-locked index of the trips in Drive's Oblio/Trip.
+
+Each trip (a file or subfolder of gdrive:Oblio/Trip) is shared "anyone with the
+link can view" by `rclone link`; the Trip folder itself stays private, so one
+trip's link never leads to the others. The list of links, newest first, is
+encrypted with StatiCrypt into trip.html, so neither a crawler nor a visitor
+without the password can read it. The password is shareable, kept in plain text
+on the vault page CAT Trip (`password::` line) and never in this public repo.
+Run after adding a trip:
+`just trip` (rebuild, commit, push).
+"""
+
+import html
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+DRIVE_FOLDER = "gdrive:Oblio/Trip"
+CAT_TRIP = Path.home() / "ob/kmr/SYS/SYS Catalog/CAT Trip.md"
+STATICRYPT = "staticrypt@3.5.4"
+SALT_CONFIG = REPO / "tools" / "staticrypt.json"
+TITLE = "Oblinger Trip Folder"
+
+
+def run(cmd, **kw):
+    return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw).stdout
+
+
+def password():
+    m = re.search(r"^password::\s*(\S+)", CAT_TRIP.read_text(), re.M)
+    if not m:
+        sys.exit(f"trip-index: no 'password::' line in {CAT_TRIP}")
+    return m.group(1)
+
+
+def trips():
+    entries = json.loads(run(["rclone", "lsjson", DRIVE_FOLDER]))
+    out = []
+    for e in entries:
+        name = e["Name"]
+        link = run(["rclone", "link", f"{DRIVE_FOLDER}/{name}"]).strip()
+        if e.get("MimeType", "").startswith("application/vnd.google-apps") and not e["IsDir"]:
+            name = name.rsplit(".", 1)[0]
+        out.append((name, link))
+    # Dated trips newest first, then the undated ones
+    return sorted(out, key=lambda t: (t[0][:1].isdigit(), t[0]), reverse=True)
+
+
+def index_html(items):
+    rows = "\n".join(f'<li><a href="{html.escape(link)}">{html.escape(name)}</a></li>'
+                     for name, link in items)
+    return f"""<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{TITLE}</title></head>
+<body style="font-family:system-ui,sans-serif;max-width:36rem;margin:2rem auto;padding:0 1rem;line-height:1.6">
+<h1>{TITLE}</h1>
+<ul style="padding-left:1.2rem">
+{rows}
+</ul>
+</body></html>
+"""
+
+
+def encrypt(plain, pw):
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / "trip.html"
+        src.write_text(plain)
+        env = dict(os.environ, STATICRYPT_PASSWORD=pw)
+        run(["npx", "-y", STATICRYPT, str(src), "-d", str(Path(tmp) / "out"),
+             "-c", SALT_CONFIG.name, "--short",  # staticrypt prefixes "./" to -c, so run beside it
+             "--template-title", TITLE,
+             "--template-instructions", "Dan Oblinger's itineraries. Enter the password.",
+             "--template-color-primary", "#23ccbe", "--template-color-secondary", "#f3f6f6"],
+            env=env, cwd=SALT_CONFIG.parent)
+        return (Path(tmp) / "out" / "trip.html").read_text()
+
+
+def main():
+    pw = password()
+    items = trips()
+    page = encrypt(index_html(items), pw)
+    (REPO / "trip.html").write_text("---\npermalink: /trip/\n---\n{% raw %}\n" + page + "\n{% endraw %}\n")
+    print(f"trip-index: {len(items)} trips encrypted into trip.html")
+    if "--no-push" in sys.argv:
+        return
+    os.chdir(REPO)
+    run(["git", "add", "trip.html", str(SALT_CONFIG)])
+    if subprocess.run(["git", "diff", "--cached", "--quiet", "--", "trip.html", str(SALT_CONFIG)]).returncode:
+        run(["git", "commit", "-m", "Rebuild trip index", "--", "trip.html", str(SALT_CONFIG)])
+        run(["git", "push"])
+        print("trip-index: pushed")
+
+
+if __name__ == "__main__":
+    main()

@@ -30,3 +30,7 @@ publish-dcl:
     cd {{website_repo}}/gitproj/DeliberativeCoherence && quarto render Experiments_Paper.qmd
     cd {{website_repo}} && git add -A && git commit -m "Update Deliberative Coherence" && git push
     @echo "Deployed to https://oblinger.github.io/gitproj/DeliberativeCoherence/"
+
+# Rebuild /trip/, the password-locked trip index, from Drive Oblio/Trip; commit and push
+trip:
+    {{website_repo}}/tools/trip-index
