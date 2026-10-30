@@ -3,9 +3,7 @@ layout: cayman
 title: Machine_Centric_Coms
 description: "Claim: The fraction of machine-interpretable information will grow to eclipse human-interpretable communications.  This will be true both in terms of the importance of the communication and as a percentage of total volume.  It will also hold between and within intelligent agents."
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
-
 
 
 This shift will occur across four areas:
@@ -21,7 +19,6 @@ Machine Interpretable
 - Supports much much higher volume/complexity
 - Legally more efficient
 - Financially more efficient
-
 
 
 Machine Interpretable communications are digital messages that are interpretable by AI systems, but are pragmatically difficult or impossible for humans to process.

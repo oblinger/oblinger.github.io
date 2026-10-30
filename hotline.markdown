@@ -2,6 +2,7 @@
 layout: blank
 title: Dan Oblinger — personal hotline
 permalink: /hotline/
+sitemap: false # noindex page: keep it out of /sitemap.xml too
 ---
 
 <head>

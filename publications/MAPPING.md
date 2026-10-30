@@ -1,6 +1,9 @@
+---
+sitemap: false
+---
 # Publications — Source Mapping
 
-Each PDF in this folder was copied (or converted from PostScript) from a publication folder under `~/ob/kmr/Topic/Career/RES/VITA/VITA Pubs/`. This file records the source for each one.
+Each PDF in this folder was copied (or converted from PostScript) from a publication folder in the author's `VITA Pubs/` archive. This file records the source for each one.
 
 | Website filename | Source folder under `VITA Pubs/` | Source file | Notes |
 |---|---|---|---|

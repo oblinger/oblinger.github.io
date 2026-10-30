@@ -1,6 +1,3 @@
-
-
-
 ### 2025-08-24  Corp AI Capacities
 
 CorpAI will be driven to achieve several key capacities:
@@ -14,9 +11,8 @@ MANY MASTERS
 Just as an employee must consider and respect the perspective and objectives of key leader, key clients
 ### 2025-08-24  Dan's Worry
 
-- [[Corp_AI]] and National_AI will drive adoption even in face of notable risks.
+- [Corp_AI](/ASIO/Corp_AI.html) and National_AI will drive adoption even in face of notable risks.
 - AI_Dependence develops as deeply as electricity more than the internet.
-
 
 
 Claim: AIs will carry out world shaping decision making in closed multi-party AI-driving communications and decision-making:
@@ -97,9 +93,6 @@ Governments -- maybe not this one
 	- still to a large degree these governments are competing against other govs, and thus cede power to centers that bring relative power to their regioned areas
 
 
-
-
-
 ### 2025-06-04  Police Bots
 
 - there will be police bots
@@ -136,9 +129,7 @@ We even apply these practices against members of our own organization.
 ### 2025-06-04  Emergent Collaboration
 
 
-
-
-- Because of [[Civilizing_Tendency]] we expect ASIs to develop organizations to support cross-corp collaboration around areas of mutual interest.  
+- Because of [Civilizing_Tendency](/ASIO/Civilizing_Tendency.html) we expect ASIs to develop organizations to support cross-corp collaboration around areas of mutual interest.  
 - Will be have the standard intrigue around any collaborative effort among collabor-competitors.
 - Organizations spawned from these convergent goals will have:
 	- Agendas
@@ -146,6 +137,4 @@ We even apply these practices against members of our own organization.
 	- Sophisticated shared and withheld reasoning about extra-agentic actions/goals/consequences
 
 
-
 Specifically, these agents will be deeply involved in discussions about how various human, governmental, and corporate groups will react and behave based on actions members of the group might take.
-

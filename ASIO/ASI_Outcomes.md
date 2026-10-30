@@ -4,7 +4,6 @@ title: ASI Outcomes
 description: A framework for reasoning about and mitigating risks associated with ASI
 permalink: /ASIO/ASI_Outcomes/
 ---
-
 <img src="../../assets/images/WorkInProgress.png" height="150px;" />
 
 *I plan on refining/adding content before sharing it more widely.*
@@ -50,7 +49,7 @@ Below is a starter hierarchy of about a dozen plausible claims. The aim is to fr
 | **[Machine Centric Coms](/ASIO/Machine_Centric_Coms)**             | Claim: The fraction of machine-interpretable information will grow to eclipse human-interpretable communications. This will be true both between and within intelligent agents.                      |
 |                                                                    |                                                                                                                                                                                                      |
 |                                                                    |                                                                                                                                                                                                      |
-| [[Productive Capacity Framework]]                                  | **PRODUCTIVE CAPACITY FRAMEWORK**                                                                                                                                                                    |
+| [Productive Capacity Framework](/ASIO/Productive%20Capacity%20Framework.html)                                  | **PRODUCTIVE CAPACITY FRAMEWORK**                                                                                                                                                                    |
 |                                                                    |                                                                                                                                                                                                      |
 |                                                                    |                                                                                                                                                                                                      |
 |                                                                    | **HALF BAKED CLAIMS**                                                                                                                                                                                |
@@ -59,9 +58,3 @@ Below is a starter hierarchy of about a dozen plausible claims. The aim is to fr
 | **[AGI Will Come](/ASIO/AGI_Will_Come)**                           |                                                                                                                                                                                                      |
 | **[Nature of AI Progress](/ASIO/Nature_of_AI_Progress)**           | Claim: There are specific aspects of successful AI systems that we can use to make informed predictions about the nature of future AI systems and our probable progress in developing these systems. |
 | **[No Fast Takeoff](/ASIO/No_Fast_Takeoff)**                       | Claim: A unilateral fast take-off scenario might be less likely while risks from a slow takeoff might be greater than often considered.                                                              |
-
-
-
-
-
-

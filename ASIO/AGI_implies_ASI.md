@@ -3,7 +3,6 @@ layout: cayman
 title: AGI Implies ASI
 description: "Claim: Achieving AGI will likely afford a specific kind of ASI at nearly the same time."
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
 
 
@@ -22,4 +21,3 @@ First, learning times can often be reduced to zero, there is no need for each Ch
 PARALLELISM - 
 
 SPEED - Silicon-based propagation delays are many orders of magnitude faster than biologically based processing; current operators are not comparable between silicon and biology still this difference likely results is much faster processing within silicon in the limit as specialized hardware is developed.  Moreover processing speed continues to improve year over year in at a reduce exponential rate yielding ever greater differences.  Straightforwardly faster processing allows for a larger number 
-

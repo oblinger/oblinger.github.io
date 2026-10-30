@@ -18,10 +18,10 @@ RENAME: No Escape
 
 **Consequences** 
 Several (humanly) dire consequences follow from this thesis:
-- The rise of [[Corp_AI]] 
-- [[Loop_Closing]] in both innovation and execution
-- We absolutely [[Cant_Stop]] 
-- Transition to a new [[Apex_Predator]]
+- The rise of [Corp_AI](/ASIO/Corp_AI.html) 
+- [Loop_Closing](/ASIO/Loop_Closing.html) in both innovation and execution
+- We absolutely [Cant_Stop](/ASIO/Cant_Stop.html) 
+- Transition to a new [Apex_Predator](/ASIO/Apex_Predator.html)
 
 **Applications**
 This inevitability outcome applies at four levels within the human species:
@@ -42,7 +42,6 @@ Significant justification is require here.  We are drawing a very broad conclusi
 **Discussion**:
 
 
-
 We labor under the fiction of an executive control which we as a species demonstrably do not have.
 
 Individual entities might operate against these pressures for a time, but others will simply take advantage of this choice and those dissenting entities will simply loose power over time and become less relevant.  All entities clearly seeing this reality will usually not even try operate against this pressure, but will use that reality to rationalize their acquiescence.  
@@ -50,7 +49,6 @@ Individual entities might operate against these pressures for a time, but others
 In limited cases, groups can change laws in ways to shape the competition game, but humanity simply cannot escape playing the game.  That is completely out of our control.
 
 Many (dire) consequences follow from this reality:
-
 
 
 **Idea**:  No matter what humanity does nation-states, corporations, and individuals cannot escape the Natural Selection systems to which they are a part.  Nor can we escape the most dire consequences of these pressures.
@@ -65,4 +63,3 @@ This selection pressure occurs pervasively in at least three distinct human leve
 - The NATION state
 - 
 - The INDIVIDUAL person is often within social / work contexts where there is some power/wealth dynamic at work.  These individuals as a group will 
-

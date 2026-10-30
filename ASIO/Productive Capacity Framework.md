@@ -1,5 +1,3 @@
-
-
 **Productive Capacity Framework**
 Claim: Modeling AI's impact on and integration with humanity's productive elements enables us to see and shape outcomes from humanity's most potent force.
 
@@ -14,8 +12,6 @@ Claim: Modeling AI's impact on and integration with humanity's productive elemen
 
 - **Hyperscalers** are the organizations pushing the frontier of AI capacity.
 - **Hyperscaler Concentration** is 1 over its cardinality expressed as a percent.
-
-
 
 
 Claim: AI-driven automation will accelerate trends that concentrate the productive frontier.

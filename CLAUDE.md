@@ -10,7 +10,7 @@ This repo is the website source and the **WEB** anchor (slug `WEB`): `.anchor` a
 
 Jekyll site deployed to https://oblinger.github.io/ via GitHub Pages auto-build on push.
 
-- **Engine:** Jekyll 4.4.x with `jekyll-theme-cayman` (see `_config.yml`, `Gemfile`)
+- **Engine:** the `github-pages` gem (Jekyll 3.10, the same plugin set GitHub Pages runs) with `jekyll-theme-cayman` (see `_config.yml`, `Gemfile`), so `just preview` matches production
 - **Deploy:** `git push` triggers GitHub Pages build. No CI/CD config to maintain.
 
 ### Common commands
@@ -20,11 +20,13 @@ Run from the repo root:
 ```bash
 # jekyll serve --livereload at http://localhost:4000/
 just preview
-# git add -A, commit "Update site", push (GH Pages builds)
+# sync-asio, then stage and commit ASIO/ only, push (GH Pages builds)
 just publish
 # rebuild the Quarto papers in gitproj/DeliberativeCoherence/, publish
 just publish-dcl
 ```
+
+`ASIO/` is a published copy of the vault's `~/ob/kmr/ASIO`: `just sync-asio` copies it through `tools/strip-vault`, which removes vault machinery (breadcrumbs, `# BRIEF`, HookAnchor stubs, `hook://`/`ha://` links) and turns `[[wikilinks]]` into site links; it refuses, writing nothing, when a page still names a local path. Tests: `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tools/tests -q`.
 
 ### Layouts — pick the right one
 

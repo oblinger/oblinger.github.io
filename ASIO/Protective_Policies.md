@@ -3,7 +3,6 @@ layout: cayman
 title: Protective Policies
 description: "Claim: We can predict policies that are likely societally protective given forces intrinsic to the environments where Agentic AI will evolve."
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
 
 
@@ -13,7 +12,6 @@ description: "Claim: We can predict policies that are likely societally protecti
 - national parity
 - win-win networks
 - something to loose
-
 
 
 ## References

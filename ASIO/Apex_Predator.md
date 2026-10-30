@@ -3,9 +3,7 @@ layout: cayman
 title: Apex Predator
 description: "Claim: We are in the final stages of a planet-wide transition from one apex predator to another."
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
-
 
 
 **Thesis**:
@@ -15,16 +13,16 @@ description: "Claim: We are in the final stages of a planet-wide transition from
 
 
 **Consequences**:
-- [[Our_Best_Hope]] 
+- [Our_Best_Hope](/ASIO/Our_Best_Hope.html) 
 
 **Antecedents**:
-- [[EOCT Ways Intelligence Will Be Super]] 
-- [[Corp_AI]] 
-- [[Alignment_Wont_Work]] - 
+- EOCT Ways Intelligence Will Be Super 
+- [Corp_AI](/ASIO/Corp_AI.html) 
+- [Alignment_Wont_Work](/ASIO/Alignment_Wont_Work.html) - 
 
 
 **Justification**:
-- The [[Nature_of_AI_Progress]].  
+- The [Nature_of_AI_Progress](/ASIO/Nature_of_AI_Progress.html).  
 
 
 **Discussion**:

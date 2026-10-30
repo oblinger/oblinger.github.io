@@ -1,0 +1,250 @@
+#!/usr/bin/env python3
+"""Remove vault machinery from markdown pages before they are published.
+
+    strip-vault ROOT BASE [FILE ...]
+
+Cleans every .md under ROOT in place (or only the FILEs named, relative to ROOT).
+BASE is ROOT's URL on the site, e.g. /ASIO/; wikilinks become root-absolute links
+under it, so they work from a page with a directory permalink too.
+
+Removed: `:>>` breadcrumb lines, `# BRIEF` sections, HookAnchor's auto-generated
+anchor stubs, dispatch-table mastheads and their electric-zone rows, stray
+mid-page front-matter blocks, `hook://`/`ha://` links, and front-matter values
+that name a wikilink, a vault URI or a local path. `[[wikilinks]]` become site
+links when the target is under ROOT and plain text otherwise.
+
+Refuses (exit 1, nothing written) when any page still carries vault material
+it cannot remove, such as a local path in the body: fix that page in the vault.
+"""
+
+import os
+import re
+import sys
+from pathlib import Path
+from urllib.parse import quote
+
+VAULT_LINK = re.compile(r"\[([^\]]*)\]\((?:hook|ha)://[^)]*\)")
+WIKILINK = re.compile(r"(!?)\[\[(.+?)\]\]")
+FRONT = re.compile(r"\A---\n(.*?)^---[ \t]*\n", re.S | re.M)
+YAML_LINE = re.compile(r"^[A-Za-z_][\w-]*:(\s.*)?$")
+MASTHEAD = re.compile(r"^\s*-\[\[.+\]\]-\s*$")
+ZONE_MARKERS = {"...", "ooo", "---", "+++", "^^^", "!!!", "."}
+STUB = "This is an auto-generated anchor file"
+RESIDUE = [("vault breadcrumb", re.compile(r"^\s*:>>", re.M)),
+           ("BRIEF section", re.compile(r"^# BRIEF\b", re.M)),
+           ("vault URI", re.compile(r"\b(?:hook|ha)://")),
+           ("wikilink", re.compile(r"\[\[")),
+           ("local path", re.compile(r"~/ob\b|/Users/"))]
+
+
+def names_vault(value):
+    return "[[" in value or re.search(r"\b(?:hook|ha)://|~/ob\b|/Users/|symlink", value)
+
+
+def clean_front_matter(block):
+    return "".join(line for line in block.splitlines(keepends=True)
+                   if not (YAML_LINE.match(line.rstrip("\n")) and names_vault(line)))
+
+
+def cells(row):
+    return [c.strip() for c in row.strip().strip("|").split("|")]
+
+
+def first_cell(row):
+    return re.split(r"(?<!\\)\|", row.strip()[1:], maxsplit=1)[0].strip()
+
+
+def is_hr(line):
+    return line.strip() == "---"
+
+
+def drop_sections(lines):
+    """Drop `# BRIEF` and auto-generated stub sections; a section runs to the next H1 or `---`."""
+    out, i = [], 0
+    while i < len(lines):
+        if lines[i].startswith("# "):
+            j = i + 1
+            while j < len(lines) and not lines[j].startswith("# ") and not is_hr(lines[j]):
+                j += 1
+            section = lines[i:j]
+            if lines[i].strip() == "# BRIEF" or any(STUB in s for s in section):
+                while out and not out[-1].strip():
+                    out.pop()
+                if out and is_hr(out[-1]):
+                    out.pop()
+                i = j
+                continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+def drop_stray_front_matter(lines):
+    out, i = [], 0
+    while i < len(lines):
+        if is_hr(lines[i]):
+            j = i + 1
+            while j < len(lines) and YAML_LINE.match(lines[j]):
+                j += 1
+            if j > i + 1 and j < len(lines) and is_hr(lines[j]):
+                i = j + 1
+                continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+def clean_table(rows):
+    """Return the table's rows with vault rows removed, or [] when nothing published is left."""
+    masthead = MASTHEAD.match(first_cell(rows[0]))
+    kept = []
+    for n, row in enumerate(rows):
+        head = first_cell(row).strip("~").strip()
+        if n == 1 and set(head) <= set("-: "):
+            kept.append(row)
+            continue
+        if VAULT_LINK.search(first_cell(row)) or head in ZONE_MARKERS or (n and set(head) == {"-"}):
+            continue
+        kept.append(row)
+    if masthead:
+        body = kept[2:] if len(kept) > 1 and set(first_cell(kept[1])) <= set("-: ") else []
+        if not body:
+            return []
+        name = WIKILINK.search(first_cell(rows[0])).group(2)
+        kept[0] = "| " + " | ".join([name] + [""] * (len(cells(rows[0])) - 1)) + " |"
+    return kept
+
+
+def drop_tables_and_zones(lines):
+    out, i = [], 0
+    while i < len(lines):
+        if lines[i].lstrip().startswith("|"):
+            j = i
+            while j < len(lines) and lines[j].lstrip().startswith("|"):
+                j += 1
+            kept = clean_table(lines[i:j])
+            out.extend(kept)
+            if not kept and MASTHEAD.match(first_cell(lines[i])):
+                # the electric zone under a bare masthead: blank and indented lines
+                while j < len(lines) and (not lines[j].strip() or lines[j][:1] in " \t"):
+                    j += 1
+            i = j
+            continue
+        out.append(lines[i])
+        i += 1
+    return out
+
+
+def link_text(target, alias):
+    if alias:
+        return alias
+    return target.split("#")[0].rsplit("/", 1)[-1] or target
+
+
+def convert_wikilinks(text, pages):
+    def replace(match):
+        bang, inner = match.groups()
+        target, *alias = re.split(r"\\?\|", inner, maxsplit=1)
+        target, alias = target.strip(), (alias[0].strip() if alias else "")
+        page, _, anchor = target.partition("#")
+        url = pages.get(page) or pages.get(page.removesuffix(".md"))
+        label = link_text(target, alias)
+        if not url:
+            return "" if bang else label
+        url = url + ("#" + quote(anchor.lower().replace(" ", "-")) if anchor else "")
+        return f"{bang}[{label}]({url})"
+    return WIKILINK.sub(replace, text)
+
+
+def clean(text, pages):
+    """Return `text` with vault machinery removed; `pages` maps a wikilink target to its URL."""
+    # A breadcrumb can sit above the front matter, which Jekyll reads only at byte 0.
+    lines = [line for line in text.split("\n") if not line.lstrip().startswith(":>>")]
+    text = "\n".join(lines).lstrip("\n")
+    front = ""
+    match = FRONT.match(text)
+    if match:
+        front = "---\n" + clean_front_matter(match.group(1)) + "---\n"
+        text = text[match.end():]
+    lines = drop_sections(text.split("\n"))
+    lines = drop_stray_front_matter(lines)
+    lines = drop_tables_and_zones(lines)
+    lines = [line for line in lines
+             if not VAULT_LINK.match(re.sub(r"^[\s~*-]*", "", line))]
+    body = VAULT_LINK.sub(lambda m: m.group(1), "\n".join(lines))
+    body = convert_wikilinks(body, pages)
+    body = re.sub(r"\n{4,}", "\n\n\n", body.rstrip("\n")) + "\n"
+    return front + body.lstrip("\n")
+
+
+def residue(text):
+    found = []
+    for n, line in enumerate(text.splitlines(), 1):
+        for label, pattern in RESIDUE:
+            if pattern.search(line):
+                found.append(f"line {n}: {label}: {line.strip()[:120]}")
+    return found
+
+
+def page_url(path, root, base):
+    match = FRONT.match(path.read_text(errors="replace")) if path.suffix == ".md" else None
+    permalink = match and re.search(r"^permalink:\s*['\"]?([^'\"\s]+)", match.group(1), re.M)
+    if permalink:
+        return permalink.group(1)
+    rel = path.relative_to(root).as_posix()
+    if path.suffix == ".md":
+        rel = rel[:-3] + ".html"
+    return base + quote(rel)
+
+
+def site_files(root):
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = sorted(d for d in dirnames if not d.startswith("."))
+        for name in sorted(filenames):
+            if not name.startswith("."):
+                yield Path(dirpath) / name
+
+
+def link_table(page, files, root, base):
+    """Map each wikilink spelling to a URL, preferring a target in `page`'s own folder."""
+    table = {}
+    for f in sorted(files, key=lambda f: (f.parent != page.parent, len(f.parts))):
+        url = page_url(f, root, base)
+        rel = f.relative_to(root).as_posix()
+        for key in (rel, rel.removesuffix(".md"), f.name, f.stem if f.suffix == ".md" else f.name):
+            table.setdefault(key, url)
+    return table
+
+
+def clean_tree(root, base, only=None):
+    root = Path(root)
+    files = list(site_files(root))
+    targets = [root / p for p in only] if only else [f for f in files if f.suffix == ".md"]
+    cleaned, problems = {}, []
+    for page in targets:
+        text = clean(page.read_text(), link_table(page, files, root, base))
+        problems += [f"{page}: {p}" for p in residue(text)]
+        cleaned[page] = text
+    if problems:
+        raise ValueError("vault material left after cleaning (fix it in the vault):\n  "
+                         + "\n  ".join(problems))
+    for page, text in cleaned.items():
+        if page.read_text() != text:
+            page.write_text(text)
+
+
+def main(argv):
+    if len(argv) < 2:
+        sys.exit(__doc__)
+    root, base, *only = argv
+    if not base.startswith("/") or not base.endswith("/"):
+        sys.exit(f"strip-vault: BASE must be a site path like /ASIO/, got {base!r}")
+    try:
+        clean_tree(root, base, only)
+    except ValueError as error:
+        print(f"strip-vault: {error}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

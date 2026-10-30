@@ -3,7 +3,6 @@ layout: cayman
 title: Loop Closing
 description: 'Claim: Both scale and cost will jump discontinuously each time AI "closes loop" over all aspects of an end-to-end business function.'
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
 
 **Definition**:
@@ -19,7 +18,7 @@ Once loop is closed over an entire job function, performance on that job functio
 As AI-ability surpasses human-ability across ALL aspects of a given job, AI will tend to "close loop" such in a way that humans are not involved-in or even aware-of the actions the AI is taking in execution of this ability.
 
 **Justification**:
-- Because of [[Natural_Selection]], each time AI-abilities surpass human-ability, execution of that ability is aggressively transitioned to AI-execution.
+- Because of [Natural_Selection](/ASIO/Natural_Selection.html), each time AI-abilities surpass human-ability, execution of that ability is aggressively transitioned to AI-execution.
 -  that specific 
 
 **Discussion**:

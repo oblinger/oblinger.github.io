@@ -17,11 +17,9 @@ This claim is clear enough in the abstract. Yet, architects of complex systems m
 - Of course any actions involving its crypto money must be safe guarded extremely well as this is an obvious area for external exploitation:  (1) only known and trusted code is used.  (2) all relevant processing is sandboxed within itself, and the sandboxing code is among the most throughly tested code. (3) even after all of
 
 
-
 SO HERE IS THE NEEDLE IN THE HAY STACK
 
 DITHERING - For added realism and texture the video synthesizer use a simple randomized dithering in a algorithm pervasively.  Uses randomized scratch pad as a colorable source of randomness for this.  It turns out given enough video its easy to reconstruct the random pad (no reason)
-
 
 
 COMPARING FINDING TO HIDING

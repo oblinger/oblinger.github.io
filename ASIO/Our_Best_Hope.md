@@ -3,12 +3,11 @@ layout: cayman
 title: Our Best Hope
 description: "Claim: Our best hope is to shape our progressive loss of control in ways least likely to result in catastrophic harm."
 ---
-
 <img src="../assets/images/WorkInProgress.png" height="150px;" />
 
 **Thesis**:
 - Humanity's predicament is far more dire than most imagine. 
-- In these [[EOCK Last stages AGI development]] there is a remote possibility that we can [[EOCK Shut it all down]].
+- In these EOCK Last stages AGI development there is a remote possibility that we can EOCK Shut it all down.
 - Failing that, however, our last best hope is that we can shape outcomes in a way that is not catastrophic for humanity.
 
 
@@ -16,9 +15,8 @@ Thesis:
 - It is possible to advance our understanding of how to shape the application of AGI faster than our understanding of how to achieve AGI in a way that we can avoid catastrophic outcomes for humanity.
 
 
-
 **Antecedents**:
-- [[Cant_Stop]]  and  [[Apex_Predator]] 
+- [Cant_Stop](/ASIO/Cant_Stop.html)  and  [Apex_Predator](/ASIO/Apex_Predator.html) 
 
 **Justification**:
 
@@ -27,7 +25,6 @@ Discussion:
 
 Some worry about a "fast takeoff" scenario where AI takes over so fast, in hours, days, or weeks, that we don't have time to react.
 I am personally doubtful about the plausibility of this scenerio, nonetheless, I feel we have little chance to 
-
 
 
 ~~

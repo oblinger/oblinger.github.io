@@ -1,8 +1,3 @@
-| -[[AlienBiology]]- | +> |
-
-    [[AlienBiologyWhitepaper.pdf]], [[AlienBiology/AlienBiologyWhitepaper]], [[CellMetabolism5.pdf]], [[CellReactions.pdf]], [[AlienBiology/CellReactions]], [[Photosynthesis.pdf]]
-
-
 **Alien Biology**:
 1. Is based entirely on a ***synthetically-generated*** &nbsp; "alien" biology, including a newly invented chemistry.
 2. It ***avoids training-set taint*** since it is derived from an alien universe.
@@ -30,7 +25,7 @@ Below are some samples from the data artifacts being used as the statistical bas
 
 <!--
 
-.[[AlienBiology]].
-  , [[CellReactions]], 
+.[AlienBiology](/gitproj/AlienBiology/AlienBiology.html).
+  , [CellReactions](/gitproj/AlienBiology/CellReactions.html), 
 
 -->

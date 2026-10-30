@@ -39,7 +39,7 @@ white paper</a>
 <a href="https://github.com/oblinger/alienbio" style="color: #606878; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; font-size: 0.82em;">
 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 1h8l4 4v9a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#dde1e8" stroke="#4a9eff" stroke-width="0.8"/><path d="M5 8l2 2 3-3" stroke="#4a9eff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
 code</a>
-<a href="https://oblinger.github.io/abio-docs/demos/index.html" style="color: #606878; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; font-size: 0.82em;">
+<a href="https://oblinger.github.io/abio-docs/ABIO%20Demos/ABIO%20Demo%20Gallery.html" style="color: #606878; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; font-size: 0.82em;">
 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="2" width="14" height="11" rx="1.5" fill="#dde1e8" stroke="#4a9eff" stroke-width="0.8"/><path d="M5 7l-2 1.5L5 10" stroke="#4a9eff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M11 7l2 1.5L11 10" stroke="#4a9eff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
 demos</a>
 </div>

@@ -3,7 +3,6 @@ title: Cant Stop
 layout: cayman
 description: "Claim: Humanity cannot stop its creation of AGI."
 ---
-
 At first read, this claim seems preposterous; one can invent dozens of ways to stop the creation of AGI, so obviously, that is false.  Here, we argue that the opposite is not only obvious but inevitable.  Separately, we argue we are on the path to AGI, and the AGI is ASI.  [AGI Will Come](/ASIO/AGI_Will_Come), [AGI Implies ASI](ASIO/AGI_implies_ASI).  Here, we start by arguing that it would be very difficult to stop our creation of AGI, then extend that argument to show, for practical purposes, that it is impossible to stop it.
 
 
@@ -16,7 +15,6 @@ But of course, we *could* stop climate change in its tracks.  If every human on 
 These are the important conclusions to draw from this: (1) given powerful sources of power and profit like fossil fuel consumption or AI computation, corporations and nations will not slow or forgo these advantages except under extreme pressure.  (2) Humanity only applies extreme pressure in cases of high certainty.  Existential risk is not sufficient; a majority of humanity needs to have high confidence in the threat before such pressures could potentially be applied.  
 
 So, we have established that it will be difficult for humanity to stop the development of AGI, how is this extended to conclude it is effectively impossible to achieve?  
-
 
 
 - WHY

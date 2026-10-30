@@ -59,3 +59,4 @@ exclude:
   - doc/
   - CLAUDE.md
   - tools/ # trip-index and its StatiCrypt salt
+  - justfile # build recipes; they name vault paths

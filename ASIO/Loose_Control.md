@@ -3,8 +3,6 @@ layout: cayman
 title: Can't Control
 description: "Claim: Humanity cannot maintain indefinite control over the ASI systems it creates."
 ---
-
-
 **TL;DR.**  Even if we succeed in the challenging objective of building ASI systems that are aligned with the purposes we intend, we will still ultimately be at the mercy of these ASI systems once they are created, as well as at the mercy of other unaligned ASI systems that will also likely exist.  And since "shit happens" no matter how carefully humanity strives to set the initial conditions of this ecosystem, a due to variety of pressures will evolve it significantly beyond that point in unforseeable ways.  Whatever happens, humanity will not be in control of this evolution. Instead, a collection of one or more ASIs will be.
 
 **Caveats**—It is helpful to frame this sobering claim first in terms of what is NOT being claimed, both to minimize the non-trivial alarm it might cause and to increase the believability of the argument by carefully avoiding unintended overreach.
@@ -12,14 +10,12 @@ description: "Claim: Humanity cannot maintain indefinite control over the ASI sy
 - HUMANITY IS NOT NECESSARILY DOOMED — We argue humanity will not remain in control, and any tight alignment guarantees attempts to install into the systems that will be in control will tend to unravel over time. Still, we are in control today, so it is conceivable that we can shape the trajectory this society of ASIs will embark upon in a way that has lasting consequences beneficial for humanity.
 
 **Assumptions, Dependencies, and Conclusions**:
-- AGI is possible, and we are on track to achieve it (see [[AGI_Will_Come]]).
-- Further, ASI will soon follow (see [[AGI_implies_ASI]]).
-- The world (people, corporations, and nations) operates within competitive ecosystems that they cannot escape (see [[Corp_AI]]).
-- Consequently, we cannot stop the construction of ASI systems (see [[Cant_Stop]]).
+- AGI is possible, and we are on track to achieve it (see [AGI_Will_Come](/ASIO/AGI_Will_Come.html)).
+- Further, ASI will soon follow (see [AGI_implies_ASI](/ASIO/AGI_implies_ASI.html)).
+- The world (people, corporations, and nations) operates within competitive ecosystems that they cannot escape (see [Corp_AI](/ASIO/Corp_AI.html)).
+- Consequently, we cannot stop the construction of ASI systems (see [Cant_Stop](/ASIO/Cant_Stop.html)).
 -  [Not If But When](/ASIO/Not_If_But_When).
-- The best we can do is shape their starting point towards humanity's long-term interests (see [[EOCK Shaping The Future]]).
-
-
+- The best we can do is shape their starting point towards humanity's long-term interests (see [EOCK Shaping The Future](/ASIO/EOCK%20Shaping%20The%20Future.html)).
 
 
 ## The Argument
@@ -29,20 +25,16 @@ This is an argument about tendencies inherent in the world and consequences that
 2. Where chaos occasionally intervenes in ways that will destroy mechanisms designed to thwart #1.
 
 
-
-
 **Life is a Competition Where the Strongest Tend to Win**
 
 Competition is an inherent aspect of nearly all social and physical environments. However, the determiners of competitive strength vary across different environments and periods of time in hard-to-predict ways. Physical, intellectual, and perceptual strengths are often key, as is one's velocity in perception, thinking, and action.  Still, in many cases, intellectual strength trumps others as it can be used to shape or change the nature of the competition or introduce actions that others do not even consider.
 
-See [[Corp_AI]] for an extended discussion of the nature of these competitive environments, particularly as they apply to the emergence of AI-based competition.
+See [Corp_AI](/ASIO/Corp_AI.html) for an extended discussion of the nature of these competitive environments, particularly as they apply to the emergence of AI-based competition.
 
 
 **Shit Happens**
 
 A key objective of civilization is to modulate competition in ways that are broadly beneficial. Aligning ASIs can be viewed as a kind of civilizing for the benefit of humanity.
-
-
 
 
 JUNK
