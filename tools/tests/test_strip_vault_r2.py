@@ -95,6 +95,10 @@ def test_heading_anchor_matches_kramdown_id(sv, heading, anchor):
 @pytest.mark.parametrize("line, kept", [
     ("## [Essay notes](hook://x)", "## Essay notes"),
     ("> [Quoted](ha://y)", "> Quoted"),
+    # 8766098's exemption wanted whitespace after the `>`: a quote written `>[link]` or nested
+    # `>> [link]` was still a stub (regression review 3, 2026-10-30).
+    (">[Quoted](ha://y)", ">Quoted"),
+    (">> [Quoted](hook://z)", ">> Quoted"),
 ])
 def test_heading_or_quote_that_is_a_vault_link_keeps_its_text(sv, line, kept):
     assert sv.clean(f"{line}\nbody\n", {}) == f"{kept}\nbody\n"
