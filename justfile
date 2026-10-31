@@ -20,9 +20,17 @@ preview:
 sync-asio:
     #!/usr/bin/env bash
     set -euo pipefail
+    src="{{vault_asio}}"
+    # An empty or wrong WEB_VAULT_ASIO made the copy read `/` and the --delete below empty ASIO/.
+    if [ -z "$src" ] || [ ! -f "$src/ASIO.md" ]; then
+        echo "sync-asio: '$src' is not the ASIO vault folder (no ASIO.md); refusing" >&2; exit 1
+    fi
     stage=$(mktemp -d)
     trap 'rm -rf "$stage"' EXIT
-    rsync -a --exclude='.anchor' --exclude='.DS_Store' "{{vault_asio}}/" "$stage/"
+    rsync -a --exclude='.anchor' --exclude='.DS_Store' "$src/" "$stage/"
+    if [ -z "$(ls -A "$stage")" ]; then
+        echo "sync-asio: the stage is empty; refusing to empty ASIO/" >&2; exit 1
+    fi
     python3 "{{justfile_directory()}}/tools/strip-vault" "$stage" /ASIO/
     rsync -a --delete --checksum "$stage/" "{{website_repo}}/ASIO/"
     echo "ASIO synced from {{vault_asio}}"
