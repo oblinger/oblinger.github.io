@@ -87,3 +87,18 @@ def test_wikilink_resolves_case_insensitively(sv, tmp_path):
 def test_heading_anchor_matches_kramdown_id(sv, heading, anchor):
     out = sv.clean(f"[[Other#{heading}|x]]\n", {"Other": "/ASIO/Other.html"})
     assert out == f"[x](/ASIO/Other.html#{anchor})\n"
+
+
+# Broke in efe9d17's own stub rule: a line that is "nothing but vault links and punctuation" took a
+# heading or a blockquote whose text is one link for a stub, and dropped it whole; the rule it
+# replaced kept `## [Essay notes](hook://x)` as `## Essay notes` (regression review 2026-10-30).
+@pytest.mark.parametrize("line, kept", [
+    ("## [Essay notes](hook://x)", "## Essay notes"),
+    ("> [Quoted](ha://y)", "> Quoted"),
+])
+def test_heading_or_quote_that_is_a_vault_link_keeps_its_text(sv, line, kept):
+    assert sv.clean(f"{line}\nbody\n", {}) == f"{kept}\nbody\n"
+
+
+def test_bulleted_vault_stub_is_still_dropped(sv):
+    assert sv.clean("- [ASIO markdown](hook://x) - [Log](ha://y)\nbody\n", {}) == "body\n"

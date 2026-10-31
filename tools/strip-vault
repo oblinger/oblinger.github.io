@@ -63,7 +63,10 @@ def is_hr(line):
 
 def is_vault_stub(line):
     """A line that is nothing but hook://, ha:// links and punctuation (a HookAnchor stub); a
-    sentence that merely opens with such a link keeps its words."""
+    sentence that merely opens with such a link keeps its words, and so do a heading and a
+    blockquote whose text is the link (`## [Essay notes](hook://x)` is a heading, not a stub)."""
+    if re.match(r"\s*(#+|>)\s", line):
+        return False
     return bool(VAULT_LINK.search(line)) and not re.search(r"\w", VAULT_LINK.sub("", line))
 
 
