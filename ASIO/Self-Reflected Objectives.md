@@ -15,5 +15,5 @@ The main takeaway from this:
 
 
 ==> This raises two important questions:
-1. Where does this all lead?   (See Fixed Point Objectives)
-2. As AI agents pull ahead of human cognition, they will interact with other AI agents that most shape this progression.  What impact will that have?  (See Societally mediated objectives)
+1. Where does this all lead?   (See ~~Fixed Point Objectives~~)
+2. As AI agents pull ahead of human cognition, they will interact with other AI agents that most shape this progression.  What impact will that have?  (See ~~Societally mediated objectives~~)

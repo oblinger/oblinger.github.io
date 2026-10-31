@@ -7,7 +7,7 @@ description: "Claim: Our best hope is to shape our progressive loss of control i
 
 **Thesis**:
 - Humanity's predicament is far more dire than most imagine. 
-- In these EOCK Last stages AGI development there is a remote possibility that we can EOCK Shut it all down.
+- In these ~~EOCK Last stages AGI development~~ there is a remote possibility that we can ~~EOCK Shut it all down~~.
 - Failing that, however, our last best hope is that we can shape outcomes in a way that is not catastrophic for humanity.
 
 

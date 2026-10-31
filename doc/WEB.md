@@ -2,7 +2,7 @@
 description: "Dan's personal website, oblinger.github.io: the live site, its per-project pages, and how it deploys"
 ---
 
-| -[[WEB]]-              | : Website — Dan's personal website, oblinger.github.io: the live site, its per-project pages, and how it deploys<br>→ [WEB](ha://p/WEB)  (grove/oblinger.github.io/doc)                                                                                    |
+| -[WEB](WEB.md)-        | : Website — Dan's personal website, oblinger.github.io: the live site, its per-project pages, and how it deploys<br>→ [WEB](ha://p/WEB)  (grove/oblinger.github.io/doc)                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Website                | [🌐 Home](https://oblinger.github.io/)  ·  [Projects index](https://oblinger.github.io/gitproj/)  ·  [Repo](https://github.com/oblinger/oblinger.github.io)  ·  [Elsewhere](https://oblinger.github.io/elsewhere/)  ·  Src `~/ob/grove/oblinger.github.io/` |
 | WEB links              | ~~[Web Public](ha://Web/Web%20Public)~~ ([Drive](https://drive.google.com/drive/folders/1asHv4t89nzMF0nCyz0uL6sneQ4mR2d5z))                                                                                                                                |
@@ -13,7 +13,7 @@ description: "Dan's personal website, oblinger.github.io: the live site, its per
 | Deliberative Coherence | Src `oblinger.github.io/gitproj/DeliberativeCoherence/*.qmd` (Quarto, in-repo)  →  [live page](https://oblinger.github.io/gitproj/DeliberativeCoherence)  ·  [[DCP]]                                                                                       |
 | ASI Outcomes           | Src `oblinger.github.io/ASIO/` (in-repo)  →  [live page](https://oblinger.github.io/ASIO/ASI_Outcomes/)  ·  [[ASIO]]                                                                                                                                       |
 | [[MYWEB]]              | dev / local-Jekyll / hosting notes                                                                                                                                                                                                                         |
-| ...                    | [[doc/Web Hooks]],  [[Website]],  [[WSITE]],                                                                                                                                                                                                               |
+| ...                    | [Web Hooks](Web%20Hooks.md),  [WEB Website](Website.md),  [WEB WSITE](WSITE.md),                                                                                                                                                                           |
 
 # WEB
 Dispatch surface for the personal website published at https://oblinger.github.io/ — the live site, its per-project pages, and the deploy setup.
