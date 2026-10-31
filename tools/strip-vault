@@ -27,6 +27,9 @@ VAULT_LINK = re.compile(r"\[([^\]]*)\]\((?:hook|ha)://[^)]*\)")
 WIKILINK = re.compile(r"(!?)\[\[(.+?)\]\]")
 FRONT = re.compile(r"\A---\n(.*?)^---[ \t]*\n", re.S | re.M)
 YAML_LINE = re.compile(r"^[A-Za-z_][\w-]*:(\s.*)?$")
+# A stray front-matter block's keys are Obsidian's and Jekyll's, all lowercase; a prose line
+# between two rules ("Note: the point.") starts with a capital and is not one.
+STRAY_KEY = re.compile(r"^[a-z_][a-z0-9_-]*:(\s.*)?$")
 MASTHEAD = re.compile(r"^\s*-\[\[.+\]\]-\s*$")
 ZONE_MARKERS = {"...", "ooo", "---", "+++", "^^^", "!!!", "."}
 STUB = "This is an auto-generated anchor file"
@@ -58,6 +61,12 @@ def is_hr(line):
     return line.strip() == "---"
 
 
+def is_vault_stub(line):
+    """A line that is nothing but hook://, ha:// links and punctuation (a HookAnchor stub); a
+    sentence that merely opens with such a link keeps its words."""
+    return bool(VAULT_LINK.search(line)) and not re.search(r"\w", VAULT_LINK.sub("", line))
+
+
 def drop_sections(lines):
     """Drop `# BRIEF` and auto-generated stub sections; a section runs to the next H1 or `---`."""
     out, i = [], 0
@@ -84,7 +93,7 @@ def drop_stray_front_matter(lines):
     while i < len(lines):
         if is_hr(lines[i]):
             j = i + 1
-            while j < len(lines) and YAML_LINE.match(lines[j]):
+            while j < len(lines) and STRAY_KEY.match(lines[j]):
                 j += 1
             if j > i + 1 and j < len(lines) and is_hr(lines[j]):
                 i = j + 1
@@ -138,7 +147,25 @@ def drop_tables_and_zones(lines):
 def link_text(target, alias):
     if alias:
         return alias
-    return target.split("#")[0].rsplit("/", 1)[-1] or target
+    page, _, anchor = target.partition("#")
+    return page.rsplit("/", 1)[-1] or anchor or target
+
+
+def heading_id(text):
+    """The id kramdown (GitHub Pages) gives a heading: leading non-letters dropped, then only
+    ASCII letters, digits, spaces and dashes kept, spaces to dashes, lowercased; `section` if empty."""
+    text = re.sub(r"^[^A-Za-z]+", "", text)
+    text = re.sub(r"[^A-Za-z0-9 -]", "", text).replace(" ", "-").lower()
+    return text or "section"
+
+
+def page_link(pages, page):
+    """The URL of a wikilink target, as Obsidian resolves it: with or without `.md`, any case."""
+    for key in (page, page.removesuffix(".md")):
+        url = pages.get(key) or pages.get(key.lower())
+        if url:
+            return url
+    return None
 
 
 def convert_wikilinks(text, pages):
@@ -147,11 +174,11 @@ def convert_wikilinks(text, pages):
         target, *alias = re.split(r"\\?\|", inner, maxsplit=1)
         target, alias = target.strip(), (alias[0].strip() if alias else "")
         page, _, anchor = target.partition("#")
-        url = pages.get(page) or pages.get(page.removesuffix(".md"))
+        url = "" if not page and anchor else page_link(pages, page)   # [[#Heading]] is this page
         label = link_text(target, alias)
-        if not url:
+        if url is None:
             return "" if bang else label
-        url = url + ("#" + quote(anchor.lower().replace(" ", "-")) if anchor else "")
+        url = url + ("#" + heading_id(anchor) if anchor else "")
         return f"{bang}[{label}]({url})"
     return WIKILINK.sub(replace, text)
 
@@ -169,8 +196,7 @@ def clean(text, pages):
     lines = drop_sections(text.split("\n"))
     lines = drop_stray_front_matter(lines)
     lines = drop_tables_and_zones(lines)
-    lines = [line for line in lines
-             if not VAULT_LINK.match(re.sub(r"^[\s~*-]*", "", line))]
+    lines = [line for line in lines if not is_vault_stub(line)]
     body = VAULT_LINK.sub(lambda m: m.group(1), "\n".join(lines))
     body = convert_wikilinks(body, pages)
     body = re.sub(r"\n{4,}", "\n\n\n", body.rstrip("\n")) + "\n"
@@ -213,6 +239,8 @@ def link_table(page, files, root, base):
         rel = f.relative_to(root).as_posix()
         for key in (rel, rel.removesuffix(".md"), f.name, f.stem if f.suffix == ".md" else f.name):
             table.setdefault(key, url)
+    for key, url in list(table.items()):    # Obsidian resolves a wikilink in any case
+        table.setdefault(key.lower(), url)
     return table
 
 
