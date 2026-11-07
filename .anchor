@@ -1,7 +1,9 @@
 slug: WEB
-agent: Atticus
 traits:
 - topic
 - code
 page: doc/WEB.md
 namespace: true
+stones:
+  pebbles:
+  inbox:
