@@ -4,6 +4,7 @@ traits:
 - code
 page: doc/WEB.md
 namespace: true
+bare_facets: true
 stones:
   pebbles:
   inbox:
