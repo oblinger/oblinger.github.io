@@ -1,7 +1,7 @@
 ---
 description: "dev / local-Jekyll / hosting notes"
 ---
-:>> [WEB](WEB.md) → [WEB MYWEB](ha://p/WEB%20MYWEB) 
+:>> [WEB](WEB.md) → [WEB MYWEB](ha://pop/WEB~MYWEB) 
 # MYWEB
 Dev, local Jekyll and hosting notes for the website.
 
