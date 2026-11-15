@@ -13,13 +13,13 @@ __pycache__/
 .anchor
 **/.anchor
 
-# Anchor (DAS repo-anchor shape, 2026-10-20): the root .anchor is tracked; Track folders are grout worktrees
+# Anchor (DAS repo-anchor shape, 2026-10-20): the root .anchor is tracked; Track folders are plain ignored folders
 !/.anchor
 /doc/*Track/
 /doc/**/*Track/
 /doc/.obsidian/
 /.claude/settings.local.json
-# grout (HA F471)
+# anchor-vault (HA F471)
 doc/*Track/
 
 # Yore folders stay on disk, out of git: unzip there to look inside without it being swept in; restic backs up all of ~/ob (Dan, 2026-10-22)
