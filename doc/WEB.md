@@ -8,10 +8,10 @@ description: "Dan's personal website, oblinger.github.io: the live site, its per
 | WEB links              | ~~[Web Public](ha://Web/Web%20Public)~~ ([Drive](https://drive.google.com/drive/folders/1asHv4t89nzMF0nCyz0uL6sneQ4mR2d5z))                                                                                                                                |
 |                        |                                                                                                                                                                                                                                                            |
 | Hook Anchor            | Src `~/ob/proj/Hook Anchor/`  →  [live page](https://oblinger.github.io/gitproj/HookAnchor/)  ·  ~~[[Hook Anchor]]~~                                                                                                                                       |
-| Dan's Skills           | Src `~/.claude/skills/`  →  [live page](https://oblinger.github.io/gitproj/dans-anchor-system/)  ·  [[DAS Skills\|dans-anchor-system]]                                                                                                                     |
+| Dan's Skills           | Src `~/.claude/skills/`  →  [live page](https://oblinger.github.io/gitproj/dans-anchor-system/)  ·  [dans-anchor-system](ha://DAS%20Skills)                                                                                                                     |
 | Alien Biology          | Src `~/ob/proj/abio/`  →  [live page](https://oblinger.github.io/gitproj/AlienBiology)  ·  [[ABIO]]                                                                                                                                                        |
-| Deliberative Coherence | Src `oblinger.github.io/gitproj/DeliberativeCoherence/*.qmd` (Quarto, in-repo)  →  [live page](https://oblinger.github.io/gitproj/DeliberativeCoherence)  ·  [[DCP]]                                                                                       |
-| ASI Outcomes           | Src `oblinger.github.io/ASIO/` (in-repo)  →  [live page](https://oblinger.github.io/ASIO/ASI_Outcomes/)  ·  [[ASIO]]                                                                                                                                       |
+| Deliberative Coherence | Src `oblinger.github.io/gitproj/DeliberativeCoherence/*.qmd` (Quarto, in-repo)  →  [live page](https://oblinger.github.io/gitproj/DeliberativeCoherence)  ·  [DCP](ha://DCP)                                                                                       |
+| ASI Outcomes           | Src `oblinger.github.io/ASIO/` (in-repo)  →  [live page](https://oblinger.github.io/ASIO/ASI_Outcomes/)  ·  [ASIO](ha://ASIO)                                                                                                                                       |
 | [[MYWEB]]              | dev / local-Jekyll / hosting notes                                                                                                                                                                                                                         |
 | ...                    | [Track/](ha://f/~/ob/grove/oblinger.github.io/doc/Track),  [Web Hooks](Web%20Hooks.md),  [Website](Website.md),  [WSITE](WSITE.md),                                                                                                                        |
 
@@ -21,7 +21,7 @@ Dispatch surface for the personal website published at https://oblinger.github.i
 | Card |  |
 | --- | --- |
 | **Engine** | Jekyll + jekyll-theme-cayman · GitHub Pages auto-deploys on `git push` |
-| **Deploy** | **Full topology + copy mechanisms at [[WIRE Website Deploy]].** Summary: HookAnchor / AlienBio: `just docs-deploy` in the project repo · Skills: `git push` from `~/.claude/skills/` · Quarto DCP: `just publish-dcl` · KM homepage: `km_github.py` in [[KM]] |
+| **Deploy** | **Full topology + copy mechanisms at [WIRE Website Deploy](ha://WIRE%20Website%20Deploy).** Summary: HookAnchor / AlienBio: `just docs-deploy` in the project repo · Skills: `git push` from `~/.claude/skills/` · Quarto DCP: `just publish-dcl` · KM homepage: `km_github.py` in [KM](ha://KM) |
 
 
 # BRIEF
